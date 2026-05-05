@@ -1,0 +1,146 @@
+[
+  {
+    "id": "wu_biding_sentence",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "field_any": ["judgment_text"]
+    },
+    "expected_graph": [
+      {
+        "edge_type": "CASE_APPLIES_ARTICLE",
+        "article": "第十二条第一款",
+        "law_version": "current",
+        "resolution": "law_chunk_found"
+      },
+      {
+        "edge_type": "CASE_APPLIES_ARTICLE",
+        "article": "第一百三十四条第二款",
+        "law_version": "1979",
+        "resolution": "no_current_law_chunk"
+      }
+    ]
+  },
+  {
+    "id": "wu_biding_applied_articles",
+    "query": "吴必定案适用了哪些法条",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "source_type_any": ["case_chunk"]
+    },
+    "expected_graph": [
+      {
+        "edge_type": "CASE_APPLIES_ARTICLE",
+        "article": "第十二条第一款",
+        "law_version": "current",
+        "resolution": "law_chunk_found"
+      },
+      {
+        "edge_type": "CASE_APPLIES_ARTICLE",
+        "article": "第一百三十四条第二款",
+        "law_version": "1979",
+        "resolution": "no_current_law_chunk"
+      }
+    ]
+  },
+  {
+    "id": "intentional_injury_law",
+    "query": "故意伤害罪相关刑法条文是什么",
+    "top_k": 5,
+    "expected_direct": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["234"]
+    }
+  },
+  {
+    "id": "intentional_injury_current_article",
+    "query": "刑法第二百三十四条规定了什么",
+    "top_k": 5,
+    "expected_direct": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["234"]
+    }
+  },
+  {
+    "id": "dangerous_driving_case",
+    "query": "穆某危险驾驶罪判了什么刑",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
+      "field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "dangerous_driving_law",
+    "query": "危险驾驶罪对应刑法第几条",
+    "top_k": 5,
+    "expected_direct": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["133.1"]
+    }
+  },
+  {
+    "id": "forestry_case_facts",
+    "query": "孙五十四滥伐林木案砍伐了多少立方米",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["孙五十四"],
+      "field_any": ["court_found_facts_text", "accusation_text"]
+    }
+  },
+  {
+    "id": "forestry_applied_articles",
+    "query": "孙五十四案适用了哪些刑法法条",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["孙五十四"],
+      "source_type_any": ["case_chunk"]
+    },
+    "expected_graph": [
+      {
+        "edge_type": "CASE_APPLIES_ARTICLE",
+        "article": "第三百四十五条第二款",
+        "law_version": "current",
+        "resolution": "law_chunk_found"
+      }
+    ]
+  },
+  {
+    "id": "bribery_case_sentence",
+    "query": "王红珍受贿案判了多久",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["王红珍受贿一审刑事判决书"],
+      "field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "drug_case_sentence",
+    "query": "赵吉安贩卖毒品案判了多久",
+    "top_k": 5,
+    "expected_direct": {
+      "title_contains_any": ["赵吉安走私、贩卖、运输、制造毒品一审刑事判决书"],
+      "field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "rape_law_article",
+    "query": "强奸罪刑法条文是什么",
+    "top_k": 5,
+    "expected_direct": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["236"]
+    }
+  },
+  {
+    "id": "fraud_law_article",
+    "query": "诈骗罪相关刑法条文",
+    "top_k": 5,
+    "expected_direct": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["266"]
+    }
+  }
+]

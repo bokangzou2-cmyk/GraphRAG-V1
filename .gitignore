@@ -1,0 +1,7 @@
+raw/
+processing/__pycache__/
+*.pyc
+
+processing_data/*
+!processing_data/search_eval_sample.json
+!processing_data/answer_eval_sample.json

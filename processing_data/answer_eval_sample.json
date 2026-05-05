@@ -1,0 +1,138 @@
+[
+  {
+    "id": "wu_biding_sentence",
+    "query": "吴必定案判了多久",
+    "expected": {
+      "answer_type": "sentence",
+      "answer_contains_all": ["有期徒刑十年"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "wu_biding_applied_articles",
+    "query": "吴必定案适用了哪些法条",
+    "expected": {
+      "answer_type": "applied_articles",
+      "answer_contains_all": ["第十二条第一款", "第一百三十四条第二款", "law_version=1979"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第十二条第一款",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        },
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第一百三十四条第二款",
+          "law_version": "1979",
+          "resolution": "no_current_law_chunk"
+        }
+      ]
+    }
+  },
+  {
+    "id": "intentional_injury_law",
+    "query": "故意伤害罪相关刑法条文是什么",
+    "expected": {
+      "answer_type": "law_articles",
+      "answer_contains_all": ["第234条", "故意伤害罪"],
+      "citation_source_type_any": ["law_article"]
+    }
+  },
+  {
+    "id": "dangerous_driving_sentence",
+    "query": "穆某危险驾驶罪判了什么刑",
+    "expected": {
+      "answer_type": "sentence",
+      "answer_contains_all": ["拘役一个月", "缓刑二个月"],
+      "citation_title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
+      "citation_field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "dangerous_driving_law",
+    "query": "危险驾驶罪对应刑法第几条",
+    "expected": {
+      "answer_type": "law_articles",
+      "answer_contains_all": ["第133.1条", "危险驾驶罪"],
+      "citation_source_type_any": ["law_article"]
+    }
+  },
+  {
+    "id": "forestry_applied_articles",
+    "query": "孙五十四案适用了哪些刑法法条",
+    "expected": {
+      "answer_type": "applied_articles",
+      "answer_contains_all": ["第三百四十五条第二款", "law_version=current"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第三百四十五条第二款",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wu_biding_facts",
+    "query": "吴必定案事实是什么",
+    "expected": {
+      "answer_type": "fact",
+      "answer_contains_all": ["五峰坑", "砍了数刀"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["court_found_facts_text", "accusation_text"]
+    }
+  },
+  {
+    "id": "wu_biding_evidence",
+    "query": "吴必定案有哪些证据",
+    "expected": {
+      "answer_type": "evidence",
+      "answer_contains_all": ["证实"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["evidence_text", "witness_testimony_texts", "expert_opinion_texts", "inspection_records_texts"]
+    }
+  },
+  {
+    "id": "wu_biding_reasoning",
+    "query": "吴必定案为什么构成故意伤害罪",
+    "expected": {
+      "answer_type": "reasoning",
+      "answer_contains_all": ["吴必定", "构成故意伤害罪"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["reasoning_text"]
+    }
+  },
+  {
+    "id": "forestry_amount",
+    "query": "孙五十四滥伐林木案砍伐了多少立方米",
+    "expected": {
+      "answer_type": "amount",
+      "answer_contains_all": ["77.97809立方米", "72.84971立方米"],
+      "citation_title_contains_any": ["孙五十四"],
+      "citation_field_any": ["court_found_facts_text", "accusation_text", "reasoning_text"]
+    }
+  },
+  {
+    "id": "bribery_amount",
+    "query": "王红珍受贿案涉及多少金额",
+    "expected": {
+      "answer_type": "amount",
+      "answer_contains_all": ["人民币"],
+      "citation_title_contains_any": ["王红珍受贿一审刑事判决书"],
+      "citation_field_any": ["court_found_facts_text", "accusation_text", "reasoning_text", "judgment_text"]
+    }
+  },
+  {
+    "id": "dangerous_driving_reasoning",
+    "query": "穆某危险驾驶罪为什么成立",
+    "expected": {
+      "answer_type": "reasoning",
+      "answer_contains_all": ["穆某", "构成危险驾驶罪"],
+      "citation_title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
+      "citation_field_any": ["reasoning_text"]
+    }
+  }
+]
