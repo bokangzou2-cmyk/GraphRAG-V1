@@ -1,6 +1,10 @@
 # Router LoRA Training
 
-This folder contains the first-version training flow for the criminal-law query router.
+Status: legacy first-version training flow.
+
+The active frontend runtime uses the Router LoRA after the Query Rewriter LoRA and deterministic rewrite completion. For the current training recipe and processed 5000-row target dataset, prefer `processing/router_lora_v2_TRAINING.md`.
+
+This document is preserved because the first-version router dataset and commands are still useful for comparison and recovery, but it is not the primary current workflow.
 
 ## 1. Install training dependencies
 

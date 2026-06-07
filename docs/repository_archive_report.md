@@ -1,8 +1,16 @@
 # Repository Archive Report
 
+Last synchronized: 2026-06-07
+
 ## Scope
 
 This archive pass organizes the current GraphRAG-V1 workspace into a versioned baseline for the criminal-law GraphRAG sample project.
+
+Published repository:
+
+- `https://github.com/bokangzou2-cmyk/GraphRAG-V1`
+- Branch: `master`
+- Archive commit: `2f32dc3 Archive LangGraph GraphRAG QA baseline`
 
 The committed scope includes:
 
@@ -53,3 +61,12 @@ No dataset, vector index, graph output, evaluation result, report, model directo
 ## Archive Notes
 
 Large LoRA training outputs are not committed. Their runtime paths and current active adapter references are preserved in `.env.example`, `processing/*TRAINING.md`, and `docs/artifact_inventory.md`.
+
+## Documentation Sync
+
+The project documentation was synchronized after the archive commit to reflect the current runtime:
+
+- The frontend uses the LangGraph orchestration path.
+- `/api/chat` delegates to the same orchestration implementation as `/api/chat/orchestration`.
+- The active Query Understanding architecture is split into Query Rewriter LoRA, deterministic completion, and Router LoRA.
+- The old unified Query Understanding LoRA is preserved only as a legacy training/comparison asset.

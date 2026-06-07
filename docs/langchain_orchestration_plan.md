@@ -1,8 +1,8 @@
-# LangChain Orchestration Runtime
+# LangGraph Orchestration Runtime
 
 ## Current Boundary
 
-The frontend runtime chain is the LangChain orchestration path. The React app calls `/api/chat/orchestration`, and `/api/chat` is kept as a compatibility endpoint that delegates to the same orchestration implementation.
+The frontend runtime chain is the LangGraph orchestration path. The React app calls `/api/chat/orchestration`, and `/api/chat` is kept as a compatibility endpoint that delegates to the same orchestration implementation.
 
 Both endpoints use `processing/langchain_orchestration_sample.py` and therefore run the current Query Understanding flow:
 
@@ -10,19 +10,25 @@ Both endpoints use `processing/langchain_orchestration_sample.py` and therefore 
 
 The historical `app.llm.chat_service.answer_chat` path remains in the repository for comparison scripts and shared helper functions, but it is not the frontend answer path.
 
-## What LangChain Does
+## What LangGraph Does
 
-LangChain wraps the existing GraphRAG pipeline as `RunnableLambda` nodes:
+The current implementation uses a compatibility-preserving LangGraph `StateGraph`. Several node functions are still also exposed as LangChain `RunnableLambda` wrappers for fallback and comparison, but the active runtime is the state graph when `langgraph` is installed.
 
-- Start Runnable: calls `understand_query`, which prefers the Rewriter-first flow when `QUERY_REWRITER_MODE=lora`.
-- Router Runnable: uses the route already produced by Query Understanding.
-- Lexical Retriever Runnable: calls `processing/search_sample.py`.
-- Graph Retriever Runnable: calls `processing/graph_retriever_sample.py`.
-- Vector Retriever Runnable: calls `processing/vector_search_sample.py` through the existing helper.
-- Hybrid Merge/Rerank Runnable: calls shared merge and rerank logic from `processing/hybrid_search_sample.py`.
-- Answer Runnable: reuses the grounded-answer JSON contract, confidence gate, fallback answer, citations, and graph paths from shared chat-service helpers.
+Active nodes:
 
-LangChain is not a replacement retrieval implementation. It is the runtime orchestration layer around the custom retrieval and answer code.
+- Start node: initializes messages, query, memory container, mode, metrics, and logs.
+- Memory node: extracts conservative structured memory from conversation history.
+- Query Rewriter node: prefers the Rewriter LoRA when `QUERY_REWRITER_MODE=lora`, then applies deterministic completion.
+- Router node: runs Router LoRA plus priority/rule validation.
+- Direct Answer node: handles no-retrieval or out-of-scope/direct-answer paths.
+- Law/Case/Graph/Vector Retriever nodes: call the existing self-owned retrieval modules.
+- Hybrid Merge/Rerank node: calls shared merge and rerank logic from `processing/hybrid_search_sample.py`.
+- Evidence Sufficiency node: decides whether retrieved context is enough for grounded answering.
+- Grounded Answer node: reuses the provider JSON contract, citation validation, confidence gate, and fallback handling.
+- Fallback Answer node: returns user-safe fallback text without exposing raw provider/retrieval internals.
+- Final Response node: attaches logs and metrics for backend/frontend audit.
+
+LangGraph is not a replacement retrieval implementation. It is the runtime orchestration layer around the custom retrieval and answer code.
 
 ## Configuration
 
@@ -65,9 +71,9 @@ The orchestration response returns `orchestration_logs` with these key events:
 
 The merge/rerank log includes `enabled_retrievers`, `lexical_count`, `graph_count`, `vector_count`, `final_context_count`, `confidence`, and `warnings`.
 
-## Target LangGraph Architecture
+## Implemented LangGraph Architecture
 
-The long-term target is to migrate the current linear LangChain runnable chain to an explicit LangGraph state machine. This should preserve the existing Rewriter LoRA, Router LoRA, deterministic correction rules, retrieval modules, rerank logic, and grounded answer contract while making multi-turn state and conditional retrieval branches first-class.
+The project has migrated the previous linear orchestration chain to an explicit LangGraph state machine while preserving the Rewriter LoRA, Router LoRA, deterministic correction rules, retrieval modules, rerank logic, and grounded answer contract.
 
 Target runtime flow:
 
@@ -109,7 +115,7 @@ Target state fields should include at least:
 - `answer`: final direct, grounded, or fallback answer payload.
 - `orchestration_logs`: trace events for frontend/backend audit.
 
-Migration order:
+Migration status:
 
 1. Port the current orchestration behavior to LangGraph without changing answer behavior. Status: implemented as a compatibility-preserving `StateGraph` in `processing/langchain_orchestration_sample.py`; the public `run_orchestration*` functions still return the same response shape.
 2. Add the structured memory node and keep it conservative: extract case names, ordinals, crimes, amounts, field intents, and user constraints instead of free-form summarization. Status: implemented as `memory_summary`; it stores structured memory and logs counts/constraints without free-form summarization.

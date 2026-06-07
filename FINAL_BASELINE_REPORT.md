@@ -1,10 +1,17 @@
 # Final Baseline Report
 
-Generated at: 2026-05-29T19:11:03
+Original baseline generated at: 2026-05-29T19:11:03
+Repository archive synchronized at: 2026-06-07
 
 ## Git State
 
-Working tree is not clean. Existing modified/untracked files were present before this QA freeze; no source logic changes are made during hidden validation.
+The baseline has been archived in Git and pushed to GitHub.
+
+- Archive commit: `2f32dc3 Archive LangGraph GraphRAG QA baseline`
+- Remote: `https://github.com/bokangzou2-cmyk/GraphRAG-V1`
+- Current frontend/backend runtime: LangGraph orchestration path.
+- `/api/chat/orchestration` is the primary frontend endpoint.
+- `/api/chat` is a compatibility endpoint delegating to the same orchestration implementation.
 
 ## Schema And Pipeline
 
@@ -39,9 +46,15 @@ Working tree is not clean. Existing modified/untracked files were present before
 | answer eval | PASS (36/36, warn/fail=0) |
 | adversarial eval | PASS (120/120, warn/fail=0) |
 | orchestration mock eval | PASS (9/9, warn/fail=0) |
-| backend tests | PASS (26 passed, 3 warnings) |
-| frontend tests | PASS (3 passed) |
+| backend tests | Historical baseline: PASS (26 passed, 3 warnings) |
+| frontend tests | Historical baseline: PASS (3 passed) |
+
+Recent lightweight archive verification:
+
+- `pytest tests\test_langgraph_orchestration.py tests\test_query_rewriter.py -q`: PASS (4 passed)
+- `npm test --prefix frontend`: PASS (5 passed)
+- `python -m compileall app processing tests`: PASS
 
 ## Freeze Note
 
-This report freezes the sample-level baseline before hidden anti-overfitting validation. Hidden eval generation and reporting are validation artifacts only.
+This report records the sample-level baseline and the later repository archive state. Hidden eval generation and reporting are validation artifacts only; do not rewrite hidden/adversarial result files just to update project status text.

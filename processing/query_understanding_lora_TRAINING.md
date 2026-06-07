@@ -1,6 +1,23 @@
 # Query Understanding LoRA Training
 
-This project uses a Query Understanding LoRA to decide whether a user query needs GraphRAG retrieval, how to rewrite multi-turn questions, and which retrieval targets to use.
+Status: legacy/historical.
+
+The current frontend runtime does not use the old unified Query Understanding LoRA. Runtime defaults set `QUERY_UNDERSTANDING_MODE=disabled` and use the split flow instead:
+
+```text
+User question + history
+-> Query Rewriter LoRA
+-> deterministic rewrite/schema completion
+-> Router LoRA
+-> LangGraph retrieval/answer routing
+```
+
+This document is preserved for historical training reference and regression comparison. For current runtime training, use:
+
+- `processing/query_rewriter_lora_TRAINING.md`
+- `processing/router_lora_v2_TRAINING.md`
+
+The old unified Query Understanding LoRA tried to decide whether a user query needs GraphRAG retrieval, rewrite multi-turn questions, and choose retrieval targets in one model. That unified responsibility was split because it was unstable for conservative rewriting and routing.
 
 ## Build Dataset
 
