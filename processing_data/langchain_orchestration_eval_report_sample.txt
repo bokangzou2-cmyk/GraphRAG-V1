@@ -1,0 +1,74 @@
+LangChain orchestration eval sample report
+status: WARN
+cases: 9
+pass: 2
+warn: 7
+
+[PASS] langchain_grounded_valid: 吴必定案判了多久 mode=grounded
+  answer_type=llm_grounded confidence=high warnings=no_current_law_chunk,router:criminal_law_case_only
+  citations=5 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,mock_llm_output,final_response
+
+[WARN] langchain_invalid_json_fallback: 吴必定案判了多久 mode=invalid_json
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. answer_type expected="retrieval_fallback" actual="no_answer"
+  missing. citations_min expected=1 actual=0
+  missing. warnings expected=["llm_invalid_json", "llm_call_failed"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+  missing. log_events expected=["mock_llm_output", "final_response"] actual=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "llm_skipped", "final_response"]
+  missing. same_retrieval_as_hybrid expected=["case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"] actual=[]
+  missing. direct_warnings_preserved expected=["no_current_law_chunk"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+
+[WARN] langchain_missing_citation_fallback: 吴必定案判了多久 mode=missing_citation
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. answer_type expected="retrieval_fallback" actual="no_answer"
+  missing. citations_min expected=1 actual=0
+  missing. warnings expected=["llm_invalid_json", "llm_call_failed"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+  missing. log_events expected=["mock_llm_output", "final_response"] actual=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "llm_skipped", "final_response"]
+  missing. same_retrieval_as_hybrid expected=["case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"] actual=[]
+  missing. direct_warnings_preserved expected=["no_current_law_chunk"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+
+[WARN] langchain_empty_answer_fallback: 吴必定案判了多久 mode=empty_answer
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. answer_type expected="retrieval_fallback" actual="no_answer"
+  missing. citations_min expected=1 actual=0
+  missing. warnings expected=["llm_invalid_json", "llm_call_failed"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+  missing. log_events expected=["mock_llm_output", "final_response"] actual=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "llm_skipped", "final_response"]
+  missing. same_retrieval_as_hybrid expected=["case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"] actual=[]
+  missing. direct_warnings_preserved expected=["no_current_law_chunk"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+
+[WARN] langchain_mock_no_answer_refusal: 吴必定案判了多久 mode=no_answer
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. refusal_reason expected="insufficient_context" actual="llm_not_configured"
+  missing. warnings expected=["insufficient_context"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+  missing. log_events expected=["mock_llm_output", "final_response"] actual=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "llm_skipped", "final_response"]
+  missing. same_retrieval_as_hybrid expected=["case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"] actual=[]
+  missing. direct_warnings_preserved expected=["no_current_law_chunk"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+
+[PASS] langchain_empty_query_refusal:    mode=grounded
+  answer_type=no_answer confidence=none warnings=empty_query,insufficient_context
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+
+[WARN] langchain_general_direct_answer: 天气怎么样？ mode=grounded
+  answer_type=no_answer confidence=none warnings=out_of_scope,insufficient_context
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. answer_type expected="llm_direct" actual="no_answer"
+  missing. refusal_reason expected=null actual="out_of_scope"
+  missing. warnings expected=["retrieval_skipped"] actual=["out_of_scope", "insufficient_context"]
+
+[WARN] langchain_no_context_refusal: 吴必定案判了多久 mode=grounded
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. refusal_reason expected="insufficient_context" actual="llm_not_configured"
+  missing. warnings expected=["insufficient_context"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]
+
+[WARN] langchain_multiturn_uses_latest_user_only: 吴必定案判了多久 mode=grounded
+  answer_type=no_answer confidence=high warnings=llm_not_configured,retrieval_skipped,router:low_quality_or_incomplete
+  citations=0 logs=start,router_result,lexical_retriever,graph_retriever,vector_retriever,hybrid_merge_rerank,answer_contract_prepared,llm_skipped,final_response
+  missing. answer_type expected="llm_grounded" actual="no_answer"
+  missing. citations_min expected=1 actual=0
+  missing. log_events expected=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "mock_llm_output", "final_response"] actual=["start", "router_result", "lexical_retriever", "graph_retriever", "vector_retriever", "hybrid_merge_rerank", "answer_contract_prepared", "llm_skipped", "final_response"]
+  missing. same_retrieval_as_hybrid expected=["case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0", "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"] actual=[]
+  missing. direct_warnings_preserved expected=["no_current_law_chunk"] actual=["llm_not_configured", "retrieval_skipped", "router:low_quality_or_incomplete"]

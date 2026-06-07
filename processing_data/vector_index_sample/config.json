@@ -1,0 +1,17 @@
+{
+  "schema_version": "vector-index-sample-v1",
+  "created_at_utc": "2026-05-29T10:25:12.486075+00:00",
+  "input": "D:\\GraphRAG-V1\\processing_data\\retrieval_chunks_sample.jsonl",
+  "model": "BAAI/bge-small-zh-v1.5",
+  "requested_backend": "hash",
+  "backend": "hash",
+  "backend_info": {
+    "reason": "requested_hash"
+  },
+  "device": "cpu",
+  "local_files_only": true,
+  "input_fingerprint": "01f495a29c6c45ced52592cd47fe945c0da5db26dd70bcaca3432155620fd239",
+  "metric": "inner_product_normalized_cosine",
+  "count": 4570,
+  "dimension": 768
+}

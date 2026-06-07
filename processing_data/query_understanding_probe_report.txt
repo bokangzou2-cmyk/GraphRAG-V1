@@ -1,0 +1,20 @@
+Query Understanding Probe Report
+mode: rules
+total: 12
+passed: 12
+failed: 0
+pass_rate: 100.00%
+recommendation: usable_for_probe_scope
+
+category pass rates:
+- amount_case_law: 1/1 (100.00%)
+- field_intent: 1/1 (100.00%)
+- guardrail: 1/1 (100.00%)
+- history_case_reference: 4/4 (100.00%)
+- law_lookup: 1/1 (100.00%)
+- multi_case: 1/1 (100.00%)
+- scope: 1/1 (100.00%)
+- short_case_name: 1/1 (100.00%)
+- typo: 1/1 (100.00%)
+
+failed cases:

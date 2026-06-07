@@ -1,0 +1,4097 @@
+{
+  "status": "WARN",
+  "case_count": 9,
+  "pass_count": 2,
+  "warn_count": 7,
+  "eval_file": "D:\\GraphRAG-V1\\processing_data\\langchain_orchestration_eval_sample.json",
+  "results": [
+    {
+      "id": "langchain_grounded_valid",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "grounded",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "llm_grounded",
+          "actual": "llm_grounded"
+        },
+        {
+          "name": "citations_min",
+          "passed": true,
+          "expected": 1,
+          "actual": 5
+        },
+        {
+          "name": "warnings_absent",
+          "passed": true,
+          "expected": [
+            "llm_invalid_json"
+          ],
+          "actual": [
+            "no_current_law_chunk",
+            "router:criminal_law_case_only"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": true,
+          "expected": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "mock_llm_output",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": true,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ]
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": true,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "no_current_law_chunk",
+            "router:criminal_law_case_only"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ]
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "selected_context",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "hybrid_log_context_diagnostics",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "retrieval_sources",
+            "ranking_adjustments",
+            "graph_path_count"
+          ],
+          "actual": [
+            "field",
+            "graph_path_count",
+            "hybrid_score",
+            "rank",
+            "ranking_adjustments",
+            "retrieval_id",
+            "retrieval_sources",
+            "source_type",
+            "title"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "mock_llm_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "mode",
+            "raw_preview"
+          ],
+          "actual": [
+            "mode",
+            "raw_preview"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "llm_grounded",
+      "warnings": [
+        "no_current_law_chunk",
+        "router:criminal_law_case_only"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 1.0,
+        "reason": null,
+        "query_type": "reasoning",
+        "top_hybrid_score": 3957.045,
+        "graph_supported_contexts": 5,
+        "source_diversity": 3,
+        "citation_ready_contexts": 5,
+        "vector_supported_contexts": 5,
+        "evidence_checks": [
+          {
+            "name": "case_name_match",
+            "required": true,
+            "passed": true,
+            "expected": "吴必定"
+          },
+          {
+            "name": "intent_field_match",
+            "required": true,
+            "passed": true,
+            "expected": [
+              "judgment_text",
+              "reasoning_text"
+            ]
+          }
+        ],
+        "router": {
+          "label": "criminal_law_case_only",
+          "needs_retrieval": true,
+          "retrieval_targets": [
+            "cases"
+          ],
+          "case_required": true,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.86,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": null,
+      "citations": [
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "22cbc22e9046eb27",
+          "article_no": null,
+          "law_version": null,
+          "hybrid_score": 3957.045,
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "evidence_preview": "被告人吴必定犯故意伤害罪，判处有期徒刑十年。（刑期从判决执行之日起计算。判决执行以前先行羁押的，羁押一日折抵刑期一日。即从2013年8月16日起至2023年8月15日止。） 如不服本判决，可在接到判决书的第二日起十日内，通过本院或直接向江西省高级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本二份。",
+          "amount_diagnostics": null
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "f85afedf017ff98b",
+          "article_no": null,
+          "law_version": null,
+          "hybrid_score": 3391.00986,
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发",
+          "amount_diagnostics": null
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "source_type": "case_chunk",
+          "field": "court_found_facts_text",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "4ab340d25af93550",
+          "article_no": null,
+          "law_version": null,
+          "hybrid_score": 1418.438693,
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "evidence_preview": "经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪边草丛里的李某甲后，便将李某甲押回工棚。途中，被告人吴必定持柴刀朝李某甲的手臂、肩膀等部位砍了数刀，被害人李某甲被砍伤后逃走。当日早上，被告人吴必定等七名工友下山准备就被盗一事",
+          "amount_diagnostics": null
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "source_type": "case_chunk",
+          "field": "witness_testimony_texts",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "3e260cd2735c146a",
+          "article_no": null,
+          "law_version": null,
+          "hybrid_score": 1351.70356,
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "evidence_preview": "证人杨某甲证实：昨天（1997年4月24日）晚上12点多他们都睡着了（五峰坑工棚）突然听到吴必定叫：“有小偷偷东西，”他起床发现鞋子不见了，跑出工棚见吴必定沿下山的公路追，吴某甲跟在后面，他跟吴某甲后面，另两个不知名字的人（一个叫老燕、一个叫老武）也同时追下去，追了大概2、3里路，横过小溪听到吴必定在叫“小偷在这里”。他既转身来到吴必定身边，那小偷出来，吴必定问：“你为什么偷我们的东西，”那人不作声，吴必定抓住小偷的后衣领往他们住的地方走，他和吴某甲跟在后面，走了约50米远又过一小溪，在小溪中间看到吴必定用柴刀砍小",
+          "amount_diagnostics": null
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "source_type": "case_chunk",
+          "field": "accusation_text",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "37e69f239a918ba4",
+          "article_no": null,
+          "law_version": null,
+          "hybrid_score": 1315.85228,
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "evidence_preview": "江西省宜春市人民检察院指控：1997年4月25日凌晨2时许，被告人吴必定在宜丰县黄岗乡坪田村五峰坑山上住宿的工棚内发现有人盗窃，立即叫醒工友，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪旁边草丛里的李某甲后，将李某甲押回工棚，途中，吴必定持柴刀朝李某甲的手背和肩膀等部位砍了数刀，李某甲受伤后逃走。当日早上，吴必定等八名工友下山准备就盗窃一事到公安机关报案，发现李某甲倒在五峰坑坑口处山路边已死亡。吴必定认出死者就是被自己砍伤的人后潜逃。经法医鉴定，死者李某甲系失血性休克死亡。2013年8月14日，在湖南省新晃",
+          "amount_diagnostics": null
+        }
+      ],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "criminal_law_case_only",
+              "retrieval_targets": [
+                "cases"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "grounded",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "criminal_law_case_only",
+            "needs_retrieval": true,
+            "retrieval_targets": [
+              "cases"
+            ],
+            "case_required": true,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.86,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [
+              "lexical",
+              "graph",
+              "vector"
+            ],
+            "source_types": [
+              "case_chunk"
+            ]
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": true,
+            "lexical_count": 12
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": true,
+            "graph_count": 30,
+            "warnings": [
+              "no_current_law_chunk"
+            ]
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": true,
+            "vector_count": 12,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "router_result": {
+              "label": "criminal_law_case_only",
+              "needs_retrieval": true,
+              "retrieval_targets": [
+                "cases"
+              ],
+              "case_required": true,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.86,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [
+              "lexical",
+              "graph",
+              "vector"
+            ],
+            "lexical_count": 12,
+            "graph_count": 30,
+            "vector_count": 12,
+            "final_context_count": 5,
+            "confidence": {
+              "level": "high",
+              "score": 1.0,
+              "reason": null,
+              "query_type": "reasoning",
+              "top_hybrid_score": 3957.045,
+              "graph_supported_contexts": 5,
+              "source_diversity": 3,
+              "citation_ready_contexts": 5,
+              "vector_supported_contexts": 5,
+              "evidence_checks": [
+                {
+                  "name": "case_name_match",
+                  "required": true,
+                  "passed": true,
+                  "expected": "吴必定"
+                },
+                {
+                  "name": "intent_field_match",
+                  "required": true,
+                  "passed": true,
+                  "expected": [
+                    "judgment_text",
+                    "reasoning_text"
+                  ]
+                }
+              ],
+              "router": {
+                "label": "criminal_law_case_only",
+                "needs_retrieval": true,
+                "retrieval_targets": [
+                  "cases"
+                ],
+                "case_required": true,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.86,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "no_current_law_chunk"
+            ],
+            "selected_context": [
+              {
+                "rank": 1,
+                "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "吴必定故意伤害一审刑事判决书",
+                "field": "judgment_text",
+                "hybrid_score": 3957.045,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "case_name_match": 720.0,
+                  "intent_field_match": 180.0
+                },
+                "graph_path_count": 2
+              },
+              {
+                "rank": 2,
+                "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "吴必定故意伤害一审刑事判决书",
+                "field": "reasoning_text",
+                "hybrid_score": 3391.00986,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "case_name_match": 720.0,
+                  "intent_field_match": 180.0
+                },
+                "graph_path_count": 2
+              },
+              {
+                "rank": 3,
+                "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "吴必定故意伤害一审刑事判决书",
+                "field": "court_found_facts_text",
+                "hybrid_score": 1418.438693,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "case_name_match": 720.0,
+                  "intent_field_mismatch": -55.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 4,
+                "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+                "source_type": "case_chunk",
+                "title": "吴必定故意伤害一审刑事判决书",
+                "field": "witness_testimony_texts",
+                "hybrid_score": 1351.70356,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "case_name_match": 720.0,
+                  "intent_field_mismatch": -55.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 5,
+                "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "吴必定故意伤害一审刑事判决书",
+                "field": "accusation_text",
+                "hybrid_score": 1315.85228,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "case_name_match": 720.0,
+                  "intent_field_mismatch": -55.0
+                },
+                "graph_path_count": 1
+              }
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 1.0,
+              "reason": null,
+              "query_type": "reasoning",
+              "top_hybrid_score": 3957.045,
+              "graph_supported_contexts": 5,
+              "source_diversity": 3,
+              "citation_ready_contexts": 5,
+              "vector_supported_contexts": 5,
+              "evidence_checks": [
+                {
+                  "name": "case_name_match",
+                  "required": true,
+                  "passed": true,
+                  "expected": "吴必定"
+                },
+                {
+                  "name": "intent_field_match",
+                  "required": true,
+                  "passed": true,
+                  "expected": [
+                    "judgment_text",
+                    "reasoning_text"
+                  ]
+                }
+              ],
+              "router": {
+                "label": "criminal_law_case_only",
+                "needs_retrieval": true,
+                "retrieval_targets": [
+                  "cases"
+                ],
+                "case_required": true,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.86,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 5,
+            "graph_path_count": 7,
+            "warnings": [
+              "no_current_law_chunk",
+              "router:criminal_law_case_only"
+            ],
+            "citation_ids": [
+              "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+            ],
+            "llm_message_role_counts": {
+              "system": 1,
+              "user": 2
+            }
+          }
+        },
+        {
+          "event": "mock_llm_output",
+          "payload": {
+            "mode": "grounded",
+            "raw_preview": "{\"answer\": \"根据检索上下文，吴必定故意伤害一审刑事判决书、吴必定故意伤害一审刑事判决书可以支持该回答。\", \"answer_type\": \"llm_grounded\", \"citation_ids\": [\"case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0\", \"case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "llm_grounded",
+            "warning_count": 2,
+            "citation_count": 5,
+            "refusal_reason": null
+          }
+        }
+      ],
+      "selected_context": [
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "field": "judgment_text",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "22cbc22e9046eb27",
+          "text_preview": "被告人吴必定犯故意伤害罪，判处有期徒刑十年。（刑期从判决执行之日起计算。判决执行以前先行羁押的，羁押一日折抵刑期一日。即从2013年8月16日起至2023年8月15日止。） 如不服本判决，可在接到判决书的第二日起十日内，通过本院或直接向江西省高级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本二份。",
+          "case_metadata": {
+            "crimes": [
+              "故意伤害罪"
+            ],
+            "cited_articles": [
+              "第一百三十四条",
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_articles": [
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_laws": [
+              {
+                "law_name": "中华人民共和国刑法",
+                "article": "第十二条第一款"
+              },
+              {
+                "law_name": "1979年中华人民共和国刑法",
+                "article": "第一百三十四条第二款"
+              }
+            ],
+            "sentencing": [
+              "有期徒刑十年"
+            ],
+            "amounts": [],
+            "court_name": "江西省宜春市中级人民法院",
+            "judgment_date_text": "二〇一四年五月六日"
+          },
+          "law_metadata": null,
+          "quality_flags": [],
+          "hybrid_score": 3957.045,
+          "source_scores": {
+            "lexical": 722.1,
+            "graph": 1806.7,
+            "vector": 442.245
+          },
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "graph_paths": [
+            {
+              "path_type": "case_to_chunk",
+              "path_score": 920.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_HAS_CHUNK",
+              "field": "judgment_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 326.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            }
+          ],
+          "candidate_type": "case_to_chunk",
+          "path_score": 920.0,
+          "ranking_adjustments": {
+            "case_name_match": 720.0,
+            "intent_field_match": 180.0
+          },
+          "winning_source": "graph",
+          "score_margin_to_next": 566.03514,
+          "rank": 1
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "field": "reasoning_text",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "f85afedf017ff98b",
+          "text_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发",
+          "case_metadata": {
+            "crimes": [
+              "故意伤害罪"
+            ],
+            "cited_articles": [
+              "第一百三十四条",
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_articles": [
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_laws": [
+              {
+                "law_name": "中华人民共和国刑法",
+                "article": "第十二条第一款"
+              },
+              {
+                "law_name": "1979年中华人民共和国刑法",
+                "article": "第一百三十四条第二款"
+              }
+            ],
+            "sentencing": [
+              "有期徒刑十年"
+            ],
+            "amounts": [],
+            "court_name": "江西省宜春市中级人民法院",
+            "judgment_date_text": "二〇一四年五月六日"
+          },
+          "law_metadata": null,
+          "quality_flags": [],
+          "hybrid_score": 3391.00986,
+          "source_scores": {
+            "lexical": 337.8375,
+            "graph": 1811.05,
+            "vector": 256.12236
+          },
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "graph_paths": [
+            {
+              "path_type": "case_to_chunk",
+              "path_score": 920.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_HAS_CHUNK",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 329.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            }
+          ],
+          "candidate_type": "case_to_chunk",
+          "path_score": 920.0,
+          "ranking_adjustments": {
+            "case_name_match": 720.0,
+            "intent_field_match": 180.0
+          },
+          "winning_source": "graph",
+          "score_margin_to_next": 1972.571167,
+          "rank": 2
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+          "source_type": "case_chunk",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "field": "court_found_facts_text",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "4ab340d25af93550",
+          "text_preview": "经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪边草丛里的李某甲后，便将李某甲押回工棚。途中，被告人吴必定持柴刀朝李某甲的手臂、肩膀等部位砍了数刀，被害人李某甲被砍伤后逃走。当日早上，被告人吴必定等七名工友下山准备就被盗一事",
+          "case_metadata": {
+            "crimes": [
+              "故意伤害罪"
+            ],
+            "cited_articles": [
+              "第一百三十四条",
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_articles": [
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_laws": [
+              {
+                "law_name": "中华人民共和国刑法",
+                "article": "第十二条第一款"
+              },
+              {
+                "law_name": "1979年中华人民共和国刑法",
+                "article": "第一百三十四条第二款"
+              }
+            ],
+            "sentencing": [
+              "有期徒刑十年"
+            ],
+            "amounts": [],
+            "court_name": "江西省宜春市中级人民法院",
+            "judgment_date_text": "二〇一四年五月六日"
+          },
+          "law_metadata": null,
+          "quality_flags": [],
+          "hybrid_score": 1418.438693,
+          "source_scores": {
+            "lexical": 129.20833333333334,
+            "graph": 342.2,
+            "vector": 204.03036
+          },
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 236.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "court_found_facts_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0"
+            }
+          ],
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 236.0,
+          "ranking_adjustments": {
+            "case_name_match": 720.0,
+            "intent_field_mismatch": -55.0
+          },
+          "winning_source": "graph",
+          "score_margin_to_next": 66.735133,
+          "rank": 3
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+          "source_type": "case_chunk",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "field": "witness_testimony_texts",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "3e260cd2735c146a",
+          "text_preview": "证人杨某甲证实：昨天（1997年4月24日）晚上12点多他们都睡着了（五峰坑工棚）突然听到吴必定叫：“有小偷偷东西，”他起床发现鞋子不见了，跑出工棚见吴必定沿下山的公路追，吴某甲跟在后面，他跟吴某甲后面，另两个不知名字的人（一个叫老燕、一个叫老武）也同时追下去，追了大概2、3里路，横过小溪听到吴必定在叫“小偷在这里”。他既转身来到吴必定身边，那小偷出来，吴必定问：“你为什么偷我们的东西，”那人不作声，吴必定抓住小偷的后衣领往他们住的地方走，他和吴某甲跟在后面，走了约50米远又过一小溪，在小溪中间看到吴必定用柴刀砍小",
+          "case_metadata": {
+            "crimes": [
+              "故意伤害罪"
+            ],
+            "cited_articles": [
+              "第一百三十四条",
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_articles": [
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_laws": [
+              {
+                "law_name": "中华人民共和国刑法",
+                "article": "第十二条第一款"
+              },
+              {
+                "law_name": "1979年中华人民共和国刑法",
+                "article": "第一百三十四条第二款"
+              }
+            ],
+            "sentencing": [
+              "有期徒刑十年"
+            ],
+            "amounts": [],
+            "court_name": "江西省宜春市中级人民法院",
+            "judgment_date_text": "二〇一四年五月六日"
+          },
+          "law_metadata": null,
+          "quality_flags": [],
+          "hybrid_score": 1351.70356,
+          "source_scores": {
+            "lexical": 66.45,
+            "graph": 342.2,
+            "vector": 200.05356
+          },
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 236.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "witness_testimony_texts",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0"
+            }
+          ],
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 236.0,
+          "ranking_adjustments": {
+            "case_name_match": 720.0,
+            "intent_field_mismatch": -55.0
+          },
+          "winning_source": "graph",
+          "score_margin_to_next": 35.85128,
+          "rank": 4
+        },
+        {
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+          "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+          "source_type": "case_chunk",
+          "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "field": "accusation_text",
+          "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+          "text_hash": "37e69f239a918ba4",
+          "text_preview": "江西省宜春市人民检察院指控：1997年4月25日凌晨2时许，被告人吴必定在宜丰县黄岗乡坪田村五峰坑山上住宿的工棚内发现有人盗窃，立即叫醒工友，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪旁边草丛里的李某甲后，将李某甲押回工棚，途中，吴必定持柴刀朝李某甲的手背和肩膀等部位砍了数刀，李某甲受伤后逃走。当日早上，吴必定等八名工友下山准备就盗窃一事到公安机关报案，发现李某甲倒在五峰坑坑口处山路边已死亡。吴必定认出死者就是被自己砍伤的人后潜逃。经法医鉴定，死者李某甲系失血性休克死亡。2013年8月14日，在湖南省新晃",
+          "case_metadata": {
+            "crimes": [
+              "故意伤害罪"
+            ],
+            "cited_articles": [
+              "第一百三十四条",
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_articles": [
+              "第十二条第一款",
+              "第一百三十四条第二款"
+            ],
+            "applied_laws": [
+              {
+                "law_name": "中华人民共和国刑法",
+                "article": "第十二条第一款"
+              },
+              {
+                "law_name": "1979年中华人民共和国刑法",
+                "article": "第一百三十四条第二款"
+              }
+            ],
+            "sentencing": [
+              "有期徒刑十年"
+            ],
+            "amounts": [],
+            "court_name": "江西省宜春市中级人民法院",
+            "judgment_date_text": "二〇一四年五月六日"
+          },
+          "law_metadata": null,
+          "quality_flags": [],
+          "hybrid_score": 1315.85228,
+          "source_scores": {
+            "lexical": 22.150000000000002,
+            "graph": 342.2,
+            "vector": 208.50228
+          },
+          "retrieval_sources": [
+            "lexical",
+            "graph",
+            "vector"
+          ],
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 236.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "accusation_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+            }
+          ],
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 236.0,
+          "ranking_adjustments": {
+            "case_name_match": 720.0,
+            "intent_field_mismatch": -55.0
+          },
+          "winning_source": "graph",
+          "score_margin_to_next": 4.590222,
+          "rank": 5
+        }
+      ]
+    },
+    {
+      "id": "langchain_invalid_json_fallback",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "invalid_json",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": false,
+          "expected": "retrieval_fallback",
+          "actual": "no_answer"
+        },
+        {
+          "name": "citations_min",
+          "passed": false,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "llm_invalid_json",
+            "llm_call_failed"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": false,
+          "expected": [
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": false,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": []
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": false,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "invalid_json",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_missing_citation_fallback",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "missing_citation",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": false,
+          "expected": "retrieval_fallback",
+          "actual": "no_answer"
+        },
+        {
+          "name": "citations_min",
+          "passed": false,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "llm_invalid_json",
+            "llm_call_failed"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": false,
+          "expected": [
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": false,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": []
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": false,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "missing_citation",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_empty_answer_fallback",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "empty_answer",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": false,
+          "expected": "retrieval_fallback",
+          "actual": "no_answer"
+        },
+        {
+          "name": "citations_min",
+          "passed": false,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "llm_invalid_json",
+            "llm_call_failed"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": false,
+          "expected": [
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": false,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": []
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": false,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "empty_answer",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_mock_no_answer_refusal",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "no_answer",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer",
+          "actual": "no_answer"
+        },
+        {
+          "name": "refusal_reason",
+          "passed": false,
+          "expected": "insufficient_context",
+          "actual": "llm_not_configured"
+        },
+        {
+          "name": "citations_exact",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "insufficient_context"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": false,
+          "expected": [
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": false,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": []
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": false,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "no_answer",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_empty_query_refusal",
+      "query": "  ",
+      "mock_llm_mode": "grounded",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer",
+          "actual": "no_answer"
+        },
+        {
+          "name": "refusal_reason",
+          "passed": true,
+          "expected": "insufficient_context",
+          "actual": "insufficient_context"
+        },
+        {
+          "name": "citations_exact",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": true,
+          "expected": [
+            "empty_query",
+            "insufficient_context"
+          ],
+          "actual": [
+            "empty_query",
+            "insufficient_context"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "hybrid_merge_rerank",
+            "llm_skipped",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "selected_context",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "hybrid_log_context_diagnostics",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "retrieval_sources",
+            "ranking_adjustments",
+            "graph_path_count"
+          ],
+          "actual": [
+            "field",
+            "graph_path_count",
+            "hybrid_score",
+            "rank",
+            "ranking_adjustments",
+            "retrieval_id",
+            "retrieval_sources",
+            "source_type",
+            "title"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "empty_query",
+        "insufficient_context"
+      ],
+      "confidence": {
+        "level": "none",
+        "score": 0.0
+      },
+      "refusal_reason": "insufficient_context",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "",
+            "route_query": "检索帮助信息网络犯罪活动罪相关案例的裁判理由。",
+            "retrieval_query": "检索帮助信息网络犯罪活动罪相关案例的裁判理由。",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "检索帮助信息网络犯罪活动罪相关案例的裁判理由。",
+              "route_label": "criminal_law_case_only",
+              "retrieval_targets": [
+                "cases"
+              ],
+              "case_name_mentions": [],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text"
+              ],
+              "crime_mentions": [
+                "检索帮助信息网络犯罪活动罪"
+              ],
+              "amount_constraints": [],
+              "warnings": [
+                "口语表述存在罪名边界问题，需结合行为方式、后果和主观故意判断。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "grounded",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "criminal_law_case_only",
+            "needs_retrieval": true,
+            "retrieval_targets": [
+              "cases"
+            ],
+            "case_required": true,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [
+              "lexical",
+              "graph",
+              "vector"
+            ],
+            "source_types": [
+              "case_chunk"
+            ]
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": true,
+            "lexical_count": 12
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": true,
+            "graph_count": 30,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": true,
+            "vector_count": 12,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "router_result": {
+              "label": "criminal_law_case_only",
+              "needs_retrieval": true,
+              "retrieval_targets": [
+                "cases"
+              ],
+              "case_required": true,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [
+              "lexical",
+              "graph",
+              "vector"
+            ],
+            "lexical_count": 12,
+            "graph_count": 30,
+            "vector_count": 12,
+            "final_context_count": 5,
+            "confidence": {
+              "level": "high",
+              "score": 1.0,
+              "reason": null,
+              "query_type": "reasoning",
+              "top_hybrid_score": 1825.57,
+              "graph_supported_contexts": 4,
+              "source_diversity": 3,
+              "citation_ready_contexts": 5,
+              "vector_supported_contexts": 3,
+              "evidence_checks": [],
+              "router": {
+                "label": "criminal_law_case_only",
+                "needs_retrieval": true,
+                "retrieval_targets": [
+                  "cases"
+                ],
+                "case_required": true,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [],
+            "selected_context": [
+              {
+                "rank": 1,
+                "retrieval_id": "case:6d53dff9-de0a-42a9-a339-9e0a68ac2f28:d8d69d5dd6:judgment_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "黄华林、黄华地诈骗一审刑事判决书",
+                "field": "judgment_text",
+                "hybrid_score": 1825.5696,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "intent_field_match": 180.0,
+                  "case_crime_mismatch_penalty": -360.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 2,
+                "retrieval_id": "case:6d53dff9-de0a-42a9-a339-9e0a68ac2f28:d8d69d5dd6:reasoning_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "黄华林、黄华地诈骗一审刑事判决书",
+                "field": "reasoning_text",
+                "hybrid_score": 596.703,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph"
+                ],
+                "ranking_adjustments": {
+                  "intent_field_match": 130.0,
+                  "case_crime_mismatch_penalty": -360.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 3,
+                "retrieval_id": "case:4faaf364-491e-4270-86d9-23a9ea693b82:f92b091563:judgment_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "江苏省连云港市连云区人民检察院诉被告人王某某组织、领导传销活动罪一审刑事判决书",
+                "field": "judgment_text",
+                "hybrid_score": 583.43676,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph",
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "intent_field_match": 180.0,
+                  "case_crime_mismatch_penalty": -360.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 4,
+                "retrieval_id": "case:4faaf364-491e-4270-86d9-23a9ea693b82:f92b091563:reasoning_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "江苏省连云港市连云区人民检察院诉被告人王某某组织、领导传销活动罪一审刑事判决书",
+                "field": "reasoning_text",
+                "hybrid_score": 209.30825,
+                "retrieval_sources": [
+                  "lexical",
+                  "graph"
+                ],
+                "ranking_adjustments": {
+                  "intent_field_match": 130.0,
+                  "case_crime_mismatch_penalty": -360.0
+                },
+                "graph_path_count": 1
+              },
+              {
+                "rank": 5,
+                "retrieval_id": "case:2e57ca5a-2811-4f69-8de7-156749d744f1:3b14f43cef:judgment_text:scalar:0",
+                "source_type": "case_chunk",
+                "title": "史政杰、刘林艳交通肇事一审刑事判决书",
+                "field": "judgment_text",
+                "hybrid_score": -44.37476,
+                "retrieval_sources": [
+                  "vector"
+                ],
+                "ranking_adjustments": {
+                  "intent_field_match": 130.0,
+                  "case_crime_mismatch_penalty": -360.0
+                },
+                "graph_path_count": 0
+              }
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 1.0,
+              "reason": null,
+              "query_type": "reasoning",
+              "top_hybrid_score": 1825.57,
+              "graph_supported_contexts": 4,
+              "source_diversity": 3,
+              "citation_ready_contexts": 5,
+              "vector_supported_contexts": 3,
+              "evidence_checks": [],
+              "router": {
+                "label": "criminal_law_case_only",
+                "needs_retrieval": true,
+                "retrieval_targets": [
+                  "cases"
+                ],
+                "case_required": true,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 5,
+            "graph_path_count": 4,
+            "warnings": [
+              "router:criminal_law_case_only"
+            ],
+            "citation_ids": [
+              "case:6d53dff9-de0a-42a9-a339-9e0a68ac2f28:d8d69d5dd6:judgment_text:scalar:0",
+              "case:6d53dff9-de0a-42a9-a339-9e0a68ac2f28:d8d69d5dd6:reasoning_text:scalar:0",
+              "case:4faaf364-491e-4270-86d9-23a9ea693b82:f92b091563:judgment_text:scalar:0",
+              "case:4faaf364-491e-4270-86d9-23a9ea693b82:f92b091563:reasoning_text:scalar:0",
+              "case:2e57ca5a-2811-4f69-8de7-156749d744f1:3b14f43cef:judgment_text:scalar:0"
+            ],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "empty_query"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 2,
+            "citation_count": 0,
+            "refusal_reason": "insufficient_context"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_general_direct_answer",
+      "query": "天气怎么样？",
+      "mock_llm_mode": "grounded",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": false,
+          "expected": "llm_direct",
+          "actual": "no_answer"
+        },
+        {
+          "name": "refusal_reason",
+          "passed": false,
+          "expected": null,
+          "actual": "out_of_scope"
+        },
+        {
+          "name": "citations_exact",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "retrieval_skipped"
+          ],
+          "actual": [
+            "out_of_scope",
+            "insufficient_context"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "hybrid_merge_rerank",
+            "llm_skipped",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "out_of_scope",
+        "insufficient_context"
+      ],
+      "confidence": {
+        "level": "none",
+        "score": 0.0,
+        "reason": "out_of_scope"
+      },
+      "refusal_reason": "out_of_scope",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "天气怎么样？",
+            "route_query": "天气怎么样？",
+            "retrieval_query": "天气怎么样？",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "天气怎么样？",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [],
+              "resolved_case_refs": [],
+              "field_intents": [],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "non_criminal_or_general_query",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "grounded",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.93,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.93,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.93,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.93,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.93,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.93,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 2,
+            "citation_count": 0,
+            "refusal_reason": "out_of_scope"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_no_context_refusal",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "grounded",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer",
+          "actual": "no_answer"
+        },
+        {
+          "name": "refusal_reason",
+          "passed": false,
+          "expected": "insufficient_context",
+          "actual": "llm_not_configured"
+        },
+        {
+          "name": "citations_exact",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "warnings",
+          "passed": false,
+          "expected": [
+            "insufficient_context"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": true,
+          "expected": [
+            "hybrid_merge_rerank",
+            "llm_skipped",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "吴必定案 裁判理由",
+            "retrieval_query": "吴必定案 裁判理由",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "吴必定案 裁判理由",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [],
+              "field_intents": [
+                "reasoning_text",
+                "judgment_text"
+              ],
+              "crime_mentions": [],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体罪名。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 0,
+            "mock_llm_mode": "grounded",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    },
+    {
+      "id": "langchain_multiturn_uses_latest_user_only",
+      "query": "吴必定案判了多久",
+      "mock_llm_mode": "grounded",
+      "status": "WARN",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": false,
+          "expected": "llm_grounded",
+          "actual": "no_answer"
+        },
+        {
+          "name": "citations_min",
+          "passed": false,
+          "expected": 1,
+          "actual": 0
+        },
+        {
+          "name": "warnings_absent",
+          "passed": true,
+          "expected": [
+            "llm_invalid_json"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "log_events",
+          "passed": false,
+          "expected": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "mock_llm_output",
+            "final_response"
+          ],
+          "actual": [
+            "start",
+            "router_result",
+            "lexical_retriever",
+            "graph_retriever",
+            "vector_retriever",
+            "hybrid_merge_rerank",
+            "answer_contract_prepared",
+            "llm_skipped",
+            "final_response"
+          ]
+        },
+        {
+          "name": "same_retrieval_as_hybrid",
+          "passed": false,
+          "expected": [
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+          ],
+          "actual": []
+        },
+        {
+          "name": "direct_warnings_preserved",
+          "passed": false,
+          "expected": [
+            "no_current_law_chunk"
+          ],
+          "actual": [
+            "llm_not_configured",
+            "retrieval_skipped",
+            "router:low_quality_or_incomplete"
+          ]
+        },
+        {
+          "name": "citations_in_retrieval_context",
+          "passed": true,
+          "expected": "all citation retrieval_id values are present in retrieval_context",
+          "actual": []
+        },
+        {
+          "name": "no_answer_has_empty_citations",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        },
+        {
+          "name": "router_result_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "enabled_retrievers",
+            "source_types"
+          ],
+          "actual": [
+            "case_required",
+            "clarify_required",
+            "confidence",
+            "enabled_retrievers",
+            "label",
+            "law_required",
+            "needs_retrieval",
+            "reason",
+            "retrieval_targets",
+            "source",
+            "source_types"
+          ]
+        },
+        {
+          "name": "hybrid_merge_rerank_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "router_result",
+            "enabled_retrievers",
+            "lexical_count",
+            "graph_count",
+            "vector_count",
+            "final_context_count",
+            "confidence",
+            "warnings"
+          ],
+          "actual": [
+            "confidence",
+            "enabled",
+            "enabled_retrievers",
+            "final_context_count",
+            "graph_count",
+            "lexical_count",
+            "router_result",
+            "vector_count",
+            "warnings"
+          ]
+        },
+        {
+          "name": "answer_contract_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "confidence",
+            "citation_count",
+            "graph_path_count",
+            "warnings",
+            "citation_ids",
+            "llm_message_role_counts"
+          ],
+          "actual": [
+            "citation_count",
+            "citation_ids",
+            "confidence",
+            "graph_path_count",
+            "llm_message_role_counts",
+            "warnings"
+          ]
+        },
+        {
+          "name": "final_response_log_payload_fields",
+          "passed": true,
+          "expected": [
+            "answer_type",
+            "warning_count",
+            "citation_count",
+            "refusal_reason"
+          ],
+          "actual": [
+            "answer_type",
+            "citation_count",
+            "refusal_reason",
+            "warning_count"
+          ]
+        },
+        {
+          "name": "assistant_history_excluded_from_prompt",
+          "passed": true,
+          "expected": 0,
+          "actual": 0
+        }
+      ],
+      "answer_type": "no_answer",
+      "warnings": [
+        "llm_not_configured",
+        "retrieval_skipped",
+        "router:low_quality_or_incomplete"
+      ],
+      "confidence": {
+        "level": "high",
+        "score": 0.9,
+        "query_type": "low_quality_or_incomplete",
+        "router": {
+          "label": "low_quality_or_incomplete",
+          "needs_retrieval": false,
+          "retrieval_targets": [
+            "none"
+          ],
+          "case_required": false,
+          "law_required": false,
+          "clarify_required": false,
+          "confidence": 0.9,
+          "source": "lora",
+          "reason": "query_rewriter_lora_then_route_query"
+        }
+      },
+      "refusal_reason": "llm_not_configured",
+      "citations": [],
+      "orchestration_logs": [
+        {
+          "event": "start",
+          "payload": {
+            "query": "吴必定案判了多久",
+            "route_query": "查询吴必定危险驾驶罪案件的裁判结果，重点查看刑期、缓刑及从宽情节。",
+            "retrieval_query": "查询吴必定危险驾驶罪案件的裁判结果，重点查看刑期、缓刑及从宽情节。",
+            "query_understanding": {
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query",
+              "standalone_query": "查询吴必定危险驾驶罪案件的裁判结果，重点查看刑期、缓刑及从宽情节。",
+              "route_label": "low_quality_or_incomplete",
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_name_mentions": [
+                "吴必定案"
+              ],
+              "resolved_case_refs": [
+                {
+                  "ref": "吴必定",
+                  "index": 1,
+                  "case_title": "吴必定案",
+                  "source": "dialogue_context"
+                }
+              ],
+              "field_intents": [
+                "judgment_text"
+              ],
+              "crime_mentions": [
+                "查询吴必定危险驾驶罪"
+              ],
+              "amount_constraints": [],
+              "warnings": [
+                "需结合上下文事实进一步区分具体数额。",
+                "query_rewriter:lora"
+              ]
+            },
+            "top_k": 5,
+            "mock_llm_mode": "grounded",
+            "generation_mode": "mock",
+            "use_langchain_orchestration": true
+          }
+        },
+        {
+          "event": "router_result",
+          "payload": {
+            "label": "low_quality_or_incomplete",
+            "needs_retrieval": false,
+            "retrieval_targets": [
+              "none"
+            ],
+            "case_required": false,
+            "law_required": false,
+            "clarify_required": false,
+            "confidence": 0.9,
+            "source": "lora",
+            "reason": "query_rewriter_lora_then_route_query",
+            "enabled_retrievers": [],
+            "source_types": []
+          }
+        },
+        {
+          "event": "lexical_retriever",
+          "payload": {
+            "enabled": false,
+            "lexical_count": 0
+          }
+        },
+        {
+          "event": "graph_retriever",
+          "payload": {
+            "enabled": false,
+            "graph_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "vector_retriever",
+          "payload": {
+            "enabled": false,
+            "vector_count": 0,
+            "warnings": []
+          }
+        },
+        {
+          "event": "hybrid_merge_rerank",
+          "payload": {
+            "enabled": false,
+            "router_result": {
+              "label": "low_quality_or_incomplete",
+              "needs_retrieval": false,
+              "retrieval_targets": [
+                "none"
+              ],
+              "case_required": false,
+              "law_required": false,
+              "clarify_required": false,
+              "confidence": 0.9,
+              "source": "lora",
+              "reason": "query_rewriter_lora_then_route_query"
+            },
+            "enabled_retrievers": [],
+            "lexical_count": 0,
+            "graph_count": 0,
+            "vector_count": 0,
+            "final_context_count": 0,
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "warnings": [
+              "retrieval_skipped"
+            ]
+          }
+        },
+        {
+          "event": "answer_contract_prepared",
+          "payload": {
+            "confidence": {
+              "level": "high",
+              "score": 0.9,
+              "query_type": "low_quality_or_incomplete",
+              "router": {
+                "label": "low_quality_or_incomplete",
+                "needs_retrieval": false,
+                "retrieval_targets": [
+                  "none"
+                ],
+                "case_required": false,
+                "law_required": false,
+                "clarify_required": false,
+                "confidence": 0.9,
+                "source": "lora",
+                "reason": "query_rewriter_lora_then_route_query"
+              }
+            },
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "warnings": [
+              "retrieval_skipped"
+            ],
+            "citation_ids": [],
+            "llm_message_role_counts": {}
+          }
+        },
+        {
+          "event": "llm_skipped",
+          "payload": {
+            "reason": "direct_answer_path"
+          }
+        },
+        {
+          "event": "final_response",
+          "payload": {
+            "answer_type": "no_answer",
+            "warning_count": 3,
+            "citation_count": 0,
+            "refusal_reason": "llm_not_configured"
+          }
+        }
+      ],
+      "selected_context": []
+    }
+  ]
+}

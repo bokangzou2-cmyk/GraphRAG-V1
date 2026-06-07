@@ -1,0 +1,165 @@
+{
+  "schema_version": "provider-grounding-eval-v1",
+  "created_at_utc": "2026-05-30T13:36:28.605750+00:00",
+  "orchestration_generation_mode": "provider",
+  "case_count": 3,
+  "classification_counts": {
+    "完全一致": 3
+  },
+  "risk_issue_counts": {},
+  "provider_error_count": 0,
+  "provider_grounding": {
+    "stable": {
+      "grounded_score_avg": 1.0,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.0,
+      "refusal_quality_score_avg": 1.0
+    },
+    "orchestration": {
+      "grounded_score_avg": 1.0,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.0,
+      "refusal_quality_score_avg": 1.0,
+      "high_hallucination_risk_count": 0,
+      "low_citation_coverage_count": 0
+    }
+  },
+  "high_risk_samples": [],
+  "results": [
+    {
+      "id": "general_weather",
+      "query": "今天天气怎么样？",
+      "category": "general",
+      "classification": "完全一致",
+      "stable_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "orchestration_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "stable_citations_count": 0,
+      "orchestration_citations_count": 0,
+      "stable_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "orchestration_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "issues": []
+    },
+    {
+      "id": "general_poem",
+      "query": "帮我写一首五言绝句",
+      "category": "general",
+      "classification": "完全一致",
+      "stable_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "orchestration_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "stable_citations_count": 0,
+      "orchestration_citations_count": 0,
+      "stable_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "orchestration_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "issues": []
+    },
+    {
+      "id": "general_math",
+      "query": "123 加 456 等于多少？",
+      "category": "general",
+      "classification": "完全一致",
+      "stable_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "orchestration_grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_direct",
+          "context_count": 0,
+          "citation_count": 0,
+          "graph_path_count": 0,
+          "historical_query": false
+        }
+      },
+      "stable_citations_count": 0,
+      "orchestration_citations_count": 0,
+      "stable_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "orchestration_warnings": [
+        "retrieval_skipped",
+        "router:general_no_legal_retrieval"
+      ],
+      "issues": []
+    }
+  ]
+}

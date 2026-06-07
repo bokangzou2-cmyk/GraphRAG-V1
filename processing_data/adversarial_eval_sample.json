@@ -1,0 +1,2772 @@
+[
+  {
+    "id": "vague_law_001",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "故意犯罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "故意犯罪",
+        "第14条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "14"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_002",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "过失犯罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "过失犯罪",
+        "第15条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "15"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_003",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "背叛国家罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "背叛国家罪",
+        "第102条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "102"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_004",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "分裂国家罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "分裂国家罪",
+        "第103条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "103"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_005",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "武装叛乱、暴乱罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "武装叛乱、暴乱罪",
+        "第104条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "104"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_006",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "颠覆国家政权罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "颠覆国家政权罪",
+        "第105条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "105"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_007",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "资助危害国家安全犯罪活动罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "资助危害国家安全犯罪活动罪",
+        "第107条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "107"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_008",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "投敌叛变罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "投敌叛变罪",
+        "第108条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "108"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_009",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "叛逃罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "叛逃罪",
+        "第109条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "109"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_010",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "间谍罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "间谍罪",
+        "第110条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "110"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_011",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "为境外窃取、刺探、收买、非法提供国家秘密、情报罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "为境外窃取、刺探、收买、非法提供国家秘密、情报罪",
+        "第111条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "111"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_012",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "资敌罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "资敌罪",
+        "第112条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "112"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_013",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "放火罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "放火罪",
+        "第114条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "114"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_014",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "破坏交通工具罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "破坏交通工具罪",
+        "第116条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "116"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_015",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "破坏交通设施罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "破坏交通设施罪",
+        "第117条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "117"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_016",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "破坏电力设备罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "破坏电力设备罪",
+        "第118条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "118"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_017",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "组织、领导、参加恐怖组织罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "组织、领导、参加恐怖组织罪",
+        "第120条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_018",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "帮助恐怖活动罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "帮助恐怖活动罪",
+        "第120.1条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.1"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_019",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "准备实施恐怖活动罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "准备实施恐怖活动罪",
+        "第120.2条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.2"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_020",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "宣扬恐怖主义、极端主义、煽动实施恐怖活动罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "宣扬恐怖主义、极端主义、煽动实施恐怖活动罪",
+        "第120.3条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.3"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_021",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "利用极端主义破坏法律实施罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "利用极端主义破坏法律实施罪",
+        "第120.4条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.4"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_022",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "强制穿戴宣扬恐怖主义、极端主义服饰、标志罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "强制穿戴宣扬恐怖主义、极端主义服饰、标志罪",
+        "第120.5条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.5"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_023",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "非法持有宣扬恐怖主义、极端主义物品罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "非法持有宣扬恐怖主义、极端主义物品罪",
+        "第120.6条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "120.6"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_024",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "劫持航空器罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "劫持航空器罪",
+        "第121条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "121"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_025",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "劫持船只、汽车罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "劫持船只、汽车罪",
+        "第122条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "122"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_026",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "暴力危及飞行安全罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "暴力危及飞行安全罪",
+        "第123条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "123"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_027",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "破坏广播电视设施、公用电信设施罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "破坏广播电视设施、公用电信设施罪",
+        "第124条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "124"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_028",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "非法制造、买卖、运输、邮寄、储存枪支、弹药、爆炸物罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "非法制造、买卖、运输、邮寄、储存枪支、弹药、爆炸物罪",
+        "第125条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "125"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_029",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "违规制造、销售枪支罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "违规制造、销售枪支罪",
+        "第126条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "126"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_030",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "盗窃、抢夺枪支、弹药、爆炸物、危险物质罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "盗窃、抢夺枪支、弹药、爆炸物、危险物质罪",
+        "第127条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "127"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_031",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "非法持有、私藏枪支、弹药罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "非法持有、私藏枪支、弹药罪",
+        "第128条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "128"
+      ]
+    }
+  },
+  {
+    "id": "vague_law_032",
+    "category": "vague_law_query",
+    "module": "answer",
+    "query": "丢失枪支不报罪对应哪条",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "丢失枪支不报罪",
+        "第129条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "129"
+      ]
+    }
+  },
+  {
+    "id": "typo_law_001",
+    "category": "typo_fuzzy",
+    "module": "answer",
+    "query": "故意伤人罪最判几年",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "故意伤害罪",
+        "第234条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "234"
+      ]
+    }
+  },
+  {
+    "id": "typo_law_002",
+    "category": "typo_fuzzy",
+    "module": "answer",
+    "query": "危险架驶罪最判几年",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "危险驾驶罪",
+        "第133.1条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "133.1"
+      ]
+    }
+  },
+  {
+    "id": "typo_law_003",
+    "category": "typo_fuzzy",
+    "module": "answer",
+    "query": "抢却罪最判几年",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "抢劫罪",
+        "第263条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "263"
+      ]
+    }
+  },
+  {
+    "id": "typo_law_004",
+    "category": "typo_fuzzy",
+    "module": "answer",
+    "query": "诈骗人罪最判几年",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "诈骗罪",
+        "第266条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "266"
+      ]
+    }
+  },
+  {
+    "id": "typo_law_005",
+    "category": "typo_fuzzy",
+    "module": "answer",
+    "query": "偷盗罪最判几年",
+    "expected": {
+      "answer_type_any": [
+        "law_articles"
+      ],
+      "answer_contains_all": [
+        "盗窃罪",
+        "第210条"
+      ],
+      "citation_source_type_any": [
+        "law_article"
+      ],
+      "hybrid_law_article_no_any": [
+        "210"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_001",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "潘亚磊等案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_001",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "潘亚磊等案为什么构成聚众斗殴罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_001",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "潘亚磊等案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_001",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "潘亚磊等案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_001",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "潘亚磊等案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_001",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "潘亚磊等案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "潘亚磊等"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_002",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "刘某某案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "刘某某"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_002",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "刘某某案为什么构成交通肇事罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_002",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "刘某某案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_002",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "刘某某案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_002",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "刘某某案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_002",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "刘某某案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "刘某某"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_003",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "刘林艳案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "刘林艳"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_003",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "刘林艳案为什么构成交通肇事罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_003",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "刘林艳案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_003",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "刘林艳案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_003",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "刘林艳案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_003",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "刘林艳案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "刘林艳"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_004",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "王某某案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "王某某"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "王某某"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_004",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "王某某案为什么构成应当以危险驾驶罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "王某某"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_004",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "王某某案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "王某某"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_004",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "王某某案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "王某某"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_004",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "王某某案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "王某某"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_005",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "张某豪案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "张某豪"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_005",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "张某豪案为什么构成非法经营罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_005",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "张某豪案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_005",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "张某豪案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_005",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "张某豪案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_005",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "张某豪案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "张某豪"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_006",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "张少帆案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "张少帆"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_006",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "张少帆案为什么构成非法经营罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_006",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "张少帆案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_006",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "张少帆案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_006",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "张少帆案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_006",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "张少帆案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "张少帆"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_007",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "刘飞寻衅案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_007",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "刘飞寻衅案为什么构成抢劫罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_007",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "刘飞寻衅案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_007",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "刘飞寻衅案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_007",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "刘飞寻衅案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_007",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "刘飞寻衅案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "刘飞寻衅"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_008",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "吴必定案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "吴必定"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_008",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "吴必定案为什么构成故意伤害罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_008",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "吴必定案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_008",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "吴必定案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_008",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "吴必定案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_008",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "吴必定案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "吴必定"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_009",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "李士秀案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "李士秀"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_009",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "李士秀案为什么构成受贿罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_009",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "李士秀案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_009",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "李士秀案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_009",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "李士秀案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_009",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "李士秀案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "李士秀"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_010",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "孟德嵩案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "孟德嵩"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_010",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "孟德嵩案为什么构成抢劫罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_010",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "孟德嵩案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_010",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "孟德嵩案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_010",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "孟德嵩案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_010",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "孟德嵩案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "孟德嵩"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_011",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "黄华地案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "黄华地"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_011",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "黄华地案为什么构成诈骗罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_011",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "黄华地案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_011",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "黄华地案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_011",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "黄华地案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_011",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "黄华地案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "黄华地"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_012",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "浙江省杭案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "浙江省杭"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_012",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "浙江省杭案为什么构成盗窃罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_012",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "浙江省杭案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_012",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "浙江省杭案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_012",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "浙江省杭案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_012",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "浙江省杭案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "浙江省杭"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_013",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "冯明旗交案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "冯明旗交"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_013",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "冯明旗交案为什么构成交通肇事罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_013",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "冯明旗交案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_013",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "冯明旗交案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_013",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "冯明旗交案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_013",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "冯明旗交案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "冯明旗交"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  },
+  {
+    "id": "case_fact_014",
+    "category": "case_fact",
+    "module": "answer",
+    "query": "鞠瑾等案事实是什么",
+    "expected": {
+      "answer_type_any": [
+        "fact"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "citation_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ],
+      "hybrid_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "hybrid_field_any": [
+        "court_found_facts_text",
+        "accusation_text"
+      ]
+    }
+  },
+  {
+    "id": "case_reasoning_014",
+    "category": "case_reasoning",
+    "module": "answer",
+    "query": "鞠瑾等案为什么构成受贿罪",
+    "expected": {
+      "answer_type_any": [
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "citation_field_any": [
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_sentence_014",
+    "category": "case_sentence",
+    "module": "answer",
+    "query": "鞠瑾等案判了多久",
+    "expected": {
+      "answer_type_any": [
+        "sentence"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "citation_field_any": [
+        "judgment_text"
+      ],
+      "hybrid_field_any": [
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "case_evidence_014",
+    "category": "case_evidence",
+    "module": "answer",
+    "query": "鞠瑾等案法院依据哪些证据认定",
+    "expected": {
+      "answer_type_any": [
+        "evidence",
+        "reasoning"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "citation_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ],
+      "hybrid_field_any": [
+        "evidence_text",
+        "witness_testimony_texts",
+        "defendant_confession_texts",
+        "expert_opinion_texts",
+        "inspection_records_texts",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "case_defense_014",
+    "category": "case_defense",
+    "module": "answer",
+    "query": "鞠瑾等案被告人怎么辩护",
+    "expected": {
+      "answer_type_any": [
+        "defense"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "citation_field_any": [
+        "defense_text"
+      ],
+      "hybrid_field_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "case_applied_014",
+    "category": "multi_hop",
+    "module": "answer",
+    "query": "鞠瑾等案适用了哪些法条",
+    "expected": {
+      "answer_type_any": [
+        "applied_articles"
+      ],
+      "citation_title_contains_any": [
+        "鞠瑾等"
+      ],
+      "graph_edge_type_any": [
+        "CASE_APPLIES_ARTICLE"
+      ],
+      "graph_candidate_type_any": [
+        "case_to_article",
+        "case_to_chunk"
+      ]
+    }
+  }
+]

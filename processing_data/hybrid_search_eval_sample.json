@@ -1,0 +1,149 @@
+[
+  {
+    "id": "wu_biding_sentence_hybrid",
+    "query": "吴必定案判了多久",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "field_any": ["judgment_text"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["judgment_text"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3
+    }
+  },
+  {
+    "id": "wu_biding_applied_articles_hybrid",
+    "query": "吴必定案适用了哪些法条",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "graph_path_edge_any": ["CASE_APPLIES_ARTICLE"],
+      "top1_source_type": "law_article",
+      "top1_law_article_no_any": ["12"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3,
+      "graph_path": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article_no": "12",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "intentional_injury_law_hybrid",
+    "query": "故意伤害罪相关刑法条文是什么",
+    "top_k": 10,
+    "expected": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["234"],
+      "graph_path_edge_any": ["CASE_APPLIES_ARTICLE"],
+      "top1_source_type": "law_article",
+      "top1_law_article_no_any": ["234"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3,
+      "graph_path": [
+        {
+          "path_type": "crime_to_case_to_article",
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article_no": "234",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wu_biding_defense_hybrid",
+    "query": "吴必定案被告人辩称什么",
+    "top_k": 10,
+    "expected": {
+      "top1_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["defense_text"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3
+    }
+  },
+  {
+    "id": "wu_biding_reasoning_hybrid",
+    "query": "吴必定案为什么构成故意伤害罪",
+    "top_k": 10,
+    "expected": {
+      "top1_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["reasoning_text"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3
+    }
+  },
+  {
+    "id": "dangerous_driving_sentence_hybrid",
+    "query": "穆某危险驾驶罪判了什么刑",
+    "top_k": 10,
+    "expected": {
+      "top1_title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["judgment_text"],
+      "rank_max": 8,
+      "rank_law_article_no_any": ["133.1"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3
+    }
+  },
+  {
+    "id": "dangerous_driving_law_hybrid",
+    "query": "危险驾驶罪对应刑法第几条",
+    "top_k": 10,
+    "expected": {
+      "top1_source_type": "law_article",
+      "top1_law_article_no_any": ["133.1"],
+      "graph_path_edge_any": ["CASE_APPLIES_ARTICLE"],
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 3
+    }
+  },
+  {
+    "id": "wu_biding_evidence_diverse_hybrid",
+    "query": "吴必定案有哪些证据",
+    "top_k": 10,
+    "expected": {
+      "top1_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["witness_testimony_texts", "evidence_text", "defendant_confession_texts", "expert_opinion_texts", "inspection_records_texts"],
+      "rank_max": 3,
+      "rank_field_any": ["evidence_text"],
+      "distinct_fields_min": 3,
+      "distinct_fields_top_k": 5,
+      "citation_fields_required": ["retrieval_id", "chunk_id", "source_file", "text_hash"],
+      "citation_required_top_k": 5
+    }
+  },
+  {
+    "id": "article_to_case_hybrid",
+    "query": "刑法第二百三十四条相关案例有哪些",
+    "top_k": 10,
+    "expected": {
+      "source_type_any": ["case_chunk"],
+      "law_article_no_any": ["234"],
+      "graph_path": [
+        {
+          "path_type": "article_to_case_to_chunk",
+          "article_no": "234"
+        }
+      ]
+    }
+  },
+  {
+    "id": "historical_law_no_current_substitution_hybrid",
+    "query": "1979年刑法第一百三十四条第二款是什么",
+    "top_k": 10,
+    "expected": {
+      "graph_path_edge_any": ["CASE_APPLIES_ARTICLE"],
+      "top1_source_type": "case_chunk"
+    }
+  }
+]

@@ -1,0 +1,370 @@
+{
+  "schema_version": "orchestration-failure-replay-v1",
+  "created_at_utc": "2026-05-25T03:09:07.889361+00:00",
+  "generation_mode": "provider",
+  "case_count": 7,
+  "results": [
+    {
+      "id": "law_only_robbery",
+      "query": "抢劫罪和抢夺罪有什么区别？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 3,
+        "orchestration_citation_count": 2,
+        "failure_type": "orchestration_citation_count_decreased",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "llm_grounded",
+        "orchestration_answer_type": "llm_grounded",
+        "stable_citation_count": 3,
+        "orchestration_citation_count": 3,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "orchestration_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "stable_graph_paths": 6,
+        "orchestration_graph_paths": 6
+      },
+      "citation_delta": 1,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_grounded",
+          "context_count": 8,
+          "citation_count": 3,
+          "graph_path_count": 6,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "抢劫罪（第263条）是以暴力、胁迫或其他方法强行劫取财物，没有数额门槛，基本刑为三年以上十年以下有期徒刑，可至死刑。抢夺罪（第267条）是公然夺取数额较大或多次抢夺，基本刑为三年以下，最高无期徒刑。抢劫罪手段含暴力胁迫，抢夺罪不包含；若携带凶器抢夺（第267条第2款）或抢夺后当场使用暴力（第269条），则转化为抢劫罪。",
+      "orchestration_answer_preview": "抢劫罪与抢夺罪的主要区别在于行为方式：抢劫罪是使用暴力、胁迫或者其他方法强行劫取财物（《刑法》第263条），抢夺罪则是趁人不备公然夺取财物，要求数额较大或多次抢夺（《刑法》第267条）。此外，携带凶器抢夺的，依照抢劫罪定罪处罚。犯抢夺罪后为窝藏赃物、抗拒抓捕或毁灭罪证而当场使用暴力或暴力威胁的，也转化为抢劫罪（《刑法》第269条）。"
+    },
+    {
+      "id": "case_only_fact",
+      "query": "吴必定案案情是什么？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 3,
+        "orchestration_citation_count": 5,
+        "failure_type": "orchestration_answer_type_downgrade",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "llm_grounded",
+        "orchestration_answer_type": "llm_grounded",
+        "stable_citation_count": 3,
+        "orchestration_citation_count": 2,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_only"
+        ],
+        "orchestration_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_only"
+        ],
+        "stable_graph_paths": 2,
+        "orchestration_graph_paths": 2
+      },
+      "citation_delta": -3,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 0.82,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.18,
+        "refusal_quality_score": 1.0,
+        "issues": [
+          {
+            "severity": "medium",
+            "type": "citation_count_decreased",
+            "baseline": 3,
+            "actual": 2
+          }
+        ],
+        "summary": {
+          "answer_type": "llm_grounded",
+          "context_count": 8,
+          "citation_count": 2,
+          "graph_path_count": 2,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "吴必定案案情：1997年4月25日凌晨2时许，吴必定在江西宜丰县黄岗乡坪田村五峰坑山上工棚内发现有人偷盗，持柴刀追小偷，发现躲在小溪边草丛的李某甲后将其押回工棚，途中用柴刀砍其手臂、肩膀数刀，李某甲受伤逃走。当日早上，吴必定等人下山报案时发现李某甲倒在路边已死亡，经法医鉴定系失血性休克死亡，吴必定认出后潜逃。2013年8月14日被抓获。法院以故意伤害罪判处有期徒刑十年。",
+      "orchestration_answer_preview": "1997年2月，被告人吴必定与乡友从湖南省新晃侗族自治县来到江西省宜丰县黄岗乡坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，吴必定在工棚内发现有人偷盗，即叫醒工友，持砍毛竹的柴刀追赶小偷。发现躲在小溪边草丛里的李某甲后，将李某甲押回工棚，途中持柴刀朝李某甲手臂、肩膀等部位砍了数刀。李某甲受伤后逃走。当日早上，吴必定等七名工友下山准备报案时，发现李某甲倒在五峰坑坑口处山路边已死亡。吴必定认出死者就是被自己砍伤的人后潜逃。经法医鉴定，死者李某甲系失血性休克死亡。2013年8月14日，吴必定被抓获归案。"
+    },
+    {
+      "id": "case_only_defense",
+      "query": "吴必定案被告人如何辩解？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 3,
+        "orchestration_citation_count": 2,
+        "failure_type": "orchestration_citation_count_decreased",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "llm_grounded",
+        "orchestration_answer_type": "llm_grounded",
+        "stable_citation_count": 2,
+        "orchestration_citation_count": 2,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_only"
+        ],
+        "orchestration_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_only"
+        ],
+        "stable_graph_paths": 1,
+        "orchestration_graph_paths": 1
+      },
+      "citation_delta": 0,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_grounded",
+          "context_count": 8,
+          "citation_count": 2,
+          "graph_path_count": 1,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "被告人吴必定辩称没有伤害被害人的故意；其辩护人提出行为具有防卫性质、被害人有过错、主观恶性小、认罪态度好且系初犯，请求减轻处罚。",
+      "orchestration_answer_preview": "被告人吴必定辩称没有伤害被害人的故意，其辩护人提出吴必定的行为具有防卫性质、主观恶性小、社会危害性不大、被害人有过错、认罪态度好等辩护意见。在供述中，吴必定称自己因被小偷用西瓜刀刺伤左手，才用柴刀朝小偷手上和右肩手背砍了几刀。"
+    },
+    {
+      "id": "case_and_law_basis",
+      "query": "吴必定案判了多久，依据什么法条？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 2,
+        "orchestration_citation_count": 1,
+        "failure_type": "orchestration_citation_count_decreased",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "llm_grounded",
+        "orchestration_answer_type": "llm_grounded",
+        "stable_citation_count": 1,
+        "orchestration_citation_count": 2,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_and_law"
+        ],
+        "orchestration_warnings": [
+          "missing_law_article_for_conviction",
+          "no_current_law_chunk",
+          "router:criminal_law_case_and_law"
+        ],
+        "stable_graph_paths": 4,
+        "orchestration_graph_paths": 4
+      },
+      "citation_delta": 1,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 0.82,
+        "citation_coverage_score": 0.0,
+        "hallucination_risk_score": 0.18,
+        "refusal_quality_score": 1.0,
+        "issues": [
+          {
+            "severity": "medium",
+            "type": "law_context_not_cited",
+            "law_context_count": 3
+          }
+        ],
+        "summary": {
+          "answer_type": "llm_grounded",
+          "context_count": 8,
+          "citation_count": 2,
+          "graph_path_count": 4,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "吴必定犯故意伤害罪，被判处有期徒刑十年，刑期自2013年8月16日起至2023年8月15日止。判决书中未明确说明所依据的具体法条。",
+      "orchestration_answer_preview": "根据检索到的判决书，吴必定被判处有期徒刑十年。判决书认定其行为构成故意伤害罪，但检索上下文中未提供定罪量刑所依据的具体刑法条文。"
+    },
+    {
+      "id": "case_and_law_sentence_reason",
+      "query": "吴必定案的量刑理由和适用法条分别是什么？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 2,
+        "orchestration_citation_count": 0,
+        "failure_type": "orchestration_misrefused+orchestration_citation_count_decreased",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "no_answer",
+        "orchestration_answer_type": "no_answer",
+        "stable_citation_count": 0,
+        "orchestration_citation_count": 0,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_case_and_law"
+        ],
+        "orchestration_warnings": [
+          "insufficient_context",
+          "no_current_law_chunk",
+          "router:criminal_law_case_and_law"
+        ],
+        "stable_graph_paths": 7,
+        "orchestration_graph_paths": 7
+      },
+      "citation_delta": 0,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 0.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "no_answer",
+          "context_count": 8,
+          "citation_count": 0,
+          "graph_path_count": 7,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "基于现有检索信息，无法确认吴必定案的量刑理由和适用法条。判决书文本虽认定故意伤害罪、判处有期徒刑十年，但未明确给出量刑理由和具体刑法条款。",
+      "orchestration_answer_preview": "无法确认吴必定案的量刑理由和适用法条，因为检索上下文未提供明确的量刑理由说明以及所依据的具体法条。"
+    },
+    {
+      "id": "multi_case_drug",
+      "query": "贩卖毒品罪多个案例中量刑差异主要看什么？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 8,
+        "orchestration_citation_count": 6,
+        "failure_type": "orchestration_citation_count_decreased",
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "provider_error": false
+      },
+      "after": {
+        "stable_answer_type": "no_answer",
+        "orchestration_answer_type": "llm_grounded",
+        "stable_citation_count": 0,
+        "orchestration_citation_count": 6,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_multi_case"
+        ],
+        "orchestration_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_multi_case"
+        ],
+        "stable_graph_paths": 6,
+        "orchestration_graph_paths": 6
+      },
+      "citation_delta": 0,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 1.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "llm_grounded",
+          "context_count": 8,
+          "citation_count": 6,
+          "graph_path_count": 6,
+          "historical_query": false
+        }
+      },
+      "stable_answer_preview": "根据现有检索上下文，无法确定贩卖毒品罪多个案例中量刑差异的主要因素。仅能看出各案量刑结果不同（刑期从七个月到十年不等，罚金从一千到十万元不等），但未提供量刑差异的具体考量标准。",
+      "orchestration_answer_preview": "根据检索案例，贩卖毒品罪的量刑差异主要取决于毒品数量、被告人是否认罪认罚或坦白等量刑情节，以及是否数罪并罚。例如，陆某贩卖海洛因0.06克并认罪认罚，判处有期徒刑九个月；范某某具有坦白、吸毒劣迹等情节，判处有期徒刑七个月；张军良因贩卖毒品罪并犯非法持有毒品原植物种子罪，数罪并罚后贩卖毒品罪部分判处有期徒刑十年。这些案例表明毒品数量和认罪态度是影响量刑的关键因素。"
+    },
+    {
+      "id": "law_1979_general",
+      "query": "1979年刑法关于盗窃罪是怎么规定的？",
+      "generation_mode": "provider",
+      "before": {
+        "stable_citation_count": 0,
+        "orchestration_citation_count": 8,
+        "failure_type": "orchestration_hallucination_risk_increased+orchestration_provider_call_failed",
+        "hallucination_risk": {
+          "level": "medium",
+          "reasons": [
+            "llm_invalid_json",
+            "llm_call_failed"
+          ]
+        },
+        "provider_error": true
+      },
+      "after": {
+        "stable_answer_type": "no_answer",
+        "orchestration_answer_type": "no_answer",
+        "stable_citation_count": 0,
+        "orchestration_citation_count": 0,
+        "stable_warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "orchestration_warnings": [
+          "historical_law_context_missing",
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "stable_graph_paths": 14,
+        "orchestration_graph_paths": 14
+      },
+      "citation_delta": -8,
+      "warnings_changed": true,
+      "grounding": {
+        "grounded_score": 1.0,
+        "citation_coverage_score": 0.0,
+        "hallucination_risk_score": 0.0,
+        "refusal_quality_score": 1.0,
+        "issues": [],
+        "summary": {
+          "answer_type": "no_answer",
+          "context_count": 8,
+          "citation_count": 0,
+          "graph_path_count": 14,
+          "historical_query": true
+        }
+      },
+      "stable_answer_preview": "抱歉，根据提供的检索证据，无法确认1979年刑法关于盗窃罪的规定。所有检索到的法条和案例均为现行《中华人民共和国刑法》的内容，未涉及1979年刑法版本。",
+      "orchestration_answer_preview": "无法确认，因为检索上下文中未包含1979年刑法的条文，仅提供了现行刑法的相关内容。"
+    }
+  ]
+}

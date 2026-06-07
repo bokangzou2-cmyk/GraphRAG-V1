@@ -1,0 +1,47 @@
+Vector search eval sample report
+status: PASS
+cases: 6
+pass: 6
+warn: 0
+
+[PASS] wu_biding_sentence_vector: 吴必定案判了多久
+  1. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=3.666035
+  2. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1.762194
+  3. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1.745976
+  4. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1.723802
+  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1.705203
+
+[PASS] intentional_injury_law_vector: 故意伤害罪相关刑法条文是什么
+  1. law_article law_article 故意伤害罪 article_no=234 score=6.436203
+  2. law_article law_article 故意伤害罪 article_no=289 score=5.957764
+  3. case_chunk judgment_text 刘健故意伤害一审刑事判决书 score=2.606806
+  4. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=2.593755
+  5. case_chunk judgment_text 张君成故意伤害罪一审刑事判决书 score=2.573741
+
+[PASS] dangerous_driving_law_vector: 危险驾驶罪对应刑法第几条
+  1. law_article law_article 危险驾驶罪 article_no=133.1 score=6.395263
+  2. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=2.541555
+  3. case_chunk judgment_text 姚某危险驾驶罪一审刑事判决书(1) score=2.491156
+  4. case_chunk judgment_text 曹建忠危险驾驶一审刑事判决书 score=2.481116
+  5. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=2.478635
+
+[PASS] wu_biding_defense_vector: 吴必定案被告人辩称什么
+  1. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=2.346227
+  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=2.04091
+  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1.880299
+  4. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1.857379
+  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1.754794
+
+[PASS] wu_biding_reasoning_vector: 吴必定案为什么构成故意伤害罪
+  1. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=2.187091
+  2. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1.787542
+  3. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=1.750614
+  4. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1.73859
+  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1.724853
+
+[PASS] dangerous_driving_sentence_vector: 穆某危险驾驶罪判了什么刑
+  1. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=2.61523
+  2. case_chunk judgment_text 姚某危险驾驶罪一审刑事判决书(1) score=2.569576
+  3. case_chunk judgment_text 穆某犯危险驾驶罪一审刑事判决书 score=2.568825
+  4. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=2.552141
+  5. case_chunk judgment_text 曹建忠危险驾驶一审刑事判决书 score=2.536322

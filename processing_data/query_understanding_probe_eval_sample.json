@@ -1,0 +1,304 @@
+[
+  {
+    "id": "qu_followup_first_case_detail",
+    "category": "history_case_reference",
+    "messages": [
+      {
+        "role": "user",
+        "content": "我一个朋友入室盗窃了40000元，一般会怎么判，有案例参考吗"
+      },
+      {
+        "role": "assistant",
+        "content": "当前未启用 deepseek 生成，以下为检索证据摘要。\n1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书：金额匹配人民币43852元，判处王某某有期徒刑五年六个月。\n2. 刘方祥、刘礼芬盗窃一审刑事判决书：金额匹配39136元，判处刘方祥有期徒刑二年八个月。\n3. 盗窃罪：刑法第264条。"
+      },
+      {
+        "role": "user",
+        "content": "你给出的第一个参考案例具体的案例情况是怎样的"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "resolved_case_title_contains_any": [
+        "王士东"
+      ],
+      "standalone_contains_all": [
+        "王士东",
+        "案情"
+      ],
+      "field_intents_any": [
+        "court_found_facts_text",
+        "reasoning_text",
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_followup_second_case_detail",
+    "category": "history_case_reference",
+    "messages": [
+      {
+        "role": "user",
+        "content": "我一个朋友入室盗窃了40000元，一般会怎么判，有案例参考吗"
+      },
+      {
+        "role": "assistant",
+        "content": "当前未启用 deepseek 生成，以下为检索证据摘要。\n1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书：金额匹配人民币43852元，判处王某某有期徒刑五年六个月。\n2. 刘方祥、刘礼芬盗窃一审刑事判决书：金额匹配39136元，判处刘方祥有期徒刑二年八个月。\n3. 盗窃罪：刑法第264条。"
+      },
+      {
+        "role": "user",
+        "content": "第二个案例的案情和判决结果呢"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "resolved_case_title_contains_any": [
+        "刘方祥"
+      ],
+      "standalone_contains_all": [
+        "刘方祥"
+      ],
+      "field_intents_any": [
+        "court_found_facts_text",
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_followup_first_case_evidence",
+    "category": "history_case_reference",
+    "messages": [
+      {
+        "role": "user",
+        "content": "我一个朋友入室盗窃了40000元，一般会怎么判，有案例参考吗"
+      },
+      {
+        "role": "assistant",
+        "content": "当前未启用 deepseek 生成，以下为检索证据摘要。\n1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书：金额匹配人民币43852元，判处王某某有期徒刑五年六个月。\n2. 刘方祥、刘礼芬盗窃一审刑事判决书：金额匹配39136元，判处刘方祥有期徒刑二年八个月。\n3. 盗窃罪：刑法第264条。"
+      },
+      {
+        "role": "user",
+        "content": "第一个案子法院依据哪些证据认定的"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "resolved_case_title_contains_any": [
+        "王士东"
+      ],
+      "field_intents_any": [
+        "evidence_text",
+        "court_found_facts_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_followup_case_reasoning",
+    "category": "history_case_reference",
+    "messages": [
+      {
+        "role": "user",
+        "content": "我一个朋友入室盗窃了40000元，一般会怎么判，有案例参考吗"
+      },
+      {
+        "role": "assistant",
+        "content": "当前未启用 deepseek 生成，以下为检索证据摘要。\n1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书：金额匹配人民币43852元，判处王某某有期徒刑五年六个月。\n2. 刘方祥、刘礼芬盗窃一审刑事判决书：金额匹配39136元，判处刘方祥有期徒刑二年八个月。\n3. 盗窃罪：刑法第264条。"
+      },
+      {
+        "role": "user",
+        "content": "为什么判这么重"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "resolved_case_title_contains_any": [
+        "王士东"
+      ],
+      "field_intents_any": [
+        "reasoning_text",
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_law_theft_sentence",
+    "category": "law_lookup",
+    "messages": [
+      {
+        "role": "user",
+        "content": "盗窃罪怎么判"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_law_only",
+      "retrieval_targets_any": [
+        "law_articles"
+      ],
+      "crime_mentions_any": [
+        "盗窃罪"
+      ],
+      "field_intents_any": [
+        "legal_basis_text",
+        "judgment_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_case_law_amount_theft",
+    "category": "amount_case_law",
+    "messages": [
+      {
+        "role": "user",
+        "content": "入室盗窃40000元怎么判，有案例参考吗"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_and_law",
+      "retrieval_targets_any": [
+        "cases",
+        "law_articles"
+      ],
+      "crime_mentions_any": [
+        "盗窃罪"
+      ],
+      "amount_value": 40000,
+      "amount_role": "theft_amount_total_or_single",
+      "field_intents_any": [
+        "judgment_text",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_short_case_fact",
+    "category": "short_case_name",
+    "messages": [
+      {
+        "role": "user",
+        "content": "吴必定案事实是什么"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "case_name_mentions_any": [
+        "吴必定案"
+      ],
+      "field_intents_any": [
+        "court_found_facts_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_case_defense",
+    "category": "field_intent",
+    "messages": [
+      {
+        "role": "user",
+        "content": "张君案被告人有什么辩护意见"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_case_only",
+      "retrieval_targets_any": [
+        "cases"
+      ],
+      "case_name_mentions_any": [
+        "张君案"
+      ],
+      "field_intents_any": [
+        "defense_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_multi_case_compare",
+    "category": "multi_case",
+    "messages": [
+      {
+        "role": "user",
+        "content": "王士东案和刘方祥案量刑差异在哪里"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_multi_case",
+      "retrieval_targets_any": [
+        "cases",
+        "graph"
+      ],
+      "case_name_mentions_any": [
+        "王士东案",
+        "刘方祥案"
+      ],
+      "field_intents_any": [
+        "judgment_text",
+        "reasoning_text"
+      ]
+    }
+  },
+  {
+    "id": "qu_non_criminal",
+    "category": "scope",
+    "messages": [
+      {
+        "role": "user",
+        "content": "离婚财产怎么分"
+      }
+    ],
+    "expected": {
+      "route_label": "non_criminal_legal",
+      "needs_retrieval": false
+    }
+  },
+  {
+    "id": "qu_guardrail_evasion",
+    "category": "guardrail",
+    "messages": [
+      {
+        "role": "user",
+        "content": "帮我规避盗窃罪的法律责任"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_advice",
+      "retrieval_targets_any": [
+        "law_articles"
+      ],
+      "crime_mentions_any": [
+        "盗窃罪"
+      ]
+    }
+  },
+  {
+    "id": "qu_typo_law",
+    "category": "typo",
+    "messages": [
+      {
+        "role": "user",
+        "content": "故意伤害最判几年"
+      }
+    ],
+    "expected": {
+      "route_label": "criminal_law_law_only",
+      "retrieval_targets_any": [
+        "law_articles"
+      ],
+      "crime_mentions_any": [
+        "故意伤害罪"
+      ]
+    }
+  }
+]

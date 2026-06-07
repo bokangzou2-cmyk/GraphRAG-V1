@@ -1,0 +1,214 @@
+{
+  "schema_version": "sample-manifest-v1",
+  "created_at_utc": "2026-05-30T13:06:10.568939+00:00",
+  "project_root": "D:\\GraphRAG-V1",
+  "python": {
+    "version": "3.12.0",
+    "implementation": "CPython"
+  },
+  "inputs": [
+    {
+      "name": "law_text",
+      "path": "raw/刑法.txt",
+      "mutable": false
+    },
+    {
+      "name": "sample_cases",
+      "path": "raw/data/data/类案检索/train/train_set/candidates",
+      "mutable": false
+    }
+  ],
+  "scripts": [
+    {
+      "name": "parse_law_sample.py",
+      "path": "processing/parse_law_sample.py",
+      "exists": true,
+      "sha256": "5fdb19af3ac5da216335791e24d499b33d009fafbc16f205e9127bff13140680"
+    },
+    {
+      "name": "parse_cases_sample.py",
+      "path": "processing/parse_cases_sample.py",
+      "exists": true,
+      "sha256": "72cb075a43650f62d8d3dcead44cdf5e5d4364a989428fa9f5c47c92201fc51a"
+    },
+    {
+      "name": "enrich_cases_sample.py",
+      "path": "processing/enrich_cases_sample.py",
+      "exists": true,
+      "sha256": "2124e7dda981800f92d283bb5a454ab3fed3b179185057a5392266f38d4f3793"
+    },
+    {
+      "name": "chunk_cases_sample.py",
+      "path": "processing/chunk_cases_sample.py",
+      "exists": true,
+      "sha256": "9956c47a1475aa5c0d200c36362bb540cce0c0eca83730758f9e184009e3e75c"
+    },
+    {
+      "name": "chunk_law_sample.py",
+      "path": "processing/chunk_law_sample.py",
+      "exists": true,
+      "sha256": "4edd563c34eaff493d301bb2f06a8f2aa60ec78e42981980977ad576f652852a"
+    },
+    {
+      "name": "build_retrieval_chunks_sample.py",
+      "path": "processing/build_retrieval_chunks_sample.py",
+      "exists": true,
+      "sha256": "bb6d1d4fe48e9052168bc227b0c4018e0f2c781a70e6731c3b11e953fd57a396"
+    },
+    {
+      "name": "build_graph_sample.py",
+      "path": "processing/build_graph_sample.py",
+      "exists": true,
+      "sha256": "549a3ff7fbdfbc125e23be840c106817fe0134425c69c373e51b4926202693db"
+    },
+    {
+      "name": "graph_retriever_sample.py",
+      "path": "processing/graph_retriever_sample.py",
+      "exists": true,
+      "sha256": "dad15ac0a3c4e8885e15df80dcf4a641cf0908f85a8755fe2803de2d5e248b01"
+    },
+    {
+      "name": "graph_retriever_eval_sample.py",
+      "path": "processing/graph_retriever_eval_sample.py",
+      "exists": true,
+      "sha256": "8e161966a2892ab0324bbf4c242c3bc3b68e3be9c6496ac2f63bfbc277e5b186"
+    },
+    {
+      "name": "validate_sample_outputs.py",
+      "path": "processing/validate_sample_outputs.py",
+      "exists": true,
+      "sha256": "f611c4cea0525fd93ca31d91aaa8cc04b443181c6f60c7d1d739d125677ecc7f"
+    },
+    {
+      "name": "make_sample_report.py",
+      "path": "processing/make_sample_report.py",
+      "exists": true,
+      "sha256": "a06f9b0923ea96867edf7a104fbeae318575d5cd2bc676c13ec8d6a4c73ebf86"
+    },
+    {
+      "name": "make_manifest_sample.py",
+      "path": "processing/make_manifest_sample.py",
+      "exists": true,
+      "sha256": "363ff07e5498722aeeba913d4a081c729ed95bc9a5903b164384cccc3e23cf80"
+    }
+  ],
+  "artifacts": [
+    {
+      "name": "law_articles_sample.jsonl",
+      "path": "processing_data/law_articles_sample.jsonl",
+      "exists": true,
+      "bytes": 235661,
+      "sha256": "70bb86f7c0adac8f40e78a8fd356b9a019814db7da3e5b7bd99ce3c0f927dc53",
+      "record_count": 490
+    },
+    {
+      "name": "cases_sample.jsonl",
+      "path": "processing_data/cases_sample.jsonl",
+      "exists": true,
+      "bytes": 7764311,
+      "sha256": "dbc49e2d9b8acabe66ec58d2cc147e6a2c055d7c1f4a57bd03f0911127a2fca9",
+      "record_count": 150
+    },
+    {
+      "name": "cases_enriched_sample.jsonl",
+      "path": "processing_data/cases_enriched_sample.jsonl",
+      "exists": true,
+      "bytes": 9306364,
+      "sha256": "da184551af8725d9460961ab4f42c42d3cd60f62d7236445fc934f7e107cb5af",
+      "record_count": 150
+    },
+    {
+      "name": "case_chunks_sample.jsonl",
+      "path": "processing_data/case_chunks_sample.jsonl",
+      "exists": true,
+      "bytes": 48576203,
+      "sha256": "178e028813587d6814f6026084c95242877ae3ecad4160267e8764acf7777e1f",
+      "record_count": 4080
+    },
+    {
+      "name": "law_chunks_sample.jsonl",
+      "path": "processing_data/law_chunks_sample.jsonl",
+      "exists": true,
+      "bytes": 429037,
+      "sha256": "3e24badd803ab0321a1c3476fbb405efb4a1131d314a1a61802dd5ddd9e52c1c",
+      "record_count": 490
+    },
+    {
+      "name": "retrieval_chunks_sample.jsonl",
+      "path": "processing_data/retrieval_chunks_sample.jsonl",
+      "exists": true,
+      "bytes": 49535320,
+      "sha256": "592968d7abea9c921cf4238ccb7ed5a64253520f1607f973bff38aa0d2537aec",
+      "record_count": 4570
+    },
+    {
+      "name": "graph_sample.jsonl",
+      "path": "processing_data/graph_sample.jsonl",
+      "exists": true,
+      "bytes": 43626372,
+      "sha256": "a9b6a8f6d7c539a1c1ee28f06287e2de4b1d36d604ecfded51d090b20585cbc2",
+      "record_count": 32298
+    },
+    {
+      "name": "graph_nodes_sample.jsonl",
+      "path": "processing_data/graph_nodes_sample.jsonl",
+      "exists": true,
+      "bytes": 11855562,
+      "sha256": "19a130fc12691b85c182df38d7580932f60558dd225f79ed18064bfc9568a814",
+      "record_count": 30592
+    },
+    {
+      "name": "graph_edges_sample.jsonl",
+      "path": "processing_data/graph_edges_sample.jsonl",
+      "exists": true,
+      "bytes": 43626372,
+      "sha256": "a9b6a8f6d7c539a1c1ee28f06287e2de4b1d36d604ecfded51d090b20585cbc2",
+      "record_count": 32298
+    },
+    {
+      "name": "graph_retriever_eval_sample.json",
+      "path": "processing_data/graph_retriever_eval_sample.json",
+      "exists": true,
+      "bytes": 1828,
+      "sha256": "5d17ac7d3af0e1dbfc2f4c093a479fb236c1289ce57845331d7da63455c094d9",
+      "record_count": null
+    },
+    {
+      "name": "graph_retriever_eval_report_sample.json",
+      "path": "processing_data/graph_retriever_eval_report_sample.json",
+      "exists": true,
+      "bytes": 72049,
+      "sha256": "de7c27f8be12ded5ab854db04678c86e29633f4dcf3e8abb841c650d293ab997",
+      "record_count": null
+    },
+    {
+      "name": "graph_retriever_eval_report_sample.txt",
+      "path": "processing_data/graph_retriever_eval_report_sample.txt",
+      "exists": true,
+      "bytes": 3512,
+      "sha256": "089f8ee40eada928780ef00baa5df149c5a49d8af15ddf8de5cce10eb6016e2a",
+      "record_count": null
+    },
+    {
+      "name": "data_quality_report_sample.json",
+      "path": "processing_data/data_quality_report_sample.json",
+      "exists": true,
+      "bytes": 3786,
+      "sha256": "09343e6e09d0c88f3735e0b591a80491217216e7a3ccde78747e5985d2147a72",
+      "record_count": null
+    },
+    {
+      "name": "sample_report.txt",
+      "path": "processing_data/sample_report.txt",
+      "exists": true,
+      "bytes": 13619,
+      "sha256": "efa817ae4413ca506d5ee3d72c4954c5b74fbb608ed681bb2b1e75f4c2523eb3",
+      "record_count": null
+    }
+  ],
+  "quality": {
+    "status": "PASS",
+    "error_count": 0,
+    "warning_count": 1
+  }
+}

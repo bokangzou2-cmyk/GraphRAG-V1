@@ -1,0 +1,152 @@
+Chat vs LangChain orchestration eval report
+created_at_utc: 2026-05-30T13:35:59.043581+00:00
+orchestration_generation_mode: mock
+cases: 20
+classification_counts: {"完全一致": 17, "可接受差异": 3}
+risk_issue_counts: {}
+provider_error_count: 0
+provider_grounding: {"stable": {"grounded_score_avg": 0.9825, "citation_coverage_score_avg": 1.0, "hallucination_risk_score_avg": 0.0175, "refusal_quality_score_avg": 1.0}, "orchestration": {"grounded_score_avg": 0.965, "citation_coverage_score_avg": 1.0, "hallucination_risk_score_avg": 0.035, "refusal_quality_score_avg": 1.0, "high_hallucination_risk_count": 0, "low_citation_coverage_count": 0}}
+
+[完全一致] general_weather (general): '今天天气怎么样？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_poem (general): '帮我写一首五言绝句'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_math (general): '123 加 456 等于多少？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_translation (general): '把“证据充分”翻译成英文'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_recipe (general): '番茄炒蛋怎么做？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_programming (general): 'Python 怎么读取 JSONL 文件？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_history (general): '唐朝的都城在哪里？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_health (general): '感冒了应该多喝水吗？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_divorce (non_criminal_legal): '离婚财产怎么分？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"} orchestration={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_labor (non_criminal_legal): '公司拖欠工资怎么办？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_contract (non_criminal_legal): '合同违约金过高可以要求调整吗？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"} orchestration={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 0.65, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.35, "refusal_quality_score": 1.0, "issues": [{"severity": "high", "type": "unsupported_article_claims", "articles": ["第585条"]}], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 0.65, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.35, "refusal_quality_score": 1.0, "issues": [{"severity": "high", "type": "unsupported_article_claims", "articles": ["第585条"]}], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_inheritance (non_criminal_legal): '没有遗嘱的遗产怎么继承？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"} orchestration={"level": "high", "score": 0.78, "reason": null, "query_type": "non_criminal_legal", "router_label": "non_criminal_legal"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_traffic_compensation (non_criminal_legal): '交通事故赔偿标准怎么计算？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_rent (non_criminal_legal): '房东不退押金可以起诉吗？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] non_criminal_company (non_criminal_legal): '股东退股需要什么手续？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 0.65, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.35, "refusal_quality_score": 1.0, "issues": [{"severity": "high", "type": "unsupported_article_claims", "articles": ["第七十四条"]}], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[可接受差异] law_only_theft (criminal_law_law_only): '盗窃罪怎么判？'
+  answer_type: stable=llm_grounded orchestration=llm_grounded
+  citations: stable=3 orchestration=5; graph_paths: stable=11 orchestration=11
+  confidence: stable={"level": "high", "score": 1.0, "reason": null, "query_type": "law_lookup", "router_label": "criminal_law_law_only"} orchestration={"level": "high", "score": 1.0, "reason": null, "query_type": "law_lookup", "router_label": "criminal_law_law_only"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 5, "citation_count": 3, "graph_path_count": 11, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 5, "citation_count": 5, "graph_path_count": 11, "historical_query": false}}
+  diff: {"severity": "info", "reason": "citation_count_diff", "stable": 3, "orchestration": 5}
+
+[完全一致] law_only_attempt (criminal_law_law_only): '犯罪未遂的构成特征是什么？'
+  answer_type: stable=low_confidence orchestration=low_confidence
+  citations: stable=5 orchestration=5; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "low", "score": 0.074, "reason": null, "query_type": "reasoning", "router_label": "criminal_law_law_only"} orchestration={"level": "low", "score": 0.074, "reason": null, "query_type": "reasoning", "router_label": "criminal_law_law_only"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "low_confidence", "context_count": 5, "citation_count": 5, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "low_confidence", "context_count": 5, "citation_count": 5, "graph_path_count": 0, "historical_query": false}}
+
+[可接受差异] law_only_fraud (criminal_law_law_only): '诈骗罪的构成要件是什么？'
+  answer_type: stable=retrieval_fallback orchestration=llm_grounded
+  citations: stable=5 orchestration=5; graph_paths: stable=15 orchestration=15
+  confidence: stable={"level": "high", "score": 1.0, "reason": null, "query_type": "reasoning", "router_label": "criminal_law_law_only"} orchestration={"level": "high", "score": 1.0, "reason": null, "query_type": "reasoning", "router_label": "criminal_law_law_only"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "retrieval_fallback", "context_count": 5, "citation_count": 5, "graph_path_count": 15, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 5, "citation_count": 5, "graph_path_count": 15, "historical_query": false}}
+  diff: {"severity": "info", "reason": "answer_type_diff", "stable": "retrieval_fallback", "orchestration": "llm_grounded"}
+  diff: {"severity": "info", "reason": "warnings_diff", "stable": ["insufficient_context", "no_current_law_chunk", "provider_misrefused", "router:criminal_law_law_only"], "orchestration": ["no_current_law_chunk", "router:criminal_law_law_only"]}
+
+[可接受差异] law_only_robbery (criminal_law_law_only): '抢劫罪和抢夺罪有什么区别？'
+  answer_type: stable=llm_grounded orchestration=llm_grounded
+  citations: stable=3 orchestration=5; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 1.0, "reason": null, "query_type": "general_criminal", "router_label": "criminal_law_law_only"} orchestration={"level": "high", "score": 1.0, "reason": null, "query_type": "general_criminal", "router_label": "criminal_law_law_only"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 5, "citation_count": 3, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 5, "citation_count": 5, "graph_path_count": 0, "historical_query": false}}
+  diff: {"severity": "info", "reason": "citation_count_diff", "stable": 3, "orchestration": 5}
+
+[完全一致] law_only_self_surrender (criminal_law_law_only): '自首可以从轻处罚吗？'
+  answer_type: stable=no_answer orchestration=no_answer
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "none", "score": 0.0, "reason": "no_context", "query_type": "sentence", "router_label": "criminal_law_law_only"} orchestration={"level": "none", "score": 0.0, "reason": "no_context", "query_type": "sentence", "router_label": "criminal_law_law_only"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "no_answer", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "no_answer", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}

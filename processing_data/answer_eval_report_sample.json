@@ -1,0 +1,3814 @@
+{
+  "status": "PASS",
+  "case_count": 36,
+  "pass_count": 36,
+  "warn_count": 0,
+  "eval_file": "D:\\GraphRAG-V1\\processing_data\\answer_eval_sample.json",
+  "results": [
+    {
+      "id": "wu_biding_sentence",
+      "query": "吴必定案判了多久",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "sentence"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "有期徒刑十年"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案判了多久",
+        "answer_type": "sentence",
+        "answer": "吴必定故意伤害一审刑事判决书的量刑结果包括：有期徒刑十年。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "judgment_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "22cbc22e9046eb27",
+            "evidence_preview": "被告人吴必定犯故意伤害罪，判处有期徒刑十年。（刑期从判决执行之日起计算。判决执行以前先行羁押的，羁押一日折抵刑期一日。即从2013年8月16日起至2023年8月15日止。） 如不服本判决，可在接到判决书的第二日起十日内，通过本院或直接向江西省高级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本二份。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 722.1
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 299.025
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_applied_articles",
+      "query": "吴必定案适用了哪些法条",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第十二条第一款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第一百三十四条第二款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "law_version=1979"
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "law_version": "current",
+            "resolution": "law_chunk_found"
+          }
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk"
+          }
+        }
+      ],
+      "result": {
+        "query": "吴必定案适用了哪些法条",
+        "answer_type": "applied_articles",
+        "answer": "吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。",
+        "warnings": [
+          "no_current_law_chunk"
+        ],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:12",
+            "chunk_id": "law:criminal_law:12",
+            "title": "刑法溯及力",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a92204dabc96aff8",
+            "evidence_preview": "第12条 刑法溯及力 中华人民共和国成立以后本法施行以前的行为，如果当时的法律不认 为是犯罪的，适用当时的法律；如果当时的法律认为是犯罪的，依照本法总则第四章第八节的规定应 当追诉的，按照当时的法律追究刑事责任，但是如果本法不认为是犯罪或者处刑较轻的，适用本法。 本法施行以前，依照当时的法律已经作出的生效判决，继续有效。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "article_no": "12",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:12",
+            "law_chunk_id": "law:criminal_law:12",
+            "law_title": "刑法溯及力"
+          },
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "article_no": "134",
+            "law_name": "1979年中华人民共和国刑法",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk",
+            "law_retrieval_id": null,
+            "law_chunk_id": null,
+            "law_title": null
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 448.5375
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 361.05
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "intentional_injury_law",
+      "query": "故意伤害罪相关刑法条文是什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "law_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第234条"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "故意伤害罪"
+        },
+        {
+          "name": "citation_source_type_any",
+          "passed": true,
+          "expected": [
+            "law_article"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "故意伤害罪相关刑法条文是什么",
+        "answer_type": "law_articles",
+        "answer": "相关刑法条文包括：第234条 故意伤害罪：第234条 故意伤害罪 故意伤害他人身体的，处三年以下有期徒刑、拘役或者管制。 犯前款罪，致人重伤的，处三年以上十年以下有期徒刑；致人死亡或者以特别残忍手段致人重伤 造成严重残疾的，处十年以上有期徒刑、无期徒刑或者死刑。本法另有规定的，依照规定 第289条 故意伤害罪：第289条 故意伤害罪 【故意杀人罪】【抢劫罪】聚众“打砸抢”，致人伤残、死亡 的，依照本法第二百三十四条、第二百三十二条的规定定罪处罚。毁坏或者抢走公私财物的，除判令 退赔外，对首要分子，依照本法第二百六十三条的规定定罪处罚",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "law:law:criminal_law:234",
+            "chunk_id": "law:criminal_law:234",
+            "title": "故意伤害罪",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "c415e04ecc147e16",
+            "evidence_preview": "第234条 故意伤害罪 故意伤害他人身体的，处三年以下有期徒刑、拘役或者管制。 犯前款罪，致人重伤的，处三年以上十年以下有期徒刑；致人死亡或者以特别残忍手段致人重伤 造成严重残疾的，处十年以上有期徒刑、无期徒刑或者死刑。本法另有规定的，依照规定。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:289",
+            "chunk_id": "law:criminal_law:289",
+            "title": "故意伤害罪",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "83b7f90eef7fae55",
+            "evidence_preview": "第289条 故意伤害罪 【故意杀人罪】【抢劫罪】聚众“打砸抢”，致人伤残、死亡 的，依照本法第二百三十四条、第二百三十二条的规定定罪处罚。毁坏或者抢走公私财物的，除判令 退赔外，对首要分子，依照本法第二百六十三条的规定定罪处罚。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "故意伤害罪",
+              "retrieval_id": "law:law:criminal_law:234",
+              "score": 1764.18
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "故意伤害罪",
+              "retrieval_id": "law:law:criminal_law:289",
+              "score": 1722.6
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0",
+              "score": 889.488
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "诬告陷害罪",
+              "retrieval_id": "law:law:criminal_law:243",
+              "score": 639.144
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "报复陷害罪",
+              "retrieval_id": "law:law:criminal_law:254",
+              "score": 639.144
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dangerous_driving_sentence",
+      "query": "穆某危险驾驶罪判了什么刑",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "sentence"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "拘役一个月"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "缓刑二个月"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "穆某犯危险驾驶罪一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "穆某危险驾驶罪判了什么刑",
+        "answer_type": "sentence",
+        "answer": "穆某犯危险驾驶罪一审刑事判决书的量刑结果包括：拘役一个月；罚金人民币二千元；罚金已缴纳；缓刑二个月。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:judgment_text:scalar:0",
+            "chunk_id": "08053114-ea29-41a6-b190-b17377540906:399aee0a06:judgment_text:scalar:0",
+            "title": "穆某犯危险驾驶罪一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "judgment_text",
+            "case_id": "08053114-ea29-41a6-b190-b17377540906",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/11747.json",
+            "text_hash": "531850619cd74146",
+            "evidence_preview": "被告人穆某犯危险驾驶罪，判处拘役一个月，缓刑二个月。并处罚金人民币二千元。（缓刑考验期从判决确定之日起计算。罚金已缴纳。） 如不服本判决，可在接到判决书的第二日起十日内，通过本院或者直接向江苏省盐城市中级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本两份。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "穆某犯危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:judgment_text:scalar:0",
+              "score": 896.1
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "董波危险驾驶罪二审刑事判决书",
+              "retrieval_id": "case:2ba1a1e3-8285-4f3c-b834-949a4c0a5842:c37c97dcbf:judgment_text:scalar:0",
+              "score": 680.34
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "680刘某危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:898be7ec-2389-4bab-9c45-2479a592c8d2:0957c02282:judgment_text:scalar:0",
+              "score": 671.64
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "姚某危险驾驶罪一审刑事判决书(1)",
+              "retrieval_id": "case:56bbaf7b-5be4-4228-a515-81de74f0c27a:2fdf6b3ec5:judgment_text:scalar:0",
+              "score": 671.64
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "曹建忠危险驾驶一审刑事判决书",
+              "retrieval_id": "case:e40af880-0d8d-431d-8889-34b89f13c866:6eea436389:judgment_text:scalar:0",
+              "score": 515.04
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dangerous_driving_law",
+      "query": "危险驾驶罪对应刑法第几条",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "law_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第133.1条"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "危险驾驶罪"
+        },
+        {
+          "name": "citation_source_type_any",
+          "passed": true,
+          "expected": [
+            "law_article"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "危险驾驶罪对应刑法第几条",
+        "answer_type": "law_articles",
+        "answer": "相关刑法条文包括：第133.1条 危险驾驶罪：第133.1条 危险驾驶罪 在道路上驾驶机动车，有下列情形之一的，处拘役，并处 罚金： （一）追逐竞驶，情节恶劣的； （二）醉酒驾驶机动车的； （三）从事校车业务或者旅客运输，严重超过额定乘员载客，或者严重超过规定时速行驶的； （四）违反危险化学品安全管理规定运输危险化学品，危及公共安全的。 机动车所有人、管理人对前款第三项、第四项行为负有直接责任的，依照前款的规定处罚。 有前两款行为，同时构成其他犯罪的，依照处罚较重的规定定罪处罚",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "law:law:criminal_law:133.1",
+            "chunk_id": "law:criminal_law:133.1",
+            "title": "危险驾驶罪",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "0edc11572ac3fdd5",
+            "evidence_preview": "第133.1条 危险驾驶罪 在道路上驾驶机动车，有下列情形之一的，处拘役，并处 罚金： （一）追逐竞驶，情节恶劣的； （二）醉酒驾驶机动车的； （三）从事校车业务或者旅客运输，严重超过额定乘员载客，或者严重超过规定时速行驶的； （四）违反危险化学品安全管理规定运输危险化学品，危及公共安全的。 机动车所有人、管理人对前款第三项、第四项行为负有直接责任的，依照前款的规定处罚。 有前两款行为，同时构成其他犯罪的，依照处罚较重的规定定罪处罚。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "危险驾驶罪",
+              "retrieval_id": "law:law:criminal_law:133.1",
+              "score": 1740.42
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "董波危险驾驶罪二审刑事判决书",
+              "retrieval_id": "case:2ba1a1e3-8285-4f3c-b834-949a4c0a5842:c37c97dcbf:judgment_text:scalar:0",
+              "score": 964.656
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "680刘某危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:898be7ec-2389-4bab-9c45-2479a592c8d2:0957c02282:judgment_text:scalar:0",
+              "score": 839.376
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "姚某危险驾驶罪一审刑事判决书(1)",
+              "retrieval_id": "case:56bbaf7b-5be4-4228-a515-81de74f0c27a:2fdf6b3ec5:judgment_text:scalar:0",
+              "score": 839.376
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "曹建忠危险驾驶一审刑事判决书",
+              "retrieval_id": "case:e40af880-0d8d-431d-8889-34b89f13c866:6eea436389:judgment_text:scalar:0",
+              "score": 693.216
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "forestry_applied_articles",
+      "query": "孙五十四案适用了哪些刑法法条",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第三百四十五条第二款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "law_version=current"
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第三百四十五条第二款",
+            "law_version": "current",
+            "resolution": "law_chunk_found"
+          }
+        }
+      ],
+      "result": {
+        "query": "孙五十四案适用了哪些刑法法条",
+        "answer_type": "applied_articles",
+        "answer": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书适用的法条包括：第三百四十五条第二款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第十七条之一（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第四十五条（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第五十二条（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第六十七条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第七十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第六条（最高人民法院关于审理破坏森林资源刑事案件具体应用法律若干问题的解解，law_version=judicial_interpretation，未补现行刑法条文）。",
+        "warnings": [
+          "no_current_law_chunk"
+        ],
+        "citations": [
+          {
+            "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0",
+            "chunk_id": "b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0",
+            "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "judgment_text",
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/11136.json",
+            "text_hash": "899c9d04dac29c53",
+            "evidence_preview": "一、被告人孙五十四犯滥伐林木罪，判处有期徒刑一年二个月，缓刑一年二个月，并处罚金三千元。（缓刑考验期限自判决确定之日起计算。） 二、被告人杨三万犯滥伐林木罪，判处有期徒刑一年一个月，缓刑一年二个月，并处罚金三千元。（缓刑考验期限自判决确定之日起计算。） 三、被告人张维军犯滥伐林木罪，判处有期徒刑八个月，缓刑一年，并处罚金三千元。（缓刑考验期限自判决确定之日起计算。） 四、被告人马换犯滥伐林木罪，判处罚金三千元。五、被告单位鄂尔多斯市东达林沙产业开发有限公司犯非法收购滥伐的林木罪，判处罚金一万元。六、被告人王永祥犯非"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:345",
+            "chunk_id": "law:criminal_law:345",
+            "title": "盗伐林木罪",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "4bc598ae1b47a911",
+            "evidence_preview": "第345条 盗伐林木罪 盗伐森林或者其他林木，数量较大的，处三年以下有期徒刑、 拘役或者管制，并处或者单处罚金；数量巨大的，处三年以上七年以下有期徒刑，并处罚金；数量特 别巨大的，处七年以上有期徒刑，并处罚金。 【滥伐林木罪】违反森林法的规定，滥伐森林或者其他林木，数量较大的，处三年以下有期徒 刑、拘役或者管制，并处或者单处罚金；数量巨大的，处三年以上七年以下有期徒刑，并处罚金。 【非法收购、运输盗伐、滥伐的林木罪】非法收购、运输明知是盗伐、滥伐的林木，情节严重 的，处三年以下有期徒刑、拘役或者管制，并处或者单处罚"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:17.1",
+            "chunk_id": "law:criminal_law:17.1",
+            "title": "刑事责任年龄",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a8c0ffb2f7e1a4f4",
+            "evidence_preview": "第17.1条 刑事责任年龄 已满七十五周岁的人故意犯罪的，可以从轻或者减轻处罚；过 失犯罪的，应当从轻或者减轻处罚。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:45",
+            "chunk_id": "law:criminal_law:45",
+            "title": "有期徒刑的期限",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "689fa67863251d09",
+            "evidence_preview": "第45条 有期徒刑的期限 有期徒刑的期限，除本法第五十条、第六十九条规定外，为六 个月以上十五年以下。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:52",
+            "chunk_id": "law:criminal_law:52",
+            "title": "罚金数额的裁量",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "31d0fc64f0e024ee",
+            "evidence_preview": "第52条 罚金数额的裁量 判处罚金，应当根据犯罪情节决定罚金数额。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:67",
+            "chunk_id": "law:criminal_law:67",
+            "title": "自首",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "6c7b704bafe57fec",
+            "evidence_preview": "第67条 自首 犯罪以后自动投案，如实供述自己的罪行的，是自首。对于自首的犯罪分 子，可以从轻或者减轻处罚。其中，犯罪较轻的，可以免除处罚。 被采取强制措施的犯罪嫌疑人、被告人和正在服刑的罪犯，如实供述司法机关还未掌握的本人其 他罪行的，以自首论。 犯罪嫌疑人虽不具有前两款规定的自首情节，但是如实供述自己罪行的，可以从轻处罚；因其如 实供述自己罪行，避免特别严重后果发生的，可以减轻处罚。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:72",
+            "chunk_id": "law:criminal_law:72",
+            "title": "适用条件",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "bfe095bee9f5bc03",
+            "evidence_preview": "第72条 适用条件 对于被判处拘役、三年以下有期徒刑的犯罪分子，同时符合下列条件 的，可以宣告缓刑，对其中不满十八周岁的人、怀孕的妇女和已满七十五周岁的人，应当宣告缓刑： （一）犯罪情节较轻； （二）有悔罪表现； （三）没有再犯罪的危险； （四）宣告缓刑对所居住社区没有重大不良影响。 宣告缓刑，可以根据犯罪情况，同时禁止犯罪分子在缓刑考验期限内从事特定活动，进入特定区 域、场所，接触特定的人。 被宣告缓刑的犯罪分子，如果被判处附加刑，附加刑仍须执行。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第三百四十五条第二款",
+            "article_no": "345",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:345",
+            "law_chunk_id": "law:criminal_law:345",
+            "law_title": "盗伐林木罪"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十七条之一",
+            "article_no": "17.1",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:17.1",
+            "law_chunk_id": "law:criminal_law:17.1",
+            "law_title": "刑事责任年龄"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第四十五条",
+            "article_no": "45",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:45",
+            "law_chunk_id": "law:criminal_law:45",
+            "law_title": "有期徒刑的期限"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第五十二条",
+            "article_no": "52",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:52",
+            "law_chunk_id": "law:criminal_law:52",
+            "law_title": "罚金数额的裁量"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第六十七条第一款",
+            "article_no": "67",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:67",
+            "law_chunk_id": "law:criminal_law:67",
+            "law_title": "自首"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第七十二条第一款",
+            "article_no": "72",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:72",
+            "law_chunk_id": "law:criminal_law:72",
+            "law_title": "适用条件"
+          },
+          {
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "case_title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第六条",
+            "article_no": "6",
+            "law_name": "最高人民法院关于审理破坏森林资源刑事案件具体应用法律若干问题的解解",
+            "law_version": "judicial_interpretation",
+            "resolution": "no_current_law_chunk",
+            "law_retrieval_id": null,
+            "law_chunk_id": null,
+            "law_title": null
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0",
+              "score": 1118.3328
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0",
+              "score": 607.095
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:court_found_facts_text:scalar:0",
+              "score": 374.75
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "accusation_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:accusation_text:scalar:0",
+              "score": 329.78
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defendant_confession_texts",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:defendant_confession_texts:0:0",
+              "score": 295.6512
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_facts",
+      "query": "吴必定案事实是什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "fact"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "五峰坑"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "砍了数刀"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text",
+            "accusation_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案事实是什么",
+        "answer_type": "fact",
+        "answer": "吴必定故意伤害一审刑事判决书的事实内容为：经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪边草丛里的李某甲后，便将李某甲押回工棚。途中，被告人吴必定持柴刀朝李某甲的手臂、肩膀等部位砍了数刀，被害人李某甲被砍伤后逃走。当日早上，被告人吴必定等七名工友下山准备就被盗一事。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "court_found_facts_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "4ab340d25af93550",
+            "evidence_preview": "经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪边草丛里的李某甲后，便将李某甲押回工棚。途中，被告人吴必定持柴刀朝李某甲的手臂、肩膀等部位砍了数刀，被害人李某甲被砍伤后逃走。当日早上，被告人吴必定等七名工友下山准备就被盗一事"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 320.625
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 300.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_evidence",
+      "query": "吴必定案有哪些证据",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "evidence"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "证实"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "evidence_text",
+            "witness_testimony_texts",
+            "expert_opinion_texts",
+            "inspection_records_texts"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案有哪些证据",
+        "answer_type": "evidence",
+        "answer": "吴必定故意伤害一审刑事判决书的证据内容为：证人杨某甲证实：昨天（1997年4月24日）晚上12点多他们都睡着了（五峰坑工棚）突然听到吴必定叫：“有小偷偷东西，”他起床发现鞋子不见了，跑出工棚见吴必定沿下山的公路追，吴某甲跟在后面，他跟吴某甲后面，另两个不知名字的人（一个叫老燕、一个叫老武）也同时追下去，追了大概2、3里路，横过小溪听到吴必定在叫“小偷在这里”。他既转身来到吴必定身边，那小偷出来，吴必定问：“你为什么偷我们的东西，”那人不作声，吴必定抓住小偷的后衣领往他们住的地方走，他和吴某甲跟在后面，走了约50米远又过一小溪，在小溪中间看到吴必定用柴刀砍小。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "witness_testimony_texts",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "3e260cd2735c146a",
+            "evidence_preview": "证人杨某甲证实：昨天（1997年4月24日）晚上12点多他们都睡着了（五峰坑工棚）突然听到吴必定叫：“有小偷偷东西，”他起床发现鞋子不见了，跑出工棚见吴必定沿下山的公路追，吴某甲跟在后面，他跟吴某甲后面，另两个不知名字的人（一个叫老燕、一个叫老武）也同时追下去，追了大概2、3里路，横过小溪听到吴必定在叫“小偷在这里”。他既转身来到吴必定身边，那小偷出来，吴必定问：“你为什么偷我们的东西，”那人不作声，吴必定抓住小偷的后衣领往他们住的地方走，他和吴某甲跟在后面，走了约50米远又过一小溪，在小溪中间看到吴必定用柴刀砍小"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 307.125
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 300.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_reasoning",
+      "query": "吴必定案为什么构成故意伤害罪",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "reasoning"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "吴必定"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "构成故意伤害罪"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案为什么构成故意伤害罪",
+        "answer_type": "reasoning",
+        "answer": "吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 11,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "张君成故意伤害罪一审刑事判决书",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:reasoning_text:scalar:0",
+              "score": 1253.34
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:0",
+              "score": 1219.185
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:reasoning_text:scalar:0",
+              "score": 1147.905
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:reasoning_text:scalar:0",
+              "score": 1127.115
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 1106.325
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "forestry_amount",
+      "query": "孙五十四滥伐林木案砍伐了多少立方米",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "amount"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "77.97809立方米"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "72.84971立方米"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "孙五十四"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text",
+            "accusation_text",
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "孙五十四滥伐林木案砍伐了多少立方米",
+        "answer_type": "amount",
+        "answer": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书中与数额相关的内容包括：被告人孙五十四对蓄积量为77.97809立方米杨树砍伐承担刑事责任；被告人杨三万对蓄积量为72.84971立方米杨树砍伐。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0",
+            "chunk_id": "b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0",
+            "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "b568da1b-348b-4477-a306-7e6252211407",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/11136.json",
+            "text_hash": "a2f4d5b08ee6d780",
+            "evidence_preview": "本院认为，被告人孙五十四、杨三万、张维军、马换违反森林法的规定，在未经林业行政主管部门批准并核发林木采伐许可证的情况下，擅自滥伐林木，数量较大，其行为均已构成滥伐林木罪。本案属二人以上共同故意犯罪，属共同犯罪。其中，被告人孙五十四、杨三万分别与被告人张维军、马换构成共同犯罪。因各被告人在共同犯罪过程中所起作用相当，故本案不分主从犯。又因各被告人在共同犯罪过程中量刑情节不同，量刑时应有所区分。其中，被告人孙五十四对蓄积量为77.97809立方米杨树砍伐承担刑事责任，被告人杨三万对蓄积量为72.84971立方米杨树砍伐"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0",
+              "score": 651.78
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0",
+              "score": 631.91
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:court_found_facts_text:scalar:0",
+              "score": 577.25
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "accusation_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:accusation_text:scalar:0",
+              "score": 531.08
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defense_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:defense_text:scalar:0",
+              "score": 429.87
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "bribery_amount",
+      "query": "王红珍受贿案涉及多少金额",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "amount"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "人民币"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "王红珍受贿一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text",
+            "accusation_text",
+            "reasoning_text",
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "王红珍受贿案涉及多少金额",
+        "answer_type": "amount",
+        "answer": "王红珍受贿一审刑事判决书的数额内容为：一、被告人王红珍犯受贿罪，判处有期徒刑十二年，并处罚金人民币一百五十万元。（刑期从判决执行之日起计算；判决执行以前先行羁押的，羁押一日折抵刑期一日，即自2016年12月5日起至2028年12月4日止；罚金限自判决生效之次日起十日内缴纳。） 二、扣押在案的人民币二百八十九万零六百五十一元三角五分折抵赃款予以没收，上缴国库，不足部分责令被告人王红珍继续退赔",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:judgment_text:scalar:0",
+            "chunk_id": "4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:judgment_text:scalar:0",
+            "title": "王红珍受贿一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "judgment_text",
+            "case_id": "4dd9b04b-a705-4b08-8740-fd8d55b662b6",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/15580.json",
+            "text_hash": "0ba7cc927066f3ac",
+            "evidence_preview": "一、被告人王红珍犯受贿罪，判处有期徒刑十二年，并处罚金人民币一百五十万元。（刑期从判决执行之日起计算；判决执行以前先行羁押的，羁押一日折抵刑期一日，即自2016年12月5日起至2028年12月4日止；罚金限自判决生效之次日起十日内缴纳。） 二、扣押在案的人民币二百八十九万零六百五十一元三角五分折抵赃款予以没收，上缴国库，不足部分责令被告人王红珍继续退赔。如不服本判决，可在接到本判决书的第二日起十日内，通过本院或者直接向北京市高级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本二份。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王红珍受贿一审刑事判决书",
+              "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:judgment_text:scalar:0",
+              "score": 416.295
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "王红珍受贿一审刑事判决书",
+              "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:reasoning_text:scalar:0",
+              "score": 402.435
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "王红珍受贿一审刑事判决书",
+              "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:court_found_facts_text:scalar:0",
+              "score": 367.625
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "王红珍受贿一审刑事判决书",
+              "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:witness_testimony_texts:16:0",
+              "score": 352.92
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "王红珍受贿一审刑事判决书",
+              "retrieval_id": "case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:witness_testimony_texts:25:0",
+              "score": 352.92
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dangerous_driving_reasoning",
+      "query": "穆某危险驾驶罪为什么成立",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "reasoning"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "穆某"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "构成危险驾驶罪"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "穆某犯危险驾驶罪一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "穆某危险驾驶罪为什么成立",
+        "answer_type": "reasoning",
+        "answer": "穆某犯危险驾驶罪一审刑事判决书的裁判理由内容为：本院认为，被告人穆某酒后驾驶机动车在道路上行驶，其行为已触犯我国刑法，构成危险驾驶罪，应予刑罚处罚。公诉机关指控的该项罪名成立。被告人穆某庭审中能如实供述其犯罪事实，自愿认罪，酌情对其从轻处罚。辩护人辩称的被告人穆某犯罪情节显著轻微、在农村人员稀少的道路上行驶、不认为是犯罪的意见，经查，被告人酒后驾驶机动车所行驶的路段，系原东台市富东镇镇区所在地的道路，与原镇区主干道相交叉，道路两旁分布有多家营业商店和办公场所，不存在人员稀少、偏僻的情形，故辩护人辩称的意见本院不予采信。依照《中华人民共和国刑法》第一百三十三条之一。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:reasoning_text:scalar:0",
+            "chunk_id": "08053114-ea29-41a6-b190-b17377540906:399aee0a06:reasoning_text:scalar:0",
+            "title": "穆某犯危险驾驶罪一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "08053114-ea29-41a6-b190-b17377540906",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/11747.json",
+            "text_hash": "a3977b2f3842cb2a",
+            "evidence_preview": "本院认为，被告人穆某酒后驾驶机动车在道路上行驶，其行为已触犯我国刑法，构成危险驾驶罪，应予刑罚处罚。公诉机关指控的该项罪名成立。被告人穆某庭审中能如实供述其犯罪事实，自愿认罪，酌情对其从轻处罚。辩护人辩称的被告人穆某犯罪情节显著轻微、在农村人员稀少的道路上行驶、不认为是犯罪的意见，经查，被告人酒后驾驶机动车所行驶的路段，系原东台市富东镇镇区所在地的道路，与原镇区主干道相交叉，道路两旁分布有多家营业商店和办公场所，不存在人员稀少、偏僻的情形，故辩护人辩称的意见本院不予采信。依照《中华人民共和国刑法》第一百三十三条之一"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "穆某犯危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:reasoning_text:scalar:0",
+              "score": 785.565
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "680刘某危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:898be7ec-2389-4bab-9c45-2479a592c8d2:0957c02282:reasoning_text:scalar:0",
+              "score": 576.18
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "姚某危险驾驶罪一审刑事判决书(1)",
+              "retrieval_id": "case:56bbaf7b-5be4-4228-a515-81de74f0c27a:2fdf6b3ec5:reasoning_text:scalar:0",
+              "score": 576.18
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "曹建忠危险驾驶一审刑事判决书",
+              "retrieval_id": "case:e40af880-0d8d-431d-8889-34b89f13c866:6eea436389:reasoning_text:scalar:0",
+              "score": 516.78
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "董波危险驾驶罪二审刑事判决书",
+              "retrieval_id": "case:2ba1a1e3-8285-4f3c-b834-949a4c0a5842:c37c97dcbf:reasoning_text:scalar:0",
+              "score": 509.355
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_applied_clause",
+      "query": "吴必定案适用的法条第几款",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第十二条第一款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第一百三十四条第二款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "law_version=1979"
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "no_current_law_chunk"
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "law_version": "current",
+            "resolution": "law_chunk_found"
+          }
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk"
+          }
+        }
+      ],
+      "result": {
+        "query": "吴必定案适用的法条第几款",
+        "answer_type": "applied_articles",
+        "answer": "吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。",
+        "warnings": [
+          "no_current_law_chunk"
+        ],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:12",
+            "chunk_id": "law:criminal_law:12",
+            "title": "刑法溯及力",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a92204dabc96aff8",
+            "evidence_preview": "第12条 刑法溯及力 中华人民共和国成立以后本法施行以前的行为，如果当时的法律不认 为是犯罪的，适用当时的法律；如果当时的法律认为是犯罪的，依照本法总则第四章第八节的规定应 当追诉的，按照当时的法律追究刑事责任，但是如果本法不认为是犯罪或者处刑较轻的，适用本法。 本法施行以前，依照当时的法律已经作出的生效判决，继续有效。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "article_no": "12",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:12",
+            "law_chunk_id": "law:criminal_law:12",
+            "law_title": "刑法溯及力"
+          },
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "article_no": "134",
+            "law_name": "1979年中华人民共和国刑法",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk",
+            "law_retrieval_id": null,
+            "law_chunk_id": null,
+            "law_title": null
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 469.5975
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 372.186
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 284.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 273.48
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 273.48
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_why_apply_article_12",
+      "query": "吴必定案为什么适用第十二条第一款",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_reasoning"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "吴必定"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第十二条第一款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "适用法条理由"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书",
+            "刑法溯及力"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text",
+            "law_article"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "law_version": "current",
+            "resolution": "law_chunk_found"
+          }
+        }
+      ],
+      "result": {
+        "query": "吴必定案为什么适用第十二条第一款",
+        "answer_type": "applied_reasoning",
+        "answer": "吴必定故意伤害一审刑事判决书的适用法条理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。 关联的适用法条：第十二条第一款。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:12",
+            "chunk_id": "law:criminal_law:12",
+            "title": "刑法溯及力",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a92204dabc96aff8",
+            "evidence_preview": "第12条 刑法溯及力 中华人民共和国成立以后本法施行以前的行为，如果当时的法律不认 为是犯罪的，适用当时的法律；如果当时的法律认为是犯罪的，依照本法总则第四章第八节的规定应 当追诉的，按照当时的法律追究刑事责任，但是如果本法不认为是犯罪或者处刑较轻的，适用本法。 本法施行以前，依照当时的法律已经作出的生效判决，继续有效。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "article_no": "12",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:12",
+            "law_chunk_id": "law:criminal_law:12",
+            "law_title": "刑法溯及力"
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 1809.1755
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "赵永刚等贪污罪一审刑事判决书",
+              "retrieval_id": "case:7d949ce5-854a-4aae-8296-383f875721e6:48fd939544:reasoning_text:scalar:1",
+              "score": 1256.31
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "傅亮、沈某等贪污一审刑事判决书",
+              "retrieval_id": "case:d9b7b5a9-fbf4-4889-b447-035f59b6ac78:e2fb056569:reasoning_text:scalar:1",
+              "score": 1176.12
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "尉钟贪污、挪用公款二审刑事判决书",
+              "retrieval_id": "case:cefc48fe-5816-4d4e-af39-6d858b45d989:1e0e5818ef:reasoning_text:scalar:0",
+              "score": 1158.3
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "陈华贪污、受贿二审刑事判决书",
+              "retrieval_id": "case:61fa4bf9-06d3-4a60-90a4-08aa425b3f10:23a0c2828c:reasoning_text:scalar:2",
+              "score": 1158.3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_defense",
+      "query": "吴必定案被告人辩称什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "defense"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "没有伤害被害人的故意"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "防卫性质"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "defense_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案被告人辩称什么",
+        "answer_type": "defense",
+        "answer": "吴必定故意伤害一审刑事判决书的辩解/辩护内容为：被告人吴必定辩称，没有伤害被害人的故意。其辩护人提出，被告人吴必定对被害人李某甲的伤害行为具有防卫性质；主观恶性小，社会危害性不大；被害人李某甲有明显过错；被告人吴必定认罪态度好，有悔罪表现，系初犯、偶犯，请求对其减轻处罚",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "defense_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "c9afdc75d16a7c5f",
+            "evidence_preview": "被告人吴必定辩称，没有伤害被害人的故意。其辩护人提出，被告人吴必定对被害人李某甲的伤害行为具有防卫性质；主观恶性小，社会危害性不大；被害人李某甲有明显过错；被告人吴必定认罪态度好，有悔罪表现，系初犯、偶犯，请求对其减轻处罚。"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 317.925
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 306.675
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 291.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defense_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+              "score": 270.825
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_defense_adoption",
+      "query": "吴必定案法院是否采纳辩解",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "reasoning"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "不予采纳"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "辩解理由"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案法院是否采纳辩解",
+        "answer_type": "reasoning",
+        "answer": "吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 693.495
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defendant_confession_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defendant_confession_texts:0:0",
+              "score": 553.08
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 387.625
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defense_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+              "score": 356.615
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 300.875
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing_case_sentence",
+      "query": "不存在的人名案判了多久",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "没有在样本检索结果中找到"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "case_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "不存在的人名案判了多久",
+        "answer_type": "no_answer",
+        "answer": "没有在样本检索结果中找到标题包含“不存在的人名”的案例，无法回答。",
+        "warnings": [
+          "case_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "孙英辉、李传红受贿一审刑事判决书",
+              "retrieval_id": "case:46e34d95-895b-40a3-9c6a-c95b08beb25b:b5027571c7:judgment_text:scalar:0",
+              "score": 116.232
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "左权等八人职务侵占等一审刑事判决书",
+              "retrieval_id": "case:f0276cf6-64f1-403e-92b2-f25711cf7636:142a6759b0:judgment_text:scalar:1",
+              "score": 78.648
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "黄小虎贪污、受贿、行贿、职务侵占、余斌职务侵占、故意隐匿、销毁会计凭证、会计帐簿、姚发征、赵林职务侵占一审刑事判决书",
+              "retrieval_id": "case:0d5223df-994a-4dd5-bac8-2733bb89ece8:10ed04366b:judgment_text:scalar:0",
+              "score": 71.688
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "左权等八人职务侵占等一审刑事判决书",
+              "retrieval_id": "case:f0276cf6-64f1-403e-92b2-f25711cf7636:142a6759b0:judgment_text:scalar:0",
+              "score": 71.688
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "李士秀贪污一审刑事判决书",
+              "retrieval_id": "case:6524b276-483b-4343-b0fc-33667bbd4bc6:6d45deb763:judgment_text:scalar:0",
+              "score": 56.376
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing_case_articles",
+      "query": "火星盗窃案适用了哪些法条",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "case_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "火星盗窃案适用了哪些法条",
+        "answer_type": "no_answer",
+        "answer": "没有在样本检索结果中找到标题包含“火星盗窃”的案例，无法回答。",
+        "warnings": [
+          "case_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 0,
+          "final_context_count": 8,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "对生产、销售伪劣商品行为的法条适用",
+              "retrieval_id": "law:law:criminal_law:149",
+              "score": 73.1808
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "死刑适用对象的限制",
+              "retrieval_id": "law:law:criminal_law:49",
+              "score": 66.7359
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "盗窃、抢夺枪支、弹药、爆炸物、危险物质罪",
+              "retrieval_id": "law:law:criminal_law:127",
+              "score": 66.7359
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "盗窃罪",
+              "retrieval_id": "law:law:criminal_law:264",
+              "score": 66.7359
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "盗窃、抢夺武器装备、军用物资罪",
+              "retrieval_id": "law:law:criminal_law:438",
+              "score": 66.7359
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "irrelevant_law_article",
+      "query": "刑法第九百九十九条规定了什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "没有在现行刑法样本法条中找到"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "requested_article_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "刑法第九百九十九条规定了什么",
+        "answer_type": "no_answer",
+        "answer": "没有在现行刑法样本法条中找到请求的具体条号，无法回答。",
+        "warnings": [
+          "requested_article_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 0,
+          "final_context_count": 8,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "单位犯金融诈骗罪的处罚规定",
+              "retrieval_id": "law:law:criminal_law:200",
+              "score": 544.6089
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "单位犯危害税收征管罪的处罚规定",
+              "retrieval_id": "law:law:criminal_law:211",
+              "score": 534.2139
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "单位犯侵犯知识产权罪的处罚规定",
+              "retrieval_id": "law:law:criminal_law:220",
+              "score": 534.2139
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "有期徒刑的期限",
+              "retrieval_id": "law:law:criminal_law:45",
+              "score": 532.9665
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "假释的程序",
+              "retrieval_id": "law:law:criminal_law:82",
+              "score": 532.9665
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_current_law_only",
+      "query": "吴必定案现行刑法适用了哪些法条",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第十二条第一款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "law_version=current"
+        },
+        {
+          "name": "answer_not_contains",
+          "passed": true,
+          "expected": "第一百三十四条第二款"
+        },
+        {
+          "name": "answer_not_contains",
+          "passed": true,
+          "expected": "law_version=1979"
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "law_version": "current",
+            "resolution": "law_chunk_found"
+          }
+        }
+      ],
+      "result": {
+        "query": "吴必定案现行刑法适用了哪些法条",
+        "answer_type": "applied_articles",
+        "answer": "吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "judgment_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "22cbc22e9046eb27",
+            "evidence_preview": "被告人吴必定犯故意伤害罪，判处有期徒刑十年。（刑期从判决执行之日起计算。判决执行以前先行羁押的，羁押一日折抵刑期一日。即从2013年8月16日起至2023年8月15日止。） 如不服本判决，可在接到判决书的第二日起十日内，通过本院或直接向江西省高级人民法院提出上诉。书面上诉的，应当提交上诉状正本一份，副本二份。"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:12",
+            "chunk_id": "law:criminal_law:12",
+            "title": "刑法溯及力",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a92204dabc96aff8",
+            "evidence_preview": "第12条 刑法溯及力 中华人民共和国成立以后本法施行以前的行为，如果当时的法律不认 为是犯罪的，适用当时的法律；如果当时的法律认为是犯罪的，依照本法总则第四章第八节的规定应 当追诉的，按照当时的法律追究刑事责任，但是如果本法不认为是犯罪或者处刑较轻的，适用本法。 本法施行以前，依照当时的法律已经作出的生效判决，继续有效。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "article_no": "12",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:12",
+            "law_chunk_id": "law:criminal_law:12",
+            "law_title": "刑法溯及力"
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 866.52
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 448.5375
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:1:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_case_applied_law_then",
+      "query": "吴必定案当时适用的法条是什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "applied_articles"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第十二条第一款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "第一百三十四条第二款"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "law_version=1979"
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "no_current_law_chunk"
+        },
+        {
+          "name": "graph_edge",
+          "passed": true,
+          "expected": {
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk"
+          }
+        }
+      ],
+      "result": {
+        "query": "吴必定案当时适用的法条是什么",
+        "answer_type": "applied_articles",
+        "answer": "吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。",
+        "warnings": [
+          "no_current_law_chunk"
+        ],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          },
+          {
+            "retrieval_id": "law:law:criminal_law:12",
+            "chunk_id": "law:criminal_law:12",
+            "title": "刑法溯及力",
+            "source_type": "law_article",
+            "field": "law_article",
+            "case_id": null,
+            "source_file": "刑法.txt",
+            "text_hash": "a92204dabc96aff8",
+            "evidence_preview": "第12条 刑法溯及力 中华人民共和国成立以后本法施行以前的行为，如果当时的法律不认 为是犯罪的，适用当时的法律；如果当时的法律认为是犯罪的，依照本法总则第四章第八节的规定应 当追诉的，按照当时的法律追究刑事责任，但是如果本法不认为是犯罪或者处刑较轻的，适用本法。 本法施行以前，依照当时的法律已经作出的生效判决，继续有效。"
+          }
+        ],
+        "graph_paths": [
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第十二条第一款",
+            "article_no": "12",
+            "law_name": "中华人民共和国刑法",
+            "law_version": "current",
+            "resolution": "law_chunk_found",
+            "law_retrieval_id": "law:law:criminal_law:12",
+            "law_chunk_id": "law:criminal_law:12",
+            "law_title": "刑法溯及力"
+          },
+          {
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "case_title": "吴必定故意伤害一审刑事判决书",
+            "edge_type": "CASE_APPLIES_ARTICLE",
+            "article": "第一百三十四条第二款",
+            "article_no": "134",
+            "law_name": "1979年中华人民共和国刑法",
+            "law_version": "1979",
+            "resolution": "no_current_law_chunk",
+            "law_retrieval_id": null,
+            "law_chunk_id": null,
+            "law_title": null
+          }
+        ],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 448.5375
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 361.05
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:8:0",
+              "score": 268.2
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "wu_biding_defense_to_adoption_multihop",
+      "query": "吴必定案被告人辩称什么，法院为什么不采纳",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "reasoning"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "吴必定"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "没有伤害被害人的故意"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "不予采纳"
+        },
+        {
+          "name": "citation_title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        },
+        {
+          "name": "citation_field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "citation_binding_fields",
+          "passed": true,
+          "expected": [
+            "retrieval_id",
+            "chunk_id",
+            "source_file",
+            "text_hash"
+          ]
+        }
+      ],
+      "result": {
+        "query": "吴必定案被告人辩称什么，法院为什么不采纳",
+        "answer_type": "reasoning",
+        "answer": "吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。",
+        "warnings": [],
+        "citations": [
+          {
+            "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "chunk_id": "7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+            "title": "吴必定故意伤害一审刑事判决书",
+            "source_type": "case_chunk",
+            "field": "reasoning_text",
+            "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+            "source_file": "data/data/类案检索/train/train_set/candidates/-1071/10893.json",
+            "text_hash": "f85afedf017ff98b",
+            "evidence_preview": "本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发"
+          }
+        ],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 5,
+          "final_context_count": 9,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 717.255
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 408.625
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 306.675
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 271.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defense_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+              "score": 270.825
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "compare_sentence_unsupported",
+      "query": "比较吴必定案和穆某案的量刑",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "answer_contains",
+          "passed": true,
+          "expected": "不支持跨案例比较"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "low_confidence"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "比较吴必定案和穆某案的量刑",
+        "answer_type": "no_answer",
+        "answer": "当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。",
+        "warnings": [
+          "insufficient_context",
+          "low_confidence"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 722.1
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "穆某犯危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:judgment_text:scalar:0",
+              "score": 452.4
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 299.025
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "compare_applied_articles_unsupported",
+      "query": "吴必定案和穆某案适用法条是否相同",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "low_confidence"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "吴必定案和穆某案适用法条是否相同",
+        "answer_type": "no_answer",
+        "answer": "当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。",
+        "warnings": [
+          "insufficient_context",
+          "low_confidence"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 448.5375
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 361.05
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+              "score": 276.875
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "穆某犯危险驾驶罪一审刑事判决书",
+              "retrieval_id": "case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:reasoning_text:scalar:0",
+              "score": 271.35
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0",
+              "score": 265.8
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "compare_facts_unsupported",
+      "query": "吴必定案和孙五十四案事实有什么差异",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "low_confidence"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "吴必定案和孙五十四案事实有什么差异",
+        "answer_type": "no_answer",
+        "answer": "当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。",
+        "warnings": [
+          "insufficient_context",
+          "low_confidence"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0",
+              "score": 404.73
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0",
+              "score": 388.31
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "court_found_facts_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:court_found_facts_text:scalar:0",
+              "score": 377.25
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "accusation_text",
+              "title": "内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书",
+              "retrieval_id": "case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:accusation_text:scalar:0",
+              "score": 336.38
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 331.965
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "partial_name_low_confidence",
+      "query": "吴必案判了多久",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "low_confidence"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "吴必案判了多久",
+        "answer_type": "no_answer",
+        "answer": "案名“吴必”过短，无法可靠定位具体案例。",
+        "warnings": [
+          "insufficient_context",
+          "low_confidence"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 34.8
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "汪翟君贪污、挪用公款、非法经营同类营业二审刑事判决书",
+              "retrieval_id": "case:c36084ce-7993-4e98-8701-d74794d7ef0b:bd7b47a40f:judgment_text:scalar:0",
+              "score": 21.576
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "孙英辉、李传红受贿一审刑事判决书",
+              "retrieval_id": "case:46e34d95-895b-40a3-9c6a-c95b08beb25b:b5027571c7:judgment_text:scalar:0",
+              "score": 21.576
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "李建光、纪士让等滥用职权罪何卫玩忽职守罪一审刑事判决书",
+              "retrieval_id": "case:365b188e-fcf0-4a64-a2b7-415703cc0c93:6a18f8d8f0:judgment_text:scalar:0",
+              "score": 21.576
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+              "score": 18.9
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "similar_name_low_confidence",
+      "query": "张君案为什么构成故意伤害罪",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "low_confidence"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "张君案为什么构成故意伤害罪",
+        "answer_type": "no_answer",
+        "answer": "案名“张君”过短，无法可靠定位具体案例。",
+        "warnings": [
+          "insufficient_context",
+          "low_confidence"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 11,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "张君成故意伤害罪一审刑事判决书",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:reasoning_text:scalar:0",
+              "score": 1223.64
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:0",
+              "score": 1183.545
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:reasoning_text:scalar:0",
+              "score": 1130.085
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:reasoning_text:scalar:0",
+              "score": 1109.295
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "刘健故意伤害一审刑事判决书",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:reasoning_text:scalar:0",
+              "score": 1013.364
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "same_crime_missing_case",
+      "query": "不存在故意伤害案判了多久",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "case_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "不存在故意伤害案判了多久",
+        "answer_type": "no_answer",
+        "answer": "没有在样本检索结果中找到标题包含“不存在故意伤害”的案例，无法回答。",
+        "warnings": [
+          "case_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0",
+              "score": 1032.168
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "刘健故意伤害一审刑事判决书",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0",
+              "score": 931.944
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "吴必定故意伤害一审刑事判决书",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+              "score": 920.808
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "史建辉故意伤害二审刑事判决书",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0",
+              "score": 920.808
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "张君成故意伤害罪一审刑事判决书",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:judgment_text:scalar:0",
+              "score": 920.808
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_weekday",
+      "query": "今天星期几？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "今天星期几？",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "陈某宇、张某豪非法经营一审刑事判决书",
+              "retrieval_id": "case:e6c681d2-98ae-4fa6-91a0-cf8e9f9e21bb:98d21ef0a1:evidence_text:scalar:6",
+              "score": 7.56
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "inspection_records_texts",
+              "title": "陈某宇、张某豪非法经营一审刑事判决书",
+              "retrieval_id": "case:e6c681d2-98ae-4fa6-91a0-cf8e9f9e21bb:98d21ef0a1:inspection_records_texts:4:1",
+              "score": 7.2
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "张孝华强奸一审刑事判决书",
+              "retrieval_id": "case:e5551f6a-2abd-40a1-a79e-a0e6a8bb8672:465ac25882:witness_testimony_texts:0:0",
+              "score": 6.24
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "张孝华强奸一审刑事判决书",
+              "retrieval_id": "case:e5551f6a-2abd-40a1-a79e-a0e6a8bb8672:465ac25882:witness_testimony_texts:1:0",
+              "score": 6.24
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "被告人杨忠安贪污、挪用公款一审刑事判决书",
+              "retrieval_id": "case:18ee527f-4af6-4f1e-a5d2-180072a789e7:728e760baf:witness_testimony_texts:9:0",
+              "score": 6.24
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_weather",
+      "query": "天气怎么样？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "天气怎么样？",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 8,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "王君、潘成贵诈骗一审刑事判决书",
+              "retrieval_id": "case:ee52dccb-b575-49e6-b08f-d43c69b27a14:1c8a8467ea:evidence_text:scalar:3",
+              "score": 24.15
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "inspection_records_texts",
+              "title": "王君、潘成贵诈骗一审刑事判决书",
+              "retrieval_id": "case:ee52dccb-b575-49e6-b08f-d43c69b27a14:1c8a8467ea:inspection_records_texts:0:1",
+              "score": 23.0
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "王君、潘成贵诈骗一审刑事判决书",
+              "retrieval_id": "case:ee52dccb-b575-49e6-b08f-d43c69b27a14:1c8a8467ea:evidence_text:scalar:4",
+              "score": 18.9
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "王君、潘成贵诈骗一审刑事判决书",
+              "retrieval_id": "case:ee52dccb-b575-49e6-b08f-d43c69b27a14:1c8a8467ea:evidence_text:scalar:12",
+              "score": 13.65
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "inspection_records_texts",
+              "title": "王君、潘成贵诈骗一审刑事判决书",
+              "retrieval_id": "case:ee52dccb-b575-49e6-b08f-d43c69b27a14:1c8a8467ea:inspection_records_texts:7:1",
+              "score": 13.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_identity",
+      "query": "你是谁？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "你是谁？",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:witness_testimony_texts:13:0",
+              "score": 6.24
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defendant_confession_texts",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:defendant_confession_texts:4:0",
+              "score": 6.24
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:judgment_text:scalar:0",
+              "score": 4.64
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:judgment_text:scalar:1",
+              "score": 4.64
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:reasoning_text:scalar:0",
+              "score": 4.32
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_poem",
+      "query": "帮我写一首诗",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "帮我写一首诗",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "浦志刚、库吐来提·库尔班等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:6244d73d-4d72-41d8-8c93-0e8042da279a:0f5458ab99:witness_testimony_texts:0:1",
+              "score": 12.48
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "卢×合同诈骗罪一审刑事判决书",
+              "retrieval_id": "case:65209567-241f-4fec-895a-48079a0ac621:f5e50add45:evidence_text:scalar:0",
+              "score": 10.92
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "evidence_text",
+              "title": "李某甲信用卡诈骗一案一审刑事判决书",
+              "retrieval_id": "case:ef73f4ce-b971-45d4-9709-a01cc1543613:1781433843:evidence_text:scalar:1",
+              "score": 10.92
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "documentary_evidence_texts",
+              "title": "卢×合同诈骗罪一审刑事判决书",
+              "retrieval_id": "case:65209567-241f-4fec-895a-48079a0ac621:f5e50add45:documentary_evidence_texts:0:0",
+              "score": 10.4
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "documentary_evidence_texts",
+              "title": "李某甲信用卡诈骗一案一审刑事判决书",
+              "retrieval_id": "case:ef73f4ce-b971-45d4-9709-a01cc1543613:1781433843:documentary_evidence_texts:3:0",
+              "score": 10.4
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_civil_contract",
+      "query": "民法合同纠纷怎么处理？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "民法合同纠纷怎么处理？",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "付淮起合同诈骗一案一审刑事判决书",
+              "retrieval_id": "case:0e40b734-d1cc-49be-b341-40a166b3c1b5:a7dc7ad51f:reasoning_text:scalar:0",
+              "score": 41.85
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "defendant_confession_texts",
+              "title": "左权等八人职务侵占等一审刑事判决书",
+              "retrieval_id": "case:f0276cf6-64f1-403e-92b2-f25711cf7636:142a6759b0:defendant_confession_texts:18:0",
+              "score": 39.36
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "witness_testimony_texts",
+              "title": "周国华滥用职权罪、贪污罪二审刑事判决书",
+              "retrieval_id": "case:d79262cf-4e54-4640-9b21-74c18b0a54c8:fd9401cb87:witness_testimony_texts:2:0",
+              "score": 36.96
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "赵永刚等贪污罪一审刑事判决书",
+              "retrieval_id": "case:7d949ce5-854a-4aae-8296-383f875721e6:48fd939544:reasoning_text:scalar:1",
+              "score": 36.72
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "reasoning_text",
+              "title": "卢×合同诈骗罪一审刑事判决书",
+              "retrieval_id": "case:65209567-241f-4fec-895a-48079a0ac621:f5e50add45:reasoning_text:scalar:0",
+              "score": 36.45
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "out_of_scope_admin_law",
+      "query": "行政处罚法第几条是什么？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "out_of_scope"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "行政处罚法第几条是什么？",
+        "answer_type": "no_answer",
+        "answer": "该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。",
+        "warnings": [
+          "insufficient_context",
+          "out_of_scope"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 0,
+          "final_context_count": 8,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "施行日期",
+              "retrieval_id": "law:law:criminal_law:452",
+              "score": 585.09
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "非刑罚性处置措施",
+              "retrieval_id": "law:law:criminal_law:37",
+              "score": 579.15
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "逃税罪",
+              "retrieval_id": "law:law:criminal_law:201",
+              "score": 579.15
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "从重处罚与从轻处罚",
+              "retrieval_id": "law:law:criminal_law:62",
+              "score": 571.428
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "走私普通货物、物品罪",
+              "retrieval_id": "law:law:criminal_law:153",
+              "score": 570.24
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing_case_specific_sentence",
+      "query": "火星盗窃案判了多久？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "case_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "火星盗窃案判了多久？",
+        "answer_type": "no_answer",
+        "answer": "没有在样本检索结果中找到标题包含“火星盗窃”的案例，无法回答。",
+        "warnings": [
+          "case_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 12,
+          "final_context_count": 12,
+          "top_direct_hits": [
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+              "retrieval_id": "case:374baa6c-1956-4ab7-b94e-7b7fbe1b2d71:6458f9f37a:judgment_text:scalar:0",
+              "score": 57.072
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "刘方祥、刘礼芬盗窃一审刑事判决书",
+              "retrieval_id": "case:99f00264-8daf-4797-b8cd-4a981feb386d:e456ac9258:judgment_text:scalar:0",
+              "score": 57.072
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:judgment_text:scalar:1",
+              "score": 39.672
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "浙江省杭州市余杭区人民法院 刑事判决书 （2019）浙0110刑初435号",
+              "retrieval_id": "case:303e3f27-5da5-4e7e-87ff-a86929e03084:89ca45585c:judgment_text:scalar:0",
+              "score": 39.672
+            },
+            {
+              "source_type": "case_chunk",
+              "field": "judgment_text",
+              "title": "王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "retrieval_id": "case:0ac5090d-2598-4483-bb4d-0a0c8f5eb09f:6b8de393d9:judgment_text:scalar:0",
+              "score": 32.712
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "missing_specific_article",
+      "query": "刑法第八百八十八条是什么？",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "answer_type",
+          "passed": true,
+          "expected": "no_answer"
+        },
+        {
+          "name": "citation_count",
+          "passed": true,
+          "expected": 0
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "requested_article_not_found"
+        },
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "insufficient_context"
+        }
+      ],
+      "result": {
+        "query": "刑法第八百八十八条是什么？",
+        "answer_type": "no_answer",
+        "answer": "没有在现行刑法样本法条中找到请求的具体条号，无法回答。",
+        "warnings": [
+          "requested_article_not_found",
+          "insufficient_context"
+        ],
+        "citations": [],
+        "graph_paths": [],
+        "search_summary": {
+          "direct_hit_count": 8,
+          "graph_expansion_count": 0,
+          "final_context_count": 8,
+          "top_direct_hits": [
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "职务侵占罪",
+              "retrieval_id": "law:law:criminal_law:183",
+              "score": 523.611
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "非国家工作人员受贿罪",
+              "retrieval_id": "law:law:criminal_law:184",
+              "score": 523.611
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "职务侵占罪",
+              "retrieval_id": "law:law:criminal_law:271",
+              "score": 521.532
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "贪污罪",
+              "retrieval_id": "law:law:criminal_law:394",
+              "score": 521.532
+            },
+            {
+              "source_type": "law_article",
+              "field": "law_article",
+              "title": "对生产、销售伪劣商品行为的法条适用",
+              "retrieval_id": "law:law:criminal_law:149",
+              "score": 519.453
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

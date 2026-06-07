@@ -1,7 +1,30 @@
 raw/
-processing/__pycache__/
-*.pyc
+models/
+.env
+.env.*
+!.env.example
 
-processing_data/*
-!processing_data/search_eval_sample.json
-!processing_data/answer_eval_sample.json
+# Python caches and build metadata
+.pytest_cache/
+*.egg-info/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.mypy_cache/
+.ruff_cache/
+
+# Runtime logs and local state
+*.log
+*.tmp
+processing_data/*.log
+processing_data/chat_sessions.sqlite3
+
+# Large local model/training artifacts. Keep references in docs/artifact_inventory.md.
+processing_data/query_rewriter_lora/
+processing_data/query_understanding_lora/
+processing_data/router_lora/
+processing_data/query_router_lora/
+
+frontend/node_modules/
+frontend/dist/

@@ -1,0 +1,8 @@
+Adversarial eval sample report
+status: PASS
+cases: 120
+pass: 120
+fail: 0
+pass_rate: 100.00%
+fail_by_category: {}
+fail_by_reason: {}

@@ -1,0 +1,66 @@
+{
+  "schema_version": "router-question-collection-v1",
+  "created_at_utc": "2026-05-21T06:42:38.398308+00:00",
+  "outputs": {
+    "criminal_law_questions": "D:\\GraphRAG-V1\\processing_data\\router_training_questions\\criminal_law_questions.jsonl",
+    "other_questions": "D:\\GraphRAG-V1\\processing_data\\router_training_questions\\other_questions.jsonl",
+    "all_questions_unlabeled": "D:\\GraphRAG-V1\\processing_data\\router_training_questions\\all_questions_unlabeled.jsonl"
+  },
+  "requested_counts": {
+    "criminal_law_questions": 2000,
+    "other_questions": 3000,
+    "non_criminal_legal_inside_other": 500
+  },
+  "actual_counts": {
+    "criminal_law_questions": 2000,
+    "other_questions": 3000,
+    "non_criminal_legal_inside_other": 500,
+    "all_questions_unlabeled": 5000
+  },
+  "source_counts": {
+    "criminal_law_questions": {
+      "disc_law_sft_criminal": 650,
+      "local_case_query_crime_derived": 630,
+      "local_criminal_law_article_derived": 551,
+      "curated_criminal_law_questions": 100,
+      "agieval_jec_qa_criminal": 69
+    },
+    "other_questions": {
+      "disc_law_sft_non_criminal_legal": 250,
+      "hc3_law_non_criminal_legal": 191,
+      "agieval_jec_qa_non_criminal_legal": 59,
+      "hc3_open_qa_general": 1400,
+      "hc3_baike_general": 1100
+    }
+  },
+  "template_family_counts": {
+    "criminal_law_questions": {
+      "natural_or_dataset": 719,
+      "case_alias": 513,
+      "crime_general": 236,
+      "derived_other": 256,
+      "law_article_no": 276
+    },
+    "other_questions": {
+      "natural_or_dataset": 3000
+    }
+  },
+  "quality_checks": {
+    "criminal_count": 2000,
+    "other_count": 3000,
+    "all_count": 5000,
+    "duplicate_questions": 0,
+    "bad_format_hits": 0,
+    "other_broad_criminal_hits": 0,
+    "criminal_broad_criminal_hits": 1886,
+    "max_question_length": 217,
+    "long_question_over_180": 7,
+    "max_single_source_share": 0.28,
+    "max_criminal_template_family_share": 0.3595
+  },
+  "notes": [
+    "Records are not route-labeled; files are separated only to satisfy collection quotas.",
+    "Non-criminal legal questions are included inside other_questions and identifiable by source metadata for audit.",
+    "Derived criminal questions are generated from local case/law corpora without using an LLM."
+  ]
+}

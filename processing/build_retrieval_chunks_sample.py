@@ -22,6 +22,9 @@ def normalize_case_chunk(row: dict) -> dict:
         "case_id": row.get("case_id", ""),
         "case_metadata": row.get("case_metadata", {}),
         "law_metadata": None,
+        "article_no": None,
+        "law_name": None,
+        "law_version": None,
         "extraction_method": row.get("extraction_method", ""),
         "quality_flags": row.get("quality_flags", []),
     }
@@ -41,6 +44,9 @@ def normalize_law_chunk(row: dict) -> dict:
         "case_id": None,
         "case_metadata": None,
         "law_metadata": row.get("law_metadata", {}),
+        "article_no": row.get("article_no"),
+        "law_name": (row.get("law_metadata") or {}).get("law_name", "中华人民共和国刑法"),
+        "law_version": (row.get("law_metadata") or {}).get("law_version", "current"),
         "extraction_method": row.get("extraction_method", ""),
         "quality_flags": row.get("quality_flags", []),
     }

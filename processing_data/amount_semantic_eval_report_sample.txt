@@ -1,0 +1,47 @@
+Amount semantic eval sample report
+status: PASS
+cases: 6
+pass: 6
+fail: 0
+
+[PASS] amount_theft_3000_burglary: 入户盗窃3000元有没有类似案例
+  1. 刘方祥、刘礼芬盗窃一审刑事判决书 reasoning_text score=5116.77 amount=3000/theft_amount_single
+  2. 刘方祥、刘礼芬盗窃一审刑事判决书 judgment_text score=5060.42 amount=3000/theft_amount_single
+  3. 刘方祥、刘礼芬盗窃一审刑事判决书 defense_text score=5040.176667 amount=3000/theft_amount_single
+  4. 刘方祥、刘礼芬盗窃一审刑事判决书 accusation_text score=5030.63 amount=3000/theft_amount_single
+  5. 刘方祥、刘礼芬盗窃一审刑事判决书 evidence_text score=5024.442 amount=3000/theft_amount_single
+
+[PASS] amount_theft_40000_related: 盗窃金额40000元有没有类似案例
+  1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 reasoning_text score=3915.11 amount=43852/theft_amount_total
+  2. 刘方祥、刘礼芬盗窃一审刑事判决书 accusation_text score=3860.65 amount=39136/theft_amount_total
+  3. 刘方祥、刘礼芬盗窃一审刑事判决书 defense_text score=3860.65 amount=39136/theft_amount_total
+  4. 刘方祥、刘礼芬盗窃一审刑事判决书 evidence_text score=3860.65 amount=39136/theft_amount_total
+  5. 刘方祥、刘礼芬盗窃一审刑事判决书 victim_statement_texts score=3860.65 amount=39136/theft_amount_total
+
+[PASS] amount_burglary_40000_sentence: 入户盗窃40000元怎么判，有案例参考吗
+  1. 刘方祥、刘礼芬盗窃一审刑事判决书 judgment_text score=4616.876 amount=39136/theft_amount_total
+  2. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 judgment_text score=4069.401 amount=43852/theft_amount_total
+  3. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 reasoning_text score=1839.49 amount=43852/theft_amount_total
+  4. 刘方祥、刘礼芬盗窃一审刑事判决书 reasoning_text score=1807.68 amount=39136/theft_amount_total
+  5. 刘方祥、刘礼芬盗窃一审刑事判决书 defense_text score=1802.756 amount=39136/theft_amount_total
+
+[PASS] amount_fine_40000_theft: 罚金40000元的盗窃案例
+  1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 judgment_text score=5604.668 amount=40000/fine_amount
+  2. 刘方祥、刘礼芬盗窃一审刑事判决书 judgment_text score=5531.982 amount=40000/fine_amount
+  3. 王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书 judgment_text score=4916.2324 amount=40000/fine_amount
+  4. 王静、唐小梅、邓小华等走私、贩卖、运输、制造毒品罪一审刑事判决书 judgment_text score=3742.95 amount=40000/fine_amount
+  5. 浙江省杭州市余杭区人民法院 刑事判决书 （2019）浙0110刑初435号 judgment_text score=3026.479455 amount=30000/fine_amount
+
+[PASS] amount_restitution_not_theft: 退赃40000元的盗窃案例
+  1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 reasoning_text score=4440.665 amount=40072/restitution_amount
+  2. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 judgment_text score=4061.085 amount=40072/restitution_amount
+  3. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 court_found_facts_text score=4004.525 amount=40072/restitution_amount
+  4. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 accusation_text score=3999.621667 amount=40072/restitution_amount
+  5. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 defense_text score=3955.019533 amount=40072/restitution_amount
+
+[PASS] amount_single_near_43852: 单次盗窃金额接近43852元的案例
+  1. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 reasoning_text score=4174.54 amount=43852/theft_amount_total
+  2. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 court_found_facts_text score=3698.366667 amount=43852/theft_amount_total
+  3. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 judgment_text score=3695.363 amount=43852/theft_amount_total
+  4. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 accusation_text score=3691.825 amount=43852/theft_amount_total
+  5. 王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 defense_text score=3651.825 amount=43852/theft_amount_total

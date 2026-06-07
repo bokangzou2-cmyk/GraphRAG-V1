@@ -1,0 +1,30 @@
+Amount semantic quality report
+total_amounts: 25134
+unknown_amount_count: 22673
+
+role_counts:
+  compensation_amount: 466
+  fine_amount: 690
+  illegal_gain_amount: 291
+  restitution_amount: 579
+  theft_amount_single: 188
+  theft_amount_total: 31
+  unknown_amount: 22673
+  victim_loss_amount: 216
+
+top field_counts:
+  fact_text: 8752
+  amount_texts: 4707
+  evidence_text: 2881
+  witness_testimony_texts: 2580
+  documentary_evidence_texts: 1339
+  defendant_confession_texts: 1246
+  defense_text: 952
+  court_found_facts_text: 870
+  accusation_text: 675
+  judgment_text: 356
+  inspection_records_texts: 304
+  reasoning_text: 199
+  sentencing: 165
+  expert_opinion_texts: 55
+  victim_statement_texts: 53

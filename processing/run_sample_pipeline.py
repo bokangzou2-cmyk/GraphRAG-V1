@@ -10,12 +10,14 @@ STEPS = [
     "parse_law_sample.py",
     "parse_cases_sample.py",
     "enrich_cases_sample.py",
+    "extract_amounts_sample.py",
     "chunk_cases_sample.py",
     "chunk_law_sample.py",
     "build_retrieval_chunks_sample.py",
     "build_graph_sample.py",
     "validate_sample_outputs.py",
     "make_sample_report.py",
+    "make_manifest_sample.py",
 ]
 
 

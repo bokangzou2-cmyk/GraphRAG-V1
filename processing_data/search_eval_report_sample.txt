@@ -1,0 +1,115 @@
+Search eval sample report
+status: PASS
+cases: 12
+pass: 12
+warn: 0
+
+[PASS] wu_biding_sentence: 吴必定案判了多久
+  direct 1. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=722.1
+  direct 2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=299.025
+  direct 3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=276.875
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第一百三十四条 (1979) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第十二条第一款 (current) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+
+[PASS] wu_biding_applied_articles: 吴必定案适用了哪些法条
+  direct 1. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=448.5375
+  direct 2. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=361.05
+  direct 3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=276.875
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第一百三十四条 (1979) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第十二条第一款 (current) -> no_current_law_chunk
+  graph. CASE_CITES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+
+[PASS] intentional_injury_law: 故意伤害罪相关刑法条文是什么
+  direct 1. law_article law_article 故意伤害罪 article_no=234 score=1764.18
+  direct 2. law_article law_article 故意伤害罪 article_no=289 score=1722.6
+  direct 3. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=889.488
+  graph. CASE_APPLIES_ARTICLE 第二百三十四条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第二百九十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百零三条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百一十条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第二十五条第一款 (current) -> law_chunk_found
+
+[PASS] intentional_injury_current_article: 刑法第二百三十四条规定了什么
+  direct 1. law_article law_article 故意伤害罪 article_no=234 score=2001.78
+  direct 2. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=608.0256
+  direct 3. law_article law_article 故意伤害罪 article_no=289 score=605.7315
+  graph. CASE_APPLIES_ARTICLE 第二百三十四条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第二百九十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百零三条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百一十条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第二十五条第一款 (current) -> law_chunk_found
+
+[PASS] dangerous_driving_case: 穆某危险驾驶罪判了什么刑
+  direct 1. case_chunk judgment_text 穆某犯危险驾驶罪一审刑事判决书 score=896.1
+  direct 2. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=680.34
+  direct 3. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=671.64
+  graph. CASE_APPLIES_ARTICLE 第一百三十三条之一 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十三条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第七十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第七十三条第一款 (current) -> law_chunk_found
+
+[PASS] dangerous_driving_law: 危险驾驶罪对应刑法第几条
+  direct 1. law_article law_article 危险驾驶罪 article_no=133.1 score=1740.42
+  direct 2. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=964.656
+  direct 3. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=839.376
+  graph. CASE_APPLIES_ARTICLE 第一百三十三条之一 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十七条第三款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十三条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第七十二条 (current) -> law_chunk_found
+
+[PASS] forestry_case_facts: 孙五十四滥伐林木案砍伐了多少立方米
+  direct 1. case_chunk reasoning_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=651.78
+  direct 2. case_chunk judgment_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=631.91
+  direct 3. case_chunk court_found_facts_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=577.25
+  graph. CASE_APPLIES_ARTICLE 第三百四十五条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第十七条之一 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第四十五条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十七条第一款 (current) -> law_chunk_found
+
+[PASS] forestry_applied_articles: 孙五十四案适用了哪些刑法法条
+  direct 1. case_chunk judgment_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=1118.3328
+  direct 2. case_chunk reasoning_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=607.095
+  direct 3. case_chunk court_found_facts_text 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书 score=374.75
+  graph. CASE_APPLIES_ARTICLE 第三百四十五条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第十七条之一 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第四十五条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十七条第一款 (current) -> law_chunk_found
+
+[PASS] bribery_case_sentence: 王红珍受贿案判了多久
+  direct 1. case_chunk judgment_text 王红珍受贿一审刑事判决书 score=999.108
+  direct 2. case_chunk reasoning_text 王红珍受贿一审刑事判决书 score=402.435
+  direct 3. case_chunk court_found_facts_text 王红珍受贿一审刑事判决书 score=367.625
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百八十五条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百八十六条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百八十三条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+
+[PASS] drug_case_sentence: 赵吉安贩卖毒品案判了多久
+  direct 1. case_chunk judgment_text 赵吉安走私、贩卖、运输、制造毒品一审刑事判决书 score=1075.668
+  direct 2. case_chunk judgment_text 张彦等贩卖毒品一审刑事判决书 score=1072.536
+  direct 3. case_chunk judgment_text 被告人邢笃鹏贩卖毒品罪一审刑事判决书 score=1016.856
+  graph. CASE_APPLIES_ARTICLE 第三百四十七条第四款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第三百五十七条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十五条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十七条第三款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十八条 (current) -> law_chunk_found
+
+[PASS] rape_law_article: 强奸罪刑法条文是什么
+  direct 1. law_article law_article 强奸罪 article_no=236 score=1380.159
+  direct 2. law_article law_article 罪刑法定 article_no=3 score=580.635
+  direct 3. law_article law_article 对生产、销售伪劣商品行为的法条适用 article_no=149 score=535.194
+
+[PASS] fraud_law_article: 诈骗罪相关刑法条文
+  direct 1. law_article law_article 诈骗罪 article_no=266 score=1374.219
+  direct 2. law_article law_article 票据诈骗罪 article_no=194 score=741.609
+  direct 3. law_article law_article 贷款诈骗罪 article_no=193 score=726.759

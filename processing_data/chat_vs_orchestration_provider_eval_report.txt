@@ -1,0 +1,29 @@
+Chat vs LangChain orchestration eval report
+created_at_utc: 2026-05-30T13:36:28.605750+00:00
+orchestration_generation_mode: provider
+cases: 3
+classification_counts: {"完全一致": 3}
+risk_issue_counts: {}
+provider_error_count: 0
+provider_grounding: {"stable": {"grounded_score_avg": 1.0, "citation_coverage_score_avg": 1.0, "hallucination_risk_score_avg": 0.0, "refusal_quality_score_avg": 1.0}, "orchestration": {"grounded_score_avg": 1.0, "citation_coverage_score_avg": 1.0, "hallucination_risk_score_avg": 0.0, "refusal_quality_score_avg": 1.0, "high_hallucination_risk_count": 0, "low_citation_coverage_count": 0}}
+
+[完全一致] general_weather (general): '今天天气怎么样？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_poem (general): '帮我写一首五言绝句'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}
+
+[完全一致] general_math (general): '123 加 456 等于多少？'
+  answer_type: stable=llm_direct orchestration=llm_direct
+  citations: stable=0 orchestration=0; graph_paths: stable=0 orchestration=0
+  confidence: stable={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"} orchestration={"level": "high", "score": 0.8, "reason": null, "query_type": "general_no_legal_retrieval", "router_label": "general_no_legal_retrieval"}
+  hallucination_risk: stable={"level": "low", "reasons": []} orchestration={"level": "low", "reasons": []}
+  grounding: stable={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}} orchestration={"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_direct", "context_count": 0, "citation_count": 0, "graph_path_count": 0, "historical_query": false}}

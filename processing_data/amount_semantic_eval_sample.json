@@ -1,0 +1,62 @@
+[
+  {
+    "id": "amount_theft_3000_burglary",
+    "category": "theft_amount",
+    "query": "入户盗窃3000元有没有类似案例",
+    "expected": {
+      "top1_title_contains_any": ["刘方祥"],
+      "top1_amount_role_any": ["theft_amount_single", "theft_amount_total"],
+      "top1_amount_value_between": [2500, 3500],
+      "top3_no_title_contains_any": ["诈骗", "贪污", "受贿"]
+    }
+  },
+  {
+    "id": "amount_theft_40000_related",
+    "category": "theft_amount",
+    "query": "盗窃金额40000元有没有类似案例",
+    "expected": {
+      "top3_title_contains_any": ["刘方祥", "王士东"],
+      "top3_amount_role_any": ["theft_amount_single", "theft_amount_total"],
+      "top3_no_title_contains_any": ["诈骗", "贪污", "受贿"]
+    }
+  },
+  {
+    "id": "amount_burglary_40000_sentence",
+    "category": "theft_amount_sentence",
+    "query": "入户盗窃40000元怎么判，有案例参考吗",
+    "expected": {
+      "top3_title_contains_any": ["刘方祥", "王士东"],
+      "top3_amount_role_any": ["theft_amount_single", "theft_amount_total"],
+      "top3_no_title_contains_any": ["诈骗", "贪污", "受贿"]
+    }
+  },
+  {
+    "id": "amount_fine_40000_theft",
+    "category": "fine_amount",
+    "query": "罚金40000元的盗窃案例",
+    "expected": {
+      "top1_title_contains_any": ["王士东", "刘方祥"],
+      "top1_amount_role_any": ["fine_amount"],
+      "top1_amount_value_between": [40000, 40000]
+    }
+  },
+  {
+    "id": "amount_restitution_not_theft",
+    "category": "role_separation",
+    "query": "退赃40000元的盗窃案例",
+    "expected": {
+      "top3_amount_role_any": ["restitution_amount"],
+      "top3_no_title_contains_any": ["诈骗", "贪污", "受贿"]
+    }
+  },
+  {
+    "id": "amount_single_near_43852",
+    "category": "theft_amount",
+    "query": "单次盗窃金额接近43852元的案例",
+    "expected": {
+      "top1_title_contains_any": ["王士东"],
+      "top1_amount_role_any": ["theft_amount_single", "theft_amount_total"],
+      "top1_amount_value_between": [43000, 44500]
+    }
+  }
+]

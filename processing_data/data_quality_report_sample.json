@@ -1,0 +1,156 @@
+{
+  "status": "PASS",
+  "files": {
+    "law_articles_sample.jsonl": {
+      "count": 490
+    },
+    "cases_sample.jsonl": {
+      "count": 150
+    },
+    "cases_enriched_sample.jsonl": {
+      "count": 150
+    },
+    "case_chunks_sample.jsonl": {
+      "count": 4080
+    },
+    "law_chunks_sample.jsonl": {
+      "count": 490
+    },
+    "retrieval_chunks_sample.jsonl": {
+      "count": 4570
+    },
+    "graph_sample.jsonl": {
+      "count": 32298
+    },
+    "graph_nodes_sample.jsonl": {
+      "count": 30592
+    },
+    "graph_edges_sample.jsonl": {
+      "count": 32298
+    }
+  },
+  "laws": {
+    "count": 490,
+    "duplicate_article_no": 0,
+    "blank_key_fields": {}
+  },
+  "cases": {
+    "count": 150,
+    "duplicate_case_source": 0,
+    "blank_key_fields": {}
+  },
+  "enriched_cases": {
+    "count": 150,
+    "duplicate_case_source": 0,
+    "blank_key_fields": {},
+    "metadata_coverage": {
+      "with_crimes": 150,
+      "with_cited_articles": 149,
+      "with_applied_articles": 146,
+      "with_sentencing": 147,
+      "with_amounts": 134,
+      "with_court_name": 149,
+      "with_judgment_date_text": 111
+    },
+    "applied_articles_not_in_legal_basis": [],
+    "suspicious_crimes": []
+  },
+  "chunks": {
+    "count": 4080,
+    "duplicate_chunk_id": 0,
+    "empty_text": 0,
+    "bad_text_length": 0,
+    "invalid_fields": [],
+    "list_index_errors": 0,
+    "scalar_index_errors": 0,
+    "over_max_chars": 0,
+    "max_text_length": 1167,
+    "avg_text_length": 425.9,
+    "field_counts": {
+      "accusation_text": 209,
+      "audio_video_evidence_texts": 11,
+      "court_found_facts_text": 199,
+      "defendant_confession_texts": 436,
+      "defense_text": 237,
+      "documentary_evidence_texts": 556,
+      "evidence_text": 647,
+      "expert_opinion_texts": 56,
+      "inspection_records_texts": 184,
+      "judgment_text": 155,
+      "reasoning_text": 178,
+      "victim_statement_texts": 32,
+      "witness_testimony_texts": 1180
+    },
+    "quality_flags": {
+      "long_sentence": 2,
+      "short_chunk": 104
+    }
+  },
+  "law_chunks": {
+    "count": 490,
+    "duplicate_chunk_id": 0,
+    "empty_text": 0,
+    "bad_text_length": 0,
+    "duplicate_article_no": 0,
+    "max_text_length": 851,
+    "avg_text_length": 153.1
+  },
+  "retrieval_chunks": {
+    "count": 4570,
+    "duplicate_retrieval_id": 0,
+    "empty_text": 0,
+    "bad_text_length": 0,
+    "source_type_counts": {
+      "case_chunk": 4080,
+      "law_article": 490
+    },
+    "invalid_source_types": [],
+    "case_rows_without_case_metadata": 0,
+    "law_rows_without_law_metadata": 0,
+    "max_text_length": 1167,
+    "avg_text_length": 396.7
+  },
+  "graph": {
+    "count": 32298,
+    "type_counts": {
+      "ARTICLE_HAS_CHUNK": 490,
+      "CASE_APPLIES_ARTICLE": 1081,
+      "CASE_CITES_ARTICLE": 1246,
+      "CASE_HAS_AMOUNT": 25134,
+      "CASE_HAS_CHUNK": 4080,
+      "CASE_OF_CRIME": 267
+    },
+    "law_version_counts": {
+      "1979": 3,
+      "current": 1952,
+      "judicial_interpretation": 298,
+      "other": 64,
+      "unknown": 10
+    },
+    "historical_law_edges": 3,
+    "current_law_edges": 2442,
+    "unknown_law_edges": 10,
+    "unresolved_applied_law_edges": 5,
+    "non_current_applied_law_edges": 182,
+    "chunk_grounded_applies": 1081,
+    "case_level_only_applies": 0,
+    "invalid_types": [],
+    "blank_edges": 0
+  },
+  "graph_nodes": {
+    "count": 30592,
+    "duplicate_node_id": 0,
+    "invalid_node_types": [],
+    "blank_nodes": 0
+  },
+  "errors": [],
+  "warnings": [
+    {
+      "code": "chunk_quality_flags_present",
+      "flags": {
+        "long_sentence": 2,
+        "short_chunk": 104
+      }
+    }
+  ]
+}

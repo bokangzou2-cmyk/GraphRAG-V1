@@ -1,0 +1,319 @@
+{
+  "schema_version": "chat-vs-orchestration-eval-v1",
+  "created_at_utc": "2026-05-30T13:36:28.605750+00:00",
+  "orchestration_generation_mode": "provider",
+  "case_count": 3,
+  "classification_counts": {
+    "完全一致": 3
+  },
+  "risk_issue_counts": {},
+  "provider_error_count": 0,
+  "provider_error_samples": [],
+  "provider_grounding": {
+    "stable": {
+      "grounded_score_avg": 1.0,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.0,
+      "refusal_quality_score_avg": 1.0
+    },
+    "orchestration": {
+      "grounded_score_avg": 1.0,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.0,
+      "refusal_quality_score_avg": 1.0,
+      "high_hallucination_risk_count": 0,
+      "low_citation_coverage_count": 0
+    }
+  },
+  "risk_samples": [],
+  "results": [
+    {
+      "id": "general_weather",
+      "query": "今天天气怎么样？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "今天是哪一天、您在哪个城市呢？天气信息需要知道具体位置和当前日期才能查询。请告诉我您所在的城市，或者开启联网搜索功能，我可以帮您查看实时天气。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "抱歉，我目前无法获取实时天气信息。请告诉我你所在的城市或地区，或者你可以自行通过天气应用或网站查询。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_poem",
+      "query": "帮我写一首五言绝句",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "《秋日山居》\n空山新雨霁，幽径少人行。\n独坐听松语，斜阳照晚晴。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "《山居》\n云闲松作伴，鸟悦竹为邻。\n一径通幽处，清风不染尘。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_math",
+      "query": "123 加 456 等于多少？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "123 加 456 等于 579。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "123 加 456 等于 579。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    }
+  ]
+}

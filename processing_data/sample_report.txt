@@ -1,0 +1,106 @@
+Sample pipeline report
+法条数量: 490
+案例数量: 150
+图边数量: 32298
+chunk 总数: 4080
+law chunk 总数: 490
+retrieval chunk 总数: 4570
+有 crime 的比例: 150/150 (100.0%)
+有 article 的比例: 149/150 (99.3%)
+有 applied_article 的比例: 146/150 (97.3%)
+
+质量校验:
+status: PASS
+errors: 0
+warnings: 1
+chunk duplicate_chunk_id: 0
+chunk over_max_chars: 0
+chunk quality_flags: {"long_sentence": 2, "short_chunk": 104}
+law_chunks: {"count": 490, "duplicate_chunk_id": 0, "empty_text": 0, "bad_text_length": 0, "duplicate_article_no": 0, "max_text_length": 851, "avg_text_length": 153.1}
+retrieval_chunks: {"count": 4570, "duplicate_retrieval_id": 0, "empty_text": 0, "bad_text_length": 0, "source_type_counts": {"case_chunk": 4080, "law_article": 490}, "invalid_source_types": [], "case_rows_without_case_metadata": 0, "law_rows_without_law_metadata": 0, "max_text_length": 1167, "avg_text_length": 396.7}
+graph law_version_counts: {"1979": 3, "current": 1952, "judicial_interpretation": 298, "other": 64, "unknown": 10}
+graph historical_law_edges: 3
+graph unresolved_applied_law_edges: 5
+
+首条案例结构化抽查:
+title: 吴必定故意伤害一审刑事判决书
+legal_basis_text: 根据被告人吴必定的犯罪情节，认罪态度，及社会危害程度，经本院审判委员会讨论决定，依照《中华人民共和国刑法》第十二条第一款和1979年《中华人民共和国刑法》第一百三十四条第二款的规定，判决如下
+cited_articles: ["第一百三十四条", "第十二条第一款", "第一百三十四条第二款"]
+applied_articles: ["第十二条第一款", "第一百三十四条第二款"]
+applied_laws: [{"law_name": "中华人民共和国刑法", "article": "第十二条第一款"}, {"law_name": "1979年中华人民共和国刑法", "article": "第一百三十四条第二款"}]
+court_name: 江西省宜春市中级人民法院
+prosecution_org: 江西省宜春市人民检察院
+case_location_texts: ["当日早上，吴必定等八名工友下山准备就盗窃一事到公安机关报案，发现李某甲倒在五峰坑坑口处山路边已死亡", "经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹", "同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷", "当日早上，被告人吴必定等七名工友下山准备就被盗一事到公安机关报案，途经五峰坑坑口处时发现李某甲倒在路边已死亡"]
+punishment_location_texts: ["江西省宜春市中级人民法院", "江西省宜春市人民检察院"]
+crime_time_texts: ["江西省宜春市人民检察院指控：1997年4月25日凌晨2时许，被告人吴必定在宜丰县黄岗乡坪田村五峰坑山上住宿的工棚内发现有人盗窃，立即叫醒工友，持砍毛竹的柴刀去追小偷", "经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹"]
+judgment_date_text: 二〇一四年五月六日
+defendant_attitude_texts: ["其辩护人还提出，被告人吴必定的主观恶性小，认罪态度好，有悔罪表现，系初犯、偶犯", "根据被告人吴必定的犯罪情节，认罪态度，及社会危害程度，经本院审判委员会讨论决定，依照《中华人民共和国刑法》第十二条第一款和1979年《中华人民共和国刑法》第一百三十四条第二款的规定，判决如下", "被告人吴必定认罪态度好，有悔罪表现，系初犯、偶犯，请求对其减轻处罚"]
+amount_texts: []
+punishments: [{"defendant": "吴必定", "punishment_text": "被告人吴必定犯故意伤害罪，判处有期徒刑十年"}]
+accusation_text_len: 421
+court_found_facts_text_len: 392
+defense_text_len: 112
+evidence_text_len: 791
+witness_testimony_count: 10
+defendant_confession_count: 1
+expert_opinion_count: 1
+
+chunk 统计:
+chunk 总数: 4080
+每个字段的 chunk 数量: {"accusation_text": 209, "audio_video_evidence_texts": 11, "court_found_facts_text": 199, "defendant_confession_texts": 436, "defense_text": 237, "documentary_evidence_texts": 556, "evidence_text": 647, "expert_opinion_texts": 56, "inspection_records_texts": 184, "judgment_text": 155, "reasoning_text": 178, "victim_statement_texts": 32, "witness_testimony_texts": 1180}
+平均 chunk 长度: 425.9
+最大 chunk 长度: 1167
+是否存在超过 1200 字的 chunk: 否
+chunk quality_flags 统计: {"long_sentence": 2, "short_chunk": 104}
+
+随机案例 3 条:
+1. 周友根犯贪污罪、受贿罪一审刑事判决书
+   case_id: 5ddf07ee-3b53-49c5-8d52-1fbde115a1db
+   crimes: ["滥用职权罪", "受贿罪", "贪污罪"]
+   cited_articles: ["第三百八十五条第一款", "第三百八十六条", "第三百八十三条第一款", "第三百九十七条第二款", "第六十七条第二款", "第六十九条第一款", "第五十九条第一款", "第六十四条", "第二条", "第三条", "第一条第二款", "第八条第一款", "第一条"]
+   applied_articles: ["第三百八十五条第一款", "第三百八十六条", "第三百八十三条第一款", "第三百九十七条第二款", "第六十七条第二款", "第六十九条第一款", "第五十九条第一款", "第六十四条", "第二条", "第三条", "第一条第二款", "第八条第一款", "第一条"]
+   sentencing: ["有期徒刑七年", "有期徒刑十一年", "有期徒刑十五年"]
+   punishments: [{"defendant": "周友根", "punishment_text": "一、被告人周友根犯滥用职权罪，判处有期徒刑七年"}, {"defendant": "周友根", "punishment_text": "被告人周友根犯受贿罪，判处有期徒刑十一年，并处没收财产人民币五万元"}, {"defendant": "周友根", "punishment_text": "二罪并罚，决定执行有期徒刑十五年，没收财产人民币五万元（刑期从判决执行之日起计算"}, {"defendant": "周友根", "punishment_text": "二、扣押在杭州市江干区人民检察院的欧米茄女士手表一只由扣押单位予以没收，上缴国库"}, {"defendant": "周友根", "punishment_text": "责令追缴被告人周友根其余受贿的赃款人民币2602400元，上缴国库"}]
+   amount_texts: ["后被告人周友根利用职务之便，以其子周某的名义购买拆迁安置房使用权，在支付人民币198708元后，违法获得位于本市江干区某小区的房屋使用权", "2004年12月9日，被告人周友根将上述房屋使用权以人民币30万的价格出售给他人，非法占有差价人民币10万余元", "经鉴定，房改后该套房屋价值人民币49万余元", "具体如下： 1、2005年8月，被告人周友根在担任某街道主任期间，收受葛某送予的现金人民币5万元", "2、2005年8月，被告人周友根在担任某街道主任期间，收受葛某所送予的某房屋的装修贿赂人民币4万元", "3、2007年4月3日，被告人周友根在担任中共某工委书记期间，在购买某小区的房产及车位的过程中，收受葛某所送贿赂人民币5万元", "4、2007年，被告人周友根在担任某街道主任以及中共某工委书记期间，收受葛某所送某房屋的装修贿赂人民币23万元", "5、2008年5月份，被告人周友根在担任中共某工委书记期间，在某小区的地下车库收受葛某送予的现金人民币5万元用于购买车辆", "6、2008年10月，被告人周友根在担任中共某工委书记期间，收受葛某送予的欧米茄牌手表1只（价值人民币32400元）", "7、2008年年底，被告人周友根在担任中共某工委书记期间，帮助葛某安排其侄女葛元元就职于某街道，收受葛某送予的现金人民币2万元", "8、2010年4月8日，被告人周友根在
+2. 刘光勤挪用资金一审刑事判决书
+   case_id: b15907d8-da72-4fa2-8cc3-70faee2914df
+   crimes: ["挪用资金罪"]
+   cited_articles: ["第二百七十二条第一款", "第六十七条第一款", "第六十四条"]
+   applied_articles: ["第二百七十二条第一款", "第六十七条第一款", "第六十四条"]
+   sentencing: ["拘役三个月"]
+   punishments: [{"defendant": "刘光勤", "punishment_text": "一、被告人刘光勤犯挪用资金罪，判处拘役三个月"}, {"defendant": "刘光勤", "punishment_text": "） 二、扣押在案的被告人刘光勤退赃款人民币294900元发还被害单位江西天际建筑设备租赁有限公司"}]
+   amount_texts: ["2015年10月至2017年2月期间，刘光勤利用其管理和收取公司租赁项目租金的职务之便，挪用天际公司靖安清华美郡项目、樟树万贯汽车城项目、靖安法药寺项目、南昌城开集团农大图书馆项目中的租赁费及进出场费共计人民币294900元，所挪资金被其用于个人营利活动", "2018年1月2日，刘光勤妻子替刘光勤上交294900元", "本院认为，被告人刘光勤利用职务上的便利，挪用本单位资金人民币294900元进行营利活动，数额较大，其行为已构成挪用资金罪", "） 二、扣押在案的被告人刘光勤退赃款人民币294900元发还被害单位江西天际建筑设备租赁有限公司"]
+3. 徐某甲非法制造、销售非法制造的注册商标标识罪，徐某甲诬告陷害罪一审刑事判决书
+   case_id: 272f585b-e4a1-4632-a717-27f61d806e78
+   crimes: ["非法制造、销售非法制造的注册商标标识罪", "诬告陷害罪"]
+   cited_articles: ["第二百一十五条", "第二百四十三条", "第六十九条", "第五十二条", "第五十三条", "第六十四条"]
+   applied_articles: ["第二百一十五条", "第二百四十三条", "第六十九条", "第五十二条", "第五十三条", "第六十四条"]
+   sentencing: ["有期徒刑二年零五个月", "罚金人民币七万元", "有期徒刑六个月", "有期徒刑二年零八个月", "罚金人民币七万元（刑期从判决执行之日起计算", "罚金限判决生效后一个月内缴纳）"]
+   punishments: [{"defendant": "徐某甲", "punishment_text": "一、被告人徐某甲犯非法制造、销售非法制造的注册商标标识罪，判处有期徒刑二年零五个月，并处罚金人民币七万元"}, {"defendant": "徐某甲", "punishment_text": "被告人徐某甲犯诬告陷害罪，判处有期徒刑六个月"}, {"defendant": "徐某甲", "punishment_text": "决定执行有期徒刑二年零八个月，并处罚金人民币七万元（刑期从判决执行之日起计算"}, {"defendant": "徐某甲", "punishment_text": "二、扣押在案的标注香奈儿注册商标的饰品配件7.68万个，予以没收"}]
+   amount_texts: ["一、被告人徐某甲犯非法制造、销售非法制造的注册商标标识罪，判处有期徒刑二年零五个月，并处罚金人民币七万元", "决定执行有期徒刑二年零八个月，并处罚金人民币七万元（刑期从判决执行之日起计算"]
+
+随机 chunk 3 条:
+1. f6e5cb8a-d959-45ba-b3ad-1d7688c1e2f8:7874f45a15:documentary_evidence_texts:0:0
+   title: 梁淑凤、赵学立妨害公务罪一审刑事判决书
+   field: documentary_evidence_texts
+   list_index: 0
+   chunk_index: 0
+   text_length: 59
+   quality_flags: []
+   text_preview: 户籍信息。（2）唐山市公安局海港经济开发区分局关于 抓获经过说明：2018年4月24日凌晨5时许将赵学立、梁淑凤在家中
+2. b914ed81-b932-4460-b18f-ca419d022d01:852c8848a4:evidence_text:scalar:4
+   title: 文胜合同诈骗一审刑事判决书
+   field: evidence_text
+   list_index: None
+   chunk_index: 4
+   text_length: 834
+   quality_flags: []
+   text_preview: （11）公安机关出具的情况说明及《中华人民共和国证券投资基金法》第九条、第八十八条、第八十九条、第九十条、《私募投资基金管理人登记和基金备案办法》第五条、第六条、第十六条等证实： 被告人文胜从事上述行为未按照法律等相关规定履行登记、报送、托管等手续。3． 书证能相互印证。该辩解意见不能成立，本院不予采纳。关于 被告人文胜提出其具有从事私募基金投资的相关资质，并未违法相关行业规定及其辩护人提出的公诉人举证的证据中一部分不能作为认定诈骗罪的法律依据的辩护意见。经查，依照2013年
+3. cefc48fe-5816-4d4e-af39-6d858b45d989:b4087672e4:defendant_confession_texts:6:0
+   title: 尉钟贪污、挪用公款一审刑事判决书
+   field: defendant_confession_texts
+   list_index: 6
+   chunk_index: 0
+   text_length: 189
+   quality_flags: []
+   text_preview: 被告人尉钟的供述：2012年5月，其以其姐姐尉芹的名义成立了颐明蔚公司，注册资本100万元，其出资60万元。2013年3月，其将颐明蔚公司的负责人变更为其姐夫马某。同年6月，颐明蔚公司第一次增资，按照出资比例，其个人应当出资120万元，但从账上看，这笔120万元是张某1从小金库银行卡转给马某的。其印象中是因为其的年终奖和季度奖一直由黎某保管，就让黎某从当中扣除这部分款项。2、

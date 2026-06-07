@@ -1,0 +1,5338 @@
+{
+  "schema_version": "router-label-correction-report-v1",
+  "created_at_utc": "2026-05-21T12:47:28.835887+00:00",
+  "input": "D:\\GraphRAG-V1\\processing_data\\router_training_questions\\router_questions_labeled_deepseek.jsonl",
+  "output": "D:\\GraphRAG-V1\\processing_data\\router_training_questions\\router_questions_labeled_corrected.jsonl",
+  "rows": 5000,
+  "unique_ids": 5000,
+  "changed_rows": 757,
+  "label_counts_before": {
+    "criminal_law_law_only": 1451,
+    "criminal_law_advice": 67,
+    "non_criminal_legal": 506,
+    "criminal_law_case_and_law": 220,
+    "general_no_legal_retrieval": 2471,
+    "criminal_law_multi_case": 90,
+    "criminal_law_case_only": 177,
+    "low_quality_or_incomplete": 18
+  },
+  "label_counts_after": {
+    "criminal_law_law_only": 1478,
+    "criminal_law_advice": 50,
+    "non_criminal_legal": 499,
+    "criminal_law_case_and_law": 220,
+    "general_no_legal_retrieval": 2468,
+    "criminal_law_multi_case": 90,
+    "criminal_law_case_only": 177,
+    "low_quality_or_incomplete": 18
+  },
+  "change_reasons": {
+    "subagent_review_override": 22,
+    "shape_consistency": 721,
+    "noncriminal_criminal_terms": 11,
+    "advice_is_abstract_rule": 1,
+    "law_only_has_personal_context": 1,
+    "general_legal_terms": 1
+  },
+  "changed_ids": [
+    {
+      "id": "disc_law_sft_criminal_66d8e17d819bbcbd",
+      "question": "取保候审可以判缓刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_61c1500569953e67",
+      "question": "什么是共同贪污犯罪，认定共同贪污犯罪注意什么？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_1fea92c2b4ec3331",
+      "question": "酒驾撞死人家属签了谅解书又找人顶包会怎样判刑？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_3fb40af43283e1f7",
+      "question": "职务犯罪有哪些特征",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_28477d1af981fff4",
+      "question": "中介欺骗误导我签合同犯了什么罪",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_725330b570da75fa",
+      "question": "拘役判缓刑是什么意思，对子女的影响",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_2f9fb4d5624c2b62",
+      "question": "诈骗犯被判刑后能提起民事诉讼吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_5a4a2898491226a4",
+      "question": "法院判拘役还能取保出来吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_9769ef2741914b26",
+      "question": "无违法犯罪记录证明必须在户籍所在地开吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_c305d310e28bd511",
+      "question": "法律规定17岁未成年帮信罪会判刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "advice_is_abstract_rule"
+    },
+    {
+      "id": "disc_law_sft_criminal_dfa4c41175ee2b78",
+      "question": "诉讼时效的中止与中断的区别？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_4cc3fd04676a1a90",
+      "question": "故意伤害赔偿后还要判刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_db48623571dbc399",
+      "question": "一方因违法行为被判刑或劳教的，另一方想离婚该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_05fb6e11d2e8c2ca",
+      "question": "醉驾又无证撞死人能判死刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_abbee16d0599f6e5",
+      "question": "教师被判处缓刑是否开除公职？",
+      "old_label": "criminal_law_advice",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_49dc4e26e14c16ad",
+      "question": "公司亏损没钱发工资构成犯罪吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_c5c3c91ed9f1c6c3",
+      "question": "50万全退赃却没有判缓刑是因为什么?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_d06e769a5a2fcc78",
+      "question": "刑事案件什么时候聘请律师最合适",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_11c5263010f5d7c7",
+      "question": "驾撞伤老人很严重要判刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_81465b9a2d21a073",
+      "question": "父亲犯过刑事案件对子女有什么影响",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_advice",
+      "reason": "law_only_has_personal_context"
+    },
+    {
+      "id": "disc_law_sft_criminal_ccb024a4efffb667",
+      "question": "涉嫌抢劫罪被抓可以取保候审吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_df43380871a6727a",
+      "question": "帮信罪抓不到主犯怎么办?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_68daa332f1b950d4",
+      "question": "可以和有过犯罪记录的人结婚吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_b2ebca8e136858cb",
+      "question": "嫖娼未遂会受到处罚吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_44ecb16d0ae8bcbf",
+      "question": "护士过失犯罪能保释吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_f8c3c858bb0afc52",
+      "question": "主犯可以申请取保候审吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_ceea167663d485d3",
+      "question": "不能够成为单位犯罪的主体体的有哪些？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_43a5ff4770630070",
+      "question": "取保候审判刑几率大吗，取保候审判刑后保证金退还吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_7f78e79fffa3dc8f",
+      "question": "犯了强奸未遂的能不能判处缓刑？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_00489c3fedf2d7f1",
+      "question": "诈骗罪如何认定",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_7dbeb6f987c290d8",
+      "question": "被人告强奸罪如何应诉？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_28cf9677ab3814b2",
+      "question": "刑事案件多被告人量刑注意的问题？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_c7136e053a6573cc",
+      "question": "取保候审后有几率会判缓刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_c6950dc0e4de8a12",
+      "question": "我可以取得《无犯罪记录证明》吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_57aab5e83de88661",
+      "question": "合同生效后,一方财务出现问题可能支付不起货款，另一方可以中止履行合同吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_bc02f409c4078f0a",
+      "question": "初犯盗窃罪如何争取缓刑",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_33e5520142077b46",
+      "question": "犯罪嫌疑人涉嫌盗墓罪可以取保候审吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_fb895e8c34d2ffb4",
+      "question": "被骗构成帮信罪怎么办?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_d522edb23f54e30e",
+      "question": "醉酒驾驶拘役2个月怎么争取减刑",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_f2daa0e94a1caf08",
+      "question": "犯罪嫌疑人家属聘请律师的作用有哪些?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_259d8d8de81de6f0",
+      "question": "两卡”案件中主流司法观点如何区分掩饰、隐瞒犯罪所得罪与帮助信息网络犯罪活动罪？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_a0203e994777b1dd",
+      "question": "判了缓刑可以去外地吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_b7196f8a1e41764d",
+      "question": "协助抓捕同案犯属于立功吗?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_2feabb0eb5f33b25",
+      "question": "判拘役进大公司能查出来吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_201f8fddf68a4bef",
+      "question": "招嫖未遂会罚款拘留吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_531680b29f1e7a83",
+      "question": "企业如何防范合同诈骗罪?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_7bf5aa3e687bd10f",
+      "question": "不执行探视权是犯罪吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_c4cc7baf28a04886",
+      "question": "违规清算的行政和刑事责任?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_59b786dee0af25e7",
+      "question": "刑事案件可以“私了”吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_67dfb943a80339a3",
+      "question": "管制三个月会留下案底吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_7cdd124e9feb9c3a",
+      "question": "刑法规定网上转账被骗报警是否可以追回来",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_3d54fe1795e21590",
+      "question": "把抵押的车卖了是否违法犯罪",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_dd6944db0268e534",
+      "question": "缓刑期间又醉驾的能否办取保",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_e545b89af8ba82ec",
+      "question": "危险驾驶罪攻防的情形?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_f622c4e13b27183b",
+      "question": "非法贩卖公民身份信息获利10万会怎么判刑？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_ff631d6a5abb97ac",
+      "question": "保险诈骗罪量刑五年以下的情形有哪些?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_6a3dc89b102248f4",
+      "question": "东莞惠州江门取保候审无罪释放刑事律师:盗窃罪在检察院可以取保候审吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_7c8a8cd447ff4986",
+      "question": "收藏管制刀具需要注意什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_8566c876bbc24f29",
+      "question": "法院判拘役六个月肺结核可以申请缓刑吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_f0aa564d6291052c",
+      "question": "被判处缓刑之后还能上学吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_f04dd204ea9cc2c8",
+      "question": "酒驾撞伤人逃逸怎么判刑和赔偿",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_7212e065f5494a49",
+      "question": "制售“羊了个羊”游戏外挂会被判刑？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_14a7e49da9571dc5",
+      "question": "刑事案件获得被害人谅解,可以判缓吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_1530c62550b41a9b",
+      "question": "家属探视犯罪分子探监证明怎么写",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_d2c2030176c210c6",
+      "question": "被判处拘役还能保住国有企业工作吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_62f052ece919a775",
+      "question": "因盗窃取保后还会被判刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_57ddcfea0a09fad1",
+      "question": "刑事犯罪辩护什么时候请律师最好",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_6f5d490185d990f7",
+      "question": "翻供后还能成立自首吗?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_80b59d32d2fab5d3",
+      "question": "打架轻伤判刑后还赔偿吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_add6642789eadee2",
+      "question": "与未成年开具无犯罪证明的法律规定有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_adbff2ee2f4d9231",
+      "question": "2023无犯罪记录证明需要什么材料",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_d68caf1c337c89c1",
+      "question": "对犯罪嫌疑人逮捕有什么条件",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_33c724e87379a08c",
+      "question": "非法采集血液事故罪是以什么标准立案的",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_ce17da0cb7c57ba3",
+      "question": "拘役判缓刑有案底吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_cde1735cba305266",
+      "question": "建议量刑三到五年能缓刑吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_90979b7ad7df3d58",
+      "question": "被判缓刑信用卡很久都没还可能要收监吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_c1dd45a51a20cc44",
+      "question": "轻微事故逃逸被拘留会判刑吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_06b29bdf9b7a7227",
+      "question": "执行案件，裁定中止执行的情形？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_f24c02f84ec04f64",
+      "question": "中止探视权的程序是怎样的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_ceecbf1a937d322a",
+      "question": "交通肇事全责能不追究刑事责任吗?",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_ec14d8a51d7217a9",
+      "question": "刑事案件什么时候找律师最好？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_criminal_7a2cd3e64bfd24fe",
+      "question": "棋牌室等娱乐场所提供麻将台、牌具供人打麻将或打牌娱乐，其负责人是否有违法或犯罪风险？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_017e7e2efb879c0a",
+      "question": "侵犯他人肖像权怎么判刑？",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_e902436c23e4da6a",
+      "question": "没有偿还信用卡里面的钱，信用卡逾期有刑事责任吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_6a47d62368495ab2",
+      "question": "醉驾判拘役要开除劳动者么？",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "noncriminal_criminal_terms"
+    },
+    {
+      "id": "disc_law_sft_criminal_c6909a30ed03dc9d",
+      "question": "实行过限是共同犯罪吗?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_16475c3e40c83187",
+      "question": "劳动合同中止是怎样一回事？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_criminal_2f8fcfadcf4d43c5",
+      "question": "取保候审后还会判刑吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "local_case_query_crime_derived_ac5a1997b3deec76",
+      "question": "庞小明开设赌场罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_45b1544c5927cd7a",
+      "question": "刘池花故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_802b1742bd5d470e",
+      "question": "和苗家军危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9df29c82267e7e14",
+      "question": "与韩某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_bee90060b221217b",
+      "question": "廖梦洋盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e9f8085ce187bad7",
+      "question": "和羊章宁盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0d930b7e970d0bd9",
+      "question": "和逯银林危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e91725d19c46828f",
+      "question": "丁华印盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_970ff0ea90c044a7",
+      "question": "彭连军受贿罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d73d2640e371109a",
+      "question": "齐智伟危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3b96959bb4479b99",
+      "question": "刘池花故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_abf78ade611836d3",
+      "question": "王忠新盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_018d72cdd28ebccf",
+      "question": "和王俊生盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_16384cda6b426d43",
+      "question": "陈帮向交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_469cbb9e802befe0",
+      "question": "郑某危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_467375241eebb5a0",
+      "question": "黄凌辉交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_dd14d6a87c78458c",
+      "question": "和廖梦洋盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_432447ce2fc2b969",
+      "question": "于春莉掩饰、隐瞒犯罪所得、犯罪所得收益罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3f6f3c47c8ccf56a",
+      "question": "廖梦洋盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4243c99e0e3aa38a",
+      "question": "吴某某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ec80e012652a7ea4",
+      "question": "和陆某某诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_06d3c33be1185ab6",
+      "question": "戴星故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_af1c0493804d7253",
+      "question": "王俊生盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fd39f8061a4f2df7",
+      "question": "郑某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6591a531dc1b0536",
+      "question": "林章镔危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0b114fa955a2f111",
+      "question": "和王亮盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_185f13dfa51754df",
+      "question": "和庞小明开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cae5b3468cc1ec01",
+      "question": "刘某某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_99800b08d3013ce9",
+      "question": "魏某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5ffecb64446435fd",
+      "question": "吴小荣开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_737a6b3ca98c34ff",
+      "question": "杨某某危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_30cdecde915afd24",
+      "question": "张舰予盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6e076d24c2df4a96",
+      "question": "余文华危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3cfd0a3fe8064e55",
+      "question": "任永春危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1062b3b8953c27da",
+      "question": "和马玮泽走私废物罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1a1cf78eb4100d14",
+      "question": "和青某盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4c0e5b536c0a6fbd",
+      "question": "和房思军危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9349b7a11fd67148",
+      "question": "李俊诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0ad3e46b7d3c544c",
+      "question": "和肖体德强奸罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cd7283e5be151ccf",
+      "question": "邹存志非法拘禁罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6b52a5abd8da6116",
+      "question": "王某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_311a80a51a69664c",
+      "question": "余勇故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1fe6e9d82b6e8636",
+      "question": "于某某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_44909bb75717fcfd",
+      "question": "和林聪开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c44cea666d541114",
+      "question": "刘某某故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fc1cd420f85dba46",
+      "question": "贡某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_65a79a246196a8bf",
+      "question": "李某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_739c58c298188f1a",
+      "question": "张杉杉盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_23326d4a7afbc973",
+      "question": "栾瑞勇危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cba2737c92cd3ab5",
+      "question": "程江危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_90e29c266099d2a5",
+      "question": "吴某某危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0c9c34c83f2bb148",
+      "question": "李福发盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f66b7670749a33d2",
+      "question": "孙伟民交通肇事罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a3958b53996be935",
+      "question": "马玮泽走私废物罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_599ccfe33e279fa4",
+      "question": "和李某危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_70acc9eb728f2134",
+      "question": "和姚江洋盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7ab4c0c0a837c824",
+      "question": "杨文华危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_caca7a1888d18cbf",
+      "question": "和朱晓春诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_afe043a4f514783f",
+      "question": "逯银林危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cb65a4a4156d0596",
+      "question": "检索邹祝飞盗窃罪案时应重点看哪些事实？",
+      "old_label": "criminal_law_case_only",
+      "new_label": "criminal_law_case_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_464191aff3391422",
+      "question": "邓某某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_25bd305bc218f8b3",
+      "question": "柴正考开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fdd92bacc1468515",
+      "question": "高某某危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5c2879623c974d51",
+      "question": "和丁华印盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_98eb3b1e5d277885",
+      "question": "和谢志雄盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c3f24f2907b780e9",
+      "question": "李福发盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3cbaa60d33e14e5e",
+      "question": "逯银林危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4d0d7d64f4a15604",
+      "question": "温坚敲诈勒索罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6eaaedfa5401e8e2",
+      "question": "杨新红非法拘禁罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fbdf19fe5e3a873b",
+      "question": "张某某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_de985e8c7a92aa9f",
+      "question": "张某危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2301f20fb593d72a",
+      "question": "余文华危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_789a3c6e158f4e39",
+      "question": "和柴正考开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f3be473092d13a66",
+      "question": "孙荣彬开设赌场罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ee20e07764232dcc",
+      "question": "肖某民故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_74d01986b827cd19",
+      "question": "苏晓霞盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_467122ced2905ec4",
+      "question": "张峰齐危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5e6b2ce0345b6d74",
+      "question": "和李荷盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9718d5a2ad866394",
+      "question": "张杉杉盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_325a21b818147e75",
+      "question": "李伟联诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_70872f01c11ade62",
+      "question": "和孙单郎开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_187fc2729dd5405e",
+      "question": "和刘池花故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2fba8cf9b9bc9af6",
+      "question": "林黄炯开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_200912a2848eeff0",
+      "question": "周某某受贿罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5ae1ab8f1911035a",
+      "question": "和戴星故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_57bb093476fead4a",
+      "question": "和洪松发敲诈勒索罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a9c3ef870704dac2",
+      "question": "王亮盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d8286ba2936c1de9",
+      "question": "杨文华危险驾驶罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_745a9e771319fd64",
+      "question": "龚常辉受贿罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_446a4fe0f982a503",
+      "question": "于春莉掩饰、隐瞒犯罪所得、犯罪所得收益罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2f027a49b9f3c087",
+      "question": "李荷盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_96f071eefbb17213",
+      "question": "彭先义盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6bc8b86c2a108f96",
+      "question": "和窦成恩诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cd0a6dfb94ad9e70",
+      "question": "非法拘禁罪案件通常会关注哪些量刑情节？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cc2fb9b06f2027f7",
+      "question": "孙伟民交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2b12ee65a97b604d",
+      "question": "和李根诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5015cc8c35f93915",
+      "question": "周某某非国家工作人员受贿罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5a790ee338a72dbf",
+      "question": "张悦明诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_edac34c9b77881e8",
+      "question": "和邹存志非法拘禁罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1c7ad63e6b2c776a",
+      "question": "梁某故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5953672eb6370dd8",
+      "question": "郝忠红盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_33e1d00d79efd83f",
+      "question": "和宋峻峰危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b92b3c65dd0de55d",
+      "question": "非法吸收公众存款罪既遂和未遂怎么判断？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_8d81daf2826e1c88",
+      "question": "张峰齐危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e608d7e6e843f4ea",
+      "question": "和刘本星故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_bb07d4e35fc58de6",
+      "question": "和温坚敲诈勒索罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9bc6a00526ef3440",
+      "question": "董航非法拘禁罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6a78949da4be1488",
+      "question": "洪松发敲诈勒索罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6dc93f49ac9b7e84",
+      "question": "张江江危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3eea59c2c54283f0",
+      "question": "魏晓峰盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_74a9b253373a2ac3",
+      "question": "和崔克危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b68f84fa01548c73",
+      "question": "非法经营罪和相近罪名如何区分？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fd8d8ac3389b7e3c",
+      "question": "姚江洋盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_db9f200cc97c3d48",
+      "question": "周奇盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3581c336e0400701",
+      "question": "涂志锋盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_59b20e1bdcf82d1e",
+      "question": "葛泽龙诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_aa60231f1c92f9aa",
+      "question": "王春宇故意伤害罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4c0f853c36017480",
+      "question": "齐智伟危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2676130df77388db",
+      "question": "和张杉杉盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e6090d51cb5feee8",
+      "question": "王某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6d48ffbcc3a4b6f5",
+      "question": "栾瑞勇危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6d74dabf80881283",
+      "question": "和何昌祥非法经营罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a38ad23d6d9eef42",
+      "question": "李伟联诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7712c475394d04e9",
+      "question": "占思让交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5dcb69271a23e22a",
+      "question": "和李美玉诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_370dc61af01541c3",
+      "question": "和孙伟民交通肇事罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6b1988e20f44c6ff",
+      "question": "和吴志富危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7cfddf134c9ee645",
+      "question": "丁华印盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f1055e782fbffdaa",
+      "question": "肖体德强奸罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a75e16080e28b9fe",
+      "question": "掩饰、隐瞒犯罪所得、犯罪所得收益罪案件通常会关注哪些量刑情节？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6defbd900f1e00a9",
+      "question": "危险驾驶罪和相近罪名如何区分？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_aa83ce7175f0fe70",
+      "question": "孙单郎开设赌场罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_622a58e08c46ac7d",
+      "question": "马关福受贿罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1305ee219a11fa25",
+      "question": "丁克克盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2a27abca68dd4f66",
+      "question": "刘本星故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6b660df905591e32",
+      "question": "杨新红非法拘禁罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6861772d141efd85",
+      "question": "刘某某故意伤害罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f6e32c18891d3f0c",
+      "question": "姜贵有开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2867f4d3f4628f7c",
+      "question": "王国忱危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9333b56de599afbb",
+      "question": "陆某某诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_aff977a4d796cc1b",
+      "question": "蒋李危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3922f96b3c17ccb6",
+      "question": "谈乙抢劫罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_dfd164fe257a4f98",
+      "question": "李磊诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_be593009113c5a37",
+      "question": "和张某玉盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7b488d4e25f7bf91",
+      "question": "与韩某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f6225d8809b3dbff",
+      "question": "刘本星故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a1c9bab54715f38a",
+      "question": "宋峻峰危险驾驶罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6df5b1d8b28ba7bc",
+      "question": "和谢清合危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_cf58fff8a66d53ab",
+      "question": "程江危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b4b35a2569830765",
+      "question": "谢耀科危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f5bef71b59cf371a",
+      "question": "唐全亮交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_79ffee1ed85d5688",
+      "question": "龚常辉受贿罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_39418ef737dcbb7d",
+      "question": "肖某民故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4078426dbb54e37e",
+      "question": "和彭连军受贿罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b52170486cec8940",
+      "question": "和郝忠红盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_caff94837d0fc241",
+      "question": "白世秋诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1bd8da76283e292c",
+      "question": "孔凡强危险驾驶罪案有哪些从轻或从重情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_de317ab6359d7fd4",
+      "question": "李根诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_34fccb4a78f74e29",
+      "question": "魏某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3936beb96bf88b94",
+      "question": "苗家军危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ef61dd43d0d66c16",
+      "question": "和梁某故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0240df35b66baab6",
+      "question": "朱士满非法经营罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a3820fd95f7143e5",
+      "question": "青某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c6b15f7f68057db0",
+      "question": "刘小军危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_04b8af7fbb7d8005",
+      "question": "郑永仕危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_44a348a33222c8a6",
+      "question": "葛泽龙诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_15f9d25ecba87775",
+      "question": "马彦杰交通肇事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_25071dbccbf8a1bf",
+      "question": "应超盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_af2d1a3526500075",
+      "question": "和余勇故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5b96c41edd39b2a2",
+      "question": "杨文华危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ad8c46f5d70227f1",
+      "question": "张舰予盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4727f3533d8a90fc",
+      "question": "和杨帅帅危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_314e31eeb5537d5f",
+      "question": "俞禹州诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_879b42c46a67003a",
+      "question": "张某玉盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_43e13bcfaab4927b",
+      "question": "郝忠红盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b58c12fa65efe77f",
+      "question": "苗家军危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1ad01031885c8d42",
+      "question": "陶冶盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2665c808401c583a",
+      "question": "刘斌故意杀人罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a8e886dd164ef2a1",
+      "question": "和李俊诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2f3c0cf8bdb05959",
+      "question": "闫洪奎诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d66fd538127e034e",
+      "question": "和李福发盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4165d9bbbcbc2413",
+      "question": "检索李根诈骗罪案时应重点看哪些事实？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c5f71b968f6e8f85",
+      "question": "马彦杰交通肇事罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a306b9bc09bb8133",
+      "question": "和贡某盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d012ad9caa6b4751",
+      "question": "和朱士满非法经营罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b5cfada801916562",
+      "question": "柴正考开设赌场罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_40d17b2f4a5d9cca",
+      "question": "和董传法诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_43a343cb395cf289",
+      "question": "危险驾驶罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_621fb7d03af8fc9f",
+      "question": "走私、贩卖、运输、制造毒品罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_52ac5a752ce46d86",
+      "question": "杨某某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_38bece9ddac974d3",
+      "question": "江海霞诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ada22a0e6cb0d892",
+      "question": "和李磊合同诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_be759d8d26ee5634",
+      "question": "和魏晓峰寻衅滋事罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_4deff3155067d8fd",
+      "question": "和唐维维故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9964cbe4854d02d7",
+      "question": "贡某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2a43abcade7224b5",
+      "question": "彭连军非国家工作人员受贿罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_895988ab784c3251",
+      "question": "和姜贵有开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d589b65aa81d81b8",
+      "question": "刘旭诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c3877275c63bdd5a",
+      "question": "周奇盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e5c95309f24d9288",
+      "question": "蒋李危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7aaf0c59372e51df",
+      "question": "和丁克克盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f787b0ae0ed8ddb6",
+      "question": "和刘某某故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_eedf08045f5e65a6",
+      "question": "白世秋诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f7f21409597a8c89",
+      "question": "黄园盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_a0d2e7adcb01a939",
+      "question": "蒋世军非法经营罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1786565a0522c2f5",
+      "question": "董传法诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2593c9ac34ab96c2",
+      "question": "孙单郎开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b281a45aec4e60e8",
+      "question": "和李伟联诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_17a47052ee4d50fb",
+      "question": "全满超危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c2d6016a7e49e790",
+      "question": "和孔凡强危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_83345afed8c6fd05",
+      "question": "放火罪案件通常会关注哪些量刑情节？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c82538f3a3c4210e",
+      "question": "许芳开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f3516c3cd5a97782",
+      "question": "魏晓峰盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_81fd5064cf7ab208",
+      "question": "魏晓峰寻衅滋事罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1604b006e35b0b7f",
+      "question": "和肖某民故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2ce4074049517c2c",
+      "question": "故意伤害罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fdb5854b5b91eb94",
+      "question": "和许芳开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b5fe7e2ee853e2a4",
+      "question": "和吴小荣开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9a4ca6b05e01608d",
+      "question": "羊章宁盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_920cb2a41f337638",
+      "question": "和葛泽龙诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c7c62e2e5448567e",
+      "question": "和蒋世军非法经营罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_dadcf16284b973a2",
+      "question": "刘小军危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ac5bce91bff1accc",
+      "question": "房思军危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ef480c3fdb30fcf7",
+      "question": "周某某非国家工作人员受贿罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fe33be65223e7d23",
+      "question": "和栾瑞勇危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e9e6dc41580a4160",
+      "question": "非法经营罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0bdacb1dfc8b05bb",
+      "question": "温坚敲诈勒索罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_294e4e815a42ad33",
+      "question": "寻衅滋事罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_458f9591b9a9d3af",
+      "question": "吴小荣开设赌场罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_73e6b2797e699526",
+      "question": "谢清合危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6b7c2ef3d9696e15",
+      "question": "房思军危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_0386baaa1b59545f",
+      "question": "和孙荣彬开设赌场罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_8afa73b11f8e1bf1",
+      "question": "和彭连军非国家工作人员受贿罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1269ff0aca2f0268",
+      "question": "青某盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9b4da0c5a1756c17",
+      "question": "梁某故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_17d343c9c34eb46a",
+      "question": "唐维维故意伤害罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_18d896ab2b695d01",
+      "question": "戴星故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_37fce57ef8d7700b",
+      "question": "赵金龙危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9ca74e7bb32defe5",
+      "question": "余克俭危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_1eec188f28b8b68f",
+      "question": "林章镔危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c6e78f712c8dea8a",
+      "question": "谢耀科危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b4707d252f91e4e5",
+      "question": "俞禹州诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e22dfdae96739904",
+      "question": "张某明盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_9411878f74d99f2a",
+      "question": "和齐智伟危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e2a872b350e690ac",
+      "question": "张某玉盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_b547e4a3e08b31b1",
+      "question": "宋峻峰危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c02db1641811ca5c",
+      "question": "钱某某寻衅滋事罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ef2d3505054f32fb",
+      "question": "彭先义盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_e69f3c21e41143b0",
+      "question": "马关福受贿罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c3d182e3f86754fe",
+      "question": "李美玉诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_46bd30368668edca",
+      "question": "和郝佳诈骗罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d217c90082efac13",
+      "question": "窦成恩诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_f7b4fc099dd2dd2a",
+      "question": "帮助信息网络犯罪活动罪案件的裁判依据一般是什么？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_af364e4a25cafe3e",
+      "question": "全满超危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d040070e458d12e4",
+      "question": "林国辉盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c151cae6d950be57",
+      "question": "和周奇盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_76cb3f480f0a4663",
+      "question": "王国忱危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3e878a4a3a5647f6",
+      "question": "和杨某某危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_de218824483cab54",
+      "question": "和王春宇故意伤害罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_5f15a73f1fd7b9b6",
+      "question": "和嵇素成盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_c0500a64048d1e13",
+      "question": "和涂志锋盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_31d40b855d8f0f58",
+      "question": "任某某故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ad1006aafdc4491c",
+      "question": "孙某某开设赌场罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_744e983baae70058",
+      "question": "和董航非法拘禁罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2c86819946b52a8d",
+      "question": "王春宇故意伤害罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_2d5e96415b34db8f",
+      "question": "和郑某危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7cc5a38d927b543b",
+      "question": "于某某盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_71b1f082c7cd1501",
+      "question": "杨帅帅危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_735b290cc284aad9",
+      "question": "和葛泽龙帮助信息网络犯罪活动罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_6c88fe4bd2d8e7f3",
+      "question": "孔凡强危险驾驶罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_252075f0c576c394",
+      "question": "和邹祝飞盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_bcbb7cf4703fc8a4",
+      "question": "丁克克盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d0a3a8018821a7fd",
+      "question": "陶冶盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_333713eae6d5e866",
+      "question": "马玮泽走私废物罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ede90eb4e446b697",
+      "question": "和陶冶盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_062f02a0300cca4a",
+      "question": "刘旭诈骗罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_72c64de579a78790",
+      "question": "龚常辉受贿罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_eb765fb16fa80527",
+      "question": "嵇素成盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_8a7c0bada136deb9",
+      "question": "孔凡强危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d69ce94966d25179",
+      "question": "和刘某某危险驾驶罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_43f041588fd85a98",
+      "question": "和荣某某盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_942a2eb3b4a22151",
+      "question": "和黄凌辉交通肇事罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_3ab4b498930af1b4",
+      "question": "和占思让交通肇事罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_078fc0d4bee12c89",
+      "question": "和应超盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_98e44c11fff16904",
+      "question": "和王忠新盗窃罪案相似的案例有哪些？",
+      "old_label": "criminal_law_multi_case",
+      "new_label": "criminal_law_multi_case",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_fa9a0c58c7158e5f",
+      "question": "邓某某危险驾驶罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_d8484dbf77a71b03",
+      "question": "王丽霞诈骗罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_ce89fc51f746a7d5",
+      "question": "羊章宁盗窃罪案适用了哪些刑法规定？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_7354ae3b0aaf980d",
+      "question": "刘斌故意杀人罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_case_query_crime_derived_bf8639dd9cf92fef",
+      "question": "黄园盗窃罪案应如何量刑？",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_criminal_law_article_derived_16dd65d0e9384eb3",
+      "question": "挪用资金罪一般怎么判？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_criminal_law_article_derived_8e5acc77b6f520ee",
+      "question": "徇私舞弊低价折股、出售国有资产罪与相近犯罪如何区分？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_criminal_law_article_derived_4103f51b411c7467",
+      "question": "背叛国家罪能否适用缓刑？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_criminal_law_article_derived_7678db12daa87f4b",
+      "question": "走私普通货物、物品罪与相近犯罪如何区分？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "local_criminal_law_article_derived_0a74d12ef3fe5fc7",
+      "question": "背叛国家罪有哪些量刑情节？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_d42fac972f959045",
+      "question": "寻衅滋事罪需要哪些构成要件？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_c3b7ac6a802c7596",
+      "question": "洗钱罪和相关罪名有什么区别？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_82abfa58dd223029",
+      "question": "职务侵占罪和相关罪名有什么区别？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_6e5867b7ca5d899e",
+      "question": "贪污罪什么情况下可以从轻处罚？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_29f1ec4cdd2351f4",
+      "question": "非法经营罪和相关罪名有什么区别？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "curated_criminal_law_questions_a2a0935bcb5ef4f6",
+      "question": "故意杀人罪需要哪些构成要件？",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_d0aca96897d051c4",
+      "question": "甲路过某自行车修理店，见有一辆名牌电动自行车(价值1万元)停在门口，欲据为己有。甲见店内货架上无自行车锁便谎称要购买，催促店主去50米之外的库房拿货。店主临走时对甲说:\"我去拿锁，你帮我看一下店。\"店主离店后，甲骑走电动自行车。甲的行为构成何罪?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_29a7dd7b6c0db50d",
+      "question": "王某系聋哑人，因涉嫌盗窃罪被提起公诉。关于本案，下列哪一选项是正确的?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_3c8b5961941d0faf",
+      "question": "关于食品添加剂管制，下列哪一说法符合《食品安全法》的规定?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_d80e7ec80fbfdb62",
+      "question": "依据《刑事诉讼法》的规定，如果监狱在执行张某的有期徒刑过程中，发现对其判决有错误的，应当转请下列哪个机关处理?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_1ab29703fc56727d",
+      "question": "李某因下岗在家无收入，又想与女友结婚却苦于无钱，一日李某在街道散步时看见昔日邻居王某领其儿子(3岁)在玩耍，经交谈得知，王某现任某上市公司董事长，遂起歹心。某日李某将王某的儿子拐骗至远郊的亲属家藏起来返回家后，用IC卡给王某打电话，如王某想要回儿子的话，于某日把50万元钱放在动物园靠右边的垃圾箱内，不许报案，否则就永远见不到儿子。王某报了案，李某见阴谋未得逞，遂将王某之子杀害，案发后被抓获。若李某特王某之子骗走后卖与他人构成何罪?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_2b67bd45c79db396",
+      "question": "卞某系聋哑人，是某聋哑学校职工，因涉嫌盗窃罪被B县人民检察院提起公诉。卞某委托的辩护人高某认为卞某并非该案的犯罪嫌疑人。B县人民法院经审查，决定按照普通程序审理该案。B县人民法院为什么决定按照普通程序而不是按照简易程序审理该案?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_3407778d931eb7c3",
+      "question": "甲因涉嫌强奸被公安机关逮捕，接受公安机关讯问时，主动交待了其伙同乙在A市盗窃金融机构100万元的犯罪事实，并提供了乙因犯故意伤害罪被关押在另一城市的看守所的有关情况，使乙所犯的盗窃罪受到刑事追究。对甲的行为应当如何认定?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_criminal_0c51e03aac27c5dd",
+      "question": "被告人李阳，因故意杀人罪、间谍罪被中级人民法院一审判处死刑，缓期二年执行。在上诉期间内，人民检察院认为人民法院的量刑不当，依法提起抗诉。二审法院不开庭审理后，认为一审法院认定事实没有错误，量刑过轻，依法撤销原判，改判为死刑立即执行，并核准执行死刑立即执行。该案中哪些做法是违法的?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_2b4570f365dde319",
+      "question": "事实婚姻受法律保护吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ece69515d5d94343",
+      "question": "冷暴力是否属于家暴的一种？如何进行取证？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_0be40947f6501772",
+      "question": "对于征地安置补助标准的裁决，可能有几种结果？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f0a7be24e4e6e995",
+      "question": "动迁安置，动迁房或货币补偿是否属于夫妻共同财产？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_0c94a8ec218f5040",
+      "question": "无人认定遗失物所朋友权归属？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_53e3ce8988fc828f",
+      "question": "非小区业主能否购买车位？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_c08a1895e0f26407",
+      "question": "无诉讼行为能力的人如何参加诉讼?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b3dac356bbdc00c7",
+      "question": "一方不离婚可以拖多久",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_8f99cb01f4f2379c",
+      "question": "公司资不抵债，如何清偿债务？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1b576b054f716f16",
+      "question": "再婚和复婚有婚假吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_6c545dc3ede39df0",
+      "question": "夫妻离婚结婚时的彩礼钱要返还吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d468cb4a19c77973",
+      "question": "亲人被抓了，家属可以做些什么？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a731864e0faaf0e5",
+      "question": "近亲结婚有什么处罚",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_238084002ee406bd",
+      "question": "喝酒驾驶电动三轮车算不算酒驾?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_13d92c3a9fbda927",
+      "question": "分居两年以上法院一定会判决离婚吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d46a719b4a75f7f0",
+      "question": "法院强制执行的常见措施有哪些？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_de0a6d6336cd5486",
+      "question": "交通事故与工伤赔偿冲突吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_374ffe9293392d5c",
+      "question": "离婚协议中怎么约定子女抚养权归谁？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_249bbd9265e78f04",
+      "question": "夫妻债权债务离婚时怎么分配",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b2bad14b01e49958",
+      "question": "农村离婚可以分房产吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_3e6d89894f9355f1",
+      "question": "企业为什么要对股权结构进行变更",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_0d7c841d643d6a9b",
+      "question": "公司发行新股的条件有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_64e87703e1c46f28",
+      "question": "个人劳务合同纠纷如何处理?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_47766aa109d2c91b",
+      "question": "我国目前有效的离婚方式有哪些？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_edfa167048067f49",
+      "question": "代位继承的要件有哪些？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_46343dbaee376e3a",
+      "question": "赠与房产再出售新规定是怎么样的",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7ef71bb4a6c8204a",
+      "question": "合伙企业散货的情形具体有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_9b931b6e0491d368",
+      "question": "医疗事故损害赔偿责任的归责原则有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f81247200d572868",
+      "question": "没有签字盖章的合同有效吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_504cb3339acae967",
+      "question": "房屋拆迁，所有权人与居住权人的补偿？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_426ed895d8f32177",
+      "question": "动迁安置，动迁前亲戚户籍迁入的，能否被认定为同住人？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7745120f3fdb8268",
+      "question": "股权转让的大概流程有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_8ac85f4ce96a28ba",
+      "question": "只有盖章，没有法定代表人签字的合同是否有效？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_afb454f3dd9c0197",
+      "question": "以见证人身份在借款合同上签字是否会被起诉？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_be584d30b51c1057",
+      "question": "没有房产证的房屋就只能按航拍图认定吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_9f9720edeb088597",
+      "question": "离婚时财产分割的原则是什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_57e62a61cfba1fae",
+      "question": "试用期辞退能否得到经济补偿金",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_69a7735acbb30bfa",
+      "question": "离婚过错方的赔偿标准有哪些？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e88955e1d9ecbdd1",
+      "question": "遗产继承顺序是什么？如何分配？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e4b0e3f703854e79",
+      "question": "起诉离婚立案多久通知被告?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_3b83e6e6261ac5bf",
+      "question": "离婚诉讼期间女方能否要回陪嫁款",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_08ab1442c0511d25",
+      "question": "异地违章有哪些情况?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_18387412356f090c",
+      "question": "质量问题退货运费谁出",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_03d8181e13b3b7e7",
+      "question": "人民法院执行实际施工人对发包人的到期债权的，转包人或者违法分包人是否有权提异议？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_4e83ef01c84955b8",
+      "question": "公司挂名法定代表人如何解除",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d46ff4edfbad049e",
+      "question": "婚姻关系存续期间，哪些财产属于夫妻共同所有的财产？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_398748239b70f8cc",
+      "question": "交通事故认定书法律上的性质？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7a7f2575148e42d7",
+      "question": "聊天记录可以作为法律证据吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_34e03c78f5519f59",
+      "question": "劳动者加班费的计算方法?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_4185b43b3ac4b076",
+      "question": "违约定金和违约金怎么区分",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7a3c0d26bc603b8a",
+      "question": "村委会能否出具事实婚姻证明",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_0ab91b2b165031ac",
+      "question": "父母离婚后孩子判归一方所有，另一方想见孩子不给见违法吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_2bd392b941b8c565",
+      "question": "存单质押共有人签字有效吗法律依据是哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_0f56c9da0667ae01",
+      "question": "婚前债务怎么算，请牢记",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_6f90ea9d22f0b628",
+      "question": "信用卡、网贷即将逾期了会怎样？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_088b1bcf5657e94f",
+      "question": "专利是什么？怎么申请专利？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d0df85bbedb899f5",
+      "question": "哺乳期可以离婚吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_403abcb1efeb31c3",
+      "question": "装修房屋的住户，每天晚上装修，很是扰民，这合法吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_521c9724ee7dcba6",
+      "question": "死亡赔偿金的计算依据有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_78301e9ca45a7506",
+      "question": "女方出轨了的，在离婚的时候财产怎么分？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7702113deb4af3de",
+      "question": "离婚协议中怎么约定财产分割？签离婚协议要注意哪些问题？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b5ac9a3a472e143d",
+      "question": "上班途中摔伤算工伤吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_73a082055478b157",
+      "question": "民事诉讼中的电子数据包括哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_74c50cd6c9527b19",
+      "question": "合同无效的法定情形有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ffaf58de991b8edd",
+      "question": "举证责任倒置需要具备的条件?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7df28ca99f9971ac",
+      "question": "60岁分拣工岗位猝死，能认定工伤吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ab1d940687141186",
+      "question": "男女离婚彩礼能退吗,离婚后可以退还彩礼吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e21373dc5bc227f0",
+      "question": "在什么情况下 可以变更子女的抚养权？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_70ea0ea7e415b0c3",
+      "question": "拆迁安置房延期过户造成的各种原因？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d753c9f8c3a516b6",
+      "question": "公司被强制执行，是否可以变更法定代表人？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_90ce78ff31b2ab70",
+      "question": "借款合同与买卖合同的区别和边界?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_fd989530f3735144",
+      "question": "用人单位如何支付工伤补助金",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f58314fd7f8de761",
+      "question": "合同终止和解除的条件与法律后果如何",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a1899c1570fd8443",
+      "question": "山东省关于支付经济补偿金的规定?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_eae1adaf35602bb1",
+      "question": "当事人被关押以后能见家属吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_87d36ad694eaba1c",
+      "question": "夫妻离婚时，家里的财产应该怎么分割？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_49c714001c854532",
+      "question": "婚前房产婚后再加名是否可以",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_c75708b6a8e6154e",
+      "question": "民事借款合同纠纷传票什么意思",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a512f32f108a4559",
+      "question": "违规征地政府有哪些惩罚",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ba27e9df0b3d28bd",
+      "question": "什么样的孩子可以被收养？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_731d6e7e21cb7cfb",
+      "question": "符合哪些条件可以解除合同",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_feb254d05b1f7a39",
+      "question": "离婚一方找不到怎么起诉",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_864807a68988af5a",
+      "question": "设立一人有限公司需具备哪些条件?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_3f781aabe9182c1c",
+      "question": "什么是劳务分包合同?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a6eaffd717de06be",
+      "question": "商品房网签备案登记的效力?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b90b4ab14f9d9be0",
+      "question": "四十二、我是女方，孩子还不到两岁，我想让孩子判给我能行吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_4d9cdfff78ede88e",
+      "question": "欠钱不还,学会这几招夺回自己的利益",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_12607eccb7eb6d36",
+      "question": "什么是房屋征收决定的“公众参与”原则？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_89e69ee163e7b29b",
+      "question": "建立基金会，必须具备下列条件》？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e302950c8498a5cd",
+      "question": "股东以房屋出资注册了公司，近两年房价跌了一半，其他股东是否可以要求以房屋出资的股东补充房价所跌引起的",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b23928cc14c7f30e",
+      "question": "开车全责自己受伤怎么赔偿",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7ab5085d88753b5b",
+      "question": "结婚一年多离婚的话彩礼钱怎么判？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_617356d7c827ef31",
+      "question": "什么条件下合同可以法定解除",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_6385272a7b9dc9c2",
+      "question": "公司收购要进行公司清算吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_c4c2734c0f20b723",
+      "question": "关于借车发生争议的规定,有哪些司法解释?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f2931e555f63dcc3",
+      "question": "维修电子产品，导致信息丢失，如何赔偿？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_948772f6bdf37c18",
+      "question": "夫妻财产保证书怎么写才受法律保护",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_85fc36664b54371f",
+      "question": "2023年安徽省关于精神损害赔偿的规定?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_43bf1860171d85ef",
+      "question": "有出轨事实是否有离婚赔偿",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1959d32de8cdb97e",
+      "question": "什么是最高额抵押？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_db4be1ffc845d436",
+      "question": "提前终止合同违约金比例是多少？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1c9dbb52463966d8",
+      "question": "外贸合同履行地如何确定",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_fd3edefa9c0fbac1",
+      "question": "什么样的借条受法律保护",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_da2411d550d24326",
+      "question": "遗产包括什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_719e5ca884a78442",
+      "question": "工伤怎么认定怎么处理",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_5d1b7147acc2941d",
+      "question": "三期内被辞退可以要求赔偿吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e3cc8f1990814546",
+      "question": "公司发起人应当承担的责任有什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1ce78b2354a75644",
+      "question": "事故认定书下来司机会被拘留吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_530b4fa96fd560e3",
+      "question": "合同就签了个字有效吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_093f3571ea65860d",
+      "question": "民间借贷没有约定利息如何算",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f00d870b210618d6",
+      "question": "固定总价合同的概念和规定?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_68b858f26f613d6a",
+      "question": "不同意调岗,是否可以要经济补偿,可以要多少?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_85511e57871092dd",
+      "question": "执行不能是怎么回事？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_59de40726d91ba0b",
+      "question": "房屋征收补偿决定送达后会产生哪些法律后果？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_55ada158f21d6044",
+      "question": "协议离婚能否起诉要求重新分割财产",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a724e894efc38b47",
+      "question": "产假期间收入谁支付?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1d9ec40ca14cc5f8",
+      "question": "婚前一方父母出资的房产归谁",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_007d59333a212c97",
+      "question": "肇事逃逸后保险公司赔偿吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a7faa3a4121dac40",
+      "question": "房屋买卖过户流程是怎样的，如何办理过户手续",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_fa4c493af59193bb",
+      "question": "2023工伤五级伤残的赔偿标准是多少?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b1e1ea4fbfdf0a83",
+      "question": "没有按时完成项目未约定违约金怎么办?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_e1a97b5d19e16fff",
+      "question": "误诊如何维权?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_49a970e488d98da9",
+      "question": "怎样解决宅基地纠纷?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a728b51ef1fb31ae",
+      "question": "出轨离婚有赔偿吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a9a56f9614dfde83",
+      "question": "离婚诉讼的诉讼费要多少？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_6c53fc21125bfca0",
+      "question": "医疗死亡赔偿金怎么赔偿",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_335b90da21a528d4",
+      "question": "劳动关系中公司只签协议不签劳动合同违法吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_5eaa1ee7e20422cc",
+      "question": "为什么婚前购买的房产，婚后还贷是共同的？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a5beec275e5c3d89",
+      "question": "离婚财产保全需要什么资料",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_eb1b4eb1e47843a1",
+      "question": "出租人将房屋出卖给善意第三人，并办理过户登记，承租人是否可以基于优先购买权向出租人主张损害赔偿责任",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_c0ff38785782d967",
+      "question": "劳资纠纷的诉讼该准备哪些证据",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_9bcea0cef108b6cc",
+      "question": "建设工程分包规定有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ee8be2895cde077d",
+      "question": "房子是对方婚前购买的，结婚后他说把房子分一半给我，但没有去做产权变更登记，有效吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7769003c5684b7ce",
+      "question": "只有一方签字离婚协议生效吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_9b84144876ffe553",
+      "question": "离婚精神损失费是怎样的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_edc41c6a4717ba85",
+      "question": "邻居新盖的二层小楼挡住了阳光，怎么办?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_40657d5dec70e520",
+      "question": "如何查配偶名下财产，不离婚可以请法院调查对方财产吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_18e06d903376341d",
+      "question": "销售宣传不规范，存在“虚假宣传”情形的商品房买卖合同纠纷?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7363d524c0a6ccbd",
+      "question": "法定撤销权在夫妻或者近亲属之间的应用?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7bf39bd93f3dfef3",
+      "question": "怎样确定建设工程合同纠纷的管辖法院？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_14af9c70783deb25",
+      "question": "解除合同的解决措施什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_f3dc96a69850e8b4",
+      "question": "最高院审理民间借贷纠纷案件的规定有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1d7280ddaca4d184",
+      "question": "无偿帮工责任承担?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_37c555c7b1724328",
+      "question": "开发商延期交房违约金怎么计算？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d77a86ba6d473b61",
+      "question": "金融机构设立分支机构需要满足的条件是什么?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d4a74cc235410322",
+      "question": "分居一年了可以离婚吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_75faf08cf98fd4a1",
+      "question": "婚前房产是否属于夫妻个人财产",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_10bedec360355eab",
+      "question": "哪些借款合同不受法律保护？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_800f9ae65396ddf1",
+      "question": "离婚时如何清算公司财产?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_b764914f8a6aea5b",
+      "question": "金融机构借款合同诉讼时效是多久？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_a6a37c31171be3d3",
+      "question": "被欺骗签订的合同可以撤销吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_5e986432f96d5771",
+      "question": "合同的解除与终止有何区别?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_030730b218c956be",
+      "question": "遭遇人身损害，误工损失如何证明？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_880a7523623ca0ed",
+      "question": "如果房子的利害关系人不想让登记机构知道自己的查询目的，可以进行不动产登记资料的查询吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_2f040799e307c651",
+      "question": "一方所欠赌债离婚时由谁还",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_44ac574322598d47",
+      "question": "分别向劳动合同履行地和用人单位所在地申请仲裁怎么办?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_01875822b2afc5b1",
+      "question": "夫妻协议离婚房子留给孩子，一方可以出售吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ad7dc7fed43eddb0",
+      "question": "上海市关于支付经济补偿金的规定?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_95fdbf986f6b991b",
+      "question": "在自家宅基地上建房未审批是违建吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d69c1873f698337f",
+      "question": "公司增资扩股常见的方式有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d2059a342cb1b051",
+      "question": "夫妻一方出轨，离婚财产怎么分配，是否可以主张净身出户",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_527c894080dfbaab",
+      "question": "出借信用卡不还款,风险多大?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7ac85bcbd8f5347e",
+      "question": "父母协议离婚离婚子女户口怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_94b629ea6feabdf1",
+      "question": "工伤与交通事故并存怎么赔偿，伤残标准是一样的吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_04ea81a096a52098",
+      "question": "公司回购股权的法律风险有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_d5a062d8b1690cf3",
+      "question": "土地使用权转让必须签订书面合同吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_5c229b512f2626c1",
+      "question": "股东大会跟董事会的职权有哪些区别?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7dec7235e1961dc1",
+      "question": "民法典增加的两种遗嘱方式?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_70240c94381c2865",
+      "question": "建工合同履行过程中常见的法律问题?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_9342137a7b1d038f",
+      "question": "医疗事故需提交的证据有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_632a58dd0382f384",
+      "question": "环境污染认定的标准有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_49abcc0f70cf7a88",
+      "question": "福利房算夫妻共同财产吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_2027fba6bffcc683",
+      "question": "著作权侵权的行为具体有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_ff91779dfff7e2e7",
+      "question": "我家亲戚的小孩发生交通事故，对方企业肇事司机负全责。因小孩伤势严重医疗费巨大，对方企业是国企虽然垫付了一点，但远远不够。所以我们通过水滴筹对外募捐，以获得的捐款支付医疗费。后来在交通事故人身损害赔偿赔偿诉讼中，对方车辆的保险公司说我们已经通过水滴筹获得了款项，现在再次索赔属于重复赔偿，而已拒绝赔付。请问保险公司的说法有法律依据吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_97d07f38a8ebbd9f",
+      "question": "职业放贷人需要承担的法律后果有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_7efa8394c12d6b94",
+      "question": "丈夫死亡时妻子要清偿债务吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "disc_law_sft_non_criminal_legal_1ada9d4d1ba9aec2",
+      "question": "男方的哪些债务女方不用还",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_65d4687434964d2a",
+      "question": "奶奶名下的房产，立了书面遗嘱给我父亲（有一个姐姐一个妹妹），有证明人，现在我父亲也过世了，母亲健在，没有立遗嘱。我想请问，该房产是否只有我和我母亲有继承权。我的两位姑姑是否有继承权？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9a83f53bf5d27174",
+      "question": "2015年一月发生交通事故，已经报警，事故责任书我八对方二，我方双腿粉碎性骨折，现已住院三个月余，手术已做，未作伤残鉴定，何时做合适？对方只有抢险，我方只商业险，如何赔偿？谢谢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f6efcd533e6a4a48",
+      "question": "离婚什么情况下可以要求对方净身出户",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_ed86a61341d600c6",
+      "question": "镇里现在没钱，想赖账，也不给个说法，扩建的道路也就几里地元，占用了我家2亩土地，其中包含半亩的芹菜苗。谢谢各位律师了",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bf5ef9ecf33a2dbe",
+      "question": "母亲去逝时房产给了我，但没有公证，现在拆近了，可以直接把房产过户给我吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_dec306276de64a91",
+      "question": "拆迁房子获得的补偿款，需要交税吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_daf0f93b1c0454c1",
+      "question": "之前我和朋友一起合作经营一间店铺 合同是两个人一起签的 还有一年半才到期 现在我不想做了 但合伙人说一定要将合同过户给他才让我搬走一半的货物 要不关于店里的东西什么都不可以动 请问我现在可以怎么做",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bd0304593f150fdc",
+      "question": "请问律师，婚后买房只写了一个人的名字，如果离婚是一人一半吗？如果对方偷偷卖房了，能要回一半房产钱吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f88727d0797e9df9",
+      "question": "我一个朋友上班期间和一个同事闹着玩导致他小臂骨折，谁知道他报的是工伤，我朋友做的证人，（因为我朋友当时也很害怕毕竟骨折了，手术费大概四万左右）现在想问一下如果被发现有什么后果啊",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_16800b7bc5db6e3d",
+      "question": "工伤十级，一次性伤残补助金，医疗补助金和就业补助金能自己去社保局申领嘛？还是必须要通过单位，让单位去申领？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_0f911942e420ed50",
+      "question": "他们就是不想推到我的银行卡里，说只能退到他们网站的用户里，您好有没有什么法律条规是限制他们这种行为的，或者是保护消费者利益的",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_b4d455a3f8aac714",
+      "question": "和4个人给别人担保19万元，贷款人意外身亡，但是贷款人的妻子还在，并且在她的名下有一套楼房和一个门店，法院却要强制执行要我们还贷款，这合理合法吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_54025b0c9271be61",
+      "question": "我们有心赔偿，但他们索要15万《实际只花了1.2万》明显是在讹人，我该怎么办？应该赔偿他们多少？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_b84051b1f31ebb31",
+      "question": "母亲去世,父亲又找了继母,现父亲去世.现唯一一套住房是我父亲和生母生前分的房改房,但房产证被改为父亲和继母的名下.我们子女应该怎样继承?请赐教.谢谢!",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a454d390f263ae1b",
+      "question": "老板开了2间公司，员工在A公司买保险，在B公司出工伤（注：A与B在法律上无联系），怎样才能让保险公司赔，是要做什么文件，听PICC的一位经理说是要做派遣证明，希望专业人事给个标准的回答",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_74f94b9fc4b53d7a",
+      "question": "9级工伤伤残一次性医疗补助金和就业补助金标准分别为8个月本人工资。本人工资是指哪部分？实发工资还是缴社保的基数？还是基本工资？岗位工资？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f9ebb59397d1e92f",
+      "question": "您好！请问办理离婚时去哪边的户口所在地办理都有效吗？现在我们没有财产矛盾，只有一个一岁半的儿子，都想要儿子的抚养权。现在我没有工作，是否有争夺的胜算",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_10f2c0de61a85e66",
+      "question": "父亲去世18年，一直没有分配房产，现在想将房产过户给我，但是我母亲和姐姐还在，母亲是房产的共有人，如果母亲和姐姐愿意放弃继承权，然后我再签协议如果变卖该房产后必须给姐姐一部分钱，可以么？应该怎么做",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_e303264406c57e09",
+      "question": "在青岛买二手房没有房产证，假如以后拆迁的话前房东想要回房子，我的权利有没有保障？如果买这类房子的话需要什么证明、或者说是怎么证明此房屋是我的呢？ 谢谢！",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_b5c3998d8a5af702",
+      "question": "施工合同履约保证金约定退还为“发包人按照施工进度情况合理确定”，请问已经完工70%的工程量时，可否退还50%的履约保证金。在哪里有明确规定",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_fb19b3a806ecb7da",
+      "question": "我老公现在和小三住在一起，他又不同意离婚，说为了孩子不能离婚，我该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a4c8f1f93a608514",
+      "question": "工伤用了社保报销了一大部分，然后还有自费的，现在想问的是，工伤自费那一部分社保局会按工伤保销吗？因为听说用了社保，工伤就不可以报自费那一部分啦。现在这个自费这部分可以要求单位出吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a65d996bf2a15bd1",
+      "question": "如果在一方不知情的情况下，对方将有双方名字的房产证抵押给民间高利贷，对不知情的一方有什么影响！",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_cf8b6b87fc7d5c1b",
+      "question": "婚后由双方父母出资购买的不动产，产权登记在一方子女名下的，离婚时产权如何认定？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_79c415d7c57dd885",
+      "question": "我给人担保了1万元的高利贷 月息7分 还了快一年了 现在借款人3个月没还利息了 跑路了 放高利贷的把我的分期车扣了 怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_772363c991b21c53",
+      "question": "丈夫欠债，无力偿还，如果法院强制执行，会不会查封妻子名下的分红保险？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_309ff3ccfda860d9",
+      "question": "简易程序开庭后三个月内是不是都要出结果的？（还有就是，是不是法院可以说案件有点难度什么的，法官是不是可以向法院申请延期15天的说法，是不是真的？ 谢谢）",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bc85176e30ec35ba",
+      "question": "网上的DG棋牌最近登录不进去啊。是不是跑路了，跑路的话可以赔偿吗？找谁赔偿？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f0ad00bb9cd6e667",
+      "question": "公司安排送货时，发生了交通事故，是否能获得双重赔付",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_47a7a214a4a9b093",
+      "question": "合同签的是一年，半年交付租金，住了半年退租，提前两个月打招呼，房东提前把钥匙拿走了给了中介继续招租，现甲方房东押金不给退说乙方违约，说提前退租需支付一个月违约金故押金不退，这个押金可以退吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_3ab96bd104595060",
+      "question": "房屋租赁合同，租赁期限5年，合同到期还差2年，合同上明确了每年出租之日提前30天一次性交清租金，目前3个月过，承租人未交租金，我想回收房屋，我应该怎么做才合法",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_66d0f349aa62e4cb",
+      "question": "如果我和房东签订一年合同，我和另一个人一起住，押金房租一人一半，交了半年，半年到了，那我有权利让他搬走吗？请不要回答我按合同规定，谢谢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_d16c9b63fe2f53c8",
+      "question": "我的一亲属在交通事故中负主要责任，与死者家属已签和解协议，现申请保险公司赔偿，请问死者精神抚慰金最高可赔付多少，死者在医院的抢救医药费保险公司是否应全部报销",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9a2edd5d6af1e9e4",
+      "question": "顺丰承包商要求员工必须自己承担社保全部费用，不然就走人，怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_e11c948fc14ad88d",
+      "question": "2018.5.16上班至今 已转正 企业无故辞退 没签合同 也没提前一个月通知辞退 这样的话我应该得到什么补偿 如果企业不给赔偿金 我应该怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_86376428429ffc27",
+      "question": "近期，我家老房子在加建过程中遭遇强拆，此区域无公告要拆除，在这种情况下，在自己家加建房屋，损失将近5000元，损失如何赔偿，由相关那些部门进行赔偿？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_3dbe36f774c39081",
+      "question": "上海市退休返聘期间在工作中受伤是否属于工伤？有签合同，已享受养老金",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_24fb34e33030bb49",
+      "question": "请律师帮助，如果申请强制执行后，债务人没有财产，两年后就可以不用还款了吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_94c6b4c545a11bfe",
+      "question": "房产证上有三个人的名字，这个房子户口上只有婆婆公公的名字，现在房子要拆迁了，请问拆迁后分的房子有我的份吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_4dc990ec71b1a597",
+      "question": "您好！我即将三次起诉离婚，离婚案如果被告耍赖不到庭怎么办？就无法解决了吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_2694145094ef6e29",
+      "question": "我被他人打成轻伤，派出所已拘留了当事人，现在我能不能向派出所提出赔偿？具体该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_2b1957a75bde0fcc",
+      "question": "律师您好我和对方是遗嘱继承双方各一半的房产，法院判对方居住，判决已经一年了，因为是军产房不能卖。我想要起诉对方占居我那一半房产的租金赔偿。但不知道律师费多少，是怎么收费的。予以答复，谢谢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_98601c57750c610f",
+      "question": "工伤没有痊愈 在家休养 算医疗期间吗？找大夫开证明 证明买没痊愈 大夫不给开 上述问题怎么解决",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_650b21d139d9d7f7",
+      "question": "各位律师大家好 我自己具有使用权的水库和湖区现在是度假村进行用电捕鱼合法么？是否违反相关的渔业法和用电法",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f843aef2d9397de7",
+      "question": "公司做诉讼保全需要担保公司来担保 怎么收费标准 80万 需要什么资产给担保公司",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a386f8fffb11f497",
+      "question": "我在公司吧脚趾砸骨折了公司没有给我报工伤！我自己申报的.刚申报公司想要开除了.我想知道公司如果吧我开除了.我申报的工伤还有效吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_7c26b313292120cc",
+      "question": "我哥是建筑工地受伤，已交工伤保险，现在医院治疗，目前承包老板支付医疗费用，还比较配合，但没有报工伤认定，我哥和建筑单位没签劳务合同，我想做工伤鉴定，请问金律师我们现在应该做哪些工作或者收集哪些材料？",
+      "old_label": "general_no_legal_retrieval",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_87c8c26269062470",
+      "question": "我和老公是再婚的我们各自带着一个孩子组成了一个家庭孩子八岁时候结合的。请问他要是过世后他的房产继承权会有我的一份吗【继承问题】",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_152ee1d481e791cc",
+      "question": "装修找的工人干完活回去，在小区里掉到没有井盖的井坑里，5根肋骨骨折。这算是工伤么，装修业主负责还是小区开发商负责？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f66638aab7f09624",
+      "question": "婚内过户车辆，离婚算共同财产吗，能分割吗？属于隐匿转移财产吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6fd2d90b5c9c323d",
+      "question": "租房合同未到期，二房东为按照履约修理设备以及拖沓修理时间，反馈其问题，二房东恶言租客怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_5fcba1ebc4f2c686",
+      "question": "我的员工在离的时候保留了一份他工作时的客户名单。现在他新成立了公司，还保持和这些客户的联系。已经造成了多起我公司客户流失。请问对这种情况是否属于不正当竞争？或是在法律上有所约束？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_41ec5477c0d9715a",
+      "question": "女方好赌，没有孩子，我想离婚。她的个人债务，她自己承担吧？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_cb15737c1ac49b7e",
+      "question": "免费提供经营场所，只收取水电费，是要签订房屋租赁合同还是商铺租赁合同？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9e993196a78ab833",
+      "question": "家里准备购置一辆劳斯莱斯古思特轿车，国内4S报价为511万元，进口车商报价仅为250万元，正规手续加40万，不过车牌是粤澳车牌，是否符合国内法律法规？会不会有什么隐患呢？（粤澳车牌正规的情况下）",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_8b36db46ac4ad8f6",
+      "question": "昨天收到开庭传票，请律师给点建议，我需要找法官吗，提前交相关证据，还是最后交。有些什么建议，我应该做些什么",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_aaf3a6a16db6fe2a",
+      "question": "本人有一户平房在出租，但因平房拆迁问题于3月份和租户不再续签合同也不在收取租金，经协商后租户并不搬出，请问该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_8c1ea4b31f2f34da",
+      "question": "2013年9月到2014年9月没有签劳动合同，现在是2015年7月。我申请仲裁的一年的时效期限指的是从2013年9月开始一年内，还是2014年9月开始一年内？能赔偿多长时间的双倍工资？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_76520583d54c8a68",
+      "question": "在一家矿上上班下班骑摩托半途中摔上骨折，算工伤吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_7411e4c1eb7f85d7",
+      "question": "我在建筑工地上班时从架子上掉下来，到医院检查左手腕上骨折，经过治疗医院说—年以后还要做手术取钢板，请问我属于几级伤残，公司应该赔偿多少钱",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_70379595f113a30f",
+      "question": "请问一下，我爸爸是在工地造成的工伤。现在已确定是工伤，而且定残也鉴定了是八级，请问应该享受哪些索赔，索赔标准是什么？谢谢了",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f8945ce180cb880c",
+      "question": "某国资公司欠我公司巨款，法院判决已生效，但该公司无财产可执行，现在也就是空壳公司，政府有连带偿还责任吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_86cf69eb6edf92f9",
+      "question": "我的房子已经协议给儿子了，还没过户，可是几年后我老爹又想要房子，我就又写了个协议给我老爹了，请问在法律上到底是哪个协议有效",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_0e98796c6d2458c2",
+      "question": "公司告诉员工要缴纳社保，员工自己不愿意交，自己写了个自愿放弃缴纳社保书，这个自愿放弃缴纳社保书有没有法律效力？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_d10ff596e99e99aa",
+      "question": "我的房子出租，但由于楼下邻居不慎引起火灾。那么我与租房合同未到期，我和他之间应如何解约？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6d92eab093f2256f",
+      "question": "公司未签订试用期合同，并且试用期未缴纳五险，我现在转正了，但是想立马辞职可以吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9c0cf401405619c3",
+      "question": "老人生前公正了一份遗嘱 遗嘱内容只指明老人房产由其子A继承其子A在老人生前近了主要的赡养义务现房产已转至其子A名下老人子女B、C是否有权索要、变卖老人在世时其屋内的家具及财产？感谢回答",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c4aaf390e9ae9412",
+      "question": "外地非农户女嫁给北京非农户男，户口几年可以进北京",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6fbd5df1159a5a6f",
+      "question": "使用权房承租人是奶奶，奶奶过世了，目前户口里是儿子和孙女两个户口，请问如果此使用权房卖出后，所产生的财产是奶奶的遗产吗？，其他不在户口内奶奶的子女有权分配吗？请各位律师帮忙解答，很急",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_52f841fa683143ec",
+      "question": "我和丈夫均为再婚，丈夫是台湾藉，我们在大陆的房产，丈夫签字并公证了放弃房屋所有权，他儿子是否还享有该房产的继承权？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_55a2b301cda0c2d9",
+      "question": "我公司与乌克兰某公司签署谷物进口合同，该合同没有约定适用哪国法律，仅约定如发生争议在英国依据谷物和饲料贸易协会的仲裁规则进行仲裁。那么请问该合同适用哪国法律？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_d33cdc76f69b9405",
+      "question": "夫妻关系不和，在同一房屋中已分居，丈夫深夜突发疾病，妻子及子女听到丈夫有异样，但是没有给予救助，导致丈夫死亡，请问在这种情况下妻子及子女是否应承担法律责任，应该通过什么途径解决",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_faf588ce92ab8982",
+      "question": "我经过中介签三方合同购买的二手房，已付首付，已放贷（款项处于冻结状态）并还了一个月的贷款，但还未做抵押。由于原业主经多次催促不能交清建房前的物业费，未能履行三方合同规定的义务，我能否终止贷款？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6ef5a290a9dc4655",
+      "question": "我父亲去世了,母亲健在,还有一个同父异母的姐姐,姐姐的妈妈也去世了.房产证是父亲和我母亲结婚之后办理的 ,姐姐的妈妈有继承权吗?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_5db6bd311e1702b4",
+      "question": "丧偶儿媳能否在同一顺位继承份额？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c153e1530431d465",
+      "question": "结婚后，男方转帐给女方100万元。后来男方陆续向女方要现金20万，30万元。请问，现在要离婚了，怎样来证明，这个钱是男方拿走的，需要向法院提交银行帐户的交易流水吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_fff2a8043f3e8e37",
+      "question": "因欠款无力偿还，法院强制执行冻结了银行账户，被执行人的工资发放到另一人卡上，能不能冻结这个人的账户？不能该怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_60f506378f80a95f",
+      "question": "父亲与儿子共同共有的一处房产，没有约定份额。父亲如果未经儿子同意单独立遗嘱把个人部分给其他子女可以吗？这样的遗嘱有效吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_cebe46dd424dd7ed",
+      "question": "工作日步行上班路上,被旁边工地上落下石头意外击中头部,受外伤。家庭主力,现休假疗养中,请问: 是否属工伤?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_421a6c4529696014",
+      "question": "请问一下!今年一月份的时候我把一个人撞了,伤的很重医了几百万了!责任全部是我,是因为我没钱赔现在法院起诉我,我会判几年呢?当时是我报了警打120的.",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_52941610d0178f2d",
+      "question": "我公司跟银行贷款，银行要求我（财务人员)提供户口本结婚证作为第三担保人，如果以后公司破产我会负连带责任吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6d83b8284bb2e596",
+      "question": "晚上需要加班，约定工作开始时间为凌晨0点，晚上和朋友聚会，约22：30从朋友家出发，开车去工作地点， 大约22：40发生交通事故，对方全责，算工伤吗？单位有工伤保险",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a64fa7ee4db9698d",
+      "question": "代理民事诉讼案件的律师费用一般是诉讼之前缴纳，还是结案后缴纳？涉及经济案件金额为45万元，那么律师代理诉讼的费用比例为多少？法院费用比例多少？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_ace1840c04dc995c",
+      "question": "一商住小区合同书上写土地使用权70年，住宅业主在办房产证时被告知只有40年的产权，业主们该咋样维权 ？ 谢谢！",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a258863285cea318",
+      "question": "我的妻子有精神病，我是否可以就此申请婚姻无效？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9ce0047a116d4b5d",
+      "question": "律师您好我前些日子交了个男朋友我们都住在一起了可是我发现他有家我该怎么维护自己的权益",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_35f964d3c2d98101",
+      "question": "商标侵权诉讼的程序是如何?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_7c927c6de474e60f",
+      "question": "有没有法律规定子女有权查看父母遗嘱?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_b20cdac8ca167712",
+      "question": "五年前我一个朋友的父亲打了人，当时没有什么事，说只是推搡了一下。现在那家人找上来说要赔偿10万。不然就报警抓人，这该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_1ac93e4033a2b95f",
+      "question": "请问手机录音转到u盘上还有法律效率吗？半年前录的放到u盘里时间判定上有没有什么问题呢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_b911b0dfde1a7dd8",
+      "question": "我在公司干了6年其中签了1年合同又续了1年。到现在没有签过任何合同。现在公司要裁员请问怎么赔偿？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_45446bf36bfb4413",
+      "question": "我呼吸声影响到别人，或者抖腿别人看不惯，把我告上法庭，按照正规诉讼会如何处理？道歉并停止加害吗？在公共场所发生是否不能起诉？或者公共场所别人睡觉时候说话把他吵醒之类，起诉的话怎么算",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_01305c2440895a84",
+      "question": "诉讼保全 可以用购房合同么",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c30af208b274b546",
+      "question": "我和老公多久分居可以离婚你告诉我 ？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f9b61620c62b176c",
+      "question": "我想问下公司是以员工表现不好为由在原有的劳动报酬基础上减少下续签合同，本人不同意。公司现在以我没合同在身不让我上班，我提出辞职，请问我可以向公司索取经济补偿吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_91d41863040b44a3",
+      "question": "我父亲在这家公司上班25年，至今未上保险，合同，工资条都公司保留，没有证据，现在父亲在这公司生病，公司未管，怎么告这家公司，应得到的金额赔偿怎么算？谢谢！！",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9aae15f6bb90159b",
+      "question": "律师们，您们好，我们老家的房子土地山林都还在，房屋土地使用证，山林证，土地承包的凭证都在，但是我们现在没住在老家，现在老家在开铁矿，请问开矿要征用土地山林有我们的补偿费吗？补偿有什么不同吗？谢谢您们",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_66199b3f8e7c65fd",
+      "question": "我们家因修路要拆迁，但政府给的补偿标准太低，村民不同意。政府说不签字就要强制拆迁，我们该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bd690fe02c6a1684",
+      "question": "因双方私下签订了买卖合同，买卖终身，现在我想要回来可以么",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_10ef40fb2b012655",
+      "question": "母亲三年前去世，哥哥今年去世。嫂子侄子要继承母亲的遗产，我已经出嫁现怀孕。请问，1 我肚子里的宝宝有继承权吗？2 母亲看病的钱仍未还清，是不是应该先拿遗产还债，剩下的再进行遗产分割？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_83287c2a91529ea4",
+      "question": "个人与个人之间签署的网络小说版权转让协议有法律效应吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bec75d7bf7876115",
+      "question": "各位律师好，想和大家咨询一下工作中受伤，老板给出的住院费，但在登记挂号时用的不是本人的身份，现在己经出院，还没拿到病例，想把住院信息更正过来，医院不给出具证明，老板也不配合，这种情况如何能解决？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_7b3c4bc32df501c4",
+      "question": "我们家在上海杨浦 这次拆迁分了115万 拿了两套房子 总额是170万我们家本身是在其他区是有房子 拆迁办的说要交房产税？！ 这房产税是怎么来的？怎么算的呢？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c4c54d16c12bc57f",
+      "question": "中午休息时间被一同事用刀捅伤。医药费全是厂里出，已经用了十几万了。我问厂里负责人，厂里说这属于行事案件，不属于工伤。请问律师，我该怎么维权。 谢谢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c2375b473460279b",
+      "question": "腰椎爆裂骨折，骨髓挫伤，凭几级伤残。腰椎爆裂骨折，骨髓挫伤，凭几级伤残交通事故",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_48c5953e0a7edc2e",
+      "question": "动迁时按人头给了动迁安置费，其中我个人的部分，我妈妈给了我一半，还有一半她说她来保管着，我想问如果离动迁过去3年后，她不给我，我能通过法律维护我的权益吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_11a9f28294f3d697",
+      "question": "如果不继承遗产会怎样？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_6286dd881072d202",
+      "question": "您好，请问我贷款买的车出险理赔还要银行出理赔委托书吗，为什麽是这样的，是我买的全保，而且用我的房产证作的抵押买的车，这样做合理吗，银行会不会用什麽理由不给我开证明吗，我能拿到理赔款吗，谢谢",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c923ef528ca6eab2",
+      "question": "爷爷去世，留下了物业，物业的地契只有爷爷的名字。是否归奶奶所拥有？奶奶还有五个子女",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_0b0f7ce6db7821a5",
+      "question": "二手房合同到期，中介没办理成功，合同写的是中介代为保管定金。现在买方要求解除合同，卖方不同意，并且要求拿回金是否合理？买方如何拿回定金？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_d38e66e911369b9d",
+      "question": "营业执照上没有装修能从事装修吗并且签装修合同吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_db993e738d8a40ee",
+      "question": "如何快速讨要农民工工资，目前，工程已经交付了，就是不结算农民工工资，可以直接向工程所在地法院起诉吗？没有合同，仅有工人自己的出工记录及工钱计算",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_767594dedcee6315",
+      "question": "我侄儿夫妻都是再婚的,各自都有子女和婚前财产.不幸的是女方在十月二号车祸去世了,请问女方的婚前财产该谁继承?是她子女还是她丈夫?还是他们都有继承权?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_c72e9550dc85a88c",
+      "question": "劳动合同上面除了有合同期限没有写任何内容，而且只有公司一份，个人没有，这样的劳动合同有效吗？万一发生纠纷怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_08f3617035d5db8e",
+      "question": "在网上申请贷款，已经签订合同后对方传真的下款通知书上要求我先4000元履行完合同后下款，证实有还款能力才会下款，我怕是骗子所以就没有打过去，但是我合同已经传真过去而来，手印也按了。该怎么办？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_2df569115b54fff4",
+      "question": "没有签订劳动合同及缴纳社会保险工作两年现在想辞职可以随时离职吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_ea310849a2e7197c",
+      "question": "如何理解劳动仲裁中的终局裁决？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f8c0d5ee40e8abf0",
+      "question": "遗嘱公证需要哪些材料？如果房产证不在自己身边可以做遗嘱公证吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_072b2510da647733",
+      "question": "我因为家暴离婚，我应该如何更好地维护自己的权利？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_a88edc80d1e8bae6",
+      "question": "我家是拆房的，在拆房过程中不小心摔伤，现在在医院就诊，可是因为协议对方不与赔偿。请问这个协议有效吗？该怎样解决",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_2780407f5da42ad5",
+      "question": "2012年1月25日她自己耍小性子从楼跳下来，现在问我要十万块做为治疗，但是我没有，她要和我离婚，并且要把父母买给我的新房卖了，我想问她有这个权力吗",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_57bc2121e67058ab",
+      "question": "停工留薪期需要自己去劳动部门申请吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_bc888f341a647ac8",
+      "question": "爷爷去世前曾立遗书，名下房产给长子（我父亲），其退休金和当兵补偿分给其他子女，顾今年房子拆迁，其中有一些其他原因想要金钱补助，不要房票，现父亲其他兄弟姐妹有权干涉或继承吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_3624f6fb9729f2d0",
+      "question": "现有外婆房子一套，当时是武锅单位房，后来由我妈妈出全资购买，房主是外婆，后来外婆去世未留遗 嘱。现房子要拆迁，有兄妹5人。如平均分割遗产，那么当时我妈出资的房款是否可以多分？谢谢！",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_950faa920e9b5332",
+      "question": "老人有三个孩子，老人决定财产分配给AB两家，并晚年生活由A负责，老人拒绝C家赡养并且不给任何财产，写入遗嘱并公证，对于C家来说该怎么办，这样的遗嘱是否有效，对于C家是否还有赡养义务",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_47429904edd25ae9",
+      "question": "发生工伤，个人申请工伤认定，没有证人证言，劳动局不做认定怎么办",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_e048e0c52a030f9e",
+      "question": "律师你好，请问一个法律问题。有个朋友借我钱，先让我把钱转到他表弟的支付宝里，他表弟再取出来给他，推脱一年多未还，他表弟是否可以作为第二被告，依据是什么",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_fcc36e8919ceea31",
+      "question": "去年干一年活，现在工地几十个工人拿不到一分钱，但是公司，项目部，都说钱给大老板了百分95，不给管，找劳动局，管委会就又推到公司项目部，老板找不到人电话不接，该怎么办?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_67b230ec6e394640",
+      "question": "过年之前由中介签定的二手房买卖协议，买方已经支付了除贷款以外的房款，卖方想违约，协议上标明的违约责任只有定金部分，请问法律条款有什么规定，是按协议履行，还是按法律条款履行的？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_1d7ff954562fb3a3",
+      "question": "户籍管理咨询部门咨询律师 你好！我离婚后再婚前妻户口未迁移，户口以分开。再婚后土地拆迁，村上是按人口分配，当只承认一人。请问我现任妻子有享受权吗？再婚后妻子户口已经迁入",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_05e7b1042ab8b333",
+      "question": "婚前一方为人担保，后结婚，房子一套为夫妻共有，有按揭。债务人非法集资被起诉，失踪，担保人是否有责任？住房是否被执行？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_f3ea35caa6d9eb96",
+      "question": "买了套房，当时是没有落户的，去年房主才落户到他名下，现在我想将房产过户到自己名下，房主不配合我，我怕他是用房子贷款了，我怎么才能查到他是否贷款？ 如果贷款了，我起诉他可以吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_9165ec9200f13948",
+      "question": "我村书记把自家耕地租给他人用于建厂，并从事非农业活动。请问他触犯了什么样的法律？应该收到你什么样的惩罚？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_83a4bcdced724cd6",
+      "question": "如果起诉，申请财产保全诉讼与没有保全的诉讼的区别。另外债务人原来在借款合同中承诺用退休工资偿还借款，现在反悔，如果起诉，是否还需要对退休工资起诉保全",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_law_non_criminal_legal_83d44413ca4ad720",
+      "question": "在农村八十年代承包的土地，每年都交土地承包费用，到02年村里统一都不交承包费了，现在村里在承包人不知情的情况下将该土地又承包给他人，并签订了新的土地承包合同，该怎样维权？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_3ca5f9ffcfbc3e87",
+      "question": "在某合同纠纷中，中国当事方与甲国当事方协议选择适用乙国法，并诉至中国法院。关于该合同纠纷，下列哪些选项是正确的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_b0222d0fefafa069",
+      "question": "市某区政府教委的公务员张某在2005年度考核中定为不称职，张某的下列哪种做法不正确?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_874e4a57362f0be6",
+      "question": "关于罪数，下列哪些选项是正确的(不考虑数额和情节)?",
+      "old_label": "criminal_law_law_only",
+      "new_label": "criminal_law_law_only",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_9c73855f80a52714",
+      "question": "在刑事诉讼中，下列关于申请法律援助的说法正确的有?",
+      "old_label": "non_criminal_legal",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_2bd3eca9abd353cd",
+      "question": "甲厂的生产污水流入李某承包的鱼塘，致使鱼虾死亡，损失2万元。李某起诉，请求甲工厂赔偿。下列哪些事实应当由甲工厂承担举证责任",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_1b6e4db4d31a107b",
+      "question": "下列离婚案件诉讼中，正确的叙述有",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_b5c9a8b2e34368bc",
+      "question": "某工商分局接举报称肖某超范围经营，经现场调查取证初步认定举报属实，遂扣押与其经营相关物品，制作扣押财物决定及财物清单。关于扣押程序，下列哪些说法是正确的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_9c9c2dcc036493b2",
+      "question": "甲乙签订了一份借款合同，甲为借款人，乙为出借人。借款数额为50万元，借款期限为两年。丙、丁为该借款合同进行保证担保，担保条款约定，如甲不能如期还款，丙、丁承担保证责任。戊对甲乙的借款合同进行了抵押担保，担保物为一批电视机(价值30万元)，未约定担保，请回答:设甲、乙之间的合同有效，甲与乙决定推迟还款期限1年，并将推迟还款协议内容通知了丙、丁、戊，丙、丁，戊是否承担担保责任?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_a7cbed4c915ae5a8",
+      "question": "下列选项中不能成为合伙人的是",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_1a4598583e499a45",
+      "question": "商业银行的下列违规行为哪一项依法应由中国人民银行负责查处?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_f94ce7e5209d2c13",
+      "question": "下列关于法的作用的表述正确的是?",
+      "old_label": "general_no_legal_retrieval",
+      "new_label": "non_criminal_legal",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_f08c10b10d23e7b9",
+      "question": "甲公司是国务院规定的重要的国有独资公司以外的普通国有独资公司，在具有国有资产监督管理机构的相关授权的条件下，以下哪些事项可以由甲公司的董事会自行决定:(1)修改公司章程(2)申请破产(3)增加注册资本(4)发行公司债券(5)变更公司形式(6)与其他公司合并(7)解散",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_7ae95d818e0c9c94",
+      "question": "某市工商局和物价局在财税大检查中以共同的名义对甲公司的违法经营行为作出行政处罚决定，甲公司不服此处罚决定，拟申请行政复议。甲公司应以何机关为被申请人?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_2140e26502f5f03b",
+      "question": "根据我国有关法律规定，在下列哪些情形下仲裁协议无效?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_f7cfcde2fefcbbd8",
+      "question": "甲对拆迁不满，在高速公路中间车道用树枝点燃一个焰高约20厘米的火堆，将其分成两堆后离开。火堆很快就被通行车辆轧灭。关于本案，下列哪一选项是正确的?",
+      "old_label": "criminal_law_case_and_law",
+      "new_label": "criminal_law_case_and_law",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_7f7a8f58d5a59014",
+      "question": "甲国公民在甲国购买了原产自乙国的化妆品一套，因产品质量问题导致面部严重受损，一年后向乙国法院提起了诉讼，据此，下列选项中不属于识别的是",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_b9b69b03746a4014",
+      "question": "某律师在代理一项涉外民事诉讼案件中，需要了解有关司法文书域外送达的规则。关于司法文书域外送达的规则，下列哪些选项是正确的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_55231b5493830c5d",
+      "question": "某医院在一次优生优育的图片展览中，展出了某一性病患者的照片，并在说明中用推断性的语言表述该患者系性生活不检点所致。虽然患者眼部被遮，也未署名，但有些观众仍能辨认出该患者是谁。患者得知这一情况后精神压力过大，悬梁自尽。为此患者亲属向法院提起诉讼，状告该医院。请问医院这一行为侵害了患者",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_9f232d061d8573ac",
+      "question": "根据我国《律师法》规定，下列说法或做法错误的有",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_562cc3f0a8c87edf",
+      "question": "酒吧开业1年后，经营环境急剧变化，全体合伙人开会，协商对策。按照《合伙企业法》规定，下列事项的表决属于有效表决的是",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_4c3be033df443a1a",
+      "question": "A省B市C区的李检察长被人举报是违反法定程序被选举产生的，但他已被提请该市人民代表大会常务委员会批准。对于他的任命，何人有权提请该级人民代表大会常务委员会不批准?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_63efb9c320a8d1ca",
+      "question": "下列有关食品生产经营许可制度的说法中，正确的有哪些?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_c12f2c32cd3efde8",
+      "question": "中美两国都是世界贸易组织成员。《保护工业产权巴黎公约》、《保护文学艺术作品伯尔尼公约》和《与贸易有关的知识产权协定》对中美两国均适用。据此，下列哪一选项是正确的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_a7b05c65d5eee001",
+      "question": "检察官有下列哪种情形的，予以辞退",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_22aa7a92405b2286",
+      "question": "下列哪些行为不属于行政许可?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_6d66fb3ba94ef153",
+      "question": "某区公安局以吴某销售假烟为由对吴某作出了2000元的罚款，贾某不服提起诉讼，后来某区法院判决撤销某区公安局的处罚决定，返还吴某2000元罚款，要求在判决生效后15日内执行。当事人均未上诉，区公安分局也未返还罚款，对区公安分局不履行法院判决，法院可以采取的执行措施有?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_7fdbaf20dcbf598a",
+      "question": "甲将某物出售于乙，乙转售于丙，甲应乙的要求，将该物直接交付于丙。下列哪一说法是错误的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_88152a6e6eacefd7",
+      "question": "以下情况可以适用简易程序的是?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_c0d371131ce5ca91",
+      "question": "达重公司对扣押行为非常不满，指使技术员周某侵入甲海关计算机信息系统，造成信息系统不能正常运行，甲市某区公安局派出所对周某作出罚款2000元的处罚决定。对此，下列说法正确的是?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_10386fe1ba90afaf",
+      "question": "甲乙两人到某市杨浦区五角场街道办事处办理结婚登记，该办事处民政工作人员以两人均未参加义务献血为由不予办理。甲乙不服，当天即向正在自学考律考的朋友丙请教，丙对他们所说提的建议中，哪些是符合法律规定的?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_31822112f8c06780",
+      "question": "田律师作为被告人陈某的辩护律师出庭辩护。田律师对于自己知悉的哪些哪些情况，可以不再保密?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_a87b93cfe2ff4516",
+      "question": "甲已满18周岁，在校大学生，无经济来源，在校期间向乙借款6万元，后无力返还，由谁来还此笔款?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_3a842bf4afa840fe",
+      "question": "张大来的原户籍所在地在杨村，1994年张大来从杨村开出迁住证，迁往李村。但在李村登记前，张大来得病，在县城关医院住院1年零3个月，病愈后张大来前往北京市打工，并在某区办理了暂住证，居住期限为6个月，现住在某区某街道某号。现问，张的住所应确定为何处?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_b5a914dd9eb90ccd",
+      "question": "根据2000年《国际贸易术语解释通则》的规定，下列哪几个国际贸易术语规定货物的风险自装运港货物越过船舷时从卖方转移给买方?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_d36c8481e586b0b3",
+      "question": "某商厦于2005年5月到货一批进口空调，每台售价3500元。5月29日，小王来商厦买空调，发现这种空调的价格仅为3000元，非常满意，就买下了一台。后来，商厦的工作人员发现是误把3500元的售价标成了3000元，结果少收了小王500元。于是商厦马上派人找到小王，要求他退货或补足价款。小王认为:买卖已经了结，自己在此过程中无任何过错，因此断然拒绝。该商厦遂向法院起诉，要求撤销合同返还电视机。商厦与小王在本案中，谁有过错?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_2ddd1ea64752074e",
+      "question": "下列哪些情形构成意思表示?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_34f6a4bfeed885ef",
+      "question": "根据《行政诉讼法》有关受案范围的规定，以下那些案件属于行政诉讼受案范围?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_9e2bc6325b098957",
+      "question": "某商店与某运输公司签订了一份运输合同，由运输公司将一批瓷器从唐山运往北京，商店派一名押运员同行。途中停车吃饭，司机与押运员两人喝了一瓶酒，饭后继续上路。由于饮酒及劳累，司机要求押运员代其开车，押运员亦没有推辞。在一个转弯处，由于车速较快，不慎翻车，车上的瓷器全部毁损。对于该瓷器毁损应当由谁承担责任?",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "agieval_jec_qa_non_criminal_legal_a7f3b7f75fdb629f",
+      "question": "以下属于公务员回避的情形有哪些",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_63979eb383419b45",
+      "question": "今被某教育培训机构忽悠申请了百度钱包教育贷款，回来越想越不对，请教各路大神，这还有撤销贷款的余地吗？百度钱包教育贷款撤销",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_a3f56ba3680fadeb",
+      "question": "教师乱翻学生的课桌违法吗？教师在学生不在时乱翻学生的课桌违法吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_f87c9ebee8ed7d26",
+      "question": "旅游点门票收入是预算外资金吗,是否需要纳入财政预算外资金管理.",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_9dc542478686f67d",
+      "question": "某某偷5000元，该怎么判，求具体",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_law_only",
+      "reason": "subagent_review_override"
+    },
+    {
+      "id": "hc3_open_qa_general_6df9c8d80506c66f",
+      "question": "我有一只视力有问题（无法矫正），能考驾照吗？ 我有一只眼睛视力有问题（无法矫正），能考驾照吗？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_95ad3ca0b3b9ecb4",
+      "question": "宜兴摩托车在无锡市区能开吗，不是限摩区 宜兴牌照摩托车在无锡市区能开吗，不是限摩区",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_0095ed54c6ba5f19",
+      "question": "什莫叫货币政策？调整利率、发行国债、调节税率，哪个属于货币政策？",
+      "old_label": "general_no_legal_retrieval",
+      "new_label": "non_criminal_legal",
+      "reason": "general_legal_terms"
+    },
+    {
+      "id": "hc3_open_qa_general_d5567fa0a7fcf3dd",
+      "question": "网警可以查得到私人聊天记录吗？朋友的男朋友要去当网警了，他说可以查到朋友的聊天记录，是这样吗？删掉了的也可以吗查询的流程是什么样子的？",
+      "old_label": "non_criminal_legal",
+      "new_label": "non_criminal_legal",
+      "reason": "shape_consistency"
+    },
+    {
+      "id": "hc3_open_qa_general_939b3d5a5ba7f189",
+      "question": "「玫凯琳」的营销手段属于传销吗？如果不是，有什么区别于传销的地方？前不久一个朋友加入了玫凯琳，有了解这个产品的吗？",
+      "old_label": "criminal_law_advice",
+      "new_label": "criminal_law_advice",
+      "reason": "shape_consistency"
+    }
+  ]
+}

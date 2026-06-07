@@ -1,0 +1,64 @@
+[
+  {
+    "id": "crime_to_article_intentional_injury",
+    "query": "故意伤害罪相关刑法条文是什么",
+    "top_k": 10,
+    "expected": {
+      "candidate_type_any": ["crime_to_applied_article", "article_law_chunk"],
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["234"],
+      "graph_path": [
+        {
+          "path_type": "crime_to_case_to_article",
+          "article_no": "234",
+          "law_version": "current"
+        }
+      ]
+    }
+  },
+  {
+    "id": "case_to_reasoning_chunk",
+    "query": "吴必定案为什么构成故意伤害罪",
+    "top_k": 10,
+    "expected": {
+      "candidate_type_any": ["case_to_chunk", "metadata_to_case_chunk", "crime_to_case_chunk"],
+      "source_type_any": ["case_chunk"],
+      "field_any": ["reasoning_text"],
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"]
+    }
+  },
+  {
+    "id": "case_to_defense_chunk",
+    "query": "吴必定案被告人辩称什么",
+    "top_k": 10,
+    "expected": {
+      "candidate_type_any": ["case_to_chunk"],
+      "field_any": ["defense_text"],
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"]
+    }
+  },
+  {
+    "id": "article_to_related_cases",
+    "query": "刑法第二百三十四条相关案例有哪些",
+    "top_k": 10,
+    "expected": {
+      "candidate_type_any": ["article_to_related_case_chunk"],
+      "source_type_any": ["case_chunk"],
+      "graph_path": [
+        {
+          "path_type": "article_to_case_to_chunk",
+          "article_no": "234"
+        }
+      ]
+    }
+  },
+  {
+    "id": "historical_article_warning",
+    "query": "1979年刑法第一百三十四条第二款是什么",
+    "top_k": 10,
+    "expected": {
+      "warnings_contains_all": ["historical_law_context_missing"],
+      "no_current_law_article": true
+    }
+  }
+]

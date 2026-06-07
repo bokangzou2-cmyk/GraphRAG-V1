@@ -39,9 +39,12 @@ TARGET_MAX = 900
 TARGET_CHARS = 850
 MAX_CHARS = 1200
 OVERLAP_CHARS = 120
+MIN_USEFUL_CHARS = 80
 
 SENTENCE_RE = re.compile(r"[^。；！？!?\n]+[。；！？!?\n]?")
 SOFT_SPLIT_RE = re.compile(r"[^，、,；;：:\n]+[，、,；;：:\n]?")
+DANGLING_ENUM_RE = re.compile(r"(?:^|\s)(?:\d+[、．.]|[（(][一二三四五六七八九十]+[）)])\s*$")
+DANGLING_ONLY_RE = re.compile(r"^(?:\d+[、．.]|[（(][一二三四五六七八九十]+[）)]|[一二三四五六七八九十]+[、．.])$")
 
 
 def text_hash(text: str) -> str:
@@ -92,6 +95,25 @@ def split_oversized_sentence(start: int, sentence: str) -> list[tuple[int, int, 
     return parts
 
 
+def clean_chunk_text(text: str) -> str:
+    """Remove orphan list markers introduced by evidence item boundary detection."""
+    text = normalize_text(text)
+    while True:
+        cleaned = DANGLING_ENUM_RE.sub("", text).strip()
+        if cleaned == text:
+            return cleaned
+        text = cleaned
+
+
+def quality_flags_for(text: str, base_flags: list[str]) -> list[str]:
+    flags = set(base_flags)
+    if len(text) <= 50:
+        flags.add("short_chunk")
+    if DANGLING_ENUM_RE.search(text) or DANGLING_ONLY_RE.match(text):
+        flags.add("dangling_enumeration")
+    return sorted(flags)
+
+
 def normalized_items(value: object, field: str) -> Iterator[tuple[int | None, str]]:
     if field in LIST_FIELDS:
         if not isinstance(value, list):
@@ -106,6 +128,27 @@ def normalized_items(value: object, field: str) -> Iterator[tuple[int | None, st
             yield None, text
 
 
+def grouped_items(value: object, field: str) -> Iterator[tuple[int | None, str, list[int] | None]]:
+    items = list(normalized_items(value, field))
+    if field not in LIST_FIELDS:
+        for list_index, text in items:
+            yield list_index, text, None
+        return
+
+    pending: list[tuple[int | None, str]] = []
+    pending_len = 0
+    for list_index, text in items:
+        should_group = len(text) < MIN_USEFUL_CHARS or pending_len < MIN_USEFUL_CHARS
+        if pending and (not should_group or pending_len + len(text) > TARGET_MIN):
+            yield pending[0][0], normalize_text(" ".join(item[1] for item in pending)), [int(item[0]) for item in pending if item[0] is not None]
+            pending = []
+            pending_len = 0
+        pending.append((list_index, text))
+        pending_len += len(text)
+    if pending:
+        yield pending[0][0], normalize_text(" ".join(item[1] for item in pending)), [int(item[0]) for item in pending if item[0] is not None]
+
+
 def chunk_text(text: str) -> list[dict]:
     spans = []
     for start, end, sentence in sentence_spans(text):
@@ -114,7 +157,7 @@ def chunk_text(text: str) -> list[dict]:
         else:
             spans.append((start, end, sentence))
 
-    chunks = []
+    raw_chunks = []
     index = 0
     while index < len(spans):
         chunk_spans = []
@@ -140,12 +183,10 @@ def chunk_text(text: str) -> list[dict]:
                 quality_flags.append("oversize_chunk")
             index += 1
 
-        chunk_text_value = normalize_text("".join(part[2] for part in chunk_spans))
-        if len(chunk_text_value) <= 50:
-            quality_flags.append("short_chunk")
-        if re.search(r"(?:\d+[、．.]|[（(][一二三四五六七八九十]+[）)])\s*$", chunk_text_value):
-            quality_flags.append("dangling_enumeration")
-        chunks.append({
+        chunk_text_value = clean_chunk_text("".join(part[2] for part in chunk_spans))
+        if not chunk_text_value:
+            continue
+        raw_chunks.append({
             "text": chunk_text_value,
             "char_start": chunk_spans[0][0],
             "char_end": chunk_spans[-1][1],
@@ -166,7 +207,34 @@ def chunk_text(text: str) -> list[dict]:
         if overlap_count >= len(chunk_spans):
             index += 1
 
-    return chunks
+    if not raw_chunks:
+        return []
+
+    merged: list[dict] = []
+    index = 0
+    while index < len(raw_chunks):
+        chunk = dict(raw_chunks[index])
+        while (
+            len(chunk["text"]) < MIN_USEFUL_CHARS
+            and index + 1 < len(raw_chunks)
+            and len(chunk["text"]) + len(raw_chunks[index + 1]["text"]) <= MAX_CHARS
+        ):
+            index += 1
+            next_chunk = raw_chunks[index]
+            chunk["text"] = clean_chunk_text(chunk["text"] + next_chunk["text"])
+            chunk["char_end"] = next_chunk["char_end"]
+            chunk["quality_flags"] = sorted(set(chunk.get("quality_flags", [])) | set(next_chunk.get("quality_flags", [])))
+        if len(chunk["text"]) < MIN_USEFUL_CHARS and merged and len(merged[-1]["text"]) + len(chunk["text"]) <= MAX_CHARS:
+            merged[-1]["text"] = clean_chunk_text(merged[-1]["text"] + chunk["text"])
+            merged[-1]["char_end"] = chunk["char_end"]
+            merged[-1]["quality_flags"] = sorted(set(merged[-1].get("quality_flags", [])) | set(chunk.get("quality_flags", [])))
+        else:
+            merged.append(chunk)
+        index += 1
+
+    for chunk in merged:
+        chunk["quality_flags"] = quality_flags_for(chunk["text"], chunk.get("quality_flags", []))
+    return merged
 
 
 def case_metadata(row: dict) -> dict:
@@ -190,7 +258,7 @@ def build_chunks() -> list[dict]:
         source_file = case.get("source_file", "")
         source_id = id_part(source_file)
         for field in CHUNK_FIELDS:
-            for list_index, item_text in normalized_items(case.get(field), field):
+            for list_index, item_text, source_list_indices in grouped_items(case.get(field), field):
                 for chunk_index, chunk in enumerate(chunk_text(item_text)):
                     text = chunk["text"]
                     if not text:
@@ -201,6 +269,7 @@ def build_chunks() -> list[dict]:
                         "title": case.get("title", ""),
                         "field": field,
                         "list_index": list_index,
+                        "source_list_indices": source_list_indices,
                         "chunk_index": chunk_index,
                         "text": text,
                         "text_length": len(text),

@@ -1,0 +1,33 @@
+[project]
+name = "criminal-law-graphrag"
+version = "0.1.0"
+description = "Sample GraphRAG retrieval and answer layer for Chinese criminal-law QA."
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi",
+  "uvicorn",
+  "pydantic",
+  "python-dotenv",
+  "httpx",
+  "sentence-transformers",
+  "faiss-cpu",
+  "numpy",
+  "langchain-core",
+  "langgraph",
+]
+
+[project.optional-dependencies]
+router-train = [
+  "torch",
+  "transformers>=4.40",
+  "accelerate",
+  "peft",
+  "safetensors",
+]
+
+[tool.setuptools.packages.find]
+include = ["app*"]
+exclude = ["raw*", "frontend*", "processing*", "processing_data*", "tests*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]

@@ -17,8 +17,10 @@ CHUNKS_PATH = OUT_DIR / "case_chunks_sample.jsonl"
 LAW_CHUNKS_PATH = OUT_DIR / "law_chunks_sample.jsonl"
 RETRIEVAL_CHUNKS_PATH = OUT_DIR / "retrieval_chunks_sample.jsonl"
 GRAPH_PATH = OUT_DIR / "graph_sample.jsonl"
+GRAPH_NODES_PATH = OUT_DIR / "graph_nodes_sample.jsonl"
+GRAPH_EDGES_PATH = OUT_DIR / "graph_edges_sample.jsonl"
 
-REQUIRED_FILES = [LAW_PATH, CASES_PATH, ENRICHED_PATH, CHUNKS_PATH, LAW_CHUNKS_PATH, RETRIEVAL_CHUNKS_PATH, GRAPH_PATH]
+REQUIRED_FILES = [LAW_PATH, CASES_PATH, ENRICHED_PATH, CHUNKS_PATH, LAW_CHUNKS_PATH, RETRIEVAL_CHUNKS_PATH, GRAPH_PATH, GRAPH_NODES_PATH, GRAPH_EDGES_PATH]
 REQUIRED_FIELDS = {
     "law_articles_sample.jsonl": ["article_no", "title", "content"],
     "cases_sample.jsonl": ["case_id", "title", "fact_text", "reasoning_text", "judgment_text", "source_file"],
@@ -80,6 +82,8 @@ REQUIRED_FIELDS = {
         "quality_flags",
     ],
     "graph_sample.jsonl": ["type", "source", "target", "evidence_text", "confidence", "extraction_method"],
+    "graph_nodes_sample.jsonl": ["node_id", "node_type"],
+    "graph_edges_sample.jsonl": ["type", "source", "target", "evidence_text", "confidence", "extraction_method"],
 }
 CHUNK_FIELDS = {
     "accusation_text",
@@ -105,7 +109,8 @@ LIST_CHUNK_FIELDS = {
     "inspection_records_texts",
     "audio_video_evidence_texts",
 }
-GRAPH_TYPES = {"CASE_CITES_ARTICLE", "CASE_APPLIES_ARTICLE", "CASE_OF_CRIME"}
+GRAPH_TYPES = {"CASE_CITES_ARTICLE", "CASE_APPLIES_ARTICLE", "CASE_OF_CRIME", "CASE_HAS_CHUNK", "ARTICLE_HAS_CHUNK", "CASE_HAS_AMOUNT"}
+GRAPH_NODE_TYPES = {"case", "article", "crime", "chunk", "amount", "unknown"}
 RETRIEVAL_TYPES = {"case_chunk", "law_article"}
 
 
@@ -257,8 +262,14 @@ def validate_graph(graph_rows: list[dict]) -> dict:
     unknown_law_edges = sum(1 for row in graph_rows if row.get("type") in {"CASE_CITES_ARTICLE", "CASE_APPLIES_ARTICLE"} and row.get("law_version") == "unknown")
     unresolved_applied_law_edges = sum(
         1 for row in graph_rows
-        if row.get("type") == "CASE_APPLIES_ARTICLE" and row.get("law_version") != "current"
+        if row.get("type") == "CASE_APPLIES_ARTICLE" and row.get("law_version") in {"unknown", ""}
     )
+    non_current_applied_law_edges = sum(
+        1 for row in graph_rows
+        if row.get("type") == "CASE_APPLIES_ARTICLE" and row.get("law_version") not in {"current", "unknown", ""}
+    )
+    chunk_grounded_applies = sum(1 for row in graph_rows if row.get("type") == "CASE_APPLIES_ARTICLE" and row.get("provenance_status") == "chunk_grounded")
+    case_level_only_applies = sum(1 for row in graph_rows if row.get("type") == "CASE_APPLIES_ARTICLE" and row.get("provenance_status") == "case_level_only")
     return {
         "count": len(graph_rows),
         "type_counts": dict(sorted(type_counts.items())),
@@ -267,8 +278,20 @@ def validate_graph(graph_rows: list[dict]) -> dict:
         "current_law_edges": current_law_edges,
         "unknown_law_edges": unknown_law_edges,
         "unresolved_applied_law_edges": unresolved_applied_law_edges,
+        "non_current_applied_law_edges": non_current_applied_law_edges,
+        "chunk_grounded_applies": chunk_grounded_applies,
+        "case_level_only_applies": case_level_only_applies,
         "invalid_types": invalid_types,
         "blank_edges": blank_edges,
+    }
+
+
+def validate_graph_nodes(nodes: list[dict]) -> dict:
+    return {
+        "count": len(nodes),
+        "duplicate_node_id": duplicate_count([row.get("node_id") for row in nodes]),
+        "invalid_node_types": sorted({row.get("node_type") for row in nodes if row.get("node_type") not in GRAPH_NODE_TYPES}),
+        "blank_nodes": sum(1 for row in nodes if not row.get("node_id") or not row.get("node_type")),
     }
 
 
@@ -289,12 +312,14 @@ def build_report() -> dict:
     law_chunks = rows_by_file[LAW_CHUNKS_PATH.name]
     retrieval_chunks = rows_by_file[RETRIEVAL_CHUNKS_PATH.name]
     graph_rows = rows_by_file[GRAPH_PATH.name]
+    graph_nodes = rows_by_file[GRAPH_NODES_PATH.name]
 
     chunk_report = validate_chunks(chunks)
     law_chunk_report = validate_law_chunks(law_chunks)
     retrieval_report = validate_retrieval_chunks(retrieval_chunks)
     enriched_report = validate_enriched(enriched)
     graph_report = validate_graph(graph_rows)
+    graph_node_report = validate_graph_nodes(graph_nodes)
 
     if chunk_report["duplicate_chunk_id"]:
         errors.append({"code": "duplicate_chunk_id", "count": chunk_report["duplicate_chunk_id"]})
@@ -317,6 +342,8 @@ def build_report() -> dict:
         errors.append({"code": "invalid_retrieval_chunks", "summary": retrieval_report})
     if graph_report["invalid_types"]:
         errors.append({"code": "invalid_graph_types", "types": graph_report["invalid_types"]})
+    if graph_node_report["duplicate_node_id"] or graph_node_report["invalid_node_types"] or graph_node_report["blank_nodes"]:
+        errors.append({"code": "invalid_graph_nodes", "summary": graph_node_report})
 
     return {
         "status": "PASS" if not errors else "FAIL",
@@ -336,6 +363,7 @@ def build_report() -> dict:
         "law_chunks": law_chunk_report,
         "retrieval_chunks": retrieval_report,
         "graph": graph_report,
+        "graph_nodes": graph_node_report,
         "errors": errors,
         "warnings": warnings,
     }

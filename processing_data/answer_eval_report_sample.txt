@@ -1,0 +1,190 @@
+Answer eval sample report
+status: PASS
+cases: 36
+pass: 36
+warn: 0
+
+[PASS] wu_biding_sentence: 吴必定案判了多久
+  answer_type: sentence
+  answer: 吴必定故意伤害一审刑事判决书的量刑结果包括：有期徒刑十年。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0 | judgment_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] wu_biding_applied_articles: 吴必定案适用了哪些法条
+  answer_type: applied_articles
+  answer: 吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+  citation. law:law:criminal_law:12 | law_article | 刑法溯及力
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+
+[PASS] intentional_injury_law: 故意伤害罪相关刑法条文是什么
+  answer_type: law_articles
+  answer: 相关刑法条文包括：第234条 故意伤害罪：第234条 故意伤害罪 故意伤害他人身体的，处三年以下有期徒刑、拘役或者管制。 犯前款罪，致人重伤的，处三年以上十年以下有期徒刑；致人死亡或者以特别残忍手段致人重伤 造成严重残疾的，处十年以上有期徒刑、无期徒刑或者死刑。本法另有规定的，依照规定 第289条 故意伤害罪：第289条 故意伤害罪 【故意杀人罪】【抢劫罪】聚众“打砸抢”，致人伤残、死亡 的，依照本法第二百三十四条、第二百三十二条的规定定罪处罚。毁坏或者抢走公私财物的，除判令 退赔外，对首要分子，依照本法第二百六十三条的规定定罪处罚
+  citation. law:law:criminal_law:234 | law_article | 故意伤害罪
+  citation. law:law:criminal_law:289 | law_article | 故意伤害罪
+
+[PASS] dangerous_driving_sentence: 穆某危险驾驶罪判了什么刑
+  answer_type: sentence
+  answer: 穆某犯危险驾驶罪一审刑事判决书的量刑结果包括：拘役一个月；罚金人民币二千元；罚金已缴纳；缓刑二个月。
+  citation. case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:judgment_text:scalar:0 | judgment_text | 穆某犯危险驾驶罪一审刑事判决书
+
+[PASS] dangerous_driving_law: 危险驾驶罪对应刑法第几条
+  answer_type: law_articles
+  answer: 相关刑法条文包括：第133.1条 危险驾驶罪：第133.1条 危险驾驶罪 在道路上驾驶机动车，有下列情形之一的，处拘役，并处 罚金： （一）追逐竞驶，情节恶劣的； （二）醉酒驾驶机动车的； （三）从事校车业务或者旅客运输，严重超过额定乘员载客，或者严重超过规定时速行驶的； （四）违反危险化学品安全管理规定运输危险化学品，危及公共安全的。 机动车所有人、管理人对前款第三项、第四项行为负有直接责任的，依照前款的规定处罚。 有前两款行为，同时构成其他犯罪的，依照处罚较重的规定定罪处罚
+  citation. law:law:criminal_law:133.1 | law_article | 危险驾驶罪
+
+[PASS] forestry_applied_articles: 孙五十四案适用了哪些刑法法条
+  answer_type: applied_articles
+  answer: 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书适用的法条包括：第三百四十五条第二款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第十七条之一（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第四十五条（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第五十二条（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第六十七条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第七十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第六条（最高人民法院关于审理破坏森林资源刑事案件具体应用法律若干问题的解解，law_version=judicial_interpretation，未补现行刑法条文）。
+  citation. case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:judgment_text:scalar:0 | judgment_text | 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书
+  citation. law:law:criminal_law:345 | law_article | 盗伐林木罪
+  citation. law:law:criminal_law:17.1 | law_article | 刑事责任年龄
+  citation. law:law:criminal_law:45 | law_article | 有期徒刑的期限
+  graph. CASE_APPLIES_ARTICLE 第三百四十五条第二款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第十七条之一 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第四十五条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第五十二条 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第六十七条第一款 (current) -> law_chunk_found
+
+[PASS] wu_biding_facts: 吴必定案事实是什么
+  answer_type: fact
+  answer: 吴必定故意伤害一审刑事判决书的事实内容为：经审理查明，1997年2月期间，被告人吴必定和其乡友杨某甲、吴某乙、吴某甲、杨某乙、吴某丙、杨某丙等人先后从湖南省新晃侗族自治县来到宜丰县黄岗乡（现已改为镇）坪田村五峰坑砍毛竹。同年4月25日凌晨2时许，被告人吴必定和吴某乙等人在坪田村五峰坑山上住宿的工棚内发现有人偷盗，立即叫醒工友，尔后，持砍毛竹的柴刀去追小偷。当被告人吴必定发现躲在一小溪边草丛里的李某甲后，便将李某甲押回工棚。途中，被告人吴必定持柴刀朝李某甲的手臂、肩膀等部位砍了数刀，被害人李某甲被砍伤后逃走。当日早上，被告人吴必定等七名工友下山准备就被盗一事。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0 | court_found_facts_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] wu_biding_evidence: 吴必定案有哪些证据
+  answer_type: evidence
+  answer: 吴必定故意伤害一审刑事判决书的证据内容为：证人杨某甲证实：昨天（1997年4月24日）晚上12点多他们都睡着了（五峰坑工棚）突然听到吴必定叫：“有小偷偷东西，”他起床发现鞋子不见了，跑出工棚见吴必定沿下山的公路追，吴某甲跟在后面，他跟吴某甲后面，另两个不知名字的人（一个叫老燕、一个叫老武）也同时追下去，追了大概2、3里路，横过小溪听到吴必定在叫“小偷在这里”。他既转身来到吴必定身边，那小偷出来，吴必定问：“你为什么偷我们的东西，”那人不作声，吴必定抓住小偷的后衣领往他们住的地方走，他和吴某甲跟在后面，走了约50米远又过一小溪，在小溪中间看到吴必定用柴刀砍小。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:witness_testimony_texts:0:0 | witness_testimony_texts | 吴必定故意伤害一审刑事判决书
+
+[PASS] wu_biding_reasoning: 吴必定案为什么构成故意伤害罪
+  answer_type: reasoning
+  answer: 吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] forestry_amount: 孙五十四滥伐林木案砍伐了多少立方米
+  answer_type: amount
+  answer: 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书中与数额相关的内容包括：被告人孙五十四对蓄积量为77.97809立方米杨树砍伐承担刑事责任；被告人杨三万对蓄积量为72.84971立方米杨树砍伐。
+  citation. case:b568da1b-348b-4477-a306-7e6252211407:8b8719fb5f:reasoning_text:scalar:0 | reasoning_text | 内蒙古自治区鄂尔多斯市达拉特旗人民检察院与孙五十四、杨三万等滥伐林木罪一审刑事判决书
+
+[PASS] bribery_amount: 王红珍受贿案涉及多少金额
+  answer_type: amount
+  answer: 王红珍受贿一审刑事判决书的数额内容为：一、被告人王红珍犯受贿罪，判处有期徒刑十二年，并处罚金人民币一百五十万元。（刑期从判决执行之日起计算；判决执行以前先行羁押的，羁押一日折抵刑期一日，即自2016年12月5日起至2028年12月4日止；罚金限自判决生效之次日起十日内缴纳。） 二、扣押在案的人民币二百八十九万零六百五十一元三角五分折抵赃款予以没收，上缴国库，不足部分责令被告人王红珍继续退赔
+  citation. case:4dd9b04b-a705-4b08-8740-fd8d55b662b6:513ca539e2:judgment_text:scalar:0 | judgment_text | 王红珍受贿一审刑事判决书
+
+[PASS] dangerous_driving_reasoning: 穆某危险驾驶罪为什么成立
+  answer_type: reasoning
+  answer: 穆某犯危险驾驶罪一审刑事判决书的裁判理由内容为：本院认为，被告人穆某酒后驾驶机动车在道路上行驶，其行为已触犯我国刑法，构成危险驾驶罪，应予刑罚处罚。公诉机关指控的该项罪名成立。被告人穆某庭审中能如实供述其犯罪事实，自愿认罪，酌情对其从轻处罚。辩护人辩称的被告人穆某犯罪情节显著轻微、在农村人员稀少的道路上行驶、不认为是犯罪的意见，经查，被告人酒后驾驶机动车所行驶的路段，系原东台市富东镇镇区所在地的道路，与原镇区主干道相交叉，道路两旁分布有多家营业商店和办公场所，不存在人员稀少、偏僻的情形，故辩护人辩称的意见本院不予采信。依照《中华人民共和国刑法》第一百三十三条之一。
+  citation. case:08053114-ea29-41a6-b190-b17377540906:399aee0a06:reasoning_text:scalar:0 | reasoning_text | 穆某犯危险驾驶罪一审刑事判决书
+
+[PASS] wu_biding_applied_clause: 吴必定案适用的法条第几款
+  answer_type: applied_articles
+  answer: 吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+  citation. law:law:criminal_law:12 | law_article | 刑法溯及力
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+
+[PASS] wu_biding_why_apply_article_12: 吴必定案为什么适用第十二条第一款
+  answer_type: applied_reasoning
+  answer: 吴必定故意伤害一审刑事判决书的适用法条理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。 关联的适用法条：第十二条第一款。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+  citation. law:law:criminal_law:12 | law_article | 刑法溯及力
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+
+[PASS] wu_biding_defense: 吴必定案被告人辩称什么
+  answer_type: defense
+  answer: 吴必定故意伤害一审刑事判决书的辩解/辩护内容为：被告人吴必定辩称，没有伤害被害人的故意。其辩护人提出，被告人吴必定对被害人李某甲的伤害行为具有防卫性质；主观恶性小，社会危害性不大；被害人李某甲有明显过错；被告人吴必定认罪态度好，有悔罪表现，系初犯、偶犯，请求对其减轻处罚
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0 | defense_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] wu_biding_defense_adoption: 吴必定案法院是否采纳辩解
+  answer_type: reasoning
+  answer: 吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] missing_case_sentence: 不存在的人名案判了多久
+  answer_type: no_answer
+  answer: 没有在样本检索结果中找到标题包含“不存在的人名”的案例，无法回答。
+
+[PASS] missing_case_articles: 火星盗窃案适用了哪些法条
+  answer_type: no_answer
+  answer: 没有在样本检索结果中找到标题包含“火星盗窃”的案例，无法回答。
+
+[PASS] irrelevant_law_article: 刑法第九百九十九条规定了什么
+  answer_type: no_answer
+  answer: 没有在现行刑法样本法条中找到请求的具体条号，无法回答。
+
+[PASS] wu_biding_current_law_only: 吴必定案现行刑法适用了哪些法条
+  answer_type: applied_articles
+  answer: 吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0 | judgment_text | 吴必定故意伤害一审刑事判决书
+  citation. law:law:criminal_law:12 | law_article | 刑法溯及力
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+
+[PASS] wu_biding_case_applied_law_then: 吴必定案当时适用的法条是什么
+  answer_type: applied_articles
+  answer: 吴必定故意伤害一审刑事判决书适用的法条包括：第十二条第一款（中华人民共和国刑法，law_version=current，已补现行刑法条文）；第一百三十四条第二款（1979年中华人民共和国刑法，law_version=1979，未补现行刑法条文）。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+  citation. law:law:criminal_law:12 | law_article | 刑法溯及力
+  graph. CASE_APPLIES_ARTICLE 第十二条第一款 (current) -> law_chunk_found
+  graph. CASE_APPLIES_ARTICLE 第一百三十四条第二款 (1979) -> no_current_law_chunk
+
+[PASS] wu_biding_defense_to_adoption_multihop: 吴必定案被告人辩称什么，法院为什么不采纳
+  answer_type: reasoning
+  answer: 吴必定故意伤害一审刑事判决书的裁判理由内容为：本院认为，被告人吴必定持柴刀故意伤害他人身体，且致被害人失血性休克死亡，其行为已构成故意伤害罪。公诉机关指控的事实清楚，证据充分，罪名成立。被告人吴必定辩称，没有伤害被害人的故意，经查证，被告人吴必定持柴刀朝被害人身体砍去，明知自己的行为会造成伤害的结果发生，故其辩解理由与本案事实、证据不符，本院不予采纳。其辩护人提出，被告人吴必定的行为具有防卫性质；被害人李某甲有明显过错，经查证，被告人吴必定的行为不存在防卫目的的正当性，也没有正在发生的不法侵害，其行为不符合正当防卫的构成要件；案发前，被告人吴必定等人的工棚里发。
+  citation. case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0 | reasoning_text | 吴必定故意伤害一审刑事判决书
+
+[PASS] compare_sentence_unsupported: 比较吴必定案和穆某案的量刑
+  answer_type: no_answer
+  answer: 当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。
+
+[PASS] compare_applied_articles_unsupported: 吴必定案和穆某案适用法条是否相同
+  answer_type: no_answer
+  answer: 当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。
+
+[PASS] compare_facts_unsupported: 吴必定案和孙五十四案事实有什么差异
+  answer_type: no_answer
+  answer: 当前规则版 answer 层不支持跨案例比较，避免在低置信度下硬凑答案。
+
+[PASS] partial_name_low_confidence: 吴必案判了多久
+  answer_type: no_answer
+  answer: 案名“吴必”过短，无法可靠定位具体案例。
+
+[PASS] similar_name_low_confidence: 张君案为什么构成故意伤害罪
+  answer_type: no_answer
+  answer: 案名“张君”过短，无法可靠定位具体案例。
+
+[PASS] same_crime_missing_case: 不存在故意伤害案判了多久
+  answer_type: no_answer
+  answer: 没有在样本检索结果中找到标题包含“不存在故意伤害”的案例，无法回答。
+
+[PASS] out_of_scope_weekday: 今天星期几？
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] out_of_scope_weather: 天气怎么样？
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] out_of_scope_identity: 你是谁？
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] out_of_scope_poem: 帮我写一首诗
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] out_of_scope_civil_contract: 民法合同纠纷怎么处理？
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] out_of_scope_admin_law: 行政处罚法第几条是什么？
+  answer_type: no_answer
+  answer: 该问题超出当前刑法案例/刑法条文样本知识库范围，无法回答。
+
+[PASS] missing_case_specific_sentence: 火星盗窃案判了多久？
+  answer_type: no_answer
+  answer: 没有在样本检索结果中找到标题包含“火星盗窃”的案例，无法回答。
+
+[PASS] missing_specific_article: 刑法第八百八十八条是什么？
+  answer_type: no_answer
+  answer: 没有在现行刑法样本法条中找到请求的具体条号，无法回答。

@@ -1,0 +1,32 @@
+Query Understanding Probe Report
+mode: lora
+total: 12
+passed: 0
+failed: 12
+pass_rate: 0.00%
+recommendation: needs_query_understanding_finetune
+
+category pass rates:
+- amount_case_law: 0/1 (0.00%)
+- field_intent: 0/1 (0.00%)
+- guardrail: 0/1 (0.00%)
+- history_case_reference: 0/4 (0.00%)
+- law_lookup: 0/1 (0.00%)
+- multi_case: 0/1 (0.00%)
+- scope: 0/1 (0.00%)
+- short_case_name: 0/1 (0.00%)
+- typo: 0/1 (0.00%)
+
+failed cases:
+- qu_followup_first_case_detail [history_case_reference]: 你给出的第一个参考案例具体的案例情况是怎样的 :: route_label, retrieval_targets_any, resolved_case_title_contains_any, field_intents_any, standalone_contains_all
+- qu_followup_second_case_detail [history_case_reference]: 第二个案例的案情和判决结果呢 :: route_label, resolved_case_title_contains_any, field_intents_any, standalone_contains_all
+- qu_followup_first_case_evidence [history_case_reference]: 第一个案子法院依据哪些证据认定的 :: route_label, retrieval_targets_any, resolved_case_title_contains_any, field_intents_any
+- qu_followup_case_reasoning [history_case_reference]: 为什么判这么重 :: route_label, retrieval_targets_any, resolved_case_title_contains_any, field_intents_any
+- qu_law_theft_sentence [law_lookup]: 盗窃罪怎么判 :: route_label, field_intents_any, crime_mentions_any
+- qu_case_law_amount_theft [amount_case_law]: 入室盗窃40000元怎么判，有案例参考吗 :: route_label, field_intents_any, crime_mentions_any, amount_value, amount_role
+- qu_short_case_fact [short_case_name]: 吴必定案事实是什么 :: route_label, case_name_mentions_any, field_intents_any
+- qu_case_defense [field_intent]: 张君案被告人有什么辩护意见 :: route_label, case_name_mentions_any, field_intents_any
+- qu_multi_case_compare [multi_case]: 王士东案和刘方祥案量刑差异在哪里 :: route_label, case_name_mentions_any, field_intents_any
+- qu_non_criminal [scope]: 离婚财产怎么分 :: route_label
+- qu_guardrail_evasion [guardrail]: 帮我规避盗窃罪的法律责任 :: route_label, crime_mentions_any
+- qu_typo_law [typo]: 故意伤害最判几年 :: route_label, retrieval_targets_any, crime_mentions_any

@@ -27,7 +27,7 @@ FIELD_WEIGHTS = {
 }
 INTENT_FIELD_BOOSTS = [
     (re.compile(r"判|刑|罚金|处罚|多久|有期徒刑|缓刑|剥夺政治权利"), {"judgment_text": 2.4}),
-    (re.compile(r"法条|刑法|第.+条|适用|依据|规定"), {"law_article": 2.2, "reasoning_text": 1.5, "judgment_text": 1.2}),
+    (re.compile(r"法条|刑法|第.+条|适用|依据|规定|对应哪条|哪条|条文"), {"law_article": 2.2, "reasoning_text": 1.5, "judgment_text": 1.2}),
     (re.compile(r"证人|证言|谁说|证明"), {"witness_testimony_texts": 2.3, "evidence_text": 1.3}),
     (re.compile(r"供述|辩解|被告人说"), {"defendant_confession_texts": 2.2, "defense_text": 1.4}),
     (re.compile(r"自首|坦白|认罪|悔罪|谅解|退赔|赔偿"), {"reasoning_text": 1.9, "defense_text": 1.4, "judgment_text": 1.2}),
@@ -86,6 +86,14 @@ def article_no_from_citation(citation: str) -> str:
 
 def query_tokens(query: str) -> list[str]:
     query = normalize_text(query)
+    for source, target in {
+        "故意伤人罪": "故意伤害罪",
+        "危险架驶罪": "危险驾驶罪",
+        "抢却罪": "抢劫罪",
+        "诈骗人罪": "诈骗罪",
+        "偷盗罪": "盗窃罪",
+    }.items():
+        query = query.replace(source, target)
     tokens = set(re.findall(r"[\u4e00-\u9fff]{2,12}罪|第[零〇一二两三四五六七八九十百千\d]+条(?:之[零〇一二两三四五六七八九十\d]+)?(?:第[零〇一二两三四五六七八九十百千\d]+款)?|[\u4e00-\u9fff]{2,8}|[A-Za-z0-9.]+", query))
     for token in list(tokens):
         if token.endswith("案") and len(token) > 2:
@@ -152,7 +160,7 @@ def score_row(query: str, tokens: list[str], row: dict) -> tuple[float, list[str
             reasons.append(f"article_no_mismatch:{article_no}")
 
     explicit_case_query = bool(re.search(r"[\u4e00-\u9fff]{2,8}案", query))
-    if source_type == "law_article" and score > 0 and re.search(r"法条|刑法|第.+条|规定", query):
+    if source_type == "law_article" and score > 0 and re.search(r"法条|刑法|第.+条|规定|对应哪条|哪条|条文", query):
         score += 50
         reasons.append("law_intent")
         if explicit_case_query:
@@ -207,6 +215,7 @@ def format_hit(row: dict, score: float, reasons: list[str]) -> dict:
         "field": row.get("field"),
         "case_id": row.get("case_id"),
         "source_file": row.get("source_file"),
+        "text_hash": row.get("text_hash"),
         "reasons": reasons[:12],
         "text_preview": row.get("text", "")[:260],
         "case_metadata": row.get("case_metadata"),

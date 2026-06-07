@@ -1,0 +1,203 @@
+[
+  {
+    "id": "langchain_grounded_valid",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "mock_llm_mode": "grounded",
+    "expected": {
+      "answer_type": "llm_grounded",
+      "citations_min": 1,
+      "same_retrieval_as_hybrid": true,
+      "log_events": [
+        "start",
+        "router_result",
+        "lexical_retriever",
+        "graph_retriever",
+        "vector_retriever",
+        "hybrid_merge_rerank",
+        "answer_contract_prepared",
+        "mock_llm_output",
+        "final_response"
+      ],
+      "warnings_absent": [
+        "llm_invalid_json"
+      ]
+    }
+  },
+  {
+    "id": "langchain_invalid_json_fallback",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "mock_llm_mode": "invalid_json",
+    "expected": {
+      "answer_type": "retrieval_fallback",
+      "citations_min": 1,
+      "same_retrieval_as_hybrid": true,
+      "warnings": [
+        "llm_invalid_json",
+        "llm_call_failed"
+      ],
+      "log_events": [
+        "mock_llm_output",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_missing_citation_fallback",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "mock_llm_mode": "missing_citation",
+    "expected": {
+      "answer_type": "retrieval_fallback",
+      "citations_min": 1,
+      "same_retrieval_as_hybrid": true,
+      "warnings": [
+        "llm_invalid_json",
+        "llm_call_failed"
+      ],
+      "log_events": [
+        "mock_llm_output",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_empty_answer_fallback",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "mock_llm_mode": "empty_answer",
+    "expected": {
+      "answer_type": "retrieval_fallback",
+      "citations_min": 1,
+      "same_retrieval_as_hybrid": true,
+      "warnings": [
+        "llm_invalid_json",
+        "llm_call_failed"
+      ],
+      "log_events": [
+        "mock_llm_output",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_mock_no_answer_refusal",
+    "query": "吴必定案判了多久",
+    "top_k": 5,
+    "mock_llm_mode": "no_answer",
+    "expected": {
+      "answer_type": "no_answer",
+      "citations_exact": 0,
+      "refusal_reason": "insufficient_context",
+      "same_retrieval_as_hybrid": true,
+      "warnings": [
+        "insufficient_context"
+      ],
+      "log_events": [
+        "mock_llm_output",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_empty_query_refusal",
+    "query": "  ",
+    "top_k": 5,
+    "mock_llm_mode": "grounded",
+    "expected": {
+      "answer_type": "no_answer",
+      "citations_exact": 0,
+      "refusal_reason": "insufficient_context",
+      "warnings": [
+        "empty_query",
+        "insufficient_context"
+      ],
+      "log_events": [
+        "router_result",
+        "hybrid_merge_rerank",
+        "llm_skipped",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_general_direct_answer",
+    "query": "天气怎么样？",
+    "top_k": 5,
+    "mock_llm_mode": "grounded",
+    "expected": {
+      "answer_type": "llm_direct",
+      "citations_exact": 0,
+      "refusal_reason": null,
+      "warnings": [
+        "retrieval_skipped"
+      ],
+      "log_events": [
+        "router_result",
+        "hybrid_merge_rerank",
+        "llm_skipped",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_no_context_refusal",
+    "query": "吴必定案判了多久",
+    "top_k": 0,
+    "mock_llm_mode": "grounded",
+    "expected": {
+      "answer_type": "no_answer",
+      "citations_exact": 0,
+      "refusal_reason": "insufficient_context",
+      "warnings": [
+        "insufficient_context"
+      ],
+      "log_events": [
+        "hybrid_merge_rerank",
+        "llm_skipped",
+        "final_response"
+      ]
+    }
+  },
+  {
+    "id": "langchain_multiturn_uses_latest_user_only",
+    "query": "吴必定案判了多久",
+    "messages": [
+      {
+        "role": "user",
+        "content": "危险驾驶罪对应刑法第几条"
+      },
+      {
+        "role": "assistant",
+        "content": "这是一段旧回答，不能作为证据来源。"
+      },
+      {
+        "role": "user",
+        "content": "吴必定案判了多久"
+      }
+    ],
+    "top_k": 5,
+    "mock_llm_mode": "grounded",
+    "expected": {
+      "answer_type": "llm_grounded",
+      "citations_min": 1,
+      "same_retrieval_as_hybrid": true,
+      "assistant_history_excluded_from_prompt": true,
+      "log_events": [
+        "start",
+        "router_result",
+        "lexical_retriever",
+        "graph_retriever",
+        "vector_retriever",
+        "hybrid_merge_rerank",
+        "answer_contract_prepared",
+        "mock_llm_output",
+        "final_response"
+      ],
+      "warnings_absent": [
+        "llm_invalid_json"
+      ]
+    }
+  }
+]

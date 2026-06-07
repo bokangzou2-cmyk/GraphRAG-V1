@@ -1,0 +1,44 @@
+Graph retriever eval sample report
+status: PASS
+cases: 5
+pass: 5
+warn: 0
+
+[PASS] crime_to_article_intentional_injury: 故意伤害罪相关刑法条文是什么
+  warnings: no_current_law_chunk
+  crime_to_applied_article law_article law_article 故意伤害罪 score=7110.0
+  crime_to_applied_article law_article law_article 自首 score=5550.0
+  crime_to_applied_article law_article law_article 共同犯罪的概念 score=2775.0
+  crime_to_applied_article law_article law_article 从犯 score=2775.0
+  crime_to_applied_article law_article law_article 对死刑、无期徒刑罪犯剥夺政治权利的适用 score=1850.0
+
+[PASS] case_to_reasoning_chunk: 吴必定案为什么构成故意伤害罪
+  warnings: no_current_law_chunk
+  crime_to_case_chunk case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=2170.0
+  crime_to_case_chunk case_chunk reasoning_text 张君成故意伤害罪一审刑事判决书 score=1198.5
+  crime_to_case_chunk case_chunk reasoning_text 张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书 score=1101.0
+  crime_to_case_chunk case_chunk reasoning_text 宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书 score=1101.0
+  crime_to_case_chunk case_chunk reasoning_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=1101.0
+
+[PASS] case_to_defense_chunk: 吴必定案被告人辩称什么
+  warnings: no_current_law_chunk
+  case_to_chunk case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=1255.0
+  metadata_to_case_chunk case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=245.0
+  metadata_to_case_chunk case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=242.0
+  metadata_to_case_chunk case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=242.0
+  metadata_to_case_chunk case_chunk evidence_text 吴必定故意伤害一审刑事判决书 score=242.0
+
+[PASS] article_to_related_cases: 刑法第二百三十四条相关案例有哪些
+  article_to_related_case_chunk case_chunk judgment_text 刘健故意伤害一审刑事判决书 score=2184.5
+  article_to_related_case_chunk case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=2184.5
+  article_to_related_case_chunk case_chunk judgment_text 史建辉故意伤害二审刑事判决书 score=1534.5
+  article_to_related_case_chunk case_chunk judgment_text 张君成故意伤害罪一审刑事判决书 score=1534.5
+  article_to_related_case_chunk case_chunk judgment_text 张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书 score=1534.5
+
+[PASS] historical_article_warning: 1979年刑法第一百三十四条第二款是什么
+  warnings: historical_law_context_missing, no_current_law_chunk
+  article_to_related_case_chunk case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=3011.0
+  metadata_to_case_chunk case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=178.5
+  metadata_to_case_chunk case_chunk judgment_text 刘健故意伤害一审刑事判决书 score=171.0
+  metadata_to_case_chunk case_chunk judgment_text 史建辉故意伤害二审刑事判决书 score=171.0
+  metadata_to_case_chunk case_chunk judgment_text 杨某1、林某非法采矿、重大责任事故再审刑事判决书 score=171.0

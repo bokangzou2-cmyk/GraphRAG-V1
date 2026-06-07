@@ -1,0 +1,1713 @@
+{
+  "status": "PASS",
+  "case_count": 5,
+  "pass_count": 5,
+  "warn_count": 0,
+  "eval_file": "D:\\GraphRAG-V1\\processing_data\\graph_retriever_eval_sample.json",
+  "results": [
+    {
+      "id": "crime_to_article_intentional_injury",
+      "query": "故意伤害罪相关刑法条文是什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "candidate_type_any",
+          "passed": true,
+          "expected": [
+            "crime_to_applied_article",
+            "article_law_chunk"
+          ]
+        },
+        {
+          "name": "source_type_any",
+          "passed": true,
+          "expected": [
+            "law_article"
+          ]
+        },
+        {
+          "name": "law_article_no_any",
+          "passed": true,
+          "expected": [
+            "234"
+          ]
+        },
+        {
+          "name": "graph_path",
+          "passed": true,
+          "expected": {
+            "path_type": "crime_to_case_to_article",
+            "article_no": "234",
+            "law_version": "current"
+          }
+        }
+      ],
+      "warnings": [
+        "no_current_law_chunk"
+      ],
+      "candidates": [
+        {
+          "score": 7110.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 1185.0,
+          "retrieval_id": "law:law:criminal_law:234",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "故意伤害罪",
+          "article_no": "234",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 1185.0,
+              "crime": "故意伤害罪",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二百三十四条",
+              "article_no": "234",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:234",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 1185.0,
+              "crime": "故意伤害罪",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二百三十四条第二款",
+              "article_no": "234",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:234",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 1185.0,
+              "crime": "故意伤害罪",
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二百三十四条第一款",
+              "article_no": "234",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:234",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 5550.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:67",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "自首",
+          "article_no": "67",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十七条第三款",
+              "article_no": "67",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:67",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十七条第三款",
+              "article_no": "67",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:67",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十七条第三款",
+              "article_no": "67",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:67",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 2775.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:25",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "共同犯罪的概念",
+          "article_no": "25",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十五条第一款",
+              "article_no": "25",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:25",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十五条第一款",
+              "article_no": "25",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:25",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十五条第一款",
+              "article_no": "25",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:25",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 2775.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:27",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "从犯",
+          "article_no": "27",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十七条",
+              "article_no": "27",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:27",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十七条",
+              "article_no": "27",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:27",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二十七条",
+              "article_no": "27",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:27",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 1850.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:57",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "对死刑、无期徒刑罪犯剥夺政治权利的适用",
+          "article_no": "57",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第五十七条第一款",
+              "article_no": "57",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:57",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第五十七条第一款",
+              "article_no": "57",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:57",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 1850.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:36",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "赔偿经济损失与民事优先原则",
+          "article_no": "36",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第三十六条第一款",
+              "article_no": "36",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:36",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第三十六条第一款",
+              "article_no": "36",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:36",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 1850.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:68",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "立功",
+          "article_no": "68",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十八条",
+              "article_no": "68",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:68",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十八条",
+              "article_no": "68",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:68",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 1850.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:292",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "聚众斗殴罪",
+          "article_no": "292",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二百九十二条第一款",
+              "article_no": "292",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:292",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第二百九十二条第一款",
+              "article_no": "292",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:292",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 1850.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:65",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "一般累犯",
+          "article_no": "65",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十五条第一款",
+              "article_no": "65",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:65",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第六十五条第一款",
+              "article_no": "65",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:65",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 925.0,
+          "candidate_type": "crime_to_applied_article",
+          "path_score": 925.0,
+          "retrieval_id": "law:law:criminal_law:12",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "刑法溯及力",
+          "article_no": "12",
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_article",
+              "path_score": 925.0,
+              "crime": "故意伤害罪",
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第十二条第一款",
+              "article_no": "12",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:12",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case_to_reasoning_chunk",
+      "query": "吴必定案为什么构成故意伤害罪",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "candidate_type_any",
+          "passed": true,
+          "expected": [
+            "case_to_chunk",
+            "metadata_to_case_chunk",
+            "crime_to_case_chunk"
+          ]
+        },
+        {
+          "name": "source_type_any",
+          "passed": true,
+          "expected": [
+            "case_chunk"
+          ]
+        },
+        {
+          "name": "field_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        }
+      ],
+      "warnings": [
+        "no_current_law_chunk"
+      ],
+      "candidates": [
+        {
+          "score": 2170.0,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 920.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "case_to_chunk",
+              "path_score": 920.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_HAS_CHUNK",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 620.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1198.5,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "张君成故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "case_title": "张君成故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 568.5,
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "case_title": "张君成故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1101.0,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 471.0,
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1101.0,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 471.0,
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1101.0,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 471.0,
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1065.0,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:1",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:1"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 435.0,
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:reasoning_text:scalar:1"
+            }
+          ]
+        },
+        {
+          "score": 1042.5,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "刘健故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 412.5,
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1042.5,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "史建辉故意伤害二审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 412.5,
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1006.5,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "郭永敏故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "0c02455f-e60e-4aad-b55d-28f4fd65ddfb",
+              "case_title": "郭永敏故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 376.5,
+              "case_id": "0c02455f-e60e-4aad-b55d-28f4fd65ddfb",
+              "case_title": "郭永敏故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 905.5,
+          "candidate_type": "crime_to_case_chunk",
+          "path_score": 630.0,
+          "retrieval_id": "case:6244d73d-4d72-41d8-8c93-0e8042da279a:0f5458ab99:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "浦志刚、库吐来提·库尔班等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "crime_to_case_to_chunk",
+              "path_score": 630.0,
+              "crime": "故意伤害罪",
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "case_title": "浦志刚、库吐来提·库尔班等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:6244d73d-4d72-41d8-8c93-0e8042da279a:0f5458ab99:reasoning_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 275.5,
+              "case_id": "6244d73d-4d72-41d8-8c93-0e8042da279a",
+              "case_title": "浦志刚、库吐来提·库尔班等走私、贩卖、运输、制造毒品罪一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:6244d73d-4d72-41d8-8c93-0e8042da279a:0f5458ab99:reasoning_text:scalar:0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "case_to_defense_chunk",
+      "query": "吴必定案被告人辩称什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "candidate_type_any",
+          "passed": true,
+          "expected": [
+            "case_to_chunk"
+          ]
+        },
+        {
+          "name": "field_any",
+          "passed": true,
+          "expected": [
+            "defense_text"
+          ]
+        },
+        {
+          "name": "title_contains_any",
+          "passed": true,
+          "expected": [
+            "吴必定故意伤害一审刑事判决书"
+          ]
+        }
+      ],
+      "warnings": [
+        "no_current_law_chunk"
+      ],
+      "candidates": [
+        {
+          "score": 1255.0,
+          "candidate_type": "case_to_chunk",
+          "path_score": 920.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "defense_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "case_to_chunk",
+              "path_score": 920.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_HAS_CHUNK",
+              "field": "defense_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 335.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "defense_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defense_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 245.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 245.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "reasoning_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 245.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "reasoning_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:reasoning_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "accusation_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "accusation_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:accusation_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "court_found_facts_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "court_found_facts_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:court_found_facts_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:evidence_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "evidence_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "evidence_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:evidence_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defendant_confession_texts:0:0",
+          "source_type": "case_chunk",
+          "field": "defendant_confession_texts",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "defendant_confession_texts",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:defendant_confession_texts:0:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:documentary_evidence_texts:0:0",
+          "source_type": "case_chunk",
+          "field": "documentary_evidence_texts",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "documentary_evidence_texts",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:documentary_evidence_texts:0:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:documentary_evidence_texts:2:0",
+          "source_type": "case_chunk",
+          "field": "documentary_evidence_texts",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "documentary_evidence_texts",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:documentary_evidence_texts:2:0"
+            }
+          ]
+        },
+        {
+          "score": 242.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 242.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 242.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 240.0,
+          "candidate_type": "case_to_article",
+          "path_score": 120.0,
+          "retrieval_id": "law:law:criminal_law:12",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "刑法溯及力",
+          "article_no": "12",
+          "graph_paths": [
+            {
+              "path_type": "case_to_article",
+              "path_score": 120.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "article": "第十二条第一款",
+              "article_no": "12",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:12",
+              "resolution": "law_chunk_found"
+            },
+            {
+              "path_type": "case_to_article",
+              "path_score": 120.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "article": "第十二条第一款",
+              "article_no": "12",
+              "law_name": "中华人民共和国刑法",
+              "law_version": "current",
+              "retrieval_id": "law:law:criminal_law:12",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "article_to_related_cases",
+      "query": "刑法第二百三十四条相关案例有哪些",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "candidate_type_any",
+          "passed": true,
+          "expected": [
+            "article_to_related_case_chunk"
+          ]
+        },
+        {
+          "name": "source_type_any",
+          "passed": true,
+          "expected": [
+            "case_chunk"
+          ]
+        },
+        {
+          "name": "graph_path",
+          "passed": true,
+          "expected": {
+            "path_type": "article_to_case_to_chunk",
+            "article_no": "234"
+          }
+        }
+      ],
+      "warnings": [],
+      "candidates": [
+        {
+          "score": 2184.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "刘健故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 2184.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1534.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "史建辉故意伤害二审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1534.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张君成故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "case_title": "张君成故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "case_title": "张君成故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "d00cbae9-0c05-42ef-8722-ceff2339a236",
+              "case_title": "张君成故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:d00cbae9-0c05-42ef-8722-ceff2339a236:78c789852f:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1534.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1534.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1"
+            }
+          ]
+        },
+        {
+          "score": 1534.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 730.0,
+          "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 730.0,
+              "article_no": "234",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 1200.0,
+          "candidate_type": "article_law_chunk",
+          "path_score": 1200.0,
+          "retrieval_id": "law:law:criminal_law:234",
+          "source_type": "law_article",
+          "field": "law_article",
+          "title": "故意伤害罪",
+          "article_no": "234",
+          "graph_paths": [
+            {
+              "path_type": "query_to_article",
+              "path_score": 1200.0,
+              "article_no": "234",
+              "retrieval_id": "law:law:criminal_law:234",
+              "resolution": "law_chunk_found"
+            }
+          ]
+        },
+        {
+          "score": 804.5,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 650.0,
+          "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "郭永敏故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 650.0,
+              "article_no": "234",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "0c02455f-e60e-4aad-b55d-28f4fd65ddfb",
+              "case_title": "郭永敏故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "current",
+              "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 154.5,
+              "case_id": "0c02455f-e60e-4aad-b55d-28f4fd65ddfb",
+              "case_title": "郭永敏故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:0c02455f-e60e-4aad-b55d-28f4fd65ddfb:5d30d91f55:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 142.5,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 142.5,
+          "retrieval_id": "case:79117c9e-dec4-4e9d-8407-fc5429c44d1f:425e80e1eb:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张子民、梁凯英非法转让、倒卖土地使用权二审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 142.5,
+              "case_id": "79117c9e-dec4-4e9d-8407-fc5429c44d1f",
+              "case_title": "张子民、梁凯英非法转让、倒卖土地使用权二审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:79117c9e-dec4-4e9d-8407-fc5429c44d1f:425e80e1eb:judgment_text:scalar:0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "historical_article_warning",
+      "query": "1979年刑法第一百三十四条第二款是什么",
+      "status": "PASS",
+      "checks": [
+        {
+          "name": "warnings_contains",
+          "passed": true,
+          "expected": "historical_law_context_missing"
+        },
+        {
+          "name": "no_current_law_article",
+          "passed": true,
+          "expected": true
+        }
+      ],
+      "warnings": [
+        "historical_law_context_missing",
+        "no_current_law_chunk"
+      ],
+      "candidates": [
+        {
+          "score": 3011.0,
+          "candidate_type": "article_to_related_case_chunk",
+          "path_score": 990.0,
+          "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "吴必定故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 910.0,
+              "article_no": "134",
+              "edge_type": "CASE_CITES_ARTICLE",
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "1979",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "article_to_case_to_chunk",
+              "path_score": 990.0,
+              "article_no": "134",
+              "edge_type": "CASE_APPLIES_ARTICLE",
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "law_version": "1979",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            },
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 201.0,
+              "case_id": "7d231550-ed14-4880-8548-52836d03e953",
+              "case_title": "吴必定故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:7d231550-ed14-4880-8548-52836d03e953:6596d3f0e7:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 178.5,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 178.5,
+          "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 178.5,
+              "case_id": "d1f59c50-0008-4c6f-b2fa-35b178154fe8",
+              "case_title": "朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:d1f59c50-0008-4c6f-b2fa-35b178154fe8:e89336b9c9:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "刘健故意伤害一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "085dd5f7-360e-4351-bdea-265174570805",
+              "case_title": "刘健故意伤害一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:085dd5f7-360e-4351-bdea-265174570805:75f4c2cb30:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "史建辉故意伤害二审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "b679f9b1-3fa7-4dc5-bc46-adea901f5f54",
+              "case_title": "史建辉故意伤害二审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:b679f9b1-3fa7-4dc5-bc46-adea901f5f54:d654ffb17a:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:159195ee-fc2f-4be5-a83e-a089139b59af:7e77569d8a:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "杨某1、林某非法采矿、重大责任事故再审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "159195ee-fc2f-4be5-a83e-a089139b59af",
+              "case_title": "杨某1、林某非法采矿、重大责任事故再审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:159195ee-fc2f-4be5-a83e-a089139b59af:7e77569d8a:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:159195ee-fc2f-4be5-a83e-a089139b59af:7e77569d8a:judgment_text:scalar:1",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "杨某1、林某非法采矿、重大责任事故再审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "159195ee-fc2f-4be5-a83e-a089139b59af",
+              "case_title": "杨某1、林某非法采矿、重大责任事故再审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:159195ee-fc2f-4be5-a83e-a089139b59af:7e77569d8a:judgment_text:scalar:1"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "6e6df745-4118-44fe-a07f-a74219e506be",
+              "case_title": "张云生故意伤害罪，陆某、严斌等聚众斗殴罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:6e6df745-4118-44fe-a07f-a74219e506be:48a8ebb562:judgment_text:scalar:1"
+            }
+          ]
+        },
+        {
+          "score": 171.0,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 171.0,
+          "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 171.0,
+              "case_id": "ba82ef79-4bb9-432d-982a-6a594ac40a6e",
+              "case_title": "宁夏回族自治区中卫市沙坡头区人民检察院与陈某甲、陈永平故意伤害罪一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:ba82ef79-4bb9-432d-982a-6a594ac40a6e:31443436d7:judgment_text:scalar:0"
+            }
+          ]
+        },
+        {
+          "score": 166.5,
+          "candidate_type": "metadata_to_case_chunk",
+          "path_score": 166.5,
+          "retrieval_id": "case:f0276cf6-64f1-403e-92b2-f25711cf7636:142a6759b0:judgment_text:scalar:0",
+          "source_type": "case_chunk",
+          "field": "judgment_text",
+          "title": "左权等八人职务侵占等一审刑事判决书",
+          "article_no": null,
+          "graph_paths": [
+            {
+              "path_type": "metadata_to_case_chunk",
+              "path_score": 166.5,
+              "case_id": "f0276cf6-64f1-403e-92b2-f25711cf7636",
+              "case_title": "左权等八人职务侵占等一审刑事判决书",
+              "field": "judgment_text",
+              "retrieval_id": "case:f0276cf6-64f1-403e-92b2-f25711cf7636:142a6759b0:judgment_text:scalar:0"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

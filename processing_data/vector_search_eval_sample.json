@@ -1,0 +1,67 @@
+[
+  {
+    "id": "wu_biding_sentence_vector",
+    "query": "吴必定案判了多久",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "field_any": ["judgment_text", "reasoning_text", "accusation_text"],
+      "rank_max": 2,
+      "rank_field_any": ["judgment_text"]
+    }
+  },
+  {
+    "id": "intentional_injury_law_vector",
+    "query": "故意伤害罪相关刑法条文是什么",
+    "top_k": 10,
+    "expected": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["234"],
+      "top1_source_type": "law_article",
+      "top1_law_article_no_any": ["234"]
+    }
+  },
+  {
+    "id": "dangerous_driving_law_vector",
+    "query": "危险驾驶罪对应刑法第几条",
+    "top_k": 10,
+    "expected": {
+      "source_type_any": ["law_article"],
+      "law_article_no_any": ["133.1"],
+      "top1_source_type": "law_article",
+      "top1_law_article_no_any": ["133.1"]
+    }
+  },
+  {
+    "id": "wu_biding_defense_vector",
+    "query": "吴必定案被告人辩称什么",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "field_any": ["defense_text", "reasoning_text"],
+      "top1_field_any": ["defense_text"]
+    }
+  },
+  {
+    "id": "wu_biding_reasoning_vector",
+    "query": "吴必定案为什么构成故意伤害罪",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "field_any": ["reasoning_text"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["reasoning_text"]
+    }
+  },
+  {
+    "id": "dangerous_driving_sentence_vector",
+    "query": "穆某危险驾驶罪判了什么刑",
+    "top_k": 10,
+    "expected": {
+      "title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
+      "field_any": ["judgment_text"],
+      "top1_source_type": "case_chunk",
+      "top1_field_any": ["judgment_text"]
+    }
+  }
+]

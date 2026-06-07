@@ -134,5 +134,266 @@
       "citation_title_contains_any": ["穆某犯危险驾驶罪一审刑事判决书"],
       "citation_field_any": ["reasoning_text"]
     }
+  },
+  {
+    "id": "wu_biding_applied_clause",
+    "query": "吴必定案适用的法条第几款",
+    "expected": {
+      "answer_type": "applied_articles",
+      "answer_contains_all": ["第十二条第一款", "第一百三十四条第二款", "law_version=1979"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第十二条第一款",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        },
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第一百三十四条第二款",
+          "law_version": "1979",
+          "resolution": "no_current_law_chunk"
+        }
+      ],
+      "warnings_contains_all": ["no_current_law_chunk"]
+    }
+  },
+  {
+    "id": "wu_biding_why_apply_article_12",
+    "query": "吴必定案为什么适用第十二条第一款",
+    "expected": {
+      "answer_type": "applied_reasoning",
+      "answer_contains_all": ["吴必定", "第十二条第一款", "适用法条理由"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书", "刑法溯及力"],
+      "citation_field_any": ["reasoning_text", "law_article"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第十二条第一款",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wu_biding_defense",
+    "query": "吴必定案被告人辩称什么",
+    "expected": {
+      "answer_type": "defense",
+      "answer_contains_all": ["没有伤害被害人的故意", "防卫性质"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["defense_text"]
+    }
+  },
+  {
+    "id": "wu_biding_defense_adoption",
+    "query": "吴必定案法院是否采纳辩解",
+    "expected": {
+      "answer_type": "reasoning",
+      "answer_contains_all": ["不予采纳", "辩解理由"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["reasoning_text"]
+    }
+  },
+  {
+    "id": "missing_case_sentence",
+    "query": "不存在的人名案判了多久",
+    "expected": {
+      "answer_type": "no_answer",
+      "answer_contains_all": ["没有在样本检索结果中找到"],
+      "warnings_contains_all": ["case_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "missing_case_articles",
+    "query": "火星盗窃案适用了哪些法条",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["case_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "irrelevant_law_article",
+    "query": "刑法第九百九十九条规定了什么",
+    "expected": {
+      "answer_type": "no_answer",
+      "answer_contains_all": ["没有在现行刑法样本法条中找到"],
+      "warnings_contains_all": ["requested_article_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "wu_biding_current_law_only",
+    "query": "吴必定案现行刑法适用了哪些法条",
+    "expected": {
+      "answer_type": "applied_articles",
+      "answer_contains_all": ["第十二条第一款", "law_version=current"],
+      "answer_not_contains_any": ["第一百三十四条第二款", "law_version=1979"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第十二条第一款",
+          "law_version": "current",
+          "resolution": "law_chunk_found"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wu_biding_case_applied_law_then",
+    "query": "吴必定案当时适用的法条是什么",
+    "expected": {
+      "answer_type": "applied_articles",
+      "answer_contains_all": ["第十二条第一款", "第一百三十四条第二款", "law_version=1979"],
+      "warnings_contains_all": ["no_current_law_chunk"],
+      "graph_edge": [
+        {
+          "edge_type": "CASE_APPLIES_ARTICLE",
+          "article": "第一百三十四条第二款",
+          "law_version": "1979",
+          "resolution": "no_current_law_chunk"
+        }
+      ]
+    }
+  },
+  {
+    "id": "wu_biding_defense_to_adoption_multihop",
+    "query": "吴必定案被告人辩称什么，法院为什么不采纳",
+    "expected": {
+      "answer_type": "reasoning",
+      "answer_contains_all": ["吴必定", "没有伤害被害人的故意", "不予采纳"],
+      "citation_title_contains_any": ["吴必定故意伤害一审刑事判决书"],
+      "citation_field_any": ["reasoning_text"]
+    }
+  },
+  {
+    "id": "compare_sentence_unsupported",
+    "query": "比较吴必定案和穆某案的量刑",
+    "expected": {
+      "answer_type": "no_answer",
+      "answer_contains_all": ["不支持跨案例比较"],
+      "warnings_contains_all": ["low_confidence", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "compare_applied_articles_unsupported",
+    "query": "吴必定案和穆某案适用法条是否相同",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["low_confidence", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "compare_facts_unsupported",
+    "query": "吴必定案和孙五十四案事实有什么差异",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["low_confidence", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "partial_name_low_confidence",
+    "query": "吴必案判了多久",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["low_confidence", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "similar_name_low_confidence",
+    "query": "张君案为什么构成故意伤害罪",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["low_confidence", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "same_crime_missing_case",
+    "query": "不存在故意伤害案判了多久",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["case_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_weekday",
+    "query": "今天星期几？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_weather",
+    "query": "天气怎么样？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_identity",
+    "query": "你是谁？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_poem",
+    "query": "帮我写一首诗",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_civil_contract",
+    "query": "民法合同纠纷怎么处理？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "out_of_scope_admin_law",
+    "query": "行政处罚法第几条是什么？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["out_of_scope", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "missing_case_specific_sentence",
+    "query": "火星盗窃案判了多久？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["case_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
+  },
+  {
+    "id": "missing_specific_article",
+    "query": "刑法第八百八十八条是什么？",
+    "expected": {
+      "answer_type": "no_answer",
+      "warnings_contains_all": ["requested_article_not_found", "insufficient_context"],
+      "citation_count": 0
+    }
   }
 ]

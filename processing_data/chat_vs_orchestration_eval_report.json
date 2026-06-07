@@ -1,0 +1,2077 @@
+{
+  "schema_version": "chat-vs-orchestration-eval-v1",
+  "created_at_utc": "2026-05-30T13:35:59.043581+00:00",
+  "orchestration_generation_mode": "mock",
+  "case_count": 20,
+  "classification_counts": {
+    "完全一致": 17,
+    "可接受差异": 3
+  },
+  "risk_issue_counts": {},
+  "provider_error_count": 0,
+  "provider_error_samples": [],
+  "provider_grounding": {
+    "stable": {
+      "grounded_score_avg": 0.9825,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.0175,
+      "refusal_quality_score_avg": 1.0
+    },
+    "orchestration": {
+      "grounded_score_avg": 0.965,
+      "citation_coverage_score_avg": 1.0,
+      "hallucination_risk_score_avg": 0.035,
+      "refusal_quality_score_avg": 1.0,
+      "high_hallucination_risk_count": 0,
+      "low_citation_coverage_count": 0
+    }
+  },
+  "risk_samples": [],
+  "results": [
+    {
+      "id": "general_weather",
+      "query": "今天天气怎么样？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "抱歉，我无法获取实时天气信息。请告诉我你的城市或地区，或者你可以打开联网搜索功能查询今天的天气预报。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "您好！我无法直接获取当前的天气信息，因为我没有联网功能。要了解今天的天气，请告诉我您所在的城市或地区，并开启联网搜索功能（如您使用的平台支持），我才能帮您查询实时天气。或者您也可以自行查看天气预报应用或网站。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_poem",
+      "query": "帮我写一首五言绝句",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "月照松间影，  \n风吹竹上霜。  \n心随流水远，  \n夜静品茶香。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "《山居》\n空山新雨后，  \n溪水绕石流。  \n静听松风响，  \n心闲万事休。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_math",
+      "query": "123 加 456 等于多少？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "123 加 456 等于 579。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "123 加 456 等于 579。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_translation",
+      "query": "把“证据充分”翻译成英文",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "\"Evidence is sufficient\""
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "“证据充分”可翻译为：**sufficient evidence** 或 **ample evidence**。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_recipe",
+      "query": "番茄炒蛋怎么做？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "番茄炒蛋是一道简单又美味的家常菜。以下是基本做法：\n\n**食材**：\n- 西红柿 2-3个\n- 鸡蛋 3-4个\n- 葱 1根\n- 盐、糖、食用油 适量\n\n**步骤**：\n1. 西红柿洗净，顶部划十字，用开水烫一下去皮（也可不去皮），切成小块。\n2. 鸡蛋打散，加少许盐搅匀。\n3. 热锅倒油，油热后倒入蛋液，炒熟成块后盛出备用。\n4. 锅中再倒少许油，放入西红柿块，中火炒出汁水，加一小勺糖（提鲜中和酸味）。\n5. 倒入炒好的鸡蛋，翻炒均匀"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "番茄炒蛋是一道经典家常菜，做法简单，酸甜可口。以下是基本步骤：\n\n**食材**：番茄2个、鸡蛋3个、葱适量、盐、糖、食用油。\n\n**步骤**：\n1. 番茄洗净，在顶部划十字后用开水烫一下，去皮后切小块；鸡蛋打散，加少许盐搅匀；葱切葱花。\n2. 热锅倒油，油热后倒入蛋液，炒至凝固成块，盛出备用。\n3. 锅中再倒少许油，放入番茄块，中火翻炒至出汁，用铲子按压帮助出沙。加入一小勺糖（平衡酸味）和适量盐。\n4. 倒入炒好的鸡蛋，与番茄快速翻炒均",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_programming",
+      "query": "Python 怎么读取 JSONL 文件？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "在 Python 中读取 JSONL（JSON Lines）文件的常用方法是逐行读取并按 JSON 解析。示例如下：\n\n```python\nimport json\n\njsonl_file_path = \"data.jsonl\"\n\ndata = []\nwith open(jsonl_file_path, \"r\", encoding=\"utf-8\") as f:\n    for line in f:\n        line = line."
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "在 Python 中，读取 JSONL（JSON Lines）文件很简单，推荐使用标准库 `json` 结合逐行读取的方式。JSONL 文件的每一行都是一个独立的 JSON 对象，没有逗号分隔，也没有外层的 `[]`。\n\n### 基本方法\n```python\nimport json\n\ndata = []\nwith open('data.jsonl', 'r', encoding='utf-8') as f:\n    for line i",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_history",
+      "query": "唐朝的都城在哪里？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "唐朝的都城主要在长安（今陕西西安），此外洛阳也曾作为东都，在武则天时期一度成为实际的政治中心。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "唐朝的都城是长安，即今天的陕西省西安市。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "general_health",
+      "query": "感冒了应该多喝水吗？",
+      "category": "general",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "是的，感冒时多喝水是常见且有益的建议。充足的水分可以帮助稀释黏液、缓解喉咙不适、防止脱水，并促进身体代谢。不过也要根据个人情况适量饮用，避免一次性喝太多。如果症状严重或持续，建议及时就医。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "是的，感冒时多喝水是有益的。充足的水分可以帮助稀释痰液、缓解喉咙干燥、调节体温，并支持身体的免疫系统正常运作。建议选择温开水、清淡的汤水或少量蜂蜜柠檬水，避免含糖饮料或咖啡因饮品。不过也要注意适量，如果已经出现严重脱水或医生有特殊嘱咐，应遵医嘱。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_divorce",
+      "query": "离婚财产怎么分？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "离婚财产分割主要遵循《中华人民共和国民法典》的规定，基本原则如下：\n\n1. **共同财产**：婚姻关系存续期间所得的工资、奖金、生产经营收益、知识产权收益、继承或受赠（未明确只归一方）的财产等，属于夫妻共同财产，原则上**均等分割**。但会优先考虑**照顾子女、女方和无过错方**的权益。\n\n2. **个人财产**：一方婚前的财产、因身体受伤害获得的赔偿金、遗嘱或赠与明确只归一方的财产、专用的生活用品等，属于个人财产，**不参与分割**。"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "离婚财产分割主要依据《中华人民共和国民法典》婚姻家庭编的相关规定。核心原则是：**界定好夫妻共同财产和个人财产**，然后对共同财产进行分割。\n\n具体来说，可以分以下几个步骤理解：\n\n**1. 哪些是夫妻共同财产？**  \n主要包括：婚后双方或一方的工资、奖金、劳务报酬；生产、经营、投资的收益；知识产权的收益；继承或受赠的财产（除非遗嘱或赠与合同明确只给一方）；以及婚后购买的房产、汽车等。**原则上，这些财产夫妻双方各占一半。**\n\n**",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_labor",
+      "query": "公司拖欠工资怎么办？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "公司拖欠工资属于常见的劳动纠纷，你可以按照以下步骤合法维权：\n\n1. **收集证据**：保留劳动合同、工资单、考勤记录、工作沟通记录（微信、邮件）、催讨工资的录音或聊天记录等，证明你与公司存在劳动关系以及公司拖欠工资的事实。\n\n2. **与公司协商**：先尝试与公司负责人或HR沟通，明确要求支付拖欠工资的具体金额和期限。最好通过书面或可留存证据的方式沟通。\n\n3. **向劳动监察部门投诉**：如果协商无果，可以拨打当地人力资源和社会保障"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "如果公司拖欠工资，你可以采取以下步骤维护自己的合法权益：\n\n1. **收集证据**：保留劳动合同、工资条、考勤记录、工作沟通记录（如微信、邮件）、银行流水等，证明你与公司的劳动关系以及工资被拖欠的事实。\n\n2. **与公司沟通**：先尝试与公司负责人或人力资源部门沟通，明确要求支付拖欠的工资，并记录沟通时间、内容及对方回应。\n\n3. **向劳动监察部门投诉**：如果沟通无效，可以向公司所在地的**劳动监察大队**（隶属于人力资源和社会保",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_contract",
+      "query": "合同违约金过高可以要求调整吗？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 0.65,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.35,
+          "refusal_quality_score": 1.0,
+          "issues": [
+            {
+              "severity": "high",
+              "type": "unsupported_article_claims",
+              "articles": [
+                "第585条"
+              ]
+            }
+          ],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "当然可以。根据《中华人民共和国民法典》第585条的规定，约定的违约金过分高于造成的损失的，当事人可以请求人民法院或者仲裁机构予以适当减少。\n\n在司法实践中，通常认为违约金超过**造成损失的30%** 即可能构成“过分高于”，法院或仲裁机构会综合考虑以下因素来决定是否调整及调整幅度：\n\n1.  **实际损失**：守约方因对方违约而遭受的直接损失和可得利益损失。\n2.  **合同履行情况**：违约方是否已部分履行、履行程度如何。\n3.  *"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 0.65,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.35,
+          "refusal_quality_score": 1.0,
+          "issues": [
+            {
+              "severity": "high",
+              "type": "unsupported_article_claims",
+              "articles": [
+                "第585条"
+              ]
+            }
+          ],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "可以。根据《民法典》第585条，约定的违约金过分高于造成的损失的，当事人可以请求人民法院或者仲裁机构予以适当减少。实践中，如果违约金超过实际损失的30%，通常会被认定为“过分高于损失”。不过，你需要提供证据证明实际损失金额，法院或仲裁机构才会酌情调整。建议你收集好合同文本、损失证明等材料，必要时咨询专业律师。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_inheritance",
+      "query": "没有遗嘱的遗产怎么继承？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "没有遗嘱的遗产继承适用**法定继承**。根据《中华人民共和国民法典》继承编的规定，法定继承的顺序为：\n\n- **第一顺序**：配偶、子女（包括婚生子女、非婚生子女、养子女和有扶养关系的继子女）、父母（包括生父母、养父母和有扶养关系的继父母）。\n- **第二顺序**：兄弟姐妹（包括同父母、同父异母或同母异父、养兄弟姐妹、有扶养关系的继兄弟姐妹）、祖父母、外祖父母。\n\n继承开始时，由第一顺序继承人继承，第二顺序继承人不继承；没有第一顺序继承"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:non_criminal_legal"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.78,
+          "reason": null,
+          "query_type": "non_criminal_legal",
+          "router_label": "non_criminal_legal"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "没有遗嘱时，遗产按照法定继承处理。根据《中华人民共和国民法典》继承编的规定，法定继承顺序如下：\n\n1. **第一顺序继承人**：配偶、子女、父母。  \n   - 继承开始后，由第一顺序继承人继承，第二顺序继承人不能继承。  \n   - 同一顺序的继承人一般均等分配遗产，但法律也允许照顾生活有特殊困难、缺乏劳动能力的继承人，或者对尽了主要扶养义务的继承人可以多分；有扶养能力和条件却不尽义务的，可以少分或不分。\n\n2. **第二顺序继承人*",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_traffic_compensation",
+      "query": "交通事故赔偿标准怎么计算？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "交通事故赔偿标准的计算主要依据《中华人民共和国民法典》和《最高人民法院关于审理人身损害赔偿案件适用法律若干问题的解释》，具体金额会因事故责任划分、地区差异、受害者的个人情况（如年龄、收入、户籍等）而不同。赔偿项目通常包括以下几项，计算方式如下：\n\n1. **医疗费**：根据实际发生的合理医疗费用票据计算（包括挂号费、医药费、检查费、住院费等）。\n2. **误工费**：根据受害者的**实际减少的收入**计算。有固定收入的，按实际减少的收入"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "交通事故赔偿标准通常涉及医疗费、误工费、护理费、交通费、残疾赔偿金、死亡赔偿金等多个项目，具体计算方式因地区和事故情况而异。以下是主要项目的通用计算原则：\n\n1. **医疗费**：根据医院出具的票据、病历等凭证，按实际合理支出计算（后续治疗费可凭证明主张）。\n2. **误工费**：有固定收入的，按实际减少的收入计算（需提供工资单、劳动合同等）；无固定收入的，可参照近三年平均收入或当地同行业平均工资计算；若无法证明，则可按当地最低工资标准",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_rent",
+      "query": "房东不退押金可以起诉吗？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "当房东无正当理由拒不退还押金时，租客通常可以向法院提起民事诉讼。不过，在起诉前建议先确认以下几点：\n\n1. **检查租赁合同**：明确押金退还条件、扣款依据是否合法。\n2. **保留证据**：包括合同、押金支付凭证、退房交接单、沟通记录（微信/短信/录音等）。\n3. **发函催告**：先书面（如挂号信）要求房东限期退还，保留催告证据，证明已履行告知义务。\n4. **评估金额**：诉讼成本（时间、诉讼费）与押金金额是否匹配。小额诉讼程序（"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "房东不退押金通常属于民事纠纷，**可以起诉**，但诉讼是最后的法律途径。建议按以下步骤处理：\n\n1. **先协商或发函**：明确要求房东说明扣款理由，书面（微信、短信或挂号信）固定沟通记录。\n2. **向主管部门投诉**：可拨打12345或当地住建部门、街道办调解，部分城市对租赁纠纷有快速协调机制。\n3. **收集证据**：租赁合同、押金收据或转账记录、退房交接单、房屋损坏照片/视频、沟通记录等。\n4. **向法院起诉**：若金额不大（",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "non_criminal_company",
+      "query": "股东退股需要什么手续？",
+      "category": "non_criminal_legal",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "股东退股的具体手续取决于公司类型（有限责任公司或股份有限公司）以及退股方式。以下是常见情况的说明：\n\n### 1. 有限责任公司\n有限责任公司股东退股主要有以下方式：\n- **股权转让**：向公司其他股东或外部第三方转让股权。需要签订股权转让协议，修改公司章程，并办理工商变更登记（需提交股东会决议、股权转让证明等材料）。\n- **公司回购股权**：在特定情形下（如公司连续五年盈利但不分红、合并分立转让主要财产、章程规定的营业期限届满等）"
+      },
+      "orchestration": {
+        "answer_type": "llm_direct",
+        "citations_count": 0,
+        "warnings": [
+          "retrieval_skipped",
+          "router:general_no_legal_retrieval"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 0.8,
+          "reason": null,
+          "query_type": "general_no_legal_retrieval",
+          "router_label": "general_no_legal_retrieval"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 0.65,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.35,
+          "refusal_quality_score": 1.0,
+          "issues": [
+            {
+              "severity": "high",
+              "type": "unsupported_article_claims",
+              "articles": [
+                "第七十四条"
+              ]
+            }
+          ],
+          "summary": {
+            "answer_type": "llm_direct",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "股东退股的具体手续取决于公司类型（有限责任公司或股份有限公司）以及退股方式（如股权转让、公司回购、减资退出等）。以下是一般情况下的流程和注意事项：\n\n### 1. 有限责任公司股东退股\n最常见的方式是**股权转让**，其次是在法定条件下**请求公司回购股权**。\n\n#### （1）股权转让（内部或外部）\n- **协商确定转让价格**：与受让方（可以是其他股东或第三方）达成协议。\n- **签署股权转让协议**：明确转让份额、价格、付款方式",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "law_only_theft",
+      "query": "盗窃罪怎么判？",
+      "category": "criminal_law_law_only",
+      "classification": "可接受差异",
+      "issues": [
+        {
+          "severity": "info",
+          "reason": "citation_count_diff",
+          "stable": 3,
+          "orchestration": 5
+        }
+      ],
+      "stable": {
+        "answer_type": "llm_grounded",
+        "citations_count": 3,
+        "warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "law_lookup",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_grounded",
+            "context_count": 5,
+            "citation_count": 3,
+            "graph_path_count": 11,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:264",
+          "law:law:criminal_law:210",
+          "law:law:criminal_law:265",
+          "law:law:criminal_law:65",
+          "law:law:criminal_law:64"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 11,
+        "refusal_reason": null,
+        "answer_preview": "根据《中华人民共和国刑法》第264条，盗窃罪的量刑分三档：数额较大或多次盗窃、入户盗窃等，处三年以下有期徒刑、拘役或管制，并处或单处罚金；数额巨大或有其他严重情节，处三年以上十年以下有期徒刑，并处罚金；数额特别巨大或有其他特别严重情节，处十年以上有期徒刑或无期徒刑，并处罚金或没收财产。此外，若构成累犯（第65条）应从重处罚，违法所得应予追缴或退赔（第64条）。具体数额标准未在上下文中提供。"
+      },
+      "orchestration": {
+        "answer_type": "llm_grounded",
+        "citations_count": 5,
+        "warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "law_lookup",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_grounded",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 11,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:264",
+          "law:law:criminal_law:210",
+          "law:law:criminal_law:265",
+          "law:law:criminal_law:65",
+          "law:law:criminal_law:64"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 11,
+        "refusal_reason": null,
+        "answer_preview": "根据检索上下文，盗窃罪、盗窃罪可以支持该回答。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "mock_llm_output",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "law_only_attempt",
+      "query": "犯罪未遂的构成特征是什么？",
+      "category": "criminal_law_law_only",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "low_confidence",
+        "citations_count": 5,
+        "warnings": [
+          "low_confidence",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "low",
+          "score": 0.074,
+          "reason": null,
+          "query_type": "reasoning",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "low_confidence",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:23",
+          "law:law:criminal_law:25",
+          "law:law:criminal_law:14",
+          "law:law:criminal_law:24",
+          "law:law:criminal_law:287"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 0,
+        "refusal_reason": "low_confidence",
+        "answer_preview": "检索置信度较低，不能给出确定结论。以下仅列出命中的证据摘要。\n犯罪未遂（law_article）：第23条 犯罪未遂 已经着手实行犯罪，由于犯罪分子意志以外的原因而未得逞的，是犯 罪未遂。 对于未遂犯，可以比照既遂犯从轻或者减轻处罚。\n共同犯罪的概念（law_article）：第25条 共同犯罪的概念 共同犯罪是指二人以上共同故意犯罪。 二人以上共同过失犯罪，不以共同犯罪论处；应当负刑事责任的，按照他们所犯的罪分别处罚。\n故意犯罪（la"
+      },
+      "orchestration": {
+        "answer_type": "low_confidence",
+        "citations_count": 5,
+        "warnings": [
+          "low_confidence",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "low",
+          "score": 0.074,
+          "reason": null,
+          "query_type": "reasoning",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "low_confidence",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:23",
+          "law:law:criminal_law:25",
+          "law:law:criminal_law:14",
+          "law:law:criminal_law:24",
+          "law:law:criminal_law:287"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 0,
+        "refusal_reason": "low_confidence",
+        "answer_preview": "检索置信度较低，不能给出确定结论。以下仅列出命中的证据摘要。\n犯罪未遂（law_article）：第23条 犯罪未遂 已经着手实行犯罪，由于犯罪分子意志以外的原因而未得逞的，是犯 罪未遂。 对于未遂犯，可以比照既遂犯从轻或者减轻处罚。\n共同犯罪的概念（law_article）：第25条 共同犯罪的概念 共同犯罪是指二人以上共同故意犯罪。 二人以上共同过失犯罪，不以共同犯罪论处；应当负刑事责任的，按照他们所犯的罪分别处罚。\n故意犯罪（la",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "law_only_fraud",
+      "query": "诈骗罪的构成要件是什么？",
+      "category": "criminal_law_law_only",
+      "classification": "可接受差异",
+      "issues": [
+        {
+          "severity": "info",
+          "reason": "answer_type_diff",
+          "stable": "retrieval_fallback",
+          "orchestration": "llm_grounded"
+        },
+        {
+          "severity": "info",
+          "reason": "warnings_diff",
+          "stable": [
+            "insufficient_context",
+            "no_current_law_chunk",
+            "provider_misrefused",
+            "router:criminal_law_law_only"
+          ],
+          "orchestration": [
+            "no_current_law_chunk",
+            "router:criminal_law_law_only"
+          ]
+        }
+      ],
+      "stable": {
+        "answer_type": "retrieval_fallback",
+        "citations_count": 5,
+        "warnings": [
+          "insufficient_context",
+          "no_current_law_chunk",
+          "provider_misrefused",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "reasoning",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "retrieval_fallback",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 15,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:266",
+          "law:law:criminal_law:64",
+          "law:law:criminal_law:200",
+          "law:law:criminal_law:198",
+          "law:law:criminal_law:195"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 15,
+        "refusal_reason": "insufficient_context",
+        "answer_preview": "deepseek 调用失败，以下为检索证据摘要。\n诈骗罪（law_article）：第266条 诈骗罪 诈骗公私财物，数额较大的，处三年以下有期徒刑、拘役或者管 制，并处或者单处罚金；数额巨大或者有其他严重情节的，处三年以上十年以下有期徒刑，并处罚 金；数额特别巨大或者有其他特别严重情节的，处十年以上有期徒刑或者无期徒刑，并处罚金或者没 收财产。本法另有规定的，依照规定。\n犯罪物品的处理（law_article）：第64条 犯罪物品的处"
+      },
+      "orchestration": {
+        "answer_type": "llm_grounded",
+        "citations_count": 5,
+        "warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "reasoning",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_grounded",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 15,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:266",
+          "law:law:criminal_law:64",
+          "law:law:criminal_law:200",
+          "law:law:criminal_law:198",
+          "law:law:criminal_law:195"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 15,
+        "refusal_reason": null,
+        "answer_preview": "根据检索上下文，诈骗罪、犯罪物品的处理可以支持该回答。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "mock_llm_output",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "law_only_robbery",
+      "query": "抢劫罪和抢夺罪有什么区别？",
+      "category": "criminal_law_law_only",
+      "classification": "可接受差异",
+      "issues": [
+        {
+          "severity": "info",
+          "reason": "citation_count_diff",
+          "stable": 3,
+          "orchestration": 5
+        }
+      ],
+      "stable": {
+        "answer_type": "llm_grounded",
+        "citations_count": 3,
+        "warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "general_criminal",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_grounded",
+            "context_count": 5,
+            "citation_count": 3,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:267",
+          "law:law:criminal_law:263",
+          "law:law:criminal_law:269",
+          "law:law:criminal_law:329",
+          "law:law:criminal_law:289"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "抢劫罪（第263条）使用暴力、胁迫或其他方法强行劫取财物；抢夺罪（第267条）是公然夺取财物，未使用暴力、胁迫手段。携带凶器抢夺的按抢劫罪定罪处罚（第267条第二款）。犯抢夺罪后为窝藏赃物、抗拒抓捕或毁灭罪证当场使用暴力或威胁的，转化为抢劫罪（第269条）。"
+      },
+      "orchestration": {
+        "answer_type": "llm_grounded",
+        "citations_count": 5,
+        "warnings": [
+          "no_current_law_chunk",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "high",
+          "score": 1.0,
+          "reason": null,
+          "query_type": "general_criminal",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "llm_grounded",
+            "context_count": 5,
+            "citation_count": 5,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [
+          "law:law:criminal_law:267",
+          "law:law:criminal_law:263",
+          "law:law:criminal_law:269",
+          "law:law:criminal_law:329",
+          "law:law:criminal_law:289"
+        ],
+        "source_types": [
+          "law_article"
+        ],
+        "graph_paths_count": 0,
+        "refusal_reason": null,
+        "answer_preview": "根据检索上下文，抢夺罪、抢劫罪可以支持该回答。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "mock_llm_output",
+          "final_response"
+        ]
+      }
+    },
+    {
+      "id": "law_only_self_surrender",
+      "query": "自首可以从轻处罚吗？",
+      "category": "criminal_law_law_only",
+      "classification": "完全一致",
+      "issues": [],
+      "stable": {
+        "answer_type": "no_answer",
+        "citations_count": 0,
+        "warnings": [
+          "insufficient_context",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "none",
+          "score": 0.0,
+          "reason": "no_context",
+          "query_type": "sentence",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "no_answer",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": "insufficient_context",
+        "answer_preview": "没有检索到足够的刑法案例或法条上下文，无法可靠回答。"
+      },
+      "orchestration": {
+        "answer_type": "no_answer",
+        "citations_count": 0,
+        "warnings": [
+          "insufficient_context",
+          "router:criminal_law_law_only"
+        ],
+        "confidence": {
+          "level": "none",
+          "score": 0.0,
+          "reason": "no_context",
+          "query_type": "sentence",
+          "router_label": "criminal_law_law_only"
+        },
+        "hallucination_risk": {
+          "level": "low",
+          "reasons": []
+        },
+        "grounding": {
+          "grounded_score": 1.0,
+          "citation_coverage_score": 1.0,
+          "hallucination_risk_score": 0.0,
+          "refusal_quality_score": 1.0,
+          "issues": [],
+          "summary": {
+            "answer_type": "no_answer",
+            "context_count": 0,
+            "citation_count": 0,
+            "graph_path_count": 0,
+            "historical_query": false
+          }
+        },
+        "provider_errors": [],
+        "retrieval_ids": [],
+        "source_types": [],
+        "graph_paths_count": 0,
+        "refusal_reason": "insufficient_context",
+        "answer_preview": "没有检索到足够的刑法案例或法条上下文，无法可靠回答。",
+        "log_events": [
+          "start",
+          "router_result",
+          "lexical_retriever",
+          "graph_retriever",
+          "vector_retriever",
+          "hybrid_merge_rerank",
+          "answer_contract_prepared",
+          "llm_skipped",
+          "final_response"
+        ]
+      }
+    }
+  ]
+}

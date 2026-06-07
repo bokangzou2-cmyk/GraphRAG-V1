@@ -1,0 +1,34 @@
+{
+  "schema_version": "router-labeling-progress-v1",
+  "updated_at_utc": "2026-05-21T10:49:41.805568+00:00",
+  "input": "processing_data\\router_training_questions\\all_questions_unlabeled.jsonl",
+  "output": "processing_data\\router_training_questions\\router_questions_labeled_deepseek.jsonl",
+  "failures": "processing_data\\router_training_questions\\router_questions_label_failures.jsonl",
+  "total": 5000,
+  "completed": 5000,
+  "failed": 36,
+  "remaining": 0,
+  "label_counts": {
+    "criminal_law_law_only": 1451,
+    "criminal_law_advice": 67,
+    "non_criminal_legal": 506,
+    "criminal_law_case_and_law": 220,
+    "general_no_legal_retrieval": 2471,
+    "criminal_law_multi_case": 90,
+    "criminal_law_case_only": 177,
+    "low_quality_or_incomplete": 18
+  },
+  "source_counts_completed": {
+    "disc_law_sft_criminal": 650,
+    "local_case_query_crime_derived": 630,
+    "local_criminal_law_article_derived": 551,
+    "curated_criminal_law_questions": 100,
+    "agieval_jec_qa_criminal": 69,
+    "disc_law_sft_non_criminal_legal": 250,
+    "hc3_law_non_criminal_legal": 191,
+    "agieval_jec_qa_non_criminal_legal": 59,
+    "hc3_open_qa_general": 1400,
+    "hc3_baike_general": 1100
+  },
+  "schema_validated": true
+}

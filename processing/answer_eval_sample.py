@@ -29,6 +29,7 @@ def contains_any(value: Any, expected_values: list[str]) -> bool:
 
 def check_expected(result: dict, expected: dict) -> list[dict]:
     checks = []
+    citations = result.get("citations", [])
     if expected.get("answer_type"):
         checks.append({
             "name": "answer_type",
@@ -43,11 +44,18 @@ def check_expected(result: dict, expected: dict) -> list[dict]:
             "expected": expected_text,
         })
 
+    for forbidden_text in expected.get("answer_not_contains_any") or []:
+        checks.append({
+            "name": "answer_not_contains",
+            "passed": forbidden_text not in result.get("answer", ""),
+            "expected": forbidden_text,
+        })
+
     citation_titles = expected.get("citation_title_contains_any") or []
     if citation_titles:
         checks.append({
             "name": "citation_title_contains_any",
-            "passed": any(contains_any(citation.get("title"), citation_titles) for citation in result.get("citations", [])),
+            "passed": any(contains_any(citation.get("title"), citation_titles) for citation in citations),
             "expected": citation_titles,
         })
 
@@ -55,7 +63,7 @@ def check_expected(result: dict, expected: dict) -> list[dict]:
     if citation_fields:
         checks.append({
             "name": "citation_field_any",
-            "passed": any(citation.get("field") in citation_fields for citation in result.get("citations", [])),
+            "passed": any(citation.get("field") in citation_fields for citation in citations),
             "expected": citation_fields,
         })
 
@@ -63,8 +71,62 @@ def check_expected(result: dict, expected: dict) -> list[dict]:
     if citation_source_types:
         checks.append({
             "name": "citation_source_type_any",
-            "passed": any(citation.get("source_type") in citation_source_types for citation in result.get("citations", [])),
+            "passed": any(citation.get("source_type") in citation_source_types for citation in citations),
             "expected": citation_source_types,
+        })
+
+    if "citation_count" in expected:
+        checks.append({
+            "name": "citation_count",
+            "passed": len(citations) == expected["citation_count"],
+            "expected": expected["citation_count"],
+        })
+
+    citation_retrieval_ids = expected.get("citation_retrieval_id_any") or []
+    if citation_retrieval_ids:
+        checks.append({
+            "name": "citation_retrieval_id_any",
+            "passed": any(citation.get("retrieval_id") in citation_retrieval_ids for citation in citations),
+            "expected": citation_retrieval_ids,
+        })
+
+    citation_chunk_ids = expected.get("citation_chunk_id_any") or []
+    if citation_chunk_ids:
+        checks.append({
+            "name": "citation_chunk_id_any",
+            "passed": any(citation.get("chunk_id") in citation_chunk_ids for citation in citations),
+            "expected": citation_chunk_ids,
+        })
+
+    citation_text_hashes = expected.get("citation_text_hash_any") or []
+    if citation_text_hashes:
+        checks.append({
+            "name": "citation_text_hash_any",
+            "passed": any(citation.get("text_hash") in citation_text_hashes for citation in citations),
+            "expected": citation_text_hashes,
+        })
+
+    if expected.get("citation_fields_required"):
+        fields = expected["citation_fields_required"]
+        checks.append({
+            "name": "citation_fields_required",
+            "passed": all(all(citation.get(field) for field in fields) for citation in citations),
+            "expected": fields,
+        })
+
+    if citations:
+        fields = ["retrieval_id", "chunk_id", "source_file", "text_hash"]
+        checks.append({
+            "name": "citation_binding_fields",
+            "passed": all(all(citation.get(field) for field in fields) for citation in citations),
+            "expected": fields,
+        })
+
+    for warning in expected.get("warnings_contains_all") or []:
+        checks.append({
+            "name": "warnings_contains",
+            "passed": warning in result.get("warnings", []),
+            "expected": warning,
         })
 
     for expected_edge in expected.get("graph_edge") or []:

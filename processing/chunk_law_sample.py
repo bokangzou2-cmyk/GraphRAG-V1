@@ -37,6 +37,7 @@ def build_chunks() -> list[dict]:
                 "law_name": "中华人民共和国刑法",
                 "article_no": article_no,
                 "title": title,
+                "law_version": "current",
             },
         })
     return rows

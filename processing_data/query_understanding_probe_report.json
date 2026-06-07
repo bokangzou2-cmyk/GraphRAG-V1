@@ -1,0 +1,1228 @@
+{
+  "summary": {
+    "mode": "rules",
+    "total": 12,
+    "passed": 12,
+    "failed": 0,
+    "pass_rate": 1.0,
+    "category_stats": {
+      "history_case_reference": {
+        "total": 4,
+        "passed": 4,
+        "pass_rate": 1.0
+      },
+      "law_lookup": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "amount_case_law": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "short_case_name": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "field_intent": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "multi_case": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "scope": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "guardrail": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      },
+      "typo": {
+        "total": 1,
+        "passed": 1,
+        "pass_rate": 1.0
+      }
+    },
+    "check_pass_rates": {
+      "amount_role": 1.0,
+      "amount_value": 1.0,
+      "case_name_mentions_any": 1.0,
+      "crime_mentions_any": 1.0,
+      "field_intents_any": 1.0,
+      "json_valid": 1.0,
+      "needs_retrieval": 1.0,
+      "required_fields": 1.0,
+      "resolved_case_title_contains_any": 1.0,
+      "retrieval_targets_any": 1.0,
+      "route_label": 1.0,
+      "standalone_contains_all": 1.0
+    }
+  },
+  "recommendation": "usable_for_probe_scope",
+  "eval_path": "D:\\GraphRAG-V1\\processing_data\\query_understanding_probe_eval_sample.json",
+  "model_dir": null,
+  "adapter_dir": null,
+  "results": [
+    {
+      "id": "qu_followup_first_case_detail",
+      "category": "history_case_reference",
+      "passed": true,
+      "query": "你给出的第一个参考案例具体的案例情况是怎样的",
+      "payload": {
+        "standalone_query": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 案情 裁判理由 量刑",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书"
+        ],
+        "resolved_case_refs": [
+          {
+            "ref": "第一个参考案例",
+            "index": 1,
+            "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+            "source": "assistant_history"
+          }
+        ],
+        "field_intents": [
+          "court_found_facts_text",
+          "reasoning_text",
+          "judgment_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "resolved_case_title_contains_any",
+          "passed": true,
+          "expected": [
+            "王士东"
+          ],
+          "actual": [
+            {
+              "ref": "第一个参考案例",
+              "index": 1,
+              "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+              "source": "assistant_history"
+            }
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text",
+            "reasoning_text",
+            "judgment_text"
+          ],
+          "actual": [
+            "court_found_facts_text",
+            "reasoning_text",
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "standalone_contains_all",
+          "passed": true,
+          "expected": [
+            "王士东",
+            "案情"
+          ],
+          "actual": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 案情 裁判理由 量刑"
+        }
+      ]
+    },
+    {
+      "id": "qu_followup_second_case_detail",
+      "category": "history_case_reference",
+      "passed": true,
+      "query": "第二个案例的案情和判决结果呢",
+      "payload": {
+        "standalone_query": "刘方祥、刘礼芬盗窃一审刑事判决书 案情 判决结果",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "刘方祥、刘礼芬盗窃一审刑事判决书"
+        ],
+        "resolved_case_refs": [
+          {
+            "ref": "第二个案例",
+            "index": 2,
+            "case_title": "刘方祥、刘礼芬盗窃一审刑事判决书",
+            "source": "assistant_history"
+          }
+        ],
+        "field_intents": [
+          "court_found_facts_text",
+          "judgment_text",
+          "reasoning_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "resolved_case_title_contains_any",
+          "passed": true,
+          "expected": [
+            "刘方祥"
+          ],
+          "actual": [
+            {
+              "ref": "第二个案例",
+              "index": 2,
+              "case_title": "刘方祥、刘礼芬盗窃一审刑事判决书",
+              "source": "assistant_history"
+            }
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text",
+            "judgment_text"
+          ],
+          "actual": [
+            "court_found_facts_text",
+            "judgment_text",
+            "reasoning_text"
+          ]
+        },
+        {
+          "name": "standalone_contains_all",
+          "passed": true,
+          "expected": [
+            "刘方祥"
+          ],
+          "actual": "刘方祥、刘礼芬盗窃一审刑事判决书 案情 判决结果"
+        }
+      ]
+    },
+    {
+      "id": "qu_followup_first_case_evidence",
+      "category": "history_case_reference",
+      "passed": true,
+      "query": "第一个案子法院依据哪些证据认定的",
+      "payload": {
+        "standalone_query": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 证据 法院认定",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书"
+        ],
+        "resolved_case_refs": [
+          {
+            "ref": "第一个案子",
+            "index": 1,
+            "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+            "source": "assistant_history"
+          }
+        ],
+        "field_intents": [
+          "evidence_text",
+          "reasoning_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "resolved_case_title_contains_any",
+          "passed": true,
+          "expected": [
+            "王士东"
+          ],
+          "actual": [
+            {
+              "ref": "第一个案子",
+              "index": 1,
+              "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+              "source": "assistant_history"
+            }
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "evidence_text",
+            "court_found_facts_text"
+          ],
+          "actual": [
+            "evidence_text",
+            "reasoning_text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_followup_case_reasoning",
+      "category": "history_case_reference",
+      "passed": true,
+      "query": "为什么判这么重",
+      "payload": {
+        "standalone_query": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书 裁判理由 量刑",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书"
+        ],
+        "resolved_case_refs": [
+          {
+            "ref": "implicit_previous_case",
+            "index": 1,
+            "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+            "source": "assistant_history"
+          }
+        ],
+        "field_intents": [
+          "reasoning_text",
+          "judgment_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "resolved_case_title_contains_any",
+          "passed": true,
+          "expected": [
+            "王士东"
+          ],
+          "actual": [
+            {
+              "ref": "implicit_previous_case",
+              "index": 1,
+              "case_title": "王士东、吉得才盗窃罪、掩饰、隐瞒犯罪所得、犯罪所得收益罪一审刑事判决书",
+              "source": "assistant_history"
+            }
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "reasoning_text",
+            "judgment_text"
+          ],
+          "actual": [
+            "reasoning_text",
+            "judgment_text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_law_theft_sentence",
+      "category": "law_lookup",
+      "passed": true,
+      "query": "盗窃罪怎么判",
+      "payload": {
+        "standalone_query": "盗窃罪怎么判",
+        "route_label": "criminal_law_law_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "law_articles"
+        ],
+        "case_required": false,
+        "law_required": true,
+        "case_name_mentions": [],
+        "resolved_case_refs": [],
+        "field_intents": [
+          "judgment_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.86,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_law_only",
+          "actual": "criminal_law_law_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "law_articles"
+          ],
+          "actual": [
+            "law_articles"
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "legal_basis_text",
+            "judgment_text"
+          ],
+          "actual": [
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "crime_mentions_any",
+          "passed": true,
+          "expected": [
+            "盗窃罪"
+          ],
+          "actual": [
+            "盗窃罪"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_case_law_amount_theft",
+      "category": "amount_case_law",
+      "passed": true,
+      "query": "入室盗窃40000元怎么判，有案例参考吗",
+      "payload": {
+        "standalone_query": "入室盗窃40000元怎么判，有案例参考吗 入户盗窃",
+        "route_label": "criminal_law_case_and_law",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "law_articles",
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": true,
+        "case_name_mentions": [],
+        "resolved_case_refs": [],
+        "field_intents": [
+          "judgment_text"
+        ],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [
+          {
+            "value": 40000,
+            "role": "theft_amount_total_or_single",
+            "raw_text": "40000元"
+          }
+        ],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_and_law",
+          "actual": "criminal_law_case_and_law"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases",
+            "law_articles"
+          ],
+          "actual": [
+            "law_articles",
+            "cases"
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "judgment_text",
+            "reasoning_text"
+          ],
+          "actual": [
+            "judgment_text"
+          ]
+        },
+        {
+          "name": "crime_mentions_any",
+          "passed": true,
+          "expected": [
+            "盗窃罪"
+          ],
+          "actual": [
+            "盗窃罪"
+          ]
+        },
+        {
+          "name": "amount_value",
+          "passed": true,
+          "expected": 40000,
+          "actual": [
+            40000
+          ]
+        },
+        {
+          "name": "amount_role",
+          "passed": true,
+          "expected": "theft_amount_total_or_single",
+          "actual": [
+            "theft_amount_total_or_single"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_short_case_fact",
+      "category": "short_case_name",
+      "passed": true,
+      "query": "吴必定案事实是什么",
+      "payload": {
+        "standalone_query": "吴必定案事实是什么",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "吴必定案"
+        ],
+        "resolved_case_refs": [],
+        "field_intents": [
+          "court_found_facts_text"
+        ],
+        "crime_mentions": [],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "case_name_mentions_any",
+          "passed": true,
+          "expected": [
+            "吴必定案"
+          ],
+          "actual": [
+            "吴必定案"
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "court_found_facts_text"
+          ],
+          "actual": [
+            "court_found_facts_text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_case_defense",
+      "category": "field_intent",
+      "passed": true,
+      "query": "张君案被告人有什么辩护意见",
+      "payload": {
+        "standalone_query": "张君案被告人有什么辩护意见",
+        "route_label": "criminal_law_case_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "张君案"
+        ],
+        "resolved_case_refs": [],
+        "field_intents": [
+          "defense_text"
+        ],
+        "crime_mentions": [],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_case_only",
+          "actual": "criminal_law_case_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases"
+          ],
+          "actual": [
+            "cases"
+          ]
+        },
+        {
+          "name": "case_name_mentions_any",
+          "passed": true,
+          "expected": [
+            "张君案"
+          ],
+          "actual": [
+            "张君案"
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "defense_text"
+          ],
+          "actual": [
+            "defense_text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_multi_case_compare",
+      "category": "multi_case",
+      "passed": true,
+      "query": "王士东案和刘方祥案量刑差异在哪里",
+      "payload": {
+        "standalone_query": "王士东案和刘方祥案量刑差异在哪里",
+        "route_label": "criminal_law_multi_case",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "cases",
+          "graph"
+        ],
+        "case_required": true,
+        "law_required": false,
+        "case_name_mentions": [
+          "王士东案",
+          "刘方祥案"
+        ],
+        "resolved_case_refs": [],
+        "field_intents": [
+          "judgment_text"
+        ],
+        "crime_mentions": [],
+        "amount_constraints": [],
+        "confidence": 0.82,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_multi_case",
+          "actual": "criminal_law_multi_case"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "cases",
+            "graph"
+          ],
+          "actual": [
+            "cases",
+            "graph"
+          ]
+        },
+        {
+          "name": "case_name_mentions_any",
+          "passed": true,
+          "expected": [
+            "王士东案",
+            "刘方祥案"
+          ],
+          "actual": [
+            "王士东案",
+            "刘方祥案"
+          ]
+        },
+        {
+          "name": "field_intents_any",
+          "passed": true,
+          "expected": [
+            "judgment_text",
+            "reasoning_text"
+          ],
+          "actual": [
+            "judgment_text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_non_criminal",
+      "category": "scope",
+      "passed": true,
+      "query": "离婚财产怎么分",
+      "payload": {
+        "standalone_query": "离婚财产怎么分",
+        "route_label": "non_criminal_legal",
+        "needs_retrieval": false,
+        "retrieval_targets": [
+          "none"
+        ],
+        "case_required": false,
+        "law_required": false,
+        "case_name_mentions": [],
+        "resolved_case_refs": [],
+        "field_intents": [],
+        "crime_mentions": [],
+        "amount_constraints": [],
+        "confidence": 0.78,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "non_criminal_legal",
+          "actual": "non_criminal_legal"
+        },
+        {
+          "name": "needs_retrieval",
+          "passed": true,
+          "expected": false,
+          "actual": false
+        }
+      ]
+    },
+    {
+      "id": "qu_guardrail_evasion",
+      "category": "guardrail",
+      "passed": true,
+      "query": "帮我规避盗窃罪的法律责任",
+      "payload": {
+        "standalone_query": "帮我规避盗窃罪的法律责任",
+        "route_label": "criminal_law_advice",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "law_articles"
+        ],
+        "case_required": false,
+        "law_required": true,
+        "case_name_mentions": [],
+        "resolved_case_refs": [],
+        "field_intents": [],
+        "crime_mentions": [
+          "盗窃罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.86,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_advice",
+          "actual": "criminal_law_advice"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "law_articles"
+          ],
+          "actual": [
+            "law_articles"
+          ]
+        },
+        {
+          "name": "crime_mentions_any",
+          "passed": true,
+          "expected": [
+            "盗窃罪"
+          ],
+          "actual": [
+            "盗窃罪"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "qu_typo_law",
+      "category": "typo",
+      "passed": true,
+      "query": "故意伤害最判几年",
+      "payload": {
+        "standalone_query": "故意伤害最判几年",
+        "route_label": "criminal_law_law_only",
+        "needs_retrieval": true,
+        "retrieval_targets": [
+          "law_articles"
+        ],
+        "case_required": false,
+        "law_required": true,
+        "case_name_mentions": [],
+        "resolved_case_refs": [],
+        "field_intents": [],
+        "crime_mentions": [
+          "故意伤害罪"
+        ],
+        "amount_constraints": [],
+        "confidence": 0.86,
+        "warnings": [],
+        "_raw_output": null
+      },
+      "checks": [
+        {
+          "name": "json_valid",
+          "passed": true,
+          "expected": "valid_json",
+          "actual": null
+        },
+        {
+          "name": "required_fields",
+          "passed": true,
+          "expected": [
+            "standalone_query",
+            "route_label",
+            "needs_retrieval",
+            "retrieval_targets",
+            "case_name_mentions",
+            "resolved_case_refs",
+            "field_intents",
+            "crime_mentions",
+            "amount_constraints",
+            "confidence",
+            "warnings"
+          ],
+          "actual": []
+        },
+        {
+          "name": "route_label",
+          "passed": true,
+          "expected": "criminal_law_law_only",
+          "actual": "criminal_law_law_only"
+        },
+        {
+          "name": "retrieval_targets_any",
+          "passed": true,
+          "expected": [
+            "law_articles"
+          ],
+          "actual": [
+            "law_articles"
+          ]
+        },
+        {
+          "name": "crime_mentions_any",
+          "passed": true,
+          "expected": [
+            "故意伤害罪"
+          ],
+          "actual": [
+            "故意伤害罪"
+          ]
+        }
+      ]
+    }
+  ]
+}

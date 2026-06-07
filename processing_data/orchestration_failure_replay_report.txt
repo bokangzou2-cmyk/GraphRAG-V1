@@ -1,0 +1,39 @@
+Orchestration failure replay report
+created_at_utc: 2026-05-25T03:09:07.889361+00:00
+generation_mode: provider
+cases: 7
+
+[law_only_robbery] 抢劫罪和抢夺罪有什么区别？
+  before: {"stable_citation_count": 3, "orchestration_citation_count": 2, "failure_type": "orchestration_citation_count_decreased", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "llm_grounded", "orchestration_answer_type": "llm_grounded", "stable_citation_count": 3, "orchestration_citation_count": 3, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_law_only"], "orchestration_warnings": ["no_current_law_chunk", "router:criminal_law_law_only"], "stable_graph_paths": 6, "orchestration_graph_paths": 6}
+  grounding: {"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 8, "citation_count": 3, "graph_path_count": 6, "historical_query": false}}
+
+[case_only_fact] 吴必定案案情是什么？
+  before: {"stable_citation_count": 3, "orchestration_citation_count": 5, "failure_type": "orchestration_answer_type_downgrade", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "llm_grounded", "orchestration_answer_type": "llm_grounded", "stable_citation_count": 3, "orchestration_citation_count": 2, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_case_only"], "orchestration_warnings": ["no_current_law_chunk", "router:criminal_law_case_only"], "stable_graph_paths": 2, "orchestration_graph_paths": 2}
+  grounding: {"grounded_score": 0.82, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.18, "refusal_quality_score": 1.0, "issues": [{"severity": "medium", "type": "citation_count_decreased", "baseline": 3, "actual": 2}], "summary": {"answer_type": "llm_grounded", "context_count": 8, "citation_count": 2, "graph_path_count": 2, "historical_query": false}}
+
+[case_only_defense] 吴必定案被告人如何辩解？
+  before: {"stable_citation_count": 3, "orchestration_citation_count": 2, "failure_type": "orchestration_citation_count_decreased", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "llm_grounded", "orchestration_answer_type": "llm_grounded", "stable_citation_count": 2, "orchestration_citation_count": 2, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_case_only"], "orchestration_warnings": ["no_current_law_chunk", "router:criminal_law_case_only"], "stable_graph_paths": 1, "orchestration_graph_paths": 1}
+  grounding: {"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 8, "citation_count": 2, "graph_path_count": 1, "historical_query": false}}
+
+[case_and_law_basis] 吴必定案判了多久，依据什么法条？
+  before: {"stable_citation_count": 2, "orchestration_citation_count": 1, "failure_type": "orchestration_citation_count_decreased", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "llm_grounded", "orchestration_answer_type": "llm_grounded", "stable_citation_count": 1, "orchestration_citation_count": 2, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_case_and_law"], "orchestration_warnings": ["missing_law_article_for_conviction", "no_current_law_chunk", "router:criminal_law_case_and_law"], "stable_graph_paths": 4, "orchestration_graph_paths": 4}
+  grounding: {"grounded_score": 0.82, "citation_coverage_score": 0.0, "hallucination_risk_score": 0.18, "refusal_quality_score": 1.0, "issues": [{"severity": "medium", "type": "law_context_not_cited", "law_context_count": 3}], "summary": {"answer_type": "llm_grounded", "context_count": 8, "citation_count": 2, "graph_path_count": 4, "historical_query": false}}
+
+[case_and_law_sentence_reason] 吴必定案的量刑理由和适用法条分别是什么？
+  before: {"stable_citation_count": 2, "orchestration_citation_count": 0, "failure_type": "orchestration_misrefused+orchestration_citation_count_decreased", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "no_answer", "orchestration_answer_type": "no_answer", "stable_citation_count": 0, "orchestration_citation_count": 0, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_case_and_law"], "orchestration_warnings": ["insufficient_context", "no_current_law_chunk", "router:criminal_law_case_and_law"], "stable_graph_paths": 7, "orchestration_graph_paths": 7}
+  grounding: {"grounded_score": 1.0, "citation_coverage_score": 0.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "no_answer", "context_count": 8, "citation_count": 0, "graph_path_count": 7, "historical_query": false}}
+
+[multi_case_drug] 贩卖毒品罪多个案例中量刑差异主要看什么？
+  before: {"stable_citation_count": 8, "orchestration_citation_count": 6, "failure_type": "orchestration_citation_count_decreased", "hallucination_risk": {"level": "low", "reasons": []}, "provider_error": false}
+  after: {"stable_answer_type": "no_answer", "orchestration_answer_type": "llm_grounded", "stable_citation_count": 0, "orchestration_citation_count": 6, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_multi_case"], "orchestration_warnings": ["no_current_law_chunk", "router:criminal_law_multi_case"], "stable_graph_paths": 6, "orchestration_graph_paths": 6}
+  grounding: {"grounded_score": 1.0, "citation_coverage_score": 1.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "llm_grounded", "context_count": 8, "citation_count": 6, "graph_path_count": 6, "historical_query": false}}
+
+[law_1979_general] 1979年刑法关于盗窃罪是怎么规定的？
+  before: {"stable_citation_count": 0, "orchestration_citation_count": 8, "failure_type": "orchestration_hallucination_risk_increased+orchestration_provider_call_failed", "hallucination_risk": {"level": "medium", "reasons": ["llm_invalid_json", "llm_call_failed"]}, "provider_error": true}
+  after: {"stable_answer_type": "no_answer", "orchestration_answer_type": "no_answer", "stable_citation_count": 0, "orchestration_citation_count": 0, "stable_warnings": ["no_current_law_chunk", "router:criminal_law_law_only"], "orchestration_warnings": ["historical_law_context_missing", "no_current_law_chunk", "router:criminal_law_law_only"], "stable_graph_paths": 14, "orchestration_graph_paths": 14}
+  grounding: {"grounded_score": 1.0, "citation_coverage_score": 0.0, "hallucination_risk_score": 0.0, "refusal_quality_score": 1.0, "issues": [], "summary": {"answer_type": "no_answer", "context_count": 8, "citation_count": 0, "graph_path_count": 14, "historical_query": true}}
