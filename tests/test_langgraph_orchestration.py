@@ -11,6 +11,42 @@ def test_build_chain_prefers_langgraph_when_available() -> None:
     assert type(chain).__name__ == "CompiledStateGraph"
 
 
+def test_memory_compression_only_for_long_conversations_and_preserves_case_refs() -> None:
+    short_messages = [{"role": "user", "content": "盗窃罪怎么量刑"}]
+    short_memory = langchain_orchestration_sample.summarize_memory(short_messages)
+    short_compressed, short_meta = langchain_orchestration_sample.compress_messages_for_context(short_messages, short_memory)
+
+    assert short_meta["enabled"] is False
+    assert short_compressed == short_messages
+
+    long_messages = [
+        {"role": "user", "content": "我朋友入户盗窃40000元，有案例参考吗"},
+        {
+            "role": "assistant",
+            "content": "可以看第一个参考案例是《王士东、吉得才盗窃罪一审刑事判决书》，简称王士东案，金额约43852元。",
+        },
+    ]
+    for index in range(5):
+        long_messages.extend(
+            [
+                {"role": "user", "content": f"再说一个普通问题 {index}"},
+                {"role": "assistant", "content": f"普通回答 {index}"},
+            ]
+        )
+    long_messages.append({"role": "user", "content": "这个案子判了多久"})
+
+    memory = langchain_orchestration_sample.summarize_memory(long_messages)
+    compressed, meta = langchain_orchestration_sample.compress_messages_for_context(long_messages, memory)
+
+    assert meta["enabled"] is True
+    assert meta["dropped_message_count"] > 0
+    assert len(compressed) < len(long_messages)
+    assert compressed[-1]["content"] == "这个案子判了多久"
+    assert "结构化上下文记忆" in compressed[-2]["content"]
+    assert "王士东" in compressed[-2]["content"]
+    assert langchain_orchestration_sample.extract_case_candidates(compressed)[0]["case_title"].startswith("王士东")
+
+
 def test_langgraph_uses_explicit_answer_branches(monkeypatch) -> None:
     def fake_start(inputs: dict) -> dict:
         route = inputs["route"]

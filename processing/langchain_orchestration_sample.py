@@ -42,6 +42,7 @@ from app.llm.chat_service import (
 from app.llm.minimax_client import MinimaxClient, chat_grounded_json
 from app.llm.query_rewriter import (
     amount_constraints_for as memory_amount_constraints_for,
+    case_ref_indices,
     extract_case_candidates,
     field_intents_for as memory_field_intents_for,
     infer_crimes_from_text,
@@ -74,6 +75,8 @@ RESPONSE_KEYS = {
 
 class OrchestrationState(TypedDict, total=False):
     messages: list[dict]
+    messages_for_rewrite: list[dict]
+    messages_for_answer: list[dict]
     top_k: int
     mock_llm_mode: str
     generation_mode: str
@@ -81,6 +84,7 @@ class OrchestrationState(TypedDict, total=False):
     route_query: str
     retrieval_query: str
     memory: dict
+    memory_compression: dict
     rewrite_result: object
     rewrite_payload: dict
     query_understanding: object
@@ -273,6 +277,14 @@ def summarize_memory(messages: list[dict]) -> dict:
     latest = latest_user_query(messages)
     history_text = "\n".join(str(message.get("content") or "") for message in messages[-8:])
     cases = extract_case_candidates(messages)
+    ref_indices = case_ref_indices(latest, len(cases))
+    active_case = None
+    compared_cases = []
+    if ref_indices:
+        compared_cases = [case for case in cases if int(case.get("index") or 0) in ref_indices]
+        active_case = compared_cases[-1] if compared_cases else None
+    elif cases:
+        active_case = cases[0]
     crimes = infer_crimes_from_text(f"{history_text}\n{latest}")
     amounts = memory_amount_constraints_for(f"{history_text}\n{latest}")
     field_intents = memory_field_intents_for(latest, [])
@@ -283,10 +295,88 @@ def summarize_memory(messages: list[dict]) -> dict:
         constraints.append("no_law_retrieval")
     return {
         "case_refs": cases[:6],
+        "active_case": active_case,
+        "compared_cases": compared_cases[:4],
         "crime_mentions": crimes,
         "amount_constraints": amounts,
         "field_intents": field_intents,
         "user_constraints": constraints,
+    }
+
+
+def memory_case_line(case: dict) -> str:
+    index = case.get("index")
+    title = case.get("case_title")
+    short_title = case.get("short_title")
+    amount = case.get("amount")
+    parts = []
+    if index:
+        parts.append(f"第{index}个参考案例")
+    if title:
+        parts.append(f"《{title}》")
+    if short_title:
+        parts.append(f"简称{short_title}")
+    if amount:
+        parts.append(f"金额约{amount}元")
+    return "，".join(parts)
+
+
+def memory_to_message_content(memory: dict) -> str:
+    lines = ["结构化上下文记忆（不是检索证据，仅用于问题改写和指代消解）："]
+    case_lines = [memory_case_line(case) for case in memory.get("case_refs", []) if isinstance(case, dict)]
+    case_lines = [line for line in case_lines if line]
+    if case_lines:
+        lines.append("案例上下文：" + "；".join(case_lines))
+    active_case = memory.get("active_case")
+    if isinstance(active_case, dict) and active_case.get("case_title"):
+        lines.append(f"当前焦点案件：《{active_case['case_title']}》")
+    compared = [case.get("case_title") for case in memory.get("compared_cases", []) if isinstance(case, dict) and case.get("case_title")]
+    if compared:
+        lines.append("对比案件：" + "、".join(f"《{title}》" for title in compared))
+    if memory.get("crime_mentions"):
+        lines.append("已提及罪名：" + "、".join(map(str, memory["crime_mentions"])))
+    if memory.get("amount_constraints"):
+        amount_parts = [
+            f"{item.get('raw_text') or item.get('value')}({item.get('role', 'unknown_amount')})"
+            for item in memory["amount_constraints"]
+            if isinstance(item, dict)
+        ]
+        if amount_parts:
+            lines.append("已提及金额：" + "、".join(amount_parts))
+    if memory.get("field_intents"):
+        lines.append("字段关注：" + "、".join(map(str, memory["field_intents"])))
+    if memory.get("user_constraints"):
+        lines.append("用户限制：" + "、".join(map(str, memory["user_constraints"])))
+    lines.append("没有出现的字段保持为空；不要补充未在对话中明确出现的案件、罪名、金额、事实或法条。")
+    return "\n".join(lines)
+
+
+def compress_messages_for_context(messages: list[dict], memory: dict) -> tuple[list[dict], dict]:
+    threshold = max(0, settings.memory_compression_message_threshold)
+    recent_limit = max(1, settings.memory_compression_recent_messages)
+    if len(messages) <= threshold:
+        return messages, {
+            "enabled": False,
+            "reason": "below_threshold",
+            "message_count": len(messages),
+            "threshold": threshold,
+            "recent_message_count": len(messages),
+            "dropped_message_count": 0,
+        }
+    recent = list(messages[-recent_limit:])
+    memory_message = {"role": "assistant", "content": memory_to_message_content(memory)}
+    if recent:
+        compressed = [*recent[:-1], memory_message, recent[-1]]
+    else:
+        compressed = [memory_message]
+    return compressed, {
+        "enabled": True,
+        "reason": "message_count_exceeded_threshold",
+        "message_count": len(messages),
+        "threshold": threshold,
+        "recent_message_count": len(recent),
+        "dropped_message_count": max(0, len(messages) - len(recent)),
+        "memory_message_chars": len(memory_message["content"]),
     }
 
 
@@ -318,12 +408,19 @@ def init_state(inputs: dict) -> dict:
 
 def memory_state(state: dict) -> dict:
     memory = summarize_memory(state["messages"])
+    compressed_messages, compression = compress_messages_for_context(state["messages"], memory)
     state["memory"] = memory
+    state["memory_compression"] = compression
+    state["messages_for_rewrite"] = compressed_messages
+    state["messages_for_answer"] = compressed_messages
     return add_log(
         state,
         "memory_summary",
         {
+            "compression": compression,
             "case_ref_count": len(memory.get("case_refs", [])),
+            "active_case": memory.get("active_case", {}),
+            "compared_case_count": len(memory.get("compared_cases", [])),
             "crime_mentions": memory.get("crime_mentions", []),
             "amount_constraints": memory.get("amount_constraints", []),
             "field_intents": memory.get("field_intents", []),
@@ -333,7 +430,7 @@ def memory_state(state: dict) -> dict:
 
 
 def query_rewriter_state(state: dict) -> dict:
-    rewrite = rewrite_query(state["messages"])
+    rewrite = rewrite_query(state.get("messages_for_rewrite") or state["messages"])
     state["rewrite_result"] = rewrite
     state["rewrite_payload"] = dict(rewrite.payload)
     state["route_query"] = rewrite.standalone_query or state.get("route_query") or state["query"]
@@ -381,7 +478,7 @@ def structured_fix_state(state: dict) -> dict:
                 "warnings": warnings,
             }
         ),
-        state["messages"],
+        state.get("messages_for_rewrite") or state["messages"],
     )
     query_understanding = QueryUnderstandingResult(
         understanding_payload,
@@ -656,7 +753,8 @@ def prepare_state(state: dict) -> dict:
     confidence = align_confidence_with_route(confidence, route)
     graph_paths = [path for item in context for path in item.get("graph_paths", [])]
     citations = build_citations(context)
-    llm_messages = build_orchestration_llm_messages(state["query"], context, graph_paths, warnings, state["messages"]) if state["query"] else []
+    answer_history = state.get("messages_for_answer") or state["messages"]
+    llm_messages = build_orchestration_llm_messages(state["query"], context, graph_paths, warnings, answer_history) if state["query"] else []
     role_counts: dict[str, int] = {}
     for message in llm_messages:
         role = str(message.get("role") or "")
@@ -729,7 +827,7 @@ def generate_state(state: dict) -> dict:
 
 
 async def direct_answer_for_state(state: dict) -> dict:
-    return await answer_without_retrieval(state["query"], state["messages"], state["route"])
+    return await answer_without_retrieval(state["query"], state.get("messages_for_answer") or state["messages"], state["route"])
 
 
 def finalize_state(state: dict) -> dict:
@@ -757,7 +855,7 @@ def finalize_state(state: dict) -> dict:
             warnings.append("low_confidence")
             if can_answer_low_confidence_generally(confidence) and settings.answer_use_llm and MinimaxClient().enabled():
                 answer, answer_type, refusal_reason = asyncio.run(
-                    low_confidence_llm_answer(state["query"], state.get("messages", []), warnings)
+                    low_confidence_llm_answer(state["query"], state.get("messages_for_answer") or state.get("messages", []), warnings)
                 )
             else:
                 answer = refusal_answer("low_confidence")
@@ -895,7 +993,7 @@ def retrieval_response_from_state(state: dict) -> dict:
         warnings.append("low_confidence")
         if can_answer_low_confidence_generally(confidence) and settings.answer_use_llm and MinimaxClient().enabled():
             answer, answer_type, refusal_reason = asyncio.run(
-                low_confidence_llm_answer(state["query"], state.get("messages", []), warnings)
+                low_confidence_llm_answer(state["query"], state.get("messages_for_answer") or state.get("messages", []), warnings)
             )
         else:
             answer = refusal_answer("low_confidence")

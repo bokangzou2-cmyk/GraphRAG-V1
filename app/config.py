@@ -52,6 +52,8 @@ class Settings:
     )
     query_rewriter_max_new_tokens: int = int(os.getenv("QUERY_REWRITER_MAX_NEW_TOKENS", "384"))
     use_langchain_orchestration: bool = os.getenv("USE_LANGCHAIN_ORCHESTRATION", "true").lower() in {"1", "true", "yes", "on"}
+    memory_compression_message_threshold: int = int(os.getenv("MEMORY_COMPRESSION_MESSAGE_THRESHOLD", "12"))
+    memory_compression_recent_messages: int = int(os.getenv("MEMORY_COMPRESSION_RECENT_MESSAGES", "8"))
 
 
 settings = Settings()
