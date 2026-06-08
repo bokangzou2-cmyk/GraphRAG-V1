@@ -1,17 +1,23 @@
 {
   "schema_version": "vector-index-sample-v1",
-  "created_at_utc": "2026-05-29T10:25:12.486075+00:00",
+  "created_at_utc": "2026-06-08T15:44:29.145521+00:00",
   "input": "D:\\GraphRAG-V1\\processing_data\\retrieval_chunks_sample.jsonl",
   "model": "BAAI/bge-small-zh-v1.5",
-  "requested_backend": "hash",
-  "backend": "hash",
+  "requested_backend": "sentence-transformers",
+  "backend": "sentence-transformers",
   "backend_info": {
-    "reason": "requested_hash"
+    "model_cache": {
+      "available": true,
+      "reason": "ok",
+      "snapshot": "C:\\Users\\DELL3\\.cache\\huggingface\\hub\\models--BAAI--bge-small-zh-v1.5\\snapshots\\7999e1d3359715c523056ef9478215996d62a620",
+      "missing": []
+    }
   },
-  "device": "cpu",
-  "local_files_only": true,
+  "device": "cuda",
+  "local_files_only": false,
+  "query_instruction": "为这个句子生成表示以用于检索相关文章：",
   "input_fingerprint": "01f495a29c6c45ced52592cd47fe945c0da5db26dd70bcaca3432155620fd239",
   "metric": "inner_product_normalized_cosine",
   "count": 4570,
-  "dimension": 768
+  "dimension": 512
 }

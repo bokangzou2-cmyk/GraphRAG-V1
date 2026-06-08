@@ -143,7 +143,8 @@ def search(query: str, top_k: int = 10, index_dir: Path = INDEX_DIR) -> dict:
         if key not in _MODEL_CACHE:
             _MODEL_CACHE[key] = SentenceTransformer(config["model"], device=key[1], local_files_only=True)
         model = _MODEL_CACHE[key]
-        vector = model.encode([query], normalize_embeddings=True, convert_to_numpy=True)
+        query_text = f"{config.get('query_instruction', '')}{query}"
+        vector = model.encode([query_text], normalize_embeddings=True, convert_to_numpy=True)
     candidate_k = index.ntotal if config.get("backend") == "hash" else min(index.ntotal, max(top_k * 20, 200))
     scores, indices = index.search(np.asarray(vector, dtype="float32"), candidate_k)
     hits = []

@@ -1,0 +1,10 @@
+Vector index build report
+updated_chunk_embedding_count: 4570
+dimension: 512
+index_path: D:\GraphRAG-V1\processing_data\vector_index_sample\index.faiss
+metadata_path: D:\GraphRAG-V1\processing_data\vector_index_sample\metadata.jsonl
+config_path: D:\GraphRAG-V1\processing_data\vector_index_sample\config.json
+model: BAAI/bge-small-zh-v1.5
+backend: sentence-transformers
+device: cuda
+elapsed_seconds: 59.528

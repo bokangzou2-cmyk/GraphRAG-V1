@@ -5,63 +5,63 @@ pass: 10
 warn: 0
 
 [PASS] wu_biding_sentence_hybrid: 吴必定案判了多久
-  1. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=3954.7242 sources=lexical,graph,vector
-  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=1437.79798 sources=lexical,graph,vector
-  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1381.522027 sources=lexical,graph,vector
-  4. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1356.27436 sources=lexical,graph,vector
-  5. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1316.86712 sources=lexical,graph,vector
+  1. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=4023.58956 sources=lexical,graph,vector
+  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=1490.64562 sources=lexical,graph,vector
+  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1419.644107 sources=lexical,graph,vector
+  4. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1382.37772 sources=lexical,graph,vector
+  5. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=1359.890378 sources=lexical,graph,vector
 
 [PASS] wu_biding_applied_articles_hybrid: 吴必定案适用了哪些法条
   1. law_article law_article 刑法溯及力 score=3824.0 sources=graph
-  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=2172.56946 sources=lexical,graph,vector
-  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1824.311067 sources=lexical,graph,vector
-  4. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1760.37268 sources=lexical,graph,vector
-  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1728.09956 sources=lexical,graph,vector
+  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=2217.41298 sources=lexical,graph,vector
+  3. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=1945.23816 sources=lexical,graph,vector
+  4. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=1798.408378 sources=lexical,graph,vector
+  5. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1786.90156 sources=lexical,graph,vector
 
 [PASS] intentional_injury_law_hybrid: 故意伤害罪相关刑法条文是什么
-  1. law_article law_article 故意伤害罪 score=14721.02436 sources=lexical,graph,vector
+  1. law_article law_article 故意伤害罪 score=14773.35876 sources=lexical,graph,vector
   2. law_article law_article 自首 score=7802.5 sources=graph
   3. law_article law_article 共同犯罪的概念 score=3767.75 sources=graph
   4. law_article law_article 从犯 score=3767.75 sources=graph
   5. law_article law_article 对死刑、无期徒刑罪犯剥夺政治权利的适用 score=3618.5 sources=graph
 
 [PASS] wu_biding_defense_hybrid: 吴必定案被告人辩称什么
-  1. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=3155.00349 sources=lexical,graph,vector
-  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=1661.0842 sources=lexical,graph,vector
-  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1416.827547 sources=lexical,graph,vector
-  4. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=1342.47048 sources=lexical,graph,vector
-  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1341.3328 sources=lexical,graph,vector
+  1. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=3187.39773 sources=lexical,graph,vector
+  2. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=1693.65244 sources=lexical,graph,vector
+  3. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=1495.19434 sources=lexical,graph,vector
+  4. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=1432.481787 sources=lexical,graph,vector
+  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=1373.58408 sources=lexical,graph,vector
 
 [PASS] wu_biding_reasoning_hybrid: 吴必定案为什么构成故意伤害罪
-  1. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=4944.21592 sources=lexical,graph,vector
+  1. case_chunk reasoning_text 吴必定故意伤害一审刑事判决书 score=4989.91816 sources=lexical,graph,vector
   2. case_chunk reasoning_text 张君成故意伤害罪一审刑事判决书 score=2597.165 sources=lexical,graph
-  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=2082.0183 sources=lexical,graph,vector
-  4. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=2062.33004 sources=graph,vector
-  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=2006.79836 sources=graph,vector
+  3. case_chunk court_found_facts_text 吴必定故意伤害一审刑事判决书 score=2119.1163 sources=lexical,graph,vector
+  4. case_chunk accusation_text 吴必定故意伤害一审刑事判决书 score=2103.3782 sources=graph,vector
+  5. case_chunk defense_text 吴必定故意伤害一审刑事判决书 score=2058.842 sources=graph,vector
 
 [PASS] dangerous_driving_sentence_hybrid: 穆某危险驾驶罪判了什么刑
-  1. case_chunk judgment_text 穆某犯危险驾驶罪一审刑事判决书 score=2677.809 sources=lexical,graph,vector
-  2. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=2104.2476 sources=lexical,graph,vector
-  3. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=2084.78692 sources=lexical,graph,vector
-  4. case_chunk judgment_text 姚某危险驾驶罪一审刑事判决书(1) score=2030.90912 sources=lexical,graph,vector
-  5. case_chunk judgment_text 曹建忠危险驾驶一审刑事判决书 score=1772.79164 sources=lexical,graph,vector
+  1. case_chunk judgment_text 穆某犯危险驾驶罪一审刑事判决书 score=2733.56844 sources=lexical,graph,vector
+  2. case_chunk judgment_text 董波危险驾驶罪二审刑事判决书 score=2140.28576 sources=lexical,graph,vector
+  3. case_chunk judgment_text 680刘某危险驾驶罪一审刑事判决书 score=2128.80112 sources=lexical,graph,vector
+  4. case_chunk judgment_text 姚某危险驾驶罪一审刑事判决书(1) score=2074.16576 sources=lexical,graph,vector
+  5. case_chunk judgment_text 曹建忠危险驾驶一审刑事判决书 score=1815.51872 sources=lexical,graph,vector
 
 [PASS] dangerous_driving_law_hybrid: 危险驾驶罪对应刑法第几条
-  1. law_article law_article 危险驾驶罪 score=16410.60156 sources=lexical,graph,vector
+  1. law_article law_article 危险驾驶罪 score=16466.09868 sources=lexical,graph,vector
   2. law_article law_article 罚金数额的裁量 score=7802.5 sources=graph
   3. law_article law_article 罚金的缴纳 score=7802.5 sources=graph
   4. law_article law_article 自首 score=6461.25 sources=graph
   5. law_article law_article 考验期限 score=6317.0 sources=graph
 
 [PASS] wu_biding_evidence_diverse_hybrid: 吴必定案有哪些证据
-  1. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=3103.48728 sources=lexical,graph,vector
-  2. case_chunk defendant_confession_texts 吴必定故意伤害一审刑事判决书 score=3040.68816 sources=lexical,graph,vector
-  3. case_chunk evidence_text 吴必定故意伤害一审刑事判决书 score=3011.48972 sources=graph,vector
-  4. case_chunk inspection_records_texts 吴必定故意伤害一审刑事判决书 score=2993.46872 sources=graph,vector
-  5. case_chunk expert_opinion_texts 吴必定故意伤害一审刑事判决书 score=2988.07748 sources=graph,vector
+  1. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=3144.08316 sources=lexical,graph,vector
+  2. case_chunk defendant_confession_texts 吴必定故意伤害一审刑事判决书 score=3087.89928 sources=lexical,graph,vector
+  3. case_chunk evidence_text 吴必定故意伤害一审刑事判决书 score=3059.0828 sources=graph,vector
+  4. case_chunk inspection_records_texts 吴必定故意伤害一审刑事判决书 score=3033.80204 sources=graph,vector
+  5. case_chunk witness_testimony_texts 吴必定故意伤害一审刑事判决书 score=2995.41112 sources=lexical,graph,vector
 
 [PASS] article_to_case_hybrid: 刑法第二百三十四条相关案例有哪些
-  1. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=4240.82724 sources=lexical,graph,vector
+  1. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=4279.97148 sources=lexical,graph,vector
   2. law_article law_article 故意伤害罪 score=3939.465625 sources=lexical,graph
   3. case_chunk judgment_text 刘健故意伤害一审刑事判决书 score=3619.2738 sources=lexical,graph
   4. case_chunk judgment_text 史建辉故意伤害二审刑事判决书 score=2577.5242 sources=lexical,graph
@@ -69,7 +69,7 @@ warn: 0
 
 [PASS] historical_law_no_current_substitution_hybrid: 1979年刑法第一百三十四条第二款是什么
   1. case_chunk judgment_text 吴必定故意伤害一审刑事判决书 score=5005.2012 sources=lexical,graph
-  2. case_chunk judgment_text 史建辉故意伤害二审刑事判决书 score=974.62608 sources=lexical,graph,vector
-  3. case_chunk judgment_text 尉钟贪污、挪用公款二审刑事判决书 score=738.29312 sources=graph,vector
-  4. case_chunk judgment_text 陈华贪污、受贿二审刑事判决书 score=734.99 sources=graph,vector
-  5. case_chunk judgment_text 梁雪云与邹彤、曾海涛贪污罪2016刑初64一审刑事判决书 score=725.9678 sources=graph,vector
+  2. case_chunk judgment_text 左权等八人职务侵占等一审刑事判决书 score=766.1534 sources=graph,vector
+  3. case_chunk judgment_text 陈华贪污、受贿二审刑事判决书 score=762.39044 sources=graph,vector
+  4. case_chunk judgment_text 赵永刚等贪污罪一审刑事判决书 score=762.15464 sources=graph,vector
+  5. case_chunk judgment_text 朱梦迪、潘亚磊等故意伤害罪、聚众斗殴罪等一审刑事判决书 score=659.6346 sources=lexical,graph

@@ -5,6 +5,7 @@ import hashlib
 import json
 import shutil
 import os
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -16,6 +17,7 @@ from common import OUT_DIR, iter_jsonl
 INPUT = OUT_DIR / "retrieval_chunks_sample.jsonl"
 INDEX_DIR = OUT_DIR / "vector_index_sample"
 DEFAULT_MODEL = "BAAI/bge-small-zh-v1.5"
+DEFAULT_QUERY_INSTRUCTION = "为这个句子生成表示以用于检索相关文章："
 
 
 def hf_snapshot_dir(model_name: str) -> Path | None:
@@ -95,11 +97,17 @@ def existing_metadata_fingerprint(path: Path) -> tuple[int, str] | None:
     return count, digest.hexdigest()
 
 
-def can_reuse_existing_index(rows: list[dict], index_dir: Path, rebuild: bool) -> bool:
+def can_reuse_existing_index(rows: list[dict], index_dir: Path, rebuild: bool, model: str, backend: str) -> bool:
     if rebuild:
         return False
     required = [index_dir / "index.faiss", index_dir / "metadata.jsonl", index_dir / "config.json"]
     if not all(path.exists() for path in required):
+        return False
+    try:
+        config = json.loads((index_dir / "config.json").read_text(encoding="utf-8-sig"))
+    except json.JSONDecodeError:
+        return False
+    if config.get("model") != model or config.get("backend") != backend:
         return False
     metadata_fingerprint = existing_metadata_fingerprint(index_dir / "metadata.jsonl")
     if metadata_fingerprint is None:
@@ -122,12 +130,27 @@ def hash_embed_texts(texts: list[str], dimension: int = 768) -> np.ndarray:
     return vectors / norms
 
 
+def resolve_device(device: str) -> str:
+    if device != "auto":
+        return device
+    try:
+        import torch
+
+        return "cuda" if torch.cuda.is_available() else "cpu"
+    except Exception:
+        return "cpu"
+
+
 def embed_texts(model_name: str, texts: list[str], batch_size: int, backend: str, device: str, local_files_only: bool) -> tuple[np.ndarray, str, dict]:
     if backend == "hash":
         return hash_embed_texts(texts), "hash", {"reason": "requested_hash"}
     status = model_cache_status(model_name)
     if local_files_only and not status["available"]:
-        return hash_embed_texts(texts), "hash", {"reason": "sentence_transformers_cache_incomplete", "model_cache": status}
+        raise RuntimeError(
+            "sentence_transformers_model_not_available_locally; "
+            "rerun with --allow-download or pre-download the model. "
+            f"model={model_name} missing={status.get('missing')}"
+        )
     from sentence_transformers import SentenceTransformer
 
     model = SentenceTransformer(model_name, device=device, local_files_only=local_files_only)
@@ -141,21 +164,56 @@ def embed_texts(model_name: str, texts: list[str], batch_size: int, backend: str
     return np.asarray(vectors, dtype="float32"), "sentence-transformers", {"model_cache": status}
 
 
+def write_report(index_dir: Path, config: dict, elapsed_seconds: float) -> None:
+    report = {
+        "created_at_utc": config["created_at_utc"],
+        "updated_chunk_embedding_count": config["count"],
+        "dimension": config["dimension"],
+        "index_path": str(index_dir / "index.faiss"),
+        "metadata_path": str(index_dir / "metadata.jsonl"),
+        "config_path": str(index_dir / "config.json"),
+        "model": config["model"],
+        "backend": config["backend"],
+        "device": config["device"],
+        "elapsed_seconds": round(elapsed_seconds, 3),
+    }
+    (index_dir / "build_report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (index_dir / "build_report.txt").write_text(
+        "\n".join(
+            [
+                "Vector index build report",
+                f"updated_chunk_embedding_count: {report['updated_chunk_embedding_count']}",
+                f"dimension: {report['dimension']}",
+                f"index_path: {report['index_path']}",
+                f"metadata_path: {report['metadata_path']}",
+                f"config_path: {report['config_path']}",
+                f"model: {report['model']}",
+                f"backend: {report['backend']}",
+                f"device: {report['device']}",
+                f"elapsed_seconds: {report['elapsed_seconds']}",
+                "",
+            ]
+        ),
+        encoding="utf-8",
+    )
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a local FAISS vector index for retrieval_chunks_sample.jsonl.")
     parser.add_argument("--model", default=DEFAULT_MODEL)
     parser.add_argument("--backend", choices=["sentence-transformers", "hash"], default="sentence-transformers")
-    parser.add_argument("--device", default="cpu")
+    parser.add_argument("--device", default="auto")
     parser.add_argument("--allow-download", action="store_true", help="Allow sentence-transformers to download a missing model instead of using the hash fallback.")
     parser.add_argument("--local-files-only", action="store_true", help="Deprecated; local-only mode is now the default unless --allow-download is set.")
     parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--query-instruction", default=DEFAULT_QUERY_INSTRUCTION)
     parser.add_argument("--rebuild", action="store_true")
     args = parser.parse_args()
 
     rows = list(iter_jsonl(INPUT))
     if not rows:
         raise SystemExit(f"missing or empty input: {INPUT}")
-    if can_reuse_existing_index(rows, INDEX_DIR, args.rebuild):
+    if can_reuse_existing_index(rows, INDEX_DIR, args.rebuild, args.model, args.backend):
         print(f"vector index is current -> {INDEX_DIR}")
         print(f"count: {len(rows)}")
         return
@@ -165,7 +223,9 @@ def main() -> None:
 
     texts = [row.get("text", "") for row in rows]
     local_files_only = args.local_files_only or not args.allow_download
-    vectors, effective_backend, backend_info = embed_texts(args.model, texts, args.batch_size, args.backend, args.device, local_files_only)
+    started = time.perf_counter()
+    resolved_device = resolve_device(args.device)
+    vectors, effective_backend, backend_info = embed_texts(args.model, texts, args.batch_size, args.backend, resolved_device, local_files_only)
     index = faiss.IndexFlatIP(vectors.shape[1])
     index.add(vectors)
 
@@ -181,16 +241,21 @@ def main() -> None:
         "requested_backend": args.backend,
         "backend": effective_backend,
         "backend_info": backend_info,
-        "device": args.device,
+        "device": resolved_device,
         "local_files_only": local_files_only,
+        "query_instruction": args.query_instruction,
         "input_fingerprint": row_fingerprint(rows),
         "metric": "inner_product_normalized_cosine",
         "count": len(rows),
         "dimension": int(vectors.shape[1]),
     }
     (INDEX_DIR / "config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    elapsed = time.perf_counter() - started
+    write_report(INDEX_DIR, config, elapsed)
     print(f"wrote vector index -> {INDEX_DIR}")
     print(f"count: {len(rows)} dimension: {vectors.shape[1]} model: {args.model} backend: {effective_backend}")
+    print(f"elapsed_seconds: {elapsed:.3f}")
+    print(f"report: {INDEX_DIR / 'build_report.json'}")
 
 
 if __name__ == "__main__":
